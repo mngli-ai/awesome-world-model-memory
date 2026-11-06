@@ -10334,7 +10334,7 @@ nodes:
   mechanism: 把跨 token 与跨头的冗余存进簇中心，把联合的头通道残差编成低位系数；Key 解码器以保住下游块输出为目标拟合，Value 编解码器沿实际量化路径做重建拟合，可选 Fast 变体复用系数做混合维度注意力省算力。
   media:
   - https://jiacheng-lu03.github.io/NanoKV/assets/videos/hy-teaser-nanokv.mp4
-  note: 雷达自动入库 2026-11-06，字段据摘要与项目页，待人工核。主干冻结但要离线拟合编解码器；演示视频为官方项目页 teaser。
+  note: 雷达自动入库 2026-11-06，字段据摘要，待人工核。主干冻结但要离线拟合编解码器；演示视频为官方项目页 teaser。
   one_liner: 簇中心加低位残差，KV 压到 1/26
   parent: dkv-forcing
   precision: day
@@ -10422,7 +10422,7 @@ nodes:
   mechanism: 在生成骨干的特征空间里，交互响应场预测器先描述参与者角色、未来运动响应强度与局部运动变化，响应反馈适配器据此给物体特征加增量，并把预测位移转成时间注意力的位置偏置，引导跨帧信息检索。
   media:
   - https://metaengine-world.github.io/ReactWorld/assets/videos/ambience_web077.mp4
-  note: 雷达自动入库 2026-11-06，字段据摘要与项目页，待人工核。只在 RBench 上报分；演示视频取自官方项目页。
+  note: 雷达自动入库 2026-11-06，字段据摘要，待人工核。只在 RBench 上报分；演示视频取自官方项目页。
   one_liner: 先预测交互响应，再用响应偏置取帧
   parent: echo-forcing
   precision: day
