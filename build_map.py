@@ -154,7 +154,39 @@ def time_columns(items):
     return columns
 
 
-def layout(nodes, order, color):
+def paper_signals(n, rules):
+    """出版证据与项目匹配分开：不从原始 venue 文案推断已录用。"""
+    record = rules.get("papers", {}).get(n["id"], {})
+    venue = rules.get("venues", {}).get(record.get("name"), {})
+    verified = (record.get("status") in ("accepted", "published")
+                and record.get("track") in ("main", "journal")
+                and str(record.get("source", "")).startswith("https://")
+                and str(venue.get("source", "")).startswith("https://"))
+    publication = dict(record, tier=venue.get("tier", 0) if verified else 0,
+                       rank=venue.get("rank", ""), rank_source=venue.get("source", ""))
+    concepts = set(n.get("concepts") or [])
+    reasons = []
+    if n["id"] == "solarrenderer":
+        reasons.append("当前实验基座：SolarRenderer 结构条件自回归渲染。")
+    if n["id"] in ("echo-infinity", "echo-forcing", "memrope"):
+        reasons.append("当前记忆增强候选：与 Echo-Infinity 接入及位置编码检查直接相关。")
+    if n.get("lane") == "位置时间寻址" and (
+            n.get("branch") in ("锚 sink", "重排位置", "实体挂载") or
+            concepts & {"旋转位置编码", "分块因果缓存", "记忆写入淘汰"}):
+        reasons.append("AR 记忆主线：RoPE、历史寻址或持久缓存，可用于分析长视频回访与记忆失效。")
+    if n.get("lane") == "几何位姿寻址" and n.get("branch") in ("位姿视锥", "显式几何库"):
+        reasons.append("空间记忆主线：按位姿或显式几何取回历史视图，可对照相机回访与场景一致性记忆设计。")
+    if n.get("lane") == "代码世界模型" and n.get("branch") == "神经渲染器" and (
+            concepts & {"结构条件渲染", "分块因果缓存", "流式分块推理"}):
+        reasons.append("渲染主线：结构 proxy 驱动的流式渲染，与当前 SolarRenderer 管线可对照。")
+    # 多人一致性只看机制描述，不因参考文献或限制中出现“多人”就标高相关。
+    mechanism = " ".join(str(n.get(k) or "") for k in ("title", "one_liner", "mechanism"))
+    if any(t in mechanism.lower() for t in ("多人身份", "多角色一致", "多人一致", "multi-character consistency", "multi-person consistency")):
+        reasons.append("角色主线：机制涉及多人或多角色身份一致性，可对照多人 proxy 实验。")
+    return dict(publication=publication, project_relevance=reasons)
+
+
+def layout(nodes, order, color, signals=None):
     """同一泳道共用一条紧凑时间轴：按日期排位次，不留空月；分支各占一行。"""
     by_lane = defaultdict(list)
     for n in nodes:
@@ -230,6 +262,7 @@ def layout(nodes, order, color):
         for n in items:
             x, y = placed[n["id"]]
             node_out.append({
+                **paper_signals(n, signals or {}),
                 "id": n["id"], "title": n["title"], "date": n["date"],
                 "precision": n.get("precision") or "day",
                 "lane": lane, "branch": n.get("branch") or "",
@@ -366,6 +399,11 @@ HTML = r"""<!DOCTYPE html>
   .imp-note{margin-top:7px;font-size:11.5px;color:var(--muted);line-height:1.6}
   @media (prefers-reduced-motion:reduce){.glow .halo,.glow .ring{animation:none}}
   .year-sep{stroke:rgba(15,23,42,.22);stroke-width:1.2;stroke-dasharray:3 6;stroke-linecap:round}
+  .project-mark{display:none;pointer-events:none}
+  .card.project-related .project-mark{display:block}
+  .card.project-muted{opacity:.30}
+  .venue-badge{font-size:10px;font-weight:700;pointer-events:none}
+  #project-toggle[aria-pressed="true"]{background:#0F766E;color:white;border-color:#0F766E}
   .time-label{font-size:14px;font-weight:650;fill:var(--muted)}
   .time-tick{stroke:rgba(100,116,139,.18);stroke-dasharray:3 7;pointer-events:none}
   .year-label{font-size:15px;font-weight:800;letter-spacing:.06em}
@@ -457,6 +495,7 @@ HTML = r"""<!DOCTYPE html>
   <input id="q" placeholder="搜索标题 / 机制 / 一句话">
   <span id="qc"></span>
   <button id="play">按时间播放</button>
+  <button id="project-toggle" aria-pressed="false" title="按当前 SolarRenderer / AR记忆 / 多人proxy主线匹配；青绿虚线表示相关性，不是学术评级">项目相关：关</button>
   <span class="hint">Ctrl+滚轮缩放 · 滚轮/拖拽平移 · 双击空白全览 · ←→ 切换论文 · / 搜索 · 连线为机制同构非引用</span>
 </header>
 <div id="stage">
@@ -520,8 +559,9 @@ function rateTier(cpm){
 function numText(c){ return c >= 1000 ? (c/1000).toFixed(c >= 10000 ? 0 : 1) + "k" : String(c); }
 function rateText(v){ return (Math.round(v*10)/10).toFixed(1); }
 /* 光晕沉到卡面之下：只在卡片外沿溢出，卡内毛玻璃/文字不被着色 */
+function glowTier(n){ return Math.max(rateTier(n.cpm), n.publication?.tier || 0); }
 function drawGlow(g, n){
-  const w = DATA.card.w, h = DATA.card.h, t = rateTier(n.cpm);
+  const w = DATA.card.w, h = DATA.card.h, t = glowTier(n);
   if(t){
     const T = GLOW_TIERS[t - 1], pad = T.pad + T.ring / 2;
     const gl = el("g", {class:"glow g" + t}, g);
@@ -530,6 +570,11 @@ function drawGlow(g, n){
     el("rect", {class:"ring", x:-pad, y:-pad, width:w + pad*2, height:h + pad*2,
       rx:16 + pad, "stroke-width":T.ring}, gl);
     g.insertBefore(gl, g.firstChild);
+  }
+  if(n.publication?.tier){
+    const badge = el("text", {class:"venue-badge", x:15, y:67, fill:"#7C3AED"}, g);
+    badge.textContent = n.publication.name + " · " + n.publication.rank;
+    el("title", {}, badge).textContent = "出版等级补充光效，不等同单篇质量；来源见详情";
   }
   // 右下角：被引量 + 速率（速率缺失就只写被引）
   const parts = [];
@@ -639,6 +684,10 @@ function build(){
     el("rect", {class:"bg", width:DATA.card.w, height:DATA.card.h, rx:16}, g);
     drawGlow(g, n);   // 引用速率 cpm 分档炫光 + 被引/速率标记（原手选 n.key 名单已废）
     drawInherit(g, n); // 图谱内被继承次数
+    const focus = el("g", {class:"project-mark"}, g);
+    el("rect", {x:-11,y:-11,width:DATA.card.w+22,height:DATA.card.h+22,rx:24,
+      fill:"none",stroke:"#0D9488","stroke-width":3,"stroke-dasharray":"10 5"}, focus);
+    el("title", {}, focus).textContent = (n.project_relevance || []).join(" ");
     el("rect", {class:"stripe", width:5, height:DATA.card.h-16, x:1.5, y:8, fill:laneColor[n.lane] || "#888", rx:2.5, opacity:.9}, g);
     const FREE = {"免训":"免训", "推理期技巧":"推理期"};
     const tagList = (FREE[n.training] ? [{t:FREE[n.training], free:true}] : []).concat((n.tags || []).map(t => ({t, free:false})));
@@ -690,6 +739,16 @@ function related(id){
   const st = [id]; while(st.length){ (kids[st.pop()] || []).forEach(k => { s.add(k); st.push(k); }); }
   return s;
 }
+let projectMode = false;
+const projectToggle = document.getElementById("project-toggle");
+projectToggle.onclick = () => {
+  projectMode = !projectMode;
+  projectToggle.setAttribute("aria-pressed", String(projectMode));
+  projectToggle.textContent = projectMode
+    ? "项目相关：开 · " + DATA.nodes.filter(n => n.project_relevance?.length).length + " 篇"
+    : "项目相关：关";
+  refresh();
+};
 function refresh(){
   const f = reveal ? null : (hoverId || activeId), rel = f ? related(f) : null; let hit = 0;
   DATA.nodes.forEach(n => {
@@ -699,6 +758,8 @@ function refresh(){
     c.classList.toggle("faint", !!rel && !rel.has(n.id));
     c.classList.toggle("future", !!reveal && !reveal.has(n.id));
     c.classList.toggle("active", n.id === activeId);
+    c.classList.toggle("project-related", projectMode && !!n.project_relevance?.length);
+    c.classList.toggle("project-muted", projectMode && !n.project_relevance?.length && !rel?.has(n.id));
     const lk = links[n.id]; if(!lk) return;
     const p = byId[n.parent], gone = hide || hidden.has(p.lane) || (reveal && !(reveal.has(n.id) && reveal.has(p.id)));
     lk.show(!gone);
@@ -728,7 +789,7 @@ function addImpact(b, n){
     : `<span class="u">暂未收录</span>`]);
   rows.push(["引用速率", (n.cpm != null && n.cpm > 0)
     ? `<b>${rateText(n.cpm)}</b> 次/月 <span class="u">≈ 每月新增被引，${TIER_WORD[t]}（第 ${t}/4 档）</span>`
-    : (n.cpm === 0 ? `<b>0.0</b> 次/月 <span class="u">至今无人引用，光圈不亮</span>`
+    : (n.cpm === 0 ? `<b>0.0</b> 次/月 <span class="u">引用记录为零；出版等级可能另行提供光效</span>`
                    : `<span class="u">无数据（未统计速率）</span>`)]);
   rows.push(["图谱内被继承", n.inherited > 0
     ? `<b>${n.inherited}</b> 篇后续工作直接接在它上面${n.inherited_chain > 0 ? ` <span class="u">另有 ${n.inherited_chain} 篇经传递链继承</span>` : ""}`
@@ -746,8 +807,20 @@ function addImpact(b, n){
   });
   b.appendChild(lab); b.appendChild(box);
   const note = document.createElement("p"); note.className = "imp-note";
-  note.textContent = "速率 = 被引 ÷ 发表月数，用来抵消“老论文天然引用多”；光圈只适合本图内横向比较，不代表质量。";
+  note.textContent = "光效档位取引用速率与已核实出版等级的较高值，不叠加计分。CCF A 或 ICORE A* 主会/期刊提供第3档、CCF B第2档、CCF C第1档；第4档仍需引用信号。出版等级不是单篇质量保证，未核实、投稿中及Workshop不自动晋档。";
   b.appendChild(note);
+  const pub = n.publication || {};
+  const heading = document.createElement("div"); heading.className = "lab"; heading.textContent = "出版证据与项目相关性"; b.appendChild(heading);
+  const text = document.createElement("div"); text.className = "p";
+  text.textContent = pub.tier ? `${pub.name} ${pub.year || ""} · ${pub.rank} · 出版补充第${pub.tier}/4档` : `出版等级未启用：${n.venue || "尚无已核实发表信息"}。原始venue文案不作为录用证明。`;
+  b.appendChild(text);
+  [["发表证据",pub.source],["等级依据",pub.rank_source]].forEach(([label,url]) => {
+    if(!url?.startsWith("https://")) return;
+    const a=document.createElement("a"); a.href=url; a.target="_blank"; a.rel="noopener noreferrer"; a.textContent=label+" ↗"; a.style.marginRight="16px"; b.appendChild(a);
+  });
+  const relevance = document.createElement("div"); relevance.className = "p";
+  relevance.textContent = n.project_relevance?.length ? "规则匹配 · " + n.project_relevance.join(" ") : "暂未匹配当前项目的高相关规则，不表示该论文不重要。";
+  b.appendChild(relevance);
 }
 function openPanel(n){
   setActive(n);
@@ -937,7 +1010,9 @@ def main():
     src, out, title = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3]
     prefix = sys.argv[4] if len(sys.argv) > 4 else ""
     nodes, order, color = load(src)
-    data = layout(nodes, order, color)
+    signal_file = src.parent / "paper-signals.yaml"
+    signals = yaml.safe_load(signal_file.read_text(encoding="utf-8")) if signal_file.exists() else {}
+    data = layout(nodes, order, color, signals)
     data["prefix"] = prefix
     missing = validate(data, out.parent, prefix)
     html = HTML.replace("__TITLE__", title)

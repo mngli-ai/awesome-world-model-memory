@@ -1,0 +1,120 @@
+venues:
+  ACM MM:
+    tier: 3
+    rank: CCF A
+    source: https://www.ccf.org.cn/Academic_Evaluation/CGAndMT/
+  ICLR:
+    tier: 3
+    rank: ICORE2026 A*
+    source: https://portal.core.edu.au/conf-ranks/2273/
+  ICCV:
+    tier: 3
+    rank: CCF A
+    source: https://www.ccf.org.cn/Academic_Evaluation/AI/
+  CVPR:
+    tier: 3
+    rank: CCF A
+    source: https://www.ccf.org.cn/Academic_Evaluation/AI/
+  ICML:
+    tier: 3
+    rank: CCF A
+    source: https://www.ccf.org.cn/Academic_Evaluation/AI/
+  NeurIPS:
+    tier: 3
+    rank: CCF A
+    source: https://www.ccf.org.cn/Academic_Evaluation/AI/
+  TPAMI:
+    tier: 3
+    rank: CCF A
+    source: https://www.ccf.org.cn/Academic_Evaluation/AI/
+  IJCV:
+    tier: 3
+    rank: CCF A
+    source: https://www.ccf.org.cn/Academic_Evaluation/AI/
+  JMLR:
+    tier: 3
+    rank: CCF A
+    source: https://www.ccf.org.cn/Academic_Evaluation/AI/
+  ECCV:
+    tier: 2
+    rank: CCF B
+    source: https://www.ccf.org.cn/Academic_Evaluation/AI/
+  ACCV:
+    tier: 1
+    rank: CCF C
+    source: https://www.ccf.org.cn/Academic_Evaluation/AI/
+papers:
+  worldscore:
+    name: ICCV
+    year: 2025
+    status: published
+    track: main
+    source: https://openaccess.thecvf.com/content/ICCV2025/html/Duan_WorldScore_A_Unified_Evaluation_Benchmark_for_World_Generation_ICCV_2025_paper.html
+    evidence: CVF 官方 proceedings 搜索结果列出全文标题、作者及 Proceedings of ICCV 2025, pp.27713–27724。主会已发表；不是
+      workshop。
+  vmem:
+    name: ICCV
+    year: 2025
+    status: accepted
+    track: main
+    source: https://iccv.thecvf.com/virtual/2025/poster/2213
+    evidence: ICCV 官方论文页和 awards_detail 均出现该标题及 Highlight、2025 Poster。主会和 Highlight
+      均有官方证据；Highlight 不等于最佳论文奖。
+  rolling-forcing:
+    name: ICLR
+    year: 2026
+    status: accepted
+    track: main
+    source: https://iclr.cc/virtual/2026/poster/10010326
+    evidence: ICLR 官方 Poster 页标题、作者与论文匹配，列出 2026-04-25 poster 时段。已核实 ICLR 2026 主会
+      Poster。
+  worldplay:
+    name: ICML
+    year: 2026
+    status: accepted
+    track: main
+    source: https://icml.cc/virtual/2026/poster/65111
+    evidence: ICML 官方 Poster 页给出完整标题、作者及 2026-07-08 poster 时段，摘要与 HY-WorldPlay 对应。已核实主会
+      Poster。
+  captain-safari:
+    name: CVPR
+    year: 2026
+    status: published
+    track: main
+    source: https://openaccess.thecvf.com/content/CVPR2026/html/Chou_Captain_Safari_A_World_Engine_with_Pose-Aligned_3D_Memory_CVPR_2026_paper.html
+    evidence: CVF 官方 proceedings 搜索结果列出完整标题、作者及 Proceedings of CVPR 2026, pp.25347–25357；项目页可交叉核对。直接
+      web_extract 的 CVF 页面正文缺失，但官方来源搜索索引返回完整书目信息。主会已核实。
+  worldtrace:
+    name: NeurIPS
+    year: 2026
+    status: accepted
+    track: main
+    source: https://neurips.cc/virtual/2026/session/137646
+    evidence: NeurIPS 官方 Sydney Poster Session 2 列出 Addressable Memory for Video World
+      Models、同组作者及 WorldTrace 摘要；NVIDIA 项目页 BibTeX 明确 booktitle=NeurIPS、Accepted for
+      publication。主会录用已核实；项目页另列 ICML 2026 F2S workshop 最佳论文，是早期版本经历，不可混作主会最佳论文。
+  dasa:
+    name: NeurIPS
+    year: 2026
+    status: accepted
+    track: main
+    source: https://neurips.cc/virtual/2026/poster/154629
+    evidence: NeurIPS 官方 Poster 页匹配完整标题、作者、摘要，并在搜索索引列出 2026-12-10 poster 时段。主会录用已核实。注意项目
+      PDF 仍为匿名 Submitted to NeurIPS 2026 版本，单凭该 PDF 不能证明录用，本结论依官方 poster 页。
+  video-memcomp:
+    name: ACM MM
+    year: 2026
+    status: accepted
+    track: main
+    source: https://arxiv.org/abs/2610.32784
+    evidence: arXiv Comments 明确 Accepted by ACM MM 2026；作者官方仓库 citation 明确 In Proceedings
+      of the 34th ACM International Conference on Multimedia (MM ’26), 10 pages，附
+      DOI 10.1145/3767308.3835474。据作者一手声明可核实主会录用，不是 workshop。DOI 抓取失败，未独立核实 ACM 出版端落地页；证据级别低于官方会议程序。
+  pack3d:
+    name: NeurIPS
+    year: 2026
+    status: accepted
+    track: main
+    source: https://neurips.cc/virtual/2026/poster/149667
+    evidence: NeurIPS 官方 Poster 页给出完整标题、Amil Khan 等作者、PACK3D 摘要及 2026-12-09 时段；arXiv
+      Comments 明确 Accepted to NeurIPS 2026 (Poster)。主会录用及 Poster 已核实。

@@ -1,0 +1,37 @@
+# 出版等级与项目相关标记
+
+## 学术光效
+
+最终光效 = max(原引用速率档位, 已核实出版等级档位)，不加权相加、不生成综合质量分。
+
+| 已核实出版类型 | 补充档位 |
+|---|---|
+| CCF A 主会/期刊、ICORE2026 A*（ICLR）主会 | 3 |
+| CCF B 主会/期刊 | 2 |
+| CCF C 主会/期刊 | 1 |
+| 未核实、投稿中、技术报告、workshop、赛道未确认 | 0 |
+
+最高第4档仍由引用速率触发。出版等级只提供筛选信号，不保证单篇论文质量。
+
+`paper-signals.yaml` 单独存等级来源与逐篇录用证据，不修改论文主表。每条必须包含 status（accepted/published）、track（main/journal）、source（HTTPS），以及可查等级来源，才启用补充光效。卡片显示出版徽标；详情提供发表与等级来源链接。ICLR 使用 ICORE A*，不冒标 CCF A。
+
+本轮补充的9篇：WorldScore、VMem、Rolling Forcing、WorldPlay、Captain Safari、WorldTrace、DASA、Video-MemComp、PACK3D。Video-MemComp 依据作者 arXiv 录用声明，证据强度低于官方 proceedings。GameVerse 作者声明被 NeurIPS 接收但具体赛道未核实，暂不启用；MemActive 未核实。技术报告不因项目知名就晋档。
+
+## 项目相关开关
+
+默认关闭。打开后高相关卡显示青绿虚线框，其他卡降低不透明度但不隐藏，关闭恢复原状。不改变学术光效、搜索、泳道过滤、播放顺序及数据。
+
+当前主线来自本地个人计划：SolarRenderer 结构条件渲染；Echo-Infinity 接入；RoPE/AR缓存机制；记忆方法设计；多人proxy角色一致性。
+
+`paper_signals()` 使用可解释规则：
+- 当前 SolarRenderer 基座及明确候选；
+- 位置时间寻址中锚点、重排位置、实体挂载，以及明确 RoPE/缓存机制；
+- 几何位姿寻址中的位姿视锥与显式几何库，对照相机回访/空间记忆；
+- 神经渲染器分支中明确结构条件、缓存或流式分块机制；
+- 标题/一句话/机制中明确多人身份一致性，避免从参考文献或局限泛泛命中。
+
+这是规则推荐，不是人工逐篇定论；详情公开命中原因。新增论文只要分类/概念与规则一致，重建时自动纳入。项目方向变更后需要调整规则，不建议仅按全文关键词命中。
+
+## 验证
+
+`python -m unittest test_layout test_signals -v`，另用 Edge 核对开关开/关、相关和非相关卡片、搜索、真实鼠标点击详情、已核实会议徽标与来源链接、JS错误和真实档位分布。主数据及论文内容保持原样。
