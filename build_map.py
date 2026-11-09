@@ -93,6 +93,67 @@ def load(path):
     return nodes, order, color
 
 
+MAX_STACK = 3
+
+
+def time_columns(items):
+    """泳道内共享列；仅将拥挤时段逐级细分，不给缺日论文伪造日序。"""
+    by_month = defaultdict(list)
+    for n in items:
+        d = parse_day(n["date"])
+        by_month[(d.year, d.month)].append(n)
+    columns = []
+
+    def emit(group, year, label):
+        # 同一天或缺日条目仍可能拥挤，按分支独立分页，共享续列。
+        branches = defaultdict(list)
+        for n in group:
+            branches[n.get("branch") or ""].append(n)
+        pages = max((len(g) + MAX_STACK - 1) // MAX_STACK for g in branches.values())
+        for page in range(pages):
+            members = [n for g in branches.values()
+                       for n in g[page * MAX_STACK:(page + 1) * MAX_STACK]]
+            columns.append({"year": year, "label": label + (f" · 续{page + 1}" if page else ""),
+                            "ids": [n["id"] for n in members]})
+
+    def split(group, year, month, start, end, level, label):
+        density = defaultdict(int)
+        for n in group:
+            density[n.get("branch") or ""] += 1
+        if max(density.values()) <= MAX_STACK or level == 3:
+            emit(group, year, label)
+            return
+        if level == 0:
+            ranges = [(1, 10, f"{month}月上旬"), (11, 20, f"{month}月中旬"),
+                      (21, end, f"{month}月下旬")]
+        elif level == 1:
+            mid = start + 4
+            ranges = [(start, mid, f"{month}月{start}–{mid}日"),
+                      (mid + 1, end, f"{month}月{mid + 1}–{end}日")]
+        else:
+            ranges = [(d, d, f"{month}月{d}日") for d in range(start, end + 1)]
+        for lo, hi, text in ranges:
+            subset = [n for n in group if lo <= parse_day(n["date"]).day <= hi]
+            if subset:
+                split(subset, year, month, lo, hi, level + 1, text)
+
+    for (year, month), group in sorted(by_month.items()):
+        precise = [n for n in group if (n.get("precision") or "day") == "day"]
+        imprecise = [n for n in group if (n.get("precision") or "day") != "day"]
+        density = defaultdict(int)
+        for n in group:
+            density[n.get("branch") or ""] += 1
+        if max(density.values()) <= MAX_STACK:
+            emit(group, year, f"{month}月")
+        else:
+            # 月精度放入单独列，避免将占位日期 01 误读为上旬。
+            if imprecise:
+                emit(imprecise, year, f"{month}月 · 未定日")
+            if precise:
+                split(precise, year, month, 1, month_end(date(year, month, 1)).day, 0, f"{month}月")
+    return columns
+
+
 def layout(nodes, order, color):
     """同一泳道共用一条紧凑时间轴：按日期排位次，不留空月；分支各占一行。"""
     by_lane = defaultdict(list)
@@ -116,35 +177,28 @@ def layout(nodes, order, color):
             if b not in branches:
                 branches.append(b)
 
-        # 按月分列：只保留有论文的月份，同月同列，重月横向微错开
-        mkeys = []
-        for n in by_date:
-            d = parse_day(n["date"])
-            k = (d.year, d.month)
-            if k not in mkeys:
-                mkeys.append(k)
-        col = {k: i for i, k in enumerate(mkeys)}
+        columns = time_columns(by_date)
+        col = {nid: i for i, c in enumerate(columns) for nid in c["ids"]}
 
-        # 同月同分支的多篇纵向摞起来：列位不变，行内下移
-        branch_slot = {}          # 每个分支最多摞几层
+        # 同列同分支最多三层；列由整条泳道共享。
+        branch_slot = {}
         placed = {}
         rough = {}
         max_right = LABEL_W
         for n in by_date:
-            d = parse_day(n["date"])
-            k = (d.year, d.month)
+            k = col[n["id"]]
             bi = branches.index(n.get("branch") or "")
             rough.setdefault((bi, k), []).append(n)
         for (bi, k), group in rough.items():
             branch_slot[bi] = max(branch_slot.get(bi, 1), len(group))
             for g, n in enumerate(group):
-                x = LABEL_W + col[k] * STEP
+                x = LABEL_W + k * STEP
                 placed[n["id"]] = (x, g)
 
         # 分支纵向偏移：按每支实际摞的层数累加
         btop, acc = {}, 0
         for bi, b in enumerate(branches):
-            btop[bi] = top + LANE_PAD + acc * (CARD_H + 14) + bi * 26
+            btop[bi] = top + max(LANE_PAD, 62) + acc * (CARD_H + 14) + bi * 26
             acc += branch_slot.get(bi, 1)
 
         for n in by_date:
@@ -154,10 +208,11 @@ def layout(nodes, order, color):
             max_right = max(max_right, x + CARD_W)
 
         years, prev = [], None
-        for k in mkeys:
-            if prev is None or k[0] != prev:
-                years.append({"x": LABEL_W + col[k] * STEP - 14, "label": str(k[0])})
-            prev = k[0]
+        for i, c in enumerate(columns):
+            c["x"] = LABEL_W + i * STEP
+            if prev is None or c["year"] != prev:
+                years.append({"x": c["x"] - 14, "label": str(c["year"])})
+            prev = c["year"]
 
         plot_w = max(420, max_right - LABEL_W + 30)
         height = (max(placed[n["id"]][1] for n in items) + CARD_H + 30) - top
@@ -167,7 +222,7 @@ def layout(nodes, order, color):
             "name": lane,
             "color": color.get(lane) or LANE_COLORS[li % len(LANE_COLORS)],
             "top": top, "height": height, "plotW": plot_w,
-            "count": len(items), "years": years,
+            "count": len(items), "years": years, "columns": columns,
             "branches": [{"name": b, "y": btop[i], "count": sum(1 for n in by_date if (n.get("branch") or "") == b)}
                          for i, b in enumerate(branches)],
         })
@@ -311,6 +366,8 @@ HTML = r"""<!DOCTYPE html>
   .imp-note{margin-top:7px;font-size:11.5px;color:var(--muted);line-height:1.6}
   @media (prefers-reduced-motion:reduce){.glow .halo,.glow .ring{animation:none}}
   .year-sep{stroke:rgba(15,23,42,.22);stroke-width:1.2;stroke-dasharray:3 6;stroke-linecap:round}
+  .time-label{font-size:14px;font-weight:650;fill:var(--muted)}
+  .time-tick{stroke:rgba(100,116,139,.18);stroke-dasharray:3 7;pointer-events:none}
   .year-label{font-size:15px;font-weight:800;letter-spacing:.06em}
   .tick-label-old{font-size:13px;fill:#94A3B8}
   .tick-label.major{fill:#475569;font-weight:600}
@@ -612,6 +669,10 @@ function build(){
       el("circle", {cx:30, cy:b.y+30, r:3.4, fill:l.color, opacity:.75}, t.g);
       el("text", {class:"branch", x:40, y:b.y+34}, t.g).textContent = b.name;
       finishSticky(t);
+    });
+    l.columns.forEach(c => {
+      el("line", {class:"time-tick", x1:c.x-13, y1:l.top+42, x2:c.x-13, y2:l.top+l.height-6}, lab);
+      el("text", {class:"time-label", x:c.x+5, y:l.top+43}, lab).textContent = c.label;
     });
     l.years.forEach((y, i) => {
       const t = mkSticky(lab, "year", l, {right: (l.years[i+1] ? l.years[i+1].x : DATA.labelW + l.plotW + 22) - 8});
