@@ -41,6 +41,23 @@ class SignalTests(unittest.TestCase):
         rules['papers']['x']['track'] = 'unknown'
         self.assertEqual(m.paper_signals(dict(id='x'), rules)['publication']['label'], '录用·赛道待核')
 
+    def test_project_shortlist_cap_and_reasons(self):
+        import yaml
+        rules = yaml.safe_load(Path('paper-signals.yaml').read_text(encoding='utf-8'))
+        nodes, _, _ = m.load(Path('research-map.yaml'))
+        by_id = {n['id']: n for n in nodes}
+        for lane, picks in rules['project_shortlist'].items():
+            self.assertLessEqual(len(picks), 5)
+            for nid, reason in picks.items():
+                self.assertEqual(by_id[nid]['lane'], lane)
+                self.assertTrue(reason)
+        selected = {nid for picks in rules['project_shortlist'].values() for nid in picks}
+        for n in nodes:
+            self.assertEqual(bool(m.paper_signals(n, rules)['project_relevance']), n['id'] in selected)
+        rules['project_shortlist']['overflow'] = {str(i): 'reason' for i in range(6)}
+        with self.assertRaises(ValueError):
+            m.paper_signals(nodes[0], rules)
+
     def test_full_verification_coverage(self):
         import yaml
         rules = yaml.safe_load(Path('paper-signals.yaml').read_text(encoding='utf-8'))

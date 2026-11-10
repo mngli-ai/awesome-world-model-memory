@@ -209,6 +209,14 @@ def paper_signals(n, rules):
     mechanism = " ".join(str(n.get(k) or "") for k in ("title", "one_liner", "mechanism"))
     if any(t in mechanism.lower() for t in ("多人身份", "多角色一致", "多人一致", "multi-character consistency", "multi-person consistency")):
         reasons.append("角色主线：机制涉及多人或多角色身份一致性，可对照多人 proxy 实验。")
+    # 正式构建采用人工审阅的项目精选，不再把宽泛规则命中的论文全亮。
+    if "project_shortlist" in rules:
+        shortlist = rules["project_shortlist"]
+        for lane, picks in shortlist.items():
+            if len(picks) > 5:
+                raise ValueError(f"项目精选每个板块最多5篇：{lane}")
+        picks = shortlist.get(n.get("lane"), {})
+        reasons = [picks[n["id"]]] if n["id"] in picks else []
     return dict(publication=publication, project_relevance=reasons)
 
 
@@ -521,7 +529,7 @@ HTML = r"""<!DOCTYPE html>
   <input id="q" placeholder="搜索标题 / 机制 / 一句话">
   <span id="qc"></span>
   <button id="play">按时间播放</button>
-  <button id="project-toggle" aria-pressed="false" title="按当前 SolarRenderer / AR记忆 / 多人proxy主线匹配；青绿虚线表示相关性，不是学术评级">项目相关：关</button>
+  <button id="project-toggle" aria-pressed="false" title="每个大板块最多5篇，按当前项目可借鉴的具体机制人工精选；青绿虚线不是学术评级，新增论文不会自动挤入名单">项目精选：关</button>
   <span class="hint">Ctrl+滚轮缩放 · 滚轮/拖拽平移 · 双击空白全览 · ←→ 切换论文 · / 搜索 · 连线为机制同构非引用</span>
 </header>
 <div id="stage">
@@ -777,8 +785,8 @@ projectToggle.onclick = () => {
   projectMode = !projectMode;
   projectToggle.setAttribute("aria-pressed", String(projectMode));
   projectToggle.textContent = projectMode
-    ? "项目相关：开 · " + DATA.nodes.filter(n => n.project_relevance?.length).length + " 篇"
-    : "项目相关：关";
+    ? "项目精选：开 · " + DATA.nodes.filter(n => n.project_relevance?.length).length + " 篇"
+    : "项目精选：关";
   refresh();
 };
 function refresh(){
