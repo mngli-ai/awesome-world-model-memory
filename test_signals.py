@@ -31,6 +31,16 @@ class SignalTests(unittest.TestCase):
         self.assertEqual(m.paper_signals(dict(id='benchmark', lane='评测基准'), {})['project_relevance'], [])
         self.assertTrue(m.paper_signals(dict(id='solarrenderer'), {})['project_relevance'])
 
+    def test_publication_caution_labels(self):
+        self.assertEqual(m.paper_signals(dict(id='x', arxiv='2611.12345'), {})['publication']['label'], '发表未核实')
+        for status, label in [('preprint', '预印本'), ('submitted', '投稿中'), ('technical_report', '技术报告')]:
+            rules = {'papers': {'x': {'status': status, 'source': 'https://arxiv.org/abs/x'}}}
+            self.assertEqual(m.paper_signals(dict(id='x'), rules)['publication']['label'], label)
+        rules = {'papers': {'x': {'status': 'accepted', 'track': 'workshop', 'source': 'https://example.org/paper'}}}
+        self.assertEqual(m.paper_signals(dict(id='x'), rules)['publication']['label'], 'Workshop')
+        rules['papers']['x']['track'] = 'unknown'
+        self.assertEqual(m.paper_signals(dict(id='x'), rules)['publication']['label'], '录用·赛道待核')
+
     def test_real_data_exposes_metadata(self):
         nodes, order, colors = m.load(Path('research-map.yaml'))
         data = m.layout(nodes, order, colors)

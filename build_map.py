@@ -164,6 +164,23 @@ def paper_signals(n, rules):
                 and str(venue.get("source", "")).startswith("https://"))
     publication = dict(record, tier=venue.get("tier", 0) if verified else 0,
                        rank=venue.get("rank", ""), rank_source=venue.get("source", ""))
+    status = record.get("status")
+    evidence = str(record.get("source", "")).startswith("https://")
+    if verified:
+        label, caution = "已核实发表/录用", "出版经历已核实；仍需核查实验与结论是否适用。"
+    elif evidence and record.get("track") == "workshop":
+        label, caution = "Workshop", "Workshop 论文，不等同对应会议主会；结论与实验需另行核查。"
+    elif evidence and status == "submitted":
+        label, caution = "投稿中", "只有投稿声明，尚无录用证据；不作为已通过正式评审的依据。"
+    elif evidence and status == "preprint":
+        label, caution = "预印本", "已确认预印本身份，尚无已核实正式录用记录；优先复核实验与实现。"
+    elif evidence and status == "technical_report":
+        label, caution = "技术报告", "技术报告，尚无已核实主会/期刊录用；结果需独立验证。"
+    elif evidence and status in ("accepted", "published"):
+        label, caution = "录用·赛道待核", "已有录用声明，但具体赛道或等级尚未核实，不按主会晋档。"
+    else:
+        label, caution = "发表未核实", "本图谱尚未核实正式发表/录用状态；不代表一定未录用，也不代表论文质量低。"
+    publication.update(label=label, caution=caution, verified=verified)
     concepts = set(n.get("concepts") or [])
     reasons = []
     if n["id"] == "solarrenderer":
@@ -575,6 +592,12 @@ function drawGlow(g, n){
     const badge = el("text", {class:"venue-badge", x:15, y:67, fill:"#7C3AED"}, g);
     badge.textContent = n.publication.name + " · " + n.publication.rank;
     el("title", {}, badge).textContent = "出版等级补充光效，不等同单篇质量；来源见详情";
+  } else {
+    const txt = n.publication?.label || "发表未核实";
+    const bg = el("g", {class:"publication-warning"}, g);
+    el("rect", {x:12,y:57,width:txt.length*10+14,height:17,rx:4,fill:"#FFF4DB",stroke:"#D69E36","stroke-width":.7}, bg);
+    el("text", {x:19,y:69,fill:"#92400E","font-size":10,"font-weight":700}, bg).textContent = txt;
+    el("title", {}, bg).textContent = n.publication?.caution || "出版状态尚未核实";
   }
   // 右下角：被引量 + 速率（速率缺失就只写被引）
   const parts = [];
@@ -810,6 +833,10 @@ function addImpact(b, n){
   note.textContent = "光效档位取引用速率与已核实出版等级的较高值，不叠加计分。CCF A 或 ICORE A* 主会/期刊提供第3档、CCF B第2档、CCF C第1档；第4档仍需引用信号。出版等级不是单篇质量保证，未核实、投稿中及Workshop不自动晋档。";
   b.appendChild(note);
   const pub = n.publication || {};
+  const warning=document.createElement("div"); warning.className="p publication-caution";
+  warning.textContent=pub.label+"："+pub.caution;
+  if(!pub.verified){warning.style.cssText="padding:10px 12px;background:#FFF4DB;border-left:3px solid #D69E36;border-radius:6px;color:#92400E";}
+  b.appendChild(warning);
   const heading = document.createElement("div"); heading.className = "lab"; heading.textContent = "出版证据与项目相关性"; b.appendChild(heading);
   const text = document.createElement("div"); text.className = "p";
   text.textContent = pub.tier ? `${pub.name} ${pub.year || ""} · ${pub.rank} · 出版补充第${pub.tier}/4档` : `出版等级未启用：${n.venue || "尚无已核实发表信息"}。原始venue文案不作为录用证明。`;

@@ -44,6 +44,21 @@ venues:
     rank: CCF C
     source: https://www.ccf.org.cn/Academic_Evaluation/AI/
 papers:
+  solarrenderer:
+    status: technical_report
+    source: https://arxiv.org/abs/2610.28630
+    evidence: arXiv Comments 明确 Technical Report；尚无已核实正式录用记录。
+  matrix-game-4:
+    status: preprint
+    source: https://arxiv.org/abs/2610.27999
+    evidence: 已核验 arXiv 预印本；项目及摘要页未提供已核实会议录用声明。
+  gameverse:
+    name: NeurIPS
+    year: 2026
+    status: accepted
+    track: unknown
+    source: https://arxiv.org/abs/2610.37257
+    evidence: arXiv Comments 声明 Accepted by NeurIPS 2026；精确赛道尚未核实。
   worldscore:
     name: ICCV
     year: 2025

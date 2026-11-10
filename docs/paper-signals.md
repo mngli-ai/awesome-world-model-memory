@@ -17,6 +17,10 @@
 
 本轮补充的9篇：WorldScore、VMem、Rolling Forcing、WorldPlay、Captain Safari、WorldTrace、DASA、Video-MemComp、PACK3D。Video-MemComp 依据作者 arXiv 录用声明，证据强度低于官方 proceedings。GameVerse 作者声明被 NeurIPS 接收但具体赛道未核实，暂不启用；MemActive 未核实。技术报告不因项目知名就晋档。
 
+## 出版状态警示
+
+卡片标题下方显示琥珀色状态标签，详情提供对应警示说明。明确区分预印本、投稿中、技术报告、Workshop、录用·赛道待核、发表未核实。前五种状态需独立配置中的来源证据，不从 arXiv 编号或空 venue 推断。无证据统一标“发表未核实”，只表示本图谱尚未核验，不代表未被录用或低质量。Workshop 不等同主会，预印本结果需额外核查，但并非没有研究价值。项目标记与引用光效不因警示自动取消。
+
 ## 项目相关开关
 
 默认关闭。打开后高相关卡显示青绿虚线框，其他卡降低不透明度但不隐藏，关闭恢复原状。不改变学术光效、搜索、泳道过滤、播放顺序及数据。
