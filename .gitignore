@@ -1,3 +1,13 @@
 
 # 巡检发布备份（本地保留，不入库）
 *.bak-publish-*
+
+# 发表状态核实用的抓取缓存（本地重建即可，不入库）
+scripts/arxiv_meta_cache.json
+scripts/cross_source_cache.json
+scripts/openalex_cache.json
+scripts/verify_shard_*.json
+scripts/verify_out_*.json
+scripts/baseline.json
+*.bak-2026*
+__pycache__/

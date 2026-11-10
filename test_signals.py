@@ -41,6 +41,15 @@ class SignalTests(unittest.TestCase):
         rules['papers']['x']['track'] = 'unknown'
         self.assertEqual(m.paper_signals(dict(id='x'), rules)['publication']['label'], '录用·赛道待核')
 
+    def test_full_verification_coverage(self):
+        import yaml
+        rules = yaml.safe_load(Path('paper-signals.yaml').read_text(encoding='utf-8'))
+        nodes, _, _ = m.load(Path('research-map.yaml'))
+        self.assertEqual({n['id'] for n in nodes}, set(rules['papers']))
+        self.assertTrue(all(p.get('evidence') for p in rules['papers'].values()))
+        self.assertEqual(rules['venues']['WACV']['rank'], 'ICORE2026 A')
+        self.assertEqual(rules['papers']['gameverse']['track'], 'unknown')
+
     def test_real_data_exposes_metadata(self):
         nodes, order, colors = m.load(Path('research-map.yaml'))
         data = m.layout(nodes, order, colors)

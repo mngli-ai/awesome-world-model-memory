@@ -174,12 +174,21 @@ def paper_signals(n, rules):
         label, caution = "投稿中", "只有投稿声明，尚无录用证据；不作为已通过正式评审的依据。"
     elif evidence and status == "preprint":
         label, caution = "预印本", "已确认预印本身份，尚无已核实正式录用记录；优先复核实验与实现。"
+    elif status == "product":
+        label, caution = "工业产品", "商业产品发布，未经同行评审；引用时应注明为产品发布而非论文。"
+    elif status == "project_page":
+        label, caution = "项目页", "仅有项目主页或代码仓库，未见对应正式发表论文。"
+    elif status == "unknown":
+        label, caution = "状态不明", "公开渠道未能核实其发表状态，也未确认其未发表。"
     elif evidence and status == "technical_report":
         label, caution = "技术报告", "技术报告，尚无已核实主会/期刊录用；结果需独立验证。"
     elif evidence and status in ("accepted", "published"):
         label, caution = "录用·赛道待核", "已有录用声明，但具体赛道或等级尚未核实，不按主会晋档。"
     else:
         label, caution = "发表未核实", "本图谱尚未核实正式发表/录用状态；不代表一定未录用，也不代表论文质量低。"
+    confidence = record.get("verification_confidence")
+    if confidence == "medium":
+        caution += " 核验置信度中等，部分依据来自第三方索引，引用前建议复查原始出版记录。"
     publication.update(label=label, caution=caution, verified=verified)
     concepts = set(n.get("concepts") or [])
     reasons = []
@@ -841,6 +850,16 @@ function addImpact(b, n){
   const text = document.createElement("div"); text.className = "p";
   text.textContent = pub.tier ? `${pub.name} ${pub.year || ""} · ${pub.rank} · 出版补充第${pub.tier}/4档` : `出版等级未启用：${n.venue || "尚无已核实发表信息"}。原始venue文案不作为录用证明。`;
   b.appendChild(text);
+  if(pub.evidence){
+    const ev=document.createElement("div"); ev.className="p";
+    ev.textContent="核验依据："+pub.evidence;
+    b.appendChild(ev);
+  }
+  if(pub.verification_confidence){
+    const cf=document.createElement("p"); cf.className="imp-note";
+    cf.textContent="状态核验置信度："+({high:"高",medium:"中",low:"低"}[pub.verification_confidence] || pub.verification_confidence)+"。这是对状态证据的把握，不是论文质量评分。";
+    b.appendChild(cf);
+  }
   [["发表证据",pub.source],["等级依据",pub.rank_source]].forEach(([label,url]) => {
     if(!url?.startsWith("https://")) return;
     const a=document.createElement("a"); a.href=url; a.target="_blank"; a.rel="noopener noreferrer"; a.textContent=label+" ↗"; a.style.marginRight="16px"; b.appendChild(a);

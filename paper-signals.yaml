@@ -43,6 +43,18 @@ venues:
     tier: 1
     rank: CCF C
     source: https://www.ccf.org.cn/Academic_Evaluation/AI/
+  AAAI:
+    tier: 3
+    rank: CCF A
+    source: https://www.ccf.org.cn/Academic_Evaluation/AI/
+  SIGGRAPH:
+    tier: 3
+    rank: CCF A
+    source: https://www.ccf.org.cn/Academic_Evaluation/CGAndMT/
+  WACV:
+    tier: 2
+    rank: ICORE2026 A
+    source: https://portal.core.edu.au/conf-ranks/?search=WACV&by=all&source=all&sort=atitle&page=1
 papers:
   solarrenderer:
     status: technical_report
@@ -58,78 +70,1434 @@ papers:
     status: accepted
     track: unknown
     source: https://arxiv.org/abs/2610.37257
-    evidence: arXiv Comments 声明 Accepted by NeurIPS 2026；精确赛道尚未核实。
+    evidence: arXiv comments 明确 Accepted by NeurIPS 2026；未注明具体赛道，保留录用并标赛道待核。
   worldscore:
     name: ICCV
     year: 2025
     status: published
     track: main
     source: https://openaccess.thecvf.com/content/ICCV2025/html/Duan_WorldScore_A_Unified_Evaluation_Benchmark_for_World_Generation_ICCV_2025_paper.html
-    evidence: CVF 官方 proceedings 搜索结果列出全文标题、作者及 Proceedings of ICCV 2025, pp.27713–27724。主会已发表；不是
-      workshop。
+    evidence: CVF 官方 proceedings 搜索结果列出全文标题、作者及 Proceedings of ICCV 2025, pp.27713–27724。主会已发表；不是 workshop。
   vmem:
     name: ICCV
     year: 2025
     status: accepted
     track: main
     source: https://iccv.thecvf.com/virtual/2025/poster/2213
-    evidence: ICCV 官方论文页和 awards_detail 均出现该标题及 Highlight、2025 Poster。主会和 Highlight
-      均有官方证据；Highlight 不等于最佳论文奖。
+    evidence: ICCV 官方论文页和 awards_detail 均出现该标题及 Highlight、2025 Poster。主会和 Highlight 均有官方证据；Highlight 不等于最佳论文奖。
   rolling-forcing:
     name: ICLR
     year: 2026
     status: accepted
     track: main
     source: https://iclr.cc/virtual/2026/poster/10010326
-    evidence: ICLR 官方 Poster 页标题、作者与论文匹配，列出 2026-04-25 poster 时段。已核实 ICLR 2026 主会
-      Poster。
+    evidence: ICLR 官方 Poster 页标题、作者与论文匹配，列出 2026-04-25 poster 时段。已核实 ICLR 2026 主会 Poster。
   worldplay:
     name: ICML
     year: 2026
     status: accepted
     track: main
     source: https://icml.cc/virtual/2026/poster/65111
-    evidence: ICML 官方 Poster 页给出完整标题、作者及 2026-07-08 poster 时段，摘要与 HY-WorldPlay 对应。已核实主会
-      Poster。
+    evidence: ICML 官方 Poster 页给出完整标题、作者及 2026-07-08 poster 时段，摘要与 HY-WorldPlay 对应。已核实主会 Poster。
   captain-safari:
     name: CVPR
     year: 2026
     status: published
     track: main
     source: https://openaccess.thecvf.com/content/CVPR2026/html/Chou_Captain_Safari_A_World_Engine_with_Pose-Aligned_3D_Memory_CVPR_2026_paper.html
-    evidence: CVF 官方 proceedings 搜索结果列出完整标题、作者及 Proceedings of CVPR 2026, pp.25347–25357；项目页可交叉核对。直接
-      web_extract 的 CVF 页面正文缺失，但官方来源搜索索引返回完整书目信息。主会已核实。
+    evidence: CVF 官方 proceedings 搜索结果列出完整标题、作者及 Proceedings of CVPR 2026, pp.25347–25357；项目页可交叉核对。直接 web_extract 的 CVF 页面正文缺失，但官方来源搜索索引返回完整书目信息。主会已核实。
   worldtrace:
     name: NeurIPS
     year: 2026
     status: accepted
     track: main
     source: https://neurips.cc/virtual/2026/session/137646
-    evidence: NeurIPS 官方 Sydney Poster Session 2 列出 Addressable Memory for Video World
-      Models、同组作者及 WorldTrace 摘要；NVIDIA 项目页 BibTeX 明确 booktitle=NeurIPS、Accepted for
-      publication。主会录用已核实；项目页另列 ICML 2026 F2S workshop 最佳论文，是早期版本经历，不可混作主会最佳论文。
+    evidence: NeurIPS 官方 Sydney Poster Session 2 列出 Addressable Memory for Video World Models、同组作者及 WorldTrace 摘要；NVIDIA 项目页 BibTeX 明确 booktitle=NeurIPS、Accepted for publication。主会录用已核实；项目页另列
+      ICML 2026 F2S workshop 最佳论文，是早期版本经历，不可混作主会最佳论文。
   dasa:
     name: NeurIPS
     year: 2026
     status: accepted
     track: main
     source: https://neurips.cc/virtual/2026/poster/154629
-    evidence: NeurIPS 官方 Poster 页匹配完整标题、作者、摘要，并在搜索索引列出 2026-12-10 poster 时段。主会录用已核实。注意项目
-      PDF 仍为匿名 Submitted to NeurIPS 2026 版本，单凭该 PDF 不能证明录用，本结论依官方 poster 页。
+    evidence: NeurIPS 官方 Poster 页匹配完整标题、作者、摘要，并在搜索索引列出 2026-12-10 poster 时段。主会录用已核实。注意项目 PDF 仍为匿名 Submitted to NeurIPS 2026 版本，单凭该 PDF 不能证明录用，本结论依官方 poster 页。
   video-memcomp:
     name: ACM MM
     year: 2026
     status: accepted
     track: main
     source: https://arxiv.org/abs/2610.32784
-    evidence: arXiv Comments 明确 Accepted by ACM MM 2026；作者官方仓库 citation 明确 In Proceedings
-      of the 34th ACM International Conference on Multimedia (MM ’26), 10 pages，附
-      DOI 10.1145/3767308.3835474。据作者一手声明可核实主会录用，不是 workshop。DOI 抓取失败，未独立核实 ACM 出版端落地页；证据级别低于官方会议程序。
+    evidence: arXiv Comments 明确 Accepted by ACM MM 2026；作者官方仓库 citation 明确 In Proceedings of the 34th ACM International Conference on Multimedia (MM ’26), 10 pages，附 DOI 10.1145/3767308.3835474。据作者一手声明可核实主会录用，不是
+      workshop。DOI 抓取失败，未独立核实 ACM 出版端落地页；证据级别低于官方会议程序。
   pack3d:
     name: NeurIPS
     year: 2026
     status: accepted
     track: main
     source: https://neurips.cc/virtual/2026/poster/149667
-    evidence: NeurIPS 官方 Poster 页给出完整标题、Amil Khan 等作者、PACK3D 摘要及 2026-12-09 时段；arXiv
-      Comments 明确 Accepted to NeurIPS 2026 (Poster)。主会录用及 Poster 已核实。
+    evidence: NeurIPS 官方 Poster 页给出完整标题、Amil Khan 等作者、PACK3D 摘要及 2026-12-09 时段；arXiv Comments 明确 Accepted to NeurIPS 2026 (Poster)。主会录用及 Poster 已核实。
+  action-rope:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.25861
+    evidence: arXiv comments 仅给出项目主页，S2 与 OpenAlex 均无会议/期刊记录，证据不足。
+    verification_confidence: low
+  aeon:
+    status: accepted
+    name: NeurIPS
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2610.28631
+    evidence: arXiv comments 明确写「Accepted to NeurIPS 2026」。
+    verification_confidence: high
+  agentgarten:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.12374
+    evidence: arXiv comments 仅项目主页，OpenAlex 仅登记为 arXiv 预印本（source_type=repository）。
+    verification_confidence: low
+  agiworld:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.02341
+    evidence: comments 为空，S2 无 venue，OpenAlex 无记录，无任何录用证据。
+    verification_confidence: low
+  alaya-renderer-flash:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2607.18703
+    evidence: comments 仅项目主页，S2 标注 arXiv.org（arXiv 自托管，非正式会议），OpenAlex 为预印本。
+    verification_confidence: low
+  alayaworld:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2608.13492
+    evidence: arXiv 标题即标注「Full Technical Report (v1.1)」，comments 仅说明作者排序，S2 只收录 arXiv.org。
+    verification_confidence: medium
+  anchor-forcing:
+    status: accepted
+    name: ECCV
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2603.13405
+    evidence: comments 为空；S2 标注 European Conference on Computer Vision 2026，OpenAlex 登记为 LNCS 会议论文（DOI 10.1007/978-3-032-36984-0_22）。
+    verification_confidence: high
+  anchorweave:
+    status: accepted
+    name: ECCV
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2602.14941
+    evidence: arXiv comments 明确写「Accepted to ECCV 2026」，OpenAlex 另有 LNCS 会议论文 DOI 佐证。
+    verification_confidence: high
+  any-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.42031
+    evidence: comments 仅「Autoregressive video generation」，无任何录用信息，S2 无 venue。
+    verification_confidence: low
+  anygamerenderer:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.31466
+    evidence: comments 为空，S2 无会议/期刊记录，未见独立录用证据。
+    verification_confidence: low
+  ar-edit:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.09795
+    evidence: comments 为空，S2 venue 为空，仅 arXiv 上新，无录用证据。
+    verification_confidence: low
+  astronex-world:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2609.20034
+    evidence: arXiv comments 首句即写「Technical report. 25 pages, 13 figures, 10 tables」。
+    verification_confidence: high
+  atas:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.20571
+    evidence: comments 仅项目主页与代码链接，S2 无 venue（type 仅为 Review），OpenAlex 为 arXiv 预印本。
+    verification_confidence: low
+  attn-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.30036
+    evidence: comments 仅「16 pages, 6 figures」，属篇幅说明，无录用信息。
+    verification_confidence: low
+  bev3sr:
+    status: accepted
+    name: WACV
+    track: main
+    source: https://arxiv.org/abs/2611.09816
+    evidence: arXiv comments 写 WACV camera ready，支持录用；原文未注明届次，故不猜填年份。
+    verification_confidence: medium
+  boxworld:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.36371
+    evidence: comments 为空，S2 无 venue，OpenAlex 无记录，证据不足。
+    verification_confidence: low
+  cadre:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.30129
+    evidence: comments 为空且第三方索引均无会议/期刊记录，按预印本处理。
+    verification_confidence: low
+  calm:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.28192
+    evidence: comments 为空，S2 无 venue，无录用证据。
+    verification_confidence: low
+  calm-lifecycle:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.38573
+    evidence: comments 为空，S2 无 venue，无录用证据。
+    verification_confidence: low
+  causal-forcing:
+    status: accepted
+    name: ICML
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2602.02214
+    evidence: arXiv comments 在项目页/代码链接之后标注「ICML 2026」，属录用标注，但未写 Accepted 字样。
+    verification_confidence: medium
+  causal-rcm:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2606.25473
+    evidence: arXiv comments 明确写「Technical Report」。
+    verification_confidence: high
+  causvid:
+    status: accepted
+    name: CVPR
+    year: 2025
+    track: main
+    source: https://arxiv.org/abs/2412.07772
+    evidence: arXiv comments 写「CVPR 2025」，OpenAlex 另有 CVPR 2025 会议论文 DOI 10.1109/cvpr52734.2025.02138。
+    verification_confidence: high
+  code2video-compass:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.28416
+    evidence: comments 为空，S2 无 venue，仅 arXiv 上新，无录用证据。
+    verification_confidence: low
+  codecap-bench:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.37341
+    evidence: comments 为空，S2 无 venue，无录用证据。
+    verification_confidence: low
+  codewm-brain:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2608.25927
+    evidence: comments 仅项目主页，S2 标注 arXiv.org（自托管），OpenAlex 登记为预印本。
+    verification_confidence: low
+  commit-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.00937
+    evidence: comments 仅「41 pages, 9 figures, 56 tables」，无录用信息，S2 无 venue。
+    verification_confidence: low
+  comoe:
+    status: published
+    name: ICLR
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2605.18813
+    evidence: arXiv journal_ref 明确写「Proceedings of the Fourteenth International Conference on Learning Representations (ICLR), 2026」，S2 亦标注 ICLR。
+    verification_confidence: high
+  compression-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.04028
+    evidence: comments 仅「37 pages, 16 figures」，无录用信息。
+    verification_confidence: low
+  context-compaction:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.38980
+    evidence: comments 为空，S2 无 venue，无录用证据。
+    verification_confidence: low
+  context-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2602.06028
+    evidence: comments 为空，S2 仅标注 arXiv.org，无正式会议记录。
+    verification_confidence: low
+  cosmos:
+    status: preprint
+    source: https://arxiv.org/abs/2501.03575
+    evidence: 对应论文为 Cosmos World Foundation Model Platform for Physical AI（arXiv 2501.03575），属平台技术报告，comments 无录用声明，按预印本处理。
+    verification_confidence: low
+  cvg-sgm:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.27505
+    evidence: comments 仅「8 pages, 2 figures」，S2 无 venue，无录用证据。
+    verification_confidence: low
+  decmem:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2605.31336
+    evidence: comments 仅项目主页，S2 标注 arXiv.org（自托管），OpenAlex 为预印本。
+    verification_confidence: low
+  deep-forcing:
+    status: preprint
+    year: 2025
+    source: https://arxiv.org/abs/2512.05081
+    evidence: comments 仅项目主页，S2 标注 arXiv.org，OpenAlex 登记为预印本（2025）。
+    verification_confidence: low
+  disen-forcing:
+    status: accepted
+    name: NeurIPS
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2611.02822
+    evidence: arXiv comments 首句标注「NeurIPS 2026」，但未写 Accepted 字样。
+    verification_confidence: medium
+  dkv-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.01648
+    evidence: comments 为空，S2 无 venue，无录用证据。
+    verification_confidence: low
+  dmt:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.41850
+    evidence: comments 为空，S2 无 venue，无录用证据。
+    verification_confidence: low
+  dreamx-world:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2606.16993
+    evidence: comments 仅项目主页与代码链接，S2 标注 arXiv.org，OpenAlex 为预印本。
+    verification_confidence: low
+  drift-kv-reselect:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.31433
+    evidence: comments 仅「17 pages, 7 figures, 13 tables」，S2 无 venue，无录用证据。
+    verification_confidence: low
+  dual-deltanet:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.38578
+    evidence: comments 为空，S2 无 venue，无录用证据。
+    verification_confidence: low
+  dycraft:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.40754
+    evidence: comments 仅项目主页，S2 无 venue，无录用证据。
+    verification_confidence: low
+  dysink:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2605.21028
+    evidence: comments 为空，S2 仅标注 arXiv.org，OpenAlex 为预印本。
+    verification_confidence: low
+  echo-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2605.16003
+    evidence: comments 为空，S2 仅标注 arXiv.org，OpenAlex 为预印本。
+    verification_confidence: low
+  echo-infinity:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2606.04527
+    evidence: comments 仅项目网站，S2 标注 arXiv.org，OpenAlex 为预印本。
+    verification_confidence: low
+  echokv:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.05903
+    evidence: comments 为空，S2 无 venue，无录用证据。
+    verification_confidence: low
+  evoworld:
+    status: preprint
+    year: 2025
+    source: https://arxiv.org/abs/2510.01183
+    evidence: comments 仅代码仓库链接，S2 标注 arXiv.org（自托管），无正式发表记录。
+    verification_confidence: low
+  evoworld-oos:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.06748
+    evidence: comments 为空，S2 无 venue，无录用证据。
+    verification_confidence: low
+  exeworldbench:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.15166
+    evidence: comments 为空，S2 无 venue，OpenAlex 仅登记为 arXiv 预印本。
+    verification_confidence: low
+  fadem:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2606.10671
+    evidence: comments 仅页数与项目主页，S2 标注 arXiv.org，OpenAlex 为预印本。
+    verification_confidence: low
+  fight-world-model:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2610.40607
+    evidence: arXiv comments 明确写「Tech Report」。
+    verification_confidence: high
+  flex:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2602.14027
+    evidence: comments 仅「19 pages, 15 figures」，S2 标注 arXiv.org，无正式发表记录。
+    verification_confidence: low
+  forgewm:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2608.14022
+    evidence: comments 为空，S2 仅标注 arXiv.org，无正式发表记录。
+    verification_confidence: low
+  framepack:
+    status: accepted
+    name: NeurIPS
+    year: 2025
+    track: main
+    source: https://arxiv.org/abs/2504.12626
+    evidence: comments 仅有 GitHub 链接；S2 标注 Neural Information Processing Systems 2025，OpenAlex 登记为 NeurIPS 会议论文（DOI 10.52202/085713-1024）。
+    verification_confidence: high
+  frechet-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.25666
+    evidence: comments 为空，S2 无 venue，无录用证据。
+    verification_confidence: low
+  futureworld:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.39619
+    evidence: comments 仅「17 pages, 6 figures」，S2 无 venue，无录用证据。
+    verification_confidence: low
+  gamedirector:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2609.25652
+    evidence: comments 仅项目主页，S2 标注 arXiv.org（自托管），无正式发表记录。
+    verification_confidence: low
+  gaussianrenderformer:
+    status: submitted
+    year: 2026
+    source: https://arxiv.org/abs/2611.05593
+    evidence: arXiv comments 写明「Under review at TMLR」，为投稿在审状态，尚无录用证据。
+    verification_confidence: medium
+  gear:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2609.34722
+    evidence: comments 仅项目主页，S2 标注 arXiv.org，OpenAlex 为预印本。
+    verification_confidence: low
+  gems:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.33158
+    evidence: arXiv comments 仅有代码与数据链接，无任何录用或期刊信息，第三方索引也无会议记录，判定为预印本。
+    verification_confidence: low
+  gen3c:
+    status: accepted
+    name: CVPR
+    year: 2025
+    track: main
+    source: https://arxiv.org/abs/2503.03751
+    evidence: arXiv comments 明确写 To appear in CVPR 2025。
+    verification_confidence: high
+  genie3:
+    status: product
+    year: 2025
+    source: https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/
+    evidence: DeepMind 官方博客发布，原文写明 limited research preview，页面无 arXiv 论文也无会议期刊名称，BibTeX 仅指向该博客本身。
+    verification_confidence: medium
+  geo-context:
+    status: accepted
+    name: CVPR
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2602.21929
+    evidence: arXiv comments 明确写有 Accepted by CVPR 2026，Semantic Scholar 亦标注 Computer Vision and Pattern Recognition。
+    verification_confidence: high
+  geostate:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.22343
+    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足，按预印本处理。
+    verification_confidence: low
+  gim-world:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2606.02436
+    evidence: arXiv comments 仅写项目主页，S2 的 arXiv.org 与 OpenAlex 的 repository 均非正式出版渠道。
+    verification_confidence: low
+  glance-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.20220
+    evidence: arXiv comments 为空，第三方索引无会议或期刊记录，证据不足，按预印本处理。
+    verification_confidence: low
+  globebench:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.22708
+    evidence: arXiv comments 仅给出代码与数据集链接，无录用声明，第三方索引无会议记录。
+    verification_confidence: low
+  gpwm:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.08338
+    evidence: arXiv comments 仅写页数、作者贡献说明与项目主页，无任何录用信息。
+    verification_confidence: low
+  graph-swap:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.02056
+    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
+    verification_confidence: low
+  grome:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.39812
+    evidence: arXiv comments 为空，第三方索引无会议或期刊记录，证据不足，按预印本处理。
+    verification_confidence: low
+  gsexplorer:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.01543
+    evidence: arXiv comments 仅写 17 pages，无录用声明，第三方索引亦无会议记录。
+    verification_confidence: low
+  helixworld:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2609.38123
+    evidence: arXiv comments 为空，S2 仅记录为 arXiv.org（非正式会议或期刊），无其他出版证据。
+    verification_confidence: low
+  helm:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.02660
+    evidence: arXiv comments 仅写页数与项目主页，无录用声明，第三方索引无会议记录。
+    verification_confidence: low
+  himem:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.09355
+    evidence: arXiv comments 为空，第三方索引无会议或期刊记录，证据不足。
+    verification_confidence: low
+  hiper:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.07662
+    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
+    verification_confidence: low
+  history-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.02782
+    evidence: arXiv comments 仅写项目主页，无录用声明，第三方索引无会议记录。
+    verification_confidence: low
+  hla-wm:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.05739
+    evidence: arXiv comments 为空，OpenAlex 仅登记为 arXiv repository 预印本，无会议或期刊记录。
+    verification_confidence: low
+  holo4d:
+    status: accepted
+    name: NeurIPS
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2610.25276
+    evidence: arXiv comments 明确写有 Accepted to NeurIPS 2026。
+    verification_confidence: high
+  honeycomb:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2609.37690
+    evidence: arXiv comments 仅写项目主页与代码仓库，S2 的 arXiv.org 非正式渠道，无录用证据。
+    verification_confidence: low
+  hy-nomas:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2610.36729
+    evidence: arXiv comments 明确标注 Technical Report，属技术报告而非会议或期刊发表。
+    verification_confidence: medium
+  hy-world-2:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2604.14268
+    evidence: arXiv comments 仅写项目主页与代码链接，S2 的 arXiv.org 与 OpenAlex 的 repository 均非正式出版渠道。
+    verification_confidence: low
+  infinite-rope:
+    status: accepted
+    name: CVPR
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2511.20649
+    evidence: arXiv comments 写有 CVPR 2026 并附项目主页，Semantic Scholar 亦标注 CVPR 会议。
+    verification_confidence: high
+  infinite-world:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2602.02393
+    evidence: arXiv comments 仅写项目主页，S2 仅记录为 arXiv.org，无录用证据。
+    verification_confidence: low
+  keepsake:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.06588
+    evidence: arXiv comments 为空，OpenAlex 仅登记为 arXiv 预印本，无会议或期刊记录。
+    verification_confidence: low
+  l2m:
+    status: accepted
+    name: NeurIPS
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2611.01858
+    evidence: arXiv comments 明确写有 Accepted at NeurIPS 2026。
+    verification_confidence: high
+  l2r:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.11444
+    evidence: arXiv comments 为空，OpenAlex 仅登记为 arXiv 预印本，无会议或期刊记录。
+    verification_confidence: low
+  l3g-world:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.40614
+    evidence: arXiv comments 仅写项目主页，无录用声明，第三方索引无会议记录。
+    verification_confidence: low
+  layerrecall:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2608.28460
+    evidence: arXiv comments 仅写页数与图数，S2 仅记录为 arXiv.org，无录用证据。
+    verification_confidence: low
+  lingbot-world:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2601.20540
+    evidence: arXiv comments 仅写项目主页与代码链接，S2 的 arXiv.org 与 OpenAlex 的 repository 均非正式出版渠道。
+    verification_confidence: low
+  loger:
+    status: accepted
+    year: 2026
+    track: unknown
+    source: https://arxiv.org/abs/2603.03269
+    evidence: arXiv comments 仅写项目主页；OpenAlex 将其登记为 Springer LNCS 会议论文（DOI 10.1007/978-3-032-37135-5_15），但无法确认具体会议名称，故不填 venue。
+    verification_confidence: low
+  lol:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2601.16914
+    evidence: arXiv comments 明确写 preprint，与 Semantic Scholar 标注的 CVPR 冲突，按更保守一侧取预印本。
+    verification_confidence: low
+  longforcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.18289
+    evidence: arXiv comments 为空，OpenAlex 仅登记为 arXiv 预印本，无会议或期刊记录。
+    verification_confidence: low
+  longlive:
+    status: preprint
+    source: https://arxiv.org/abs/2509.22622
+    evidence: LongLive arXiv 首发 2025-09，而 ICLR 2025 已于 2025-04 举行，第三方索引的 ICLR 2025 归属在时间上不成立，按预印本处理。
+    verification_confidence: low
+  longlive-rag:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2606.02553
+    evidence: arXiv comments 仅写页数与图表数，S2 仅记录为 arXiv.org，无录用证据。
+    verification_confidence: low
+  longtake:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2609.38562
+    evidence: arXiv comments 为空，S2 仅记录为 arXiv.org，OpenAlex 仅登记为预印本。
+    verification_confidence: low
+  loopnav:
+    status: preprint
+    year: 2025
+    source: https://arxiv.org/abs/2505.22976
+    evidence: 'arXiv comments 仅写 V3: SGCS（版本说明），无录用声明，第三方索引亦无会议记录。'
+    verification_confidence: low
+  lowbit-gdn-state:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.39931
+    evidence: arXiv comments 仅写页数与图数，无录用声明，第三方索引无会议记录。
+    verification_confidence: low
+  lyra2:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2604.13036
+    evidence: arXiv comments 仅写项目主页，S2 仅记录为 arXiv.org，无录用证据。
+    verification_confidence: low
+  mallea:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.21283
+    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
+    verification_confidence: low
+  mamba3r:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.04221
+    evidence: arXiv comments 仅写页数、图数与表格数，无录用声明，第三方索引无会议记录。
+    verification_confidence: low
+  map2vid:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.25223
+    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
+    verification_confidence: low
+  marble:
+    status: product
+    year: 2025
+    source: https://marble.worldlabs.ai/
+    evidence: World Labs 商业产品页面，无对应论文与录用记录。
+    verification_confidence: medium
+  mass:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2608.06257
+    evidence: arXiv comments 仅写项目主页，S2 仅记录为 arXiv.org，无录用证据。
+    verification_confidence: low
+  matrix-game-3:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2604.08995
+    evidence: arXiv comments 仅写项目主页，S2 的 arXiv.org 与 OpenAlex 的 repository 均非正式出版渠道。
+    verification_confidence: low
+  mem3r:
+    status: accepted
+    name: WACV
+    year: 2027
+    track: main
+    source: https://arxiv.org/abs/2604.07279
+    evidence: arXiv comments 明确写有 Accepted to the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027。
+    verification_confidence: high
+  memactive:
+    status: unknown
+    source: ''
+    evidence: 图谱内部标注为 MIPG 2026，无公开链接，公开索引与搜索引擎均未找到对应论文，该标注未经外部核实故不采信。
+    verification_confidence: low
+  memlearner:
+    status: accepted
+    name: ECCV
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2606.31734
+    evidence: arXiv comments 写有 ECCV 2026 并附项目主页，Semantic Scholar 与 OpenAlex 的 LNCS 会议论文记录一致。
+    verification_confidence: high
+  memobench:
+    status: accepted
+    name: ECCV
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2606.27537
+    evidence: arXiv comments 为空，Semantic Scholar 标注 European Conference on Computer Vision 2026（s2_types 含 Conference），仅单一第三方来源。
+    verification_confidence: medium
+  memory-forcing:
+    status: preprint
+    year: 2025
+    source: https://arxiv.org/abs/2510.03198
+    evidence: arXiv comments 仅写 19 pages, 8 figures，S2 仅记录为 arXiv.org，无录用证据。
+    verification_confidence: low
+  memory-forcing-train:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.11756
+    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
+    verification_confidence: low
+  memrope:
+    status: accepted
+    name: ECCV
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2603.12513
+    evidence: arXiv comments 仅写页数与项目主页，但 Semantic Scholar 明确标注 European Conference on Computer Vision 2026，OpenAlex 亦登记为 LNCS 会议论文（DOI 10.1007/978-3-032-37356-4_14）。
+    verification_confidence: high
+  memvln:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.35066
+    evidence: arXiv comments 仅写项目主页，无录用声明，第三方索引无会议记录。
+    verification_confidence: low
+  metrictrail:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.07555
+    evidence: arXiv comments 仅写项目主页与代码链接，无录用声明，第三方索引无会议记录。
+    verification_confidence: low
+  mind:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2602.08025
+    evidence: arXiv comments 为空，S2 仅记录为 arXiv.org，OpenAlex 仅登记为预印本。
+    verification_confidence: low
+  minwm:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2605.30263
+    evidence: arXiv comments 为空，S2 仅记录为 arXiv.org（非正式会议或期刊），无其他出版证据。
+    verification_confidence: low
+  mirage:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2606.09828
+    evidence: arXiv comments 仅写项目主页与代码链接，S2 仅记录为 arXiv.org，无录用证据。
+    verification_confidence: low
+  mist:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.23542
+    evidence: arXiv comments 仅写页数、项目主页与代码链接，无录用声明，第三方索引无会议记录。
+    verification_confidence: low
+  mit3:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.26910
+    evidence: arXiv comments 为空，OpenAlex 仅登记为 arXiv 预印本，无会议或期刊记录。
+    verification_confidence: low
+  mix-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.33589
+    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
+    verification_confidence: low
+  moc:
+    status: preprint
+    source: https://arxiv.org/abs/2508.21058
+    evidence: MoC arXiv 首发 2025-08，而 ICLR 2025 已于 2025-04 举行，第三方索引的 ICLR 2025 归属在时间上不成立，按预印本处理。
+    verification_confidence: low
+  momentum:
+    status: preprint
+    source: https://arxiv.org/abs/2610.23423
+    evidence: arXiv comments 为空、无 journal_ref，Semantic Scholar 与 OpenAlex 均无会议或期刊记录。
+    verification_confidence: low
+  mosaichunk:
+    status: preprint
+    source: https://arxiv.org/abs/2610.02153
+    evidence: arXiv comments 仅写 27 pages 与项目主页，S2 无 venue，OpenAlex 记录为 arXiv 预印本。
+    verification_confidence: low
+  most-memory:
+    status: preprint
+    source: https://arxiv.org/abs/2611.00734
+    evidence: arXiv comments 为空，无 journal_ref，S2 与 OpenAlex 均无正式发表记录。
+    verification_confidence: low
+  motioncore:
+    status: preprint
+    source: https://arxiv.org/abs/2611.08904
+    evidence: arXiv comments 为空，无 journal_ref，无任何第三方会议或期刊索引记录。
+    verification_confidence: low
+  moviedit:
+    status: preprint
+    source: https://arxiv.org/abs/2611.02737
+    evidence: arXiv comments 仅写 26 pages, 15 figures，无任何录用或期刊信息。
+    verification_confidence: low
+  nanokv:
+    status: preprint
+    source: https://arxiv.org/abs/2611.06377
+    evidence: arXiv comments 仅写页数、项目页与代码链接，无录用声明。
+    verification_confidence: low
+  neoworld-3:
+    status: preprint
+    source: https://arxiv.org/abs/2610.27690
+    evidence: arXiv comments 为空，无 journal_ref，S2 与 OpenAlex 均无正式发表记录。
+    verification_confidence: low
+  neuralsrender:
+    status: preprint
+    source: https://arxiv.org/abs/2610.29200
+    evidence: arXiv comments 仅写 'Tech repo'（技术仓库），既非 Technical Report 也非录用声明，按预印本处理。
+    verification_confidence: low
+  octworld:
+    status: published
+    name: ECCV
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2609.03919
+    evidence: arXiv journal_ref 明确为 'ECCV 2026, LNCS 17026 (2026) 287-305'，DOI 10.1007/978-3-032-37595-7_16，comments 亦写 Published at ECCV 2026。
+    verification_confidence: high
+  omnimem:
+    status: preprint
+    source: https://arxiv.org/abs/2605.30519
+    evidence: arXiv comments 仅写页数与项目页，S2 venue 为 arXiv.org（非正式会议），OpenAlex 记为预印本。
+    verification_confidence: low
+  onstm:
+    status: preprint
+    source: https://arxiv.org/abs/2607.15271
+    evidence: arXiv comments 明确标注 'Preprint'，S2 venue 为 arXiv.org。
+    verification_confidence: high
+  operator-mismatch-contrastive:
+    status: preprint
+    source: https://arxiv.org/abs/2610.25360
+    evidence: arXiv comments 仅写 19 pages/6 figures/11 tables，无录用声明，无第三方索引记录。
+    verification_confidence: low
+  orbia:
+    status: technical_report
+    source: https://arxiv.org/abs/2610.20693
+    evidence: arXiv comments 明确写 'Technical Report'（70 页技术报告）。
+    verification_confidence: high
+  packforcing:
+    status: accepted
+    name: ECCV
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2603.25730
+    evidence: arXiv 元数据无录用声明；S2 标注 European Conference on Computer Vision 2026，OpenAlex 记为 ECCV 会议论文（LNCS DOI 10.1007/978-3-032-37464-6_31），已联网核对 arXiv 详情页仍无 journal_ref，故取中等置信。
+    verification_confidence: medium
+  pawbench:
+    status: preprint
+    source: https://arxiv.org/abs/2608.27345
+    evidence: arXiv comments 为空，S2 venue 为 arXiv.org，OpenAlex 记为 arXiv 预印本。
+    verification_confidence: low
+  physcodebench:
+    status: preprint
+    source: https://arxiv.org/abs/2604.23580
+    evidence: 项目页给出 arXiv 2604.23580，comments 为空，页面未声明任何会议或期刊录用，按预印本处理。
+    verification_confidence: low
+  physcodegym:
+    status: preprint
+    source: https://arxiv.org/abs/2610.17288
+    evidence: arXiv comments 为空，无 journal_ref，OpenAlex 仅有 arXiv 预印本记录。
+    verification_confidence: low
+  playgen2:
+    status: preprint
+    source: https://arxiv.org/abs/2611.07867
+    evidence: arXiv comments 仅给代码链接，无录用声明，无第三方索引记录。
+    verification_confidence: low
+  playworld:
+    status: preprint
+    source: https://arxiv.org/abs/2608.13552
+    evidence: arXiv comments 仅写项目主页，S2 venue 为 arXiv.org，无正式会议或期刊记录。
+    verification_confidence: low
+  pod-rope:
+    status: preprint
+    source: https://arxiv.org/abs/2610.33745
+    evidence: arXiv comments 仅写 21 pages, 5 figures，无录用或期刊信息。
+    verification_confidence: low
+  ppmem:
+    status: accepted
+    name: NeurIPS
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2610.23795
+    evidence: arXiv comments 明确写 'Accepted by NeurIPS 2026'。
+    verification_confidence: high
+  prestp:
+    status: preprint
+    source: https://arxiv.org/abs/2611.07551
+    evidence: arXiv comments 仅写页数与图表/附录数量，无录用声明。
+    verification_confidence: low
+  primesim:
+    status: preprint
+    source: https://arxiv.org/abs/2611.04870
+    evidence: arXiv comments 为空，无 journal_ref，S2 与 OpenAlex 均无正式发表记录。
+    verification_confidence: low
+  prowbench:
+    status: preprint
+    source: https://arxiv.org/abs/2610.02205
+    evidence: arXiv comments 仅有项目页链接，OpenAlex 记为 arXiv 预印本。
+    verification_confidence: low
+  pvbench:
+    status: preprint
+    source: https://arxiv.org/abs/2610.26711
+    evidence: arXiv comments 为空，无 journal_ref，无任何第三方会议或期刊记录。
+    verification_confidence: low
+  pwm:
+    status: preprint
+    source: https://arxiv.org/abs/2609.10540
+    evidence: arXiv comments 仅写主页与 GitHub，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
+    verification_confidence: low
+  qgvi:
+    status: preprint
+    source: https://arxiv.org/abs/2610.41373
+    evidence: arXiv comments 仅写含补充材料、图与参考文献数量，无录用声明。
+    verification_confidence: low
+  r2m-bench:
+    status: preprint
+    source: https://arxiv.org/abs/2608.27328
+    evidence: arXiv comments 仅有代码链接，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
+    verification_confidence: low
+  rad:
+    status: published
+    name: ECCV
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2511.12940
+    evidence: arXiv comments 明确写 'Published at ECCV 2026'，S2 亦标注 European Conference on Computer Vision。
+    verification_confidence: high
+  reactworld:
+    status: preprint
+    source: https://arxiv.org/abs/2611.06120
+    evidence: arXiv comments 仅写 10 pages, 7 figures 与项目主页，无录用声明。
+    verification_confidence: low
+  reading-writing-world-video:
+    status: preprint
+    source: https://arxiv.org/abs/2610.31668
+    evidence: arXiv comments 仅写 104 页综述与项目主页，S2 归类为 Review，无期刊或会议记录。
+    verification_confidence: low
+  recallgs:
+    status: preprint
+    source: https://arxiv.org/abs/2610.31293
+    evidence: arXiv comments 为空，无 journal_ref，S2 与 OpenAlex 均无正式发表记录。
+    verification_confidence: low
+  recam:
+    status: preprint
+    source: https://arxiv.org/abs/2610.27986
+    evidence: arXiv comments 仅给代码链接，无录用声明，无第三方索引记录。
+    verification_confidence: low
+  recr:
+    status: preprint
+    source: https://arxiv.org/abs/2611.04164
+    evidence: arXiv comments 为空，无 journal_ref，无第三方会议或期刊记录。
+    verification_confidence: low
+  recsa:
+    status: preprint
+    source: https://arxiv.org/abs/2611.07232
+    evidence: arXiv comments 仅写 24 pages, 6 figures, 17 tables，无录用声明。
+    verification_confidence: low
+  redate:
+    status: preprint
+    source: https://arxiv.org/abs/2611.00758
+    evidence: arXiv comments 仅写 40 pages/16 figures/38 tables，无录用或期刊信息。
+    verification_confidence: low
+  reel:
+    status: preprint
+    source: https://arxiv.org/abs/2610.16632
+    evidence: arXiv comments 仅给项目页 URL，OpenAlex 记为 arXiv 预印本。
+    verification_confidence: low
+  referstream:
+    status: preprint
+    source: https://arxiv.org/abs/2610.37566
+    evidence: arXiv comments 仅写 18 pages 与项目主页，无录用声明。
+    verification_confidence: low
+  retrieval-ego-memory:
+    status: preprint
+    source: https://arxiv.org/abs/2610.31284
+    evidence: arXiv comments 为空，无 journal_ref，无第三方会议或期刊记录。
+    verification_confidence: low
+  retrieval-traversal:
+    status: accepted
+    name: NeurIPS
+    year: 2026
+    track: workshop
+    source: https://arxiv.org/abs/2610.40545
+    evidence: arXiv comments 明确写 'Accepted at the NeurIPS 2026 Workshop on Long-Context Foundation Models (LCFM)'，属 workshop。
+    verification_confidence: high
+  rolling-sink:
+    status: preprint
+    source: https://arxiv.org/abs/2602.07775
+    evidence: arXiv comments 仅写项目主页，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
+    verification_confidence: low
+  sana-wm:
+    status: preprint
+    source: https://arxiv.org/abs/2605.15178
+    evidence: arXiv comments 仅有项目页链接，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
+    verification_confidence: low
+  scenebound:
+    status: preprint
+    source: https://arxiv.org/abs/2611.00756
+    evidence: arXiv comments 仅写 34 pages, 8 figures, 27 tables，无录用声明。
+    verification_confidence: low
+  se-mem:
+    status: preprint
+    source: https://arxiv.org/abs/2611.00658
+    evidence: arXiv comments 仅写 13 pages, 6 figures，无录用或期刊信息。
+    verification_confidence: low
+  sekai:
+    status: preprint
+    source: https://arxiv.org/abs/2611.06685
+    evidence: arXiv comments 仅写页数、图数与代码仓库链接，无录用声明。
+    verification_confidence: low
+  self-forcing:
+    status: accepted
+    name: NeurIPS
+    year: 2025
+    track: main
+    source: https://arxiv.org/abs/2506.08009
+    evidence: arXiv comments 写 'NeurIPS 2025 spotlight'，S2 标注 Neural Information Processing Systems 2025，OpenAlex 有 NeurIPS 会议论文记录（DOI 10.52202/085713-5576）。
+    verification_confidence: high
+  slot-jepa:
+    status: preprint
+    source: https://arxiv.org/abs/2610.28074
+    evidence: arXiv comments 为空，无 journal_ref，无第三方会议或期刊记录。
+    verification_confidence: low
+  slotmemory:
+    status: preprint
+    source: https://arxiv.org/abs/2605.31033
+    evidence: arXiv comments 仅给代码仓库链接，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
+    verification_confidence: low
+  smart:
+    status: preprint
+    source: https://arxiv.org/abs/2610.19257
+    evidence: arXiv comments 仅写页数与项目主页，OpenAlex 记为 arXiv 预印本。
+    verification_confidence: low
+  smi:
+    status: preprint
+    source: https://arxiv.org/abs/2610.02521
+    evidence: arXiv comments 仅写 32 pages 与项目主页，OpenAlex 记为 arXiv 预印本。
+    verification_confidence: low
+  sol-engine:
+    status: preprint
+    source: https://arxiv.org/abs/2606.23743
+    evidence: arXiv comments 为空，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
+    verification_confidence: low
+  solarwm:
+    status: preprint
+    source: https://arxiv.org/abs/2609.02886
+    evidence: arXiv comments 仅有项目页 URL，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
+    verification_confidence: low
+  sora2-veo31:
+    status: product
+    year: 2025
+    source: https://openai.com/index/sora-2/
+    evidence: OpenAI Sora 2 与 Google Veo 3.1 均为商业产品发布页，非同行评审论文。
+    verification_confidence: medium
+  spark-embodied-memory:
+    status: preprint
+    source: https://arxiv.org/abs/2611.00344
+    evidence: arXiv comments 为空，无 journal_ref，无第三方会议或期刊记录。
+    verification_confidence: low
+  sparse-anchors:
+    status: preprint
+    source: https://arxiv.org/abs/2611.05084
+    evidence: arXiv comments 仅写 8 pages, 4 figures, 2 tables，无录用声明。
+    verification_confidence: low
+  spatial-ttt:
+    status: accepted
+    name: ECCV
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2603.12255
+    evidence: arXiv 元数据无录用声明；S2 标注 European Conference on Computer Vision 2026，OpenAlex 记为 ECCV 会议论文（LNCS DOI 10.1007/978-3-032-36839-3_19），已联网核对 arXiv 详情页仍无 journal_ref，故取中等置信。
+    verification_confidence: medium
+  spmem:
+    status: accepted
+    name: NeurIPS
+    year: 2025
+    track: main
+    source: https://arxiv.org/abs/2506.05284
+    evidence: arXiv comments 仅写项目主页，但 S2 标注 Neural Information Processing Systems 2025，OpenAlex 记为 NeurIPS 会议论文（DOI 10.52202/085713-1651）。
+    verification_confidence: high
+  state-world-models:
+    status: preprint
+    source: https://arxiv.org/abs/2610.26811
+    evidence: arXiv comments 为空，无 journal_ref，S2 仅归类为 Review，无会议或期刊记录。
+    verification_confidence: low
+  streameval:
+    status: preprint
+    source: https://arxiv.org/abs/2610.28402
+    evidence: arXiv comments 为空，无 journal_ref，无第三方会议或期刊记录。
+    verification_confidence: low
+  streaming-code-wm:
+    status: project_page
+    year: 2026
+    source: https://github.com/TingtingLiao/streaming-code-world-model
+    evidence: 社区流式实现仓库，README 以 @misc 引用自身，无对应正式论文。
+    verification_confidence: medium
+  streamingllm:
+    status: accepted
+    name: ICLR
+    year: 2024
+    track: main
+    source: https://arxiv.org/abs/2309.17453
+    evidence: 图谱未收录 arXiv 号；公开核实：arXiv 2309.17453 的 comments 为 'ICLR 2024'，ICLR 2024 官网 Poster 页与 OpenReview 记录一致。
+    verification_confidence: high
+  streamrender-h3:
+    status: project_page
+    year: 2026
+    source: https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/
+    evidence: NVIDIA Research 研究项目页，页面 BibTeX 标为 Project page，无独立论文；所属 Sol-Engine 工作见 arXiv 2606.23743，亦无录用声明。
+    verification_confidence: low
+  syncvid:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.31765
+    evidence: arXiv comments 仅为页数与项目主页（28 pages, 8 figures, 9 tables, Project page），无录用信息；S2 无 venue，无 OpenAlex 会议/期刊记录。
+    verification_confidence: low
+  taomate-hd:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.03394
+    evidence: arXiv comments 为空，S2 venue 为空，无 OpenAlex 记录，仅能判定为预印本。
+    verification_confidence: low
+  tethercache:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2606.13035
+    evidence: comments 仅写 17 pages, 8 figures；S2 venue 为 arXiv.org（非正式会议/期刊），OpenAlex 为 preprint/repository，故为预印本。
+    verification_confidence: low
+  toucheworld:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2611.06061
+    evidence: arXiv 官方标题自身标注为 'TouchéWorld tech report'，comments 与第三方索引均无录用信息，按技术报告处理。
+    verification_confidence: medium
+  trajectory-forcing:
+    status: accepted
+    name: NeurIPS
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2611.09096
+    evidence: arXiv comments 明确写 'Accepted at NeurIPS 2026'，与图谱原始标注 NeurIPS 2026 一致。
+    verification_confidence: high
+  tt-mbrl:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.09625
+    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录，判定为预印本。
+    verification_confidence: low
+  twinpast:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.41983
+    evidence: comments 为空，S2 仅有类型标记 Review 而无 venue 名称，无正式发表证据。
+    verification_confidence: low
+  ucm:
+    status: accepted
+    name: SIGGRAPH
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2602.22960
+    evidence: 'comments 仅项目主页；S2 venue 为 International Conference on Computer Graphics and Interactive Techniques，且 OpenAlex 存在 conference-paper 记录（source: ACM SIGGRAPH Conference，source_type:
+      conference，DOI 10.1145/3799902.3811088），按规则提升为高置信度录用。'
+    verification_confidence: high
+  unistate:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.25414
+    evidence: comments 仅为项目主页，S2 venue 为空，无 OpenAlex 会议/期刊记录。
+    verification_confidence: low
+  uniworld:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.32381
+    evidence: comments 仅为项目主页，S2 venue 为空，无正式发表证据。
+    verification_confidence: low
+  var-q:
+    status: accepted
+    name: ICCV
+    year: 2025
+    track: workshop
+    source: https://arxiv.org/abs/2611.05380
+    evidence: comments 写 'A preliminary version of this work was presented at the ICCV 2025 BiVision Workshop'，仅早期版本在 ICCV 2025 BiVision Workshop 发表，本 arXiv 全稿无其它录用记录，故记为 workshop track。
+    verification_confidence: medium
+  velox:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.22311
+    evidence: comments 为空，S2 无 venue，OpenAlex 记录为 preprint/repository（10.48550/arxiv.2610.22311）。
+    verification_confidence: low
+  vibevideobench:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.35864
+    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
+    verification_confidence: low
+  video-coder:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.09894
+    evidence: comments 仅项目主页与 GitHub 代码链接，无录用信息。
+    verification_confidence: low
+  video2asset:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.09661
+    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
+    verification_confidence: low
+  videococo:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2607.27380
+    evidence: comments 仅页数（15 pages, 3 figures, 3 tables）；S2 venue 为 arXiv.org，OpenAlex 为 preprint/repository。
+    verification_confidence: low
+  videophy:
+    status: preprint
+    source: https://arxiv.org/abs/2406.03520
+    evidence: arXiv 有正式论文（2406.03520），comments 仅注页数，无任何会议或期刊录用声明，按预印本处理。
+    verification_confidence: high
+  vmem-bench:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.35001
+    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
+    verification_confidence: low
+  vpm:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.28594
+    evidence: comments 仅 '43 pages; 14 figures'，无录用信息，S2 venue 为空。
+    verification_confidence: low
+  wam-sim:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.07939
+    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
+    verification_confidence: low
+  wan-streamer:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2607.15038
+    evidence: comments 仅官网地址（wan-streamer.com/v0.3），S2 venue 为 arXiv.org，无正式发表证据。
+    verification_confidence: low
+  wanar-fixar:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.37983
+    evidence: comments 仅为项目主页，S2 venue 为空。
+    verification_confidence: low
+  wave-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.00859
+    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
+    verification_confidence: low
+  waypoint-15:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2609.37107
+    evidence: comments 为空，S2 venue 为 arXiv.org（仅索引源），无会议/期刊记录；属产品方技术报告性质的预印本。
+    verification_confidence: low
+  wbench:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2605.25874
+    evidence: 'comments 明确写 ''Technical report of WBench. Homepage: ...''，按技术报告判定，不主张任何会议/期刊。'
+    verification_confidence: high
+  weave-forcing:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.03510
+    evidence: comments 为空，S2 venue 为空，OpenAlex 记录为 preprint/repository（10.48550/arxiv.2610.03510）。
+    verification_confidence: low
+  wildawm:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.26828
+    evidence: comments 仅 '35 pages'，S2 venue 为空，无录用证据。
+    verification_confidence: low
+  wizard:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.40339
+    evidence: comments 仅为项目主页，S2 venue 为空。
+    verification_confidence: low
+  wmeval:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.33894
+    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
+    verification_confidence: low
+  world-in-context:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.33169
+    evidence: comments 仅为项目主页（WiC-site），S2 venue 为空。
+    verification_confidence: low
+  world-t3:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.17434
+    evidence: comments 仅为项目主页，S2 venue 为空，OpenAlex 为 preprint/repository。
+    verification_confidence: low
+  worldcast:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.33135
+    evidence: comments 仅页数与图表数（30 pages, 14 figures, 3 tables），无录用信息。
+    verification_confidence: low
+  worldmark:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2604.21686
+    evidence: comments 为空，S2 venue 为 arXiv.org，无会议/期刊记录。
+    verification_confidence: low
+  worldmembench:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.19063
+    evidence: comments 仅 '27 pages, 10 figures'，S2 venue 为空，OpenAlex 为 preprint/repository。
+    verification_confidence: low
+  worldmirror:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.31834
+    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
+    verification_confidence: low
+  worldmodelbench:
+    status: accepted
+    name: NeurIPS
+    year: 2025
+    track: main
+    source: https://arxiv.org/abs/2502.20694
+    evidence: 'comments 为空；S2 venue 为 Neural Information Processing Systems（2025），OpenAlex 为 conference-paper（source: neural information processing systems, source_type: conference,
+      DOI 10.52202/085713-1834），双源一致。'
+    verification_confidence: high
+  worldoracle:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.18826
+    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
+    verification_confidence: low
+  worldpager:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.35529
+    evidence: comments 仅 '11 pages, 4 figures, 9 tables'，无录用信息。
+    verification_confidence: low
+  worldprobe:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.39721
+    evidence: comments 仅 '19 pages, 9 figures'，S2 venue 为空。
+    verification_confidence: low
+  worldroambench:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2606.31672
+    evidence: comments 为空，S2 venue 为 arXiv.org，无会议/期刊记录。
+    verification_confidence: low
+  worldsimbench:
+    status: preprint
+    source: https://arxiv.org/abs/2410.18072
+    evidence: arXiv 有正式论文（2410.18072），comments 为空，未见录用声明，按预印本处理。
+    verification_confidence: high
+  worldstereo:
+    status: accepted
+    name: CVPR
+    year: 2026
+    track: main
+    source: https://arxiv.org/abs/2603.02049
+    evidence: comments 为空；S2 venue 为 Computer Vision and Pattern Recognition（2026，types 含 Conference），但 OpenAlex 仅收录 preprint/repository 记录，两源部分不一致，故置信度取 medium 而非 high。
+    verification_confidence: medium
+  worldstream:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2610.28827
+    evidence: comments 仅 '19 pages, 18 figures'，S2 venue 为空。
+    verification_confidence: low
+  xiaomi-auto-wm-2:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.01677
+    evidence: comments 为页数加项目主页（40 pages, 20 figures），未提 Technical Report 也未提录用，S2 venue 为空，按预印本处理。
+    verification_confidence: low
+  zo3t:
+    status: preprint
+    source: https://arxiv.org/abs/2509.06723
+    evidence: Zo3t arXiv 首发 2025-09，而 AAAI 2025 已于 2025-02 举行，第三方索引的 AAAI 2025 归属在时间上不成立，按预印本处理。
+    verification_confidence: low
