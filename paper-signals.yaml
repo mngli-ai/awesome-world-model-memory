@@ -55,22 +55,51 @@ venues:
     tier: 2
     rank: ICORE2026 A
     source: https://portal.core.edu.au/conf-ranks/?search=WACV&by=all&source=all&sort=atitle&page=1
+  TOG:
+    tier: 3
+    rank: CCF A
+    source: https://www.ccf.org.cn/Academic_Evaluation/CGAndMT/
 papers:
   solarrenderer:
     status: technical_report
     source: https://arxiv.org/abs/2610.28630
-    evidence: arXiv Comments 明确 Technical Report；尚无已核实正式录用记录。
+    evidence: '实时arXiv《SolarRenderer: Few-Step Generative Reference Rendering》，Guian Fang等，2026-10-20 v1；comments明确“Technical Report; 28 pages, 17 figures, 10 tables; Project page ... Code ...”，无journal_ref。实际访问作者官方项目，引用为@misc、eprint={2610.28630}，未见会议/期刊接收声明；题名+accepted/publication检索未获官方接收证据。确认Technical Report分类，不将开源模型发布视为同行评审发表，也不据无结果断言从未发表。'
+    year: 2026
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.28630
+    - https://enderfga.cn/SolarRenderer
+    verification_outcome: no_publication_evidence
   matrix-game-4:
     status: preprint
     source: https://arxiv.org/abs/2610.27999
-    evidence: 已核验 arXiv 预印本；项目及摘要页未提供已核实会议录用声明。
+    evidence: '实时arXiv为《Matrix-Game 4.0: Harnessing Video Models for Real-Time Playable Game Worlds》，Jihai Zhang等，2026-10-20 v1；comments仅项目/视频/代码/模型链接，无journal_ref。实际访问官方项目，引用为@misc、eprint={2610.27999}、archivePrefix={arXiv}，未见接收声明。输入venue虽写Technical Report (Skywork AI)，此次实际来源未见明确Technical Report标签，保留previous的preprint而不据旧venue擅改。题名+publication/accepted检索未获官方发表证据；不等于确认未发表。'
+    year: 2026
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.27999
+    - https://matrix-game-v4-0.github.io/page/
+    verification_outcome: no_publication_evidence
   gameverse:
     name: NeurIPS
     year: 2026
     status: accepted
     track: unknown
-    source: https://arxiv.org/abs/2610.37257
-    evidence: arXiv comments 明确 Accepted by NeurIPS 2026；未注明具体赛道，保留录用并标赛道待核。
+    source: https://neurips.cc/virtual/2026/loc/sydney/poster/139301
+    evidence: 今日实际核对arXiv 2610.37257最新v3（2026-10-31），Comments原文“Accepted by NeurIPS 2026”。实际NeurIPS官方海报程序139301的GameVerse题名、10位作者与本arXiv对应，安排2026-12-08海报。实际项目页明确写“NeurIPS 2026 · Evaluations & Datasets”，与arXiv录用声明、官方程序组合确认录用，具体为独立的Evaluations and Datasets Track，不是main，亦不是workshop；由于给定track枚举无此项，保留unknown并用track_detail精确记录。不要混入另篇ICML 2026同名GameVerse论文。项目页本身未写accepted，故不单独把项目页标签冒充录用决定。
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.37257
+    - https://neurips.cc/virtual/2026/loc/sydney/poster/139301
+    - https://kangverse.github.io/GameVerse/
+    - https://openreview.net/forum?id=YbEXKsFhkZ
+    - https://arxiv.org/pdf/2610.37257
+    verification_outcome: confirmed_publication
+    blocker: 辅助OpenReview页面返回浏览器验证，未读到决定；PDF为非文本资源，未解析正文，搜索摘要中的PDF赛道脚注未作为已读证据。已有可读arXiv、官方程序、项目页组合证据，不被辅助访问失败覆盖。
+    track_detail: Evaluations and Datasets Track，不按主会或Workshop处理
   worldscore:
     name: ICCV
     year: 2025
@@ -78,6 +107,10 @@ papers:
     track: main
     source: https://openaccess.thecvf.com/content/ICCV2025/html/Duan_WorldScore_A_Unified_Evaluation_Benchmark_for_World_Generation_ICCV_2025_paper.html
     evidence: CVF 官方 proceedings 搜索结果列出全文标题、作者及 Proceedings of ICCV 2025, pp.27713–27724。主会已发表；不是 workshop。
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://openaccess.thecvf.com/content/ICCV2025/html/Duan_WorldScore_A_Unified_Evaluation_Benchmark_for_World_Generation_ICCV_2025_paper.html
   vmem:
     name: ICCV
     year: 2025
@@ -85,6 +118,10 @@ papers:
     track: main
     source: https://iccv.thecvf.com/virtual/2025/poster/2213
     evidence: ICCV 官方论文页和 awards_detail 均出现该标题及 Highlight、2025 Poster。主会和 Highlight 均有官方证据；Highlight 不等于最佳论文奖。
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://iccv.thecvf.com/virtual/2025/poster/2213
   rolling-forcing:
     name: ICLR
     year: 2026
@@ -92,6 +129,10 @@ papers:
     track: main
     source: https://iclr.cc/virtual/2026/poster/10010326
     evidence: ICLR 官方 Poster 页标题、作者与论文匹配，列出 2026-04-25 poster 时段。已核实 ICLR 2026 主会 Poster。
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://iclr.cc/virtual/2026/poster/10010326
   worldplay:
     name: ICML
     year: 2026
@@ -99,6 +140,10 @@ papers:
     track: main
     source: https://icml.cc/virtual/2026/poster/65111
     evidence: ICML 官方 Poster 页给出完整标题、作者及 2026-07-08 poster 时段，摘要与 HY-WorldPlay 对应。已核实主会 Poster。
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://icml.cc/virtual/2026/poster/65111
   captain-safari:
     name: CVPR
     year: 2026
@@ -106,14 +151,21 @@ papers:
     track: main
     source: https://openaccess.thecvf.com/content/CVPR2026/html/Chou_Captain_Safari_A_World_Engine_with_Pose-Aligned_3D_Memory_CVPR_2026_paper.html
     evidence: CVF 官方 proceedings 搜索结果列出完整标题、作者及 Proceedings of CVPR 2026, pp.25347–25357；项目页可交叉核对。直接 web_extract 的 CVF 页面正文缺失，但官方来源搜索索引返回完整书目信息。主会已核实。
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://openaccess.thecvf.com/content/CVPR2026/html/Chou_Captain_Safari_A_World_Engine_with_Pose-Aligned_3D_Memory_CVPR_2026_paper.html
   worldtrace:
     name: NeurIPS
     year: 2026
     status: accepted
     track: main
     source: https://neurips.cc/virtual/2026/session/137646
-    evidence: NeurIPS 官方 Sydney Poster Session 2 列出 Addressable Memory for Video World Models、同组作者及 WorldTrace 摘要；NVIDIA 项目页 BibTeX 明确 booktitle=NeurIPS、Accepted for publication。主会录用已核实；项目页另列
-      ICML 2026 F2S workshop 最佳论文，是早期版本经历，不可混作主会最佳论文。
+    evidence: NeurIPS 官方 Sydney Poster Session 2 列出 Addressable Memory for Video World Models、同组作者及 WorldTrace 摘要；NVIDIA 项目页 BibTeX 明确 booktitle=NeurIPS、Accepted for publication。主会录用已核实；项目页另列 ICML 2026 F2S workshop 最佳论文，是早期版本经历，不可混作主会最佳论文。
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://neurips.cc/virtual/2026/session/137646
   dasa:
     name: NeurIPS
     year: 2026
@@ -121,14 +173,21 @@ papers:
     track: main
     source: https://neurips.cc/virtual/2026/poster/154629
     evidence: NeurIPS 官方 Poster 页匹配完整标题、作者、摘要，并在搜索索引列出 2026-12-10 poster 时段。主会录用已核实。注意项目 PDF 仍为匿名 Submitted to NeurIPS 2026 版本，单凭该 PDF 不能证明录用，本结论依官方 poster 页。
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://neurips.cc/virtual/2026/poster/154629
   video-memcomp:
     name: ACM MM
     year: 2026
     status: accepted
     track: main
     source: https://arxiv.org/abs/2610.32784
-    evidence: arXiv Comments 明确 Accepted by ACM MM 2026；作者官方仓库 citation 明确 In Proceedings of the 34th ACM International Conference on Multimedia (MM ’26), 10 pages，附 DOI 10.1145/3767308.3835474。据作者一手声明可核实主会录用，不是
-      workshop。DOI 抓取失败，未独立核实 ACM 出版端落地页；证据级别低于官方会议程序。
+    evidence: arXiv Comments 明确 Accepted by ACM MM 2026；作者官方仓库 citation 明确 In Proceedings of the 34th ACM International Conference on Multimedia (MM ’26), 10 pages，附 DOI 10.1145/3767308.3835474。据作者一手声明可核实主会录用，不是 workshop。DOI 抓取失败，未独立核实 ACM 出版端落地页；证据级别低于官方会议程序。
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2610.32784
   pack3d:
     name: NeurIPS
     year: 2026
@@ -136,12 +195,21 @@ papers:
     track: main
     source: https://neurips.cc/virtual/2026/poster/149667
     evidence: NeurIPS 官方 Poster 页给出完整标题、Amil Khan 等作者、PACK3D 摘要及 2026-12-09 时段；arXiv Comments 明确 Accepted to NeurIPS 2026 (Poster)。主会录用及 Poster 已核实。
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://neurips.cc/virtual/2026/poster/149667
   action-rope:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.25861
-    evidence: arXiv comments 仅给出项目主页，S2 与 OpenAlex 均无会议/期刊记录，证据不足。
-    verification_confidence: low
+    evidence: '本次打开arXiv，完整题名ActionRoPE: Action as Coordinates for Spatially Consistent Control in Planar-Camera Game World Models，Zhiyang Deng、Yuzhe Wu、Zijun Lin、Yeying Jin，编号2610.25861，最新v2为2026-10-20；comments仅Project Page，无journal_ref显示。实际打开作者项目teawhite.cn/ActionRoPE，题名4作者一致，提供论文代码模型数据及实验，未显示正式渠道或录用声明。题名加accepted conference检索未得到正式录用证据；不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.25861
+    - https://teawhite.cn/ActionRoPE/
+    verification_outcome: no_publication_evidence
   aeon:
     status: accepted
     name: NeurIPS
@@ -150,38 +218,69 @@ papers:
     source: https://arxiv.org/abs/2610.28631
     evidence: arXiv comments 明确写「Accepted to NeurIPS 2026」。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2610.28631
   agentgarten:
-    status: preprint
+    status: technical_report
     year: 2026
-    source: https://arxiv.org/abs/2610.12374
-    evidence: arXiv comments 仅项目主页，OpenAlex 仅登记为 arXiv 预印本（source_type=repository）。
-    verification_confidence: low
+    source: https://github.com/MirroS-Lab/AgentGarten
+    evidence: '当天读取官方仓库，新闻明确写“[2026/10/08] AgentGarten technical report and MirroS blog released.”；BibTeX题名为AgentGarten: Code Worlds for Evolving Agents、作者MirroS Team、journal为“arXiv preprint arXiv:2610.12374”，与当天读取的arXiv及项目页对应。确认技术报告类型，不视为会议/期刊发表；没有查到录用证据不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.12374
+    - https://mirros-lab.github.io/agent-garten/
+    - https://github.com/MirroS-Lab/AgentGarten
+    verification_outcome: no_publication_evidence
+    blocker: requests访问GitHub曾代理502；随后WebFetch成功读取官方仓库，已补足报告类型证据。
   agiworld:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.02341
-    evidence: comments 为空，S2 无 venue，OpenAlex 无记录，无任何录用证据。
-    verification_confidence: low
+    evidence: '实时arXiv为《AgiWorld: An Agentic Video World Model for Building Persistent Worlds》，Shaoheng Fang等，2026-11-02 v1（输入date为11-03，非arXiv提交日）；comments和journal_ref均无。实际访问作者官方项目，引用明确“journal={arXiv preprint arXiv:2611.02341}”，未见会议/期刊接收声明。题名、第一作者和conference/accepted检索未获官方发表记录。确认预印本存在，未发现接收证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.02341
+    - https://bshfang.github.io/agiworld/
+    verification_outcome: no_publication_evidence
   alaya-renderer-flash:
-    status: preprint
+    status: technical_report
     year: 2026
     source: https://arxiv.org/abs/2607.18703
-    evidence: comments 仅项目主页，S2 标注 arXiv.org（arXiv 自托管，非正式会议），OpenAlex 为预印本。
-    verification_confidence: low
+    evidence: 2026-11-13主代理独立读取arXiv:2607.18703，题名Generative World Renderer at the Speed of Play，Guixu Lin等作者；摘要明确原文This technical report introduces AlayaRenderer-Flash，足以确认技术报告类别。子智能体亦读取作者官方仓库，Results称technical report并链接同一编号。comments仅项目页，未提供journal reference；截至本次未找到正式发表证据，不等于确认未发表。项目页502仅限制补充查证，不推翻已成功读取的技术报告身份。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2607.18703
+    - https://alaya-renderer-flash.alayalab.ai/
+    verification_outcome: no_publication_evidence
+    blocker: 补充来源https://alaya-renderer-flash.alayalab.ai/返回502，未读取该站最新声明；arXiv和作者仓库已核对。
   alayaworld:
     status: technical_report
     year: 2026
     source: https://arxiv.org/abs/2608.13492
-    evidence: arXiv 标题即标注「Full Technical Report (v1.1)」，comments 仅说明作者排序，S2 只收录 arXiv.org。
-    verification_confidence: medium
+    evidence: '本次实读arXiv:2608.13492，题名AlayaWorld: Interactive Long-Horizon World Modeling - Full Technical Report (v1.1)，署名AlayaWorld Team、Kaipeng Zhang、Chuanhao Li等，v1为2026-08-13；Comments仅作者排序说明，无Journal reference。官方仓库中文README实际可读，2026-08-17新闻明确“同步发布v1.1技术报告”并直接链接2608.13492，Citation也为arXiv preprint。依据明确自述确认technical_report；所查来源没有正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2608.13492
+    - https://github.com/AlayaLab/AlayaWorld/blob/main/README_zh.md
+    verification_outcome: no_publication_evidence
   anchor-forcing:
     status: accepted
     name: ECCV
     year: 2026
     track: main
     source: https://arxiv.org/abs/2603.13405
-    evidence: comments 为空；S2 标注 European Conference on Computer Vision 2026，OpenAlex 登记为 LNCS 会议论文（DOI 10.1007/978-3-032-36984-0_22）。
+    evidence: comments 为空；S2 标注 European Conference on Computer Vision 2026，OpenAlex 登记为 LNCS 会议论文（DOI 10.1007/978-3-032-36984-0_22）。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
     verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2603.13405
+    verification_outcome: confirmed_publication
   anchorweave:
     status: accepted
     name: ECCV
@@ -190,42 +289,82 @@ papers:
     source: https://arxiv.org/abs/2602.14941
     evidence: arXiv comments 明确写「Accepted to ECCV 2026」，OpenAlex 另有 LNCS 会议论文 DOI 佐证。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2602.14941
   any-forcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.42031
-    evidence: comments 仅「Autoregressive video generation」，无任何录用信息，S2 无 venue。
-    verification_confidence: low
+    evidence: '本次打开arXiv，完整题名Any Forcing: Any-Step Generality and One-Step Stability for Autoregressive Video Generation，作者Jiahua Xu、Yijie Fang、Nannan Wang等9人，编号2610.42031，v1为2026-10-30；comments原文“Autoregressive video generation”，未显示journal_ref。实际打开HTML正文找到并访问作者项目medcx.github.io/Any-Forcing，题名和方法一致，提供Research Paper及视频和实验，未显示正式会议期刊。完整题名检索无可核实录用记录；仅确认预印本，不确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.42031
+    - https://arxiv.org/html/2610.42031v1
+    - https://medcx.github.io/Any-Forcing/
+    verification_outcome: no_publication_evidence
   anygamerenderer:
-    status: preprint
+    status: technical_report
     year: 2026
-    source: https://arxiv.org/abs/2610.31466
-    evidence: comments 为空，S2 无会议/期刊记录，未见独立录用证据。
-    verification_confidence: low
+    source: https://alaya-lab.github.io/AnyGameRenderer
+    evidence: 'arXiv:2610.31466完整题名AnyGameRenderer: Entity-Consistent Generative Rendering Across Games and an Entity-Level Benchmark，Ruicong Liu、Liangyang Ouyang、Fengbo Lan、Zhixiang Wang、Kaipeng Zhang；最新v3为2026-10-28，无comments/journal_ref。arXiv摘要直接链接官方项目，项目完整副标题一致，按钮明确写Technical report并指向https://arxiv.org/pdf/2610.31466，可确认本作技术报告类型。项目及题名检索未发现正式会议/期刊录用证据；未找到发表证据不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.31466
+    - https://alaya-lab.github.io/AnyGameRenderer
+    verification_outcome: no_publication_evidence
   ar-edit:
-    status: preprint
+    status: accepted
     year: 2026
-    source: https://arxiv.org/abs/2611.09795
-    evidence: comments 为空，S2 venue 为空，仅 arXiv 上新，无录用证据。
-    verification_confidence: low
+    source: https://nips.cc/virtual/2026/poster/152336
+    evidence: '今日实际打开NeurIPS 2026官方海报152336，题名原文“AR-Edit: Training-Free Streaming Video Editing without Inversion”，作者原文“Hovhannes Margaryan ⋅ Vicky Kalogeiton ⋅ Quentin Bammey ⋅ Christian Sandor”，程序标“Poster Thu, Dec 10, 2026”及“Paris Poster Hall”；另实际打开Paris Poster Session 2正式场次137658。对应arXiv 2611.09795题名“AR-Edit: Training-Free Autoregressive Video Editing without Inversion”，作者为Hovhannes Margaryan、Quentin Bammey、Christian Sandor、Vicky Kalogeiton，四人相同但排序不同，标题Streaming/Autoregressive有版本差异。两者摘要同述DMD-distilled模型query/key稳定而value变化、缓存source values实现无需inversion编辑，足以对应同篇。官方正式海报程序支持accepted/main；截至今日会议尚未召开，不擅自写已出版。'
+    verification_confidence: high
+    name: NeurIPS
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.09795
+    - https://nips.cc/virtual/2026/poster/152336
+    - https://nips.cc/virtual/2026/loc/paris/session/137658
+    - https://openreview.net/forum?id=Tq0zQSyHNl
+    verification_outcome: confirmed_publication
+    blocker: 辅助OpenReview论坛被浏览器验证拦截，未读到决定；已有可访问官方会议正式程序，不因此撤销录用结论。
   astronex-world:
     status: technical_report
     year: 2026
     source: https://arxiv.org/abs/2609.20034
-    evidence: arXiv comments 首句即写「Technical report. 25 pages, 13 figures, 10 tables」。
+    evidence: 当天arXiv comments明确“Technical report. 25 pages, 13 figures, 10 tables.”；官方项目页写“Technical Report · 2026 · Open weights”。题名、作者Xin Zhou和Cong Miao及arXiv:2609.20034匹配。支持技术报告状态，不构成会议/期刊录用；本次未找到正式发表证据不等于确认未发表。
     verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2609.20034
+    - https://world.astronex.com.cn
+    verification_outcome: no_publication_evidence
   atas:
-    status: preprint
+    status: technical_report
     year: 2026
-    source: https://arxiv.org/abs/2610.20571
-    evidence: comments 仅项目主页与代码链接，S2 无 venue（type 仅为 Review），OpenAlex 为 arXiv 预印本。
-    verification_confidence: low
+    source: https://lhmd.top/atas/
+    evidence: 'arXiv题名‘Any Time, Any Space: A World-State-Centric Framework for Agentic Video Generation’，编号2610.20571，题名作者与官方项目匹配。项目页明确提供‘Tech Report’按钮，实际链接为https://arxiv.org/abs/2610.20571；引用写‘arXiv preprint arXiv:2610.20571’。据一手声明分类技术报告，而非主会录用；本次未找到正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.20571
+    - https://lhmd.top/atas/
+    verification_outcome: no_publication_evidence
   attn-forcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.30036
-    evidence: comments 仅「16 pages, 6 figures」，属篇幅说明，无录用信息。
-    verification_confidence: low
+    evidence: 当天arXiv摘要comments为“16 pages, 6 figures”，无正式journal_ref；题名与Junyao Gao等8位作者、arXiv:2610.30036匹配。正文HTTP200，检出的CVPR等会议名称属于参考文献，并非本论文录用声明。未找到本论文正式发表证据，保留预印本；这不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.30036
+    - https://arxiv.org/html/2610.30036
+    verification_outcome: no_publication_evidence
   bev3sr:
     status: accepted
     name: WACV
@@ -233,44 +372,77 @@ papers:
     source: https://arxiv.org/abs/2611.09816
     evidence: arXiv comments 写 WACV camera ready，支持录用；原文未注明届次，故不猜填年份。
     verification_confidence: medium
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.09816
   boxworld:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.36371
-    evidence: comments 为空，S2 无 venue，OpenAlex 无记录，证据不足。
-    verification_confidence: low
+    source: https://boxworld-web.github.io
+    evidence: 'arXiv最新v1题名‘BoxWorld: Let World Engines Control and Video Generators Render’，作者Zike Wu等，编号2610.36371，未见Comments/journal_ref录用声明。官方项目页身份匹配，BibTeX为‘@misc’，eprint‘2610.36371’，代码标coming soon。本次未找到正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.36371
+    - https://boxworld-web.github.io
+    verification_outcome: no_publication_evidence
   cadre:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.30129
-    evidence: comments 为空且第三方索引均无会议/期刊记录，按预印本处理。
-    verification_confidence: low
+    evidence: 今日实际打开arXiv 2610.30129《Rethinking Video Autoencoders for Interactive World Models》，作者Adrien Ramanana Rahary、Yutong Bai、Nicolas Dufour、Patrick Pérez、David Picard；v1为2026-10-21，未给出comments录用声明。另打开Kyutai博客，提取结果仅有标题及2026-10-22日期，不能据此声称全文已检查。综合可读arXiv与标题检索，截至2026-11-13未找到正式录用证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.30129
+    - https://kyutai.org/blog/2026-10-21-cadre
+    verification_outcome: no_publication_evidence
+    blocker: 辅助博客正文未被提取完整；不影响arXiv身份与预印本存在的核实，但不能宣称博客全文无录用信息。
   calm:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.28192
-    evidence: comments 为空，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2610.28192，准确标题Offline Makes Online Better: Calibrated Cache Compression for Video Generation，作者Zhen Wang、Ning Lai、Qingtao Yu，摘要明确提出CALM（Calibrated Allocation for Layer-Head Merging），因此可核输入简称身份。页面未显示comments或journal reference；精确题名检索未找到匹配的一手刊会录用记录。本次确认预印本存在但未确认录用，暂记preprint，不代表确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.28192
+    verification_outcome: no_publication_evidence
   calm-lifecycle:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.38573
-    evidence: comments 为空，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: '实际读取arXiv:2610.38573，题名CALM: Conflict-Aware Lifecycle Memory Governance for Long-Horizon Language Agents，作者Chang Li、Xianhao Ou、Xinyan Ma等，v1为2026-10-28；comments为空，未见journal_ref。以完整题名配合accepted/conference检索仅见预印本索引，未发现正式录用证据。标题用于区分其他同名CALM论文；仅确认本预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.38573
+    verification_outcome: no_publication_evidence
   causal-forcing:
-    status: accepted
+    status: published
     name: ICML
     year: 2026
     track: main
-    source: https://arxiv.org/abs/2602.02214
-    evidence: arXiv comments 在项目页/代码链接之后标注「ICML 2026」，属录用标注，但未写 Accepted 字样。
-    verification_confidence: medium
+    source: https://icml.cc/virtual/2026/poster/65646
+    evidence: ICML 2026 官方 poster 页匹配标题与六位作者；arXiv PDF 页脚写 Proceedings of the 43rd International Conference on Machine Learning, PMLR 306, 2026。主会已发表，不再只依 comments 标注。
+    verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://icml.cc/virtual/2026/poster/65646
+    - https://arxiv.org/abs/2602.02214
+    verification_outcome: confirmed_publication
   causal-rcm:
     status: technical_report
     year: 2026
     source: https://arxiv.org/abs/2606.25473
-    evidence: arXiv comments 明确写「Technical Report」。
+    evidence: 实际读取arXiv 2606.25473最新页，当前完整题名较输入扩展；作者Kaiwen Zheng, Guande He, Min Zhao, Jintao Zhang, Huayu Chen, Jianfei Chen, Chen-Hsuan Lin, Ming-Yu Liu, Jun Zhu, Qianli Ma。comments原文明确‘Technical Report’，journal_ref为空。实际读取共享作者仓库NVlabs/rcm，其同时引用原始rCM 2510.08431与Causal-rCM 2606.25473；README的ICLR 2026标签不能无区分转移给本作，本作引用仍为arXiv预印本，未见独立录用声明。截至2026-11-13，本次已查来源暂未找到Causal-rCM正式录用或发表证据，不等于证明未发表。
     verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2606.25473
+    - https://github.com/NVlabs/rcm
+    verification_outcome: no_publication_evidence
   causvid:
     status: accepted
     name: CVPR
@@ -279,247 +451,462 @@ papers:
     source: https://arxiv.org/abs/2412.07772
     evidence: arXiv comments 写「CVPR 2025」，OpenAlex 另有 CVPR 2025 会议论文 DOI 10.1109/cvpr52734.2025.02138。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2412.07772
   code2video-compass:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.28416
-    evidence: comments 为空，S2 无 venue，仅 arXiv 上新，无录用证据。
-    verification_confidence: low
+    source: https://zekaishao25.github.io/
+    evidence: 'arXiv:2610.28416完整题名Code2Video-Compass: A Comprehensive Benchmark for General-Purpose Code-Based Video Generation across T2V, I2V, and V2V，Zhenghan Chen、Zekai Shao、Xin Lin、Leting Cheng、Siming Chen，v1为2026-10-20，无comments/journal_ref。作者Zekai Shao官网对同题五作者作品明确标注arXiv, 2026, Preprint，并链接官方项目。项目站没有本作会议/期刊、录用或投稿标记。题名录用检索未获得正式发表证据；作者页面其他论文的NeurIPS等标签不归本作。未找到发表证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.28416
+    - https://zekaishao25.github.io/
+    - https://code2video-compass.github.io/
+    verification_outcome: no_publication_evidence
   codecap-bench:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.37341
-    evidence: comments 为空，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2610.37341，标题CodeCap-Bench: Can Code Serve as a Good Video Caption?，作者Jiafu Tang、Yifan Xu、Eric Tang等十四人。页面可核编号与完整标题，未显示刊会录用comments或journal reference。名称加accepted/conference检索未找到匹配的一手会议论文集或录用记录。本次仅确认预印本，暂记preprint，不代表确认未发表，也不采用第三方泛称Published作为正式出版证据。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.37341
+    verification_outcome: no_publication_evidence
   codewm-brain:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2608.25927
-    evidence: comments 仅项目主页，S2 标注 arXiv.org（自托管），OpenAlex 登记为预印本。
-    verification_confidence: low
+    evidence: '今日实际打开arXiv 2608.25927《Code World Model: Coding Agent as World Brain》，作者Yiwen Chen、Guosheng Lin、Chi Zhang，v1为2026-08-26。Comments仅提供项目页；实际项目页未出现正式录用声明。标题作者对应输入记录。截至2026-11-13在已访问来源未找到会议或期刊录用证据；不以空缺声明证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2608.25927
+    - https://buaacyw.github.io/cwm/
+    verification_outcome: no_publication_evidence
   commit-forcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.00937
-    evidence: comments 仅「41 pages, 9 figures, 56 tables」，无录用信息，S2 无 venue。
-    verification_confidence: low
+    evidence: 'arXiv:2611.00937实际标题What Helps Denoising Can Hurt Memory: Rethinking History in Long Video Generation，Yubin Jing、Ziyang Zhang、Meng Chen、Yuyao Li、Haofan Wang、Yichen Gong，摘要明确提出Commit Forcing，身份吻合。v1实际提交2026-10-31，comments仅41 pages, 9 figures, 56 tables，无journal_ref。论文HTML可见LiblibAIResearch及报告模板字段，但无明确Technical Report字样，不以模板推定报告类型；无本作录用标记。简称及全题名检索未发现正式发表证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.00937
+    - https://arxiv.org/html/2611.00937v1
+    verification_outcome: no_publication_evidence
   comoe:
     status: published
     name: ICLR
     year: 2026
     track: main
     source: https://arxiv.org/abs/2605.18813
-    evidence: arXiv journal_ref 明确写「Proceedings of the Fourteenth International Conference on Learning Representations (ICLR), 2026」，S2 亦标注 ICLR。
+    evidence: arXiv journal_ref 明确写「Proceedings of the Fourteenth International Conference on Learning Representations (ICLR), 2026」，S2 亦标注 ICLR。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
     verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2605.18813
+    verification_outcome: confirmed_publication
   compression-forcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.04028
-    evidence: comments 仅「37 pages, 16 figures」，无录用信息。
-    verification_confidence: low
+    evidence: 'arXiv:2611.04028完整题名Compression Forcing: Hierarchical History Tokenization Enables Flexible World Models，Siqiao Huang、Partha Kaushik、Michael Chen等八作者，v1实际为2026-11-02，comments仅37 pages, 16 figures，无journal_ref。访问HTML未见本作明确会议/期刊、投稿或录用标记，页面抽取从正文开始，不能据此断言完整PDF题头完全没有标记；题名录用检索未获得本作正式发表来源。可确认公开预印本，未找到发表证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.04028
+    - https://arxiv.org/html/2611.04028v1
+    verification_outcome: no_publication_evidence
   context-compaction:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.38980
-    evidence: comments 为空，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: 本次打开arXiv，完整题名Context Compaction for World Models，作者Hayder Tirmazi，编号2610.38980，v1为2026-10-28，无comments或journal_ref显示。已打开官方HTML并循正文链接实际打开作者代码仓库jadidbourbaki/context-compaction-world-models；README原文“This repository holds the code for our paper Context Compaction for World Models”，发布21个模型权重但没有会议录用声明。完整题名检索未取得可核实正式出版证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.38980
+    - https://arxiv.org/html/2610.38980v1
+    - https://github.com/jadidbourbaki/context-compaction-world-models
+    verification_outcome: no_publication_evidence
   context-forcing:
-    status: preprint
+    status: published
     year: 2026
-    source: https://arxiv.org/abs/2602.06028
-    evidence: comments 为空，S2 仅标注 arXiv.org，无正式会议记录。
-    verification_confidence: low
+    source: https://proceedings.mlr.press/v306/chen26eu.html
+    evidence: '今日实际打开PMLR官方论文集页，题名原文“Context Forcing: Consistent Autoregressive Video Generation with Long Context”；完整作者原文“Shuo Chen, Cong Wei, Sun Sun, Tiancheng Shen, Ping Nie, Kai Zou, Ge Zhang, Ming-Hsuan Yang, Wenhu Chen”；出版信息原文“Proceedings of the 43rd International Conference on Machine Learning, PMLR 306:17329-17343, 2026.”。BibTeX为@InProceedings，booktitle为该ICML正式论文集。对应输入arXiv 2602.06028《Context Forcing: Consistent Autoregressive Video Generation with Long-Context Forcing》；核心作者及摘要中long-context teacher/student和Slow-Fast Memory方法对应。正式版本题名末尾改为Long Context，作者新增Tiancheng Shen，Kai Zhou变为Kai Zou；明确保留此版本差异，不能将旧arXiv无comments当作未录用。'
+    verification_confidence: high
+    name: ICML
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2602.06028
+    - https://proceedings.mlr.press/v306/chen26eu.html
+    verification_outcome: confirmed_publication
   cosmos:
     status: preprint
     source: https://arxiv.org/abs/2501.03575
-    evidence: 对应论文为 Cosmos World Foundation Model Platform for Physical AI（arXiv 2501.03575），属平台技术报告，comments 无录用声明，按预印本处理。
-    verification_confidence: low
+    evidence: 今日实际打开arXiv 2501.03575，题名为《Cosmos World Foundation Model Platform for Physical AI》，作者为Niket Agarwal等NVIDIA团队，最新v3为2025-07-09；页面未给出正式会议/期刊录用声明。标题与输入简称Cosmos对应。截至2026-11-13，在已访问来源与标题检索中未找到录用证据；确认预印本存在，不等于证明未发表。
+    verification_confidence: medium
+    year: 2025
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2501.03575
+    verification_outcome: no_publication_evidence
   cvg-sgm:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.27505
-    evidence: comments 仅「8 pages, 2 figures」，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: 今日实际打开arXiv 2610.27505，题名《Cross-Visibility-Gap Identity Persistence for 4D Scene Graphs》，作者Jiahui Hu、Li Gao、Yu Liu、Pengzhan Zhou；v1为2026-10-20。Comments原文“8 pages, 2 figures”。截至2026-11-13未找到该论文会议或期刊录用证据；仅确认预印本，并非证明未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.27505
+    verification_outcome: no_publication_evidence
   decmem:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2605.31336
-    evidence: comments 仅项目主页，S2 标注 arXiv.org（自托管），OpenAlex 为预印本。
-    verification_confidence: low
+    evidence: '实时arXiv为《DecMem: Towards Minute-Long Consistent World Generation with Decoupled Memory》，Zhenhao Yang等，2026-05-29 v1；comments仅项目链接，无journal_ref。实际作者项目引用为@misc、eprint={2605.31336}，无接收声明。题名+accepted/NeurIPS及OpenReview检索未获同篇官方接收记录；搜索出的DeMem决策记忆或去记忆论文不是这篇DecMem，未混用。确认预印本存在，未发现发表证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2605.31336
+    - https://jeffreyyzh.github.io/DecMem-Page
+    verification_outcome: no_publication_evidence
   deep-forcing:
-    status: preprint
-    year: 2025
-    source: https://arxiv.org/abs/2512.05081
-    evidence: comments 仅项目主页，S2 标注 arXiv.org，OpenAlex 登记为预印本（2025）。
-    verification_confidence: low
+    status: accepted
+    year: 2026
+    source: https://www.icml.cc/virtual/2026/poster/62407
+    evidence: '实际访问arXiv 2512.05081，标题Deep Forcing: Training-Free Long Video Generation with Deep Sink and Participative Compression，作者Jung Yi、Wooseok Jang、Paul Hyunbin Cho、Jisu Nam、Heeji Yoon、Seungryong Kim。ICML官方2026主会poster页面列出同题同作者（Paul Cho为姓名缩写），展示时间为2026-07-08 10:30–12:15 KST；搜索发现的作者项目页也标ICML2026。官方主会项目确认录用，未获得正式论文集条目，故保守用accepted而非仅凭会议已举行即写published。'
+    verification_confidence: high
+    name: ICML
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2512.05081
+    - https://www.icml.cc/virtual/2026/poster/62407
+    verification_outcome: confirmed_publication
   disen-forcing:
     status: accepted
     name: NeurIPS
     year: 2026
     track: main
     source: https://arxiv.org/abs/2611.02822
-    evidence: arXiv comments 首句标注「NeurIPS 2026」，但未写 Accepted 字样。
+    evidence: arXiv comments 首句标注「NeurIPS 2026」，但未写 Accepted 字样。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
     verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.02822
+    verification_outcome: confirmed_publication
   dkv-forcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.01648
-    evidence: comments 为空，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: '本次arXiv:2611.01648题名dKV Forcing: Separating Generation and Memory Representations through a Differentiable KV Cache，作者Zhiqi Li、Bo Zhu，v1实际为2026-11-01（非输入日期11-03），无Comments或Journal reference。精确题名检索得到论文HTML中的作者项目主页，实际读取同题同作者，BibTeX仅journal={arXiv preprint}、year=2026，没有会议期刊录用声明。确认预印本存在，所查来源暂无正式发表证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.01648
+    - https://zhiqili-cg.github.io/dKV-Forcing-Project
+    verification_outcome: no_publication_evidence
   dmt:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.41850
-    evidence: comments 为空，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2610.41850，准确标题Dynamical Memory Transformer: Selective Recurrent Memories with Constant Cost Attention，作者Yannis Bendi-Ouis、Xavier Hinaut；摘要明确DMT简称，与输入编号身份吻合。页面未显示刊会录用comments或journal reference。精确题名检索未找到匹配的一手会议论文集、出版社或录用声明。本次确认预印本存在，暂记preprint，不代表确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.41850
+    verification_outcome: no_publication_evidence
   dreamx-world:
-    status: preprint
+    status: technical_report
     year: 2026
-    source: https://arxiv.org/abs/2606.16993
-    evidence: comments 仅项目主页与代码链接，S2 标注 arXiv.org，OpenAlex 为预印本。
-    verification_confidence: low
+    source: https://github.com/AMAP-ML/DreamX-World
+    evidence: 'arXiv:2606.16993题名DreamX-World 1.0: A General-Purpose Interactive World Model，DreamX Team、Yancheng Bai、Rui Chen等，v1为2026-06-15，comments仅项目和代码，无journal_ref。arXiv直接链接的官方GitHub新闻明确June 15, 2026: We released DreamX-World 1.0 technical report，引用前亦写please consider citing our technical report，BibTeX准确对应2606.16993。题名检索和官方仓库未发现本作会议/期刊录用证据；报告类型可确认，但未发现发表证据不等于确认从未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2606.16993
+    - https://github.com/AMAP-ML/DreamX-World
+    verification_outcome: no_publication_evidence
   drift-kv-reselect:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.31433
-    evidence: comments 仅「17 pages, 7 figures, 13 tables」，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: '本次打开arXiv，真实完整题名Drift Says When, Budget Says How Much: Rate-Controlled KV Re-selection for Long-Form Multimodal Generation；作者Bin Hu、Yingbo Xiao，编号2610.31433，v1为2026-10-22。Rate-Controlled Refresh (RCR)是方法名而非论文完整题名。comments原文“17 pages, 7 figures, 13 tables”，未显示journal_ref。已打开官方HTML正文，未发现对应作者项目或录用字段；完整题名检索未找到可核实正式渠道，维持预印本而非确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.31433
+    - https://arxiv.org/html/2610.31433v1
+    verification_outcome: no_publication_evidence
   dual-deltanet:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.38578
-    evidence: comments 为空，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: '本次arXiv:2610.38578题名Dual DeltaNet: Value-Side Memory Reorganization for Linear Attention，作者Yixiao Qian、Yaxin Zhang、Song Chen、Jiaxu Liu、Shengze Cai、Chao Xu，v1为2026-10-28，无Comments或Journal reference录用信息。实际访问摘要中代码链接ReichtumQian/DualDeltaNet，README为Dual DeltaNet实现、训练与配置说明，未列录用声明；精确题名加accepted检索未得到匹配权威录用记录。确认预印本存在，本次无正式录用证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.38578
+    - https://github.com/ReichtumQian/DualDeltaNet
+    verification_outcome: no_publication_evidence
   dycraft:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.40754
-    evidence: comments 仅项目主页，S2 无 venue，无录用证据。
-    verification_confidence: low
+    source: https://dy-craft.github.io/
+    evidence: 'arXiv最新v1题名‘DyCraft: An Agentic System for Long-Horizon 4D Scene Generation’，作者Jeff Tan等，编号2610.40754，Comments为项目链接，未列journal_ref。官方项目页题名作者匹配，引用写‘arXiv preprint arXiv:2610.40754’；正文workshop为生成场景示例而非学术会议赛道。本次未找到正式录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.40754
+    - https://dy-craft.github.io/
+    verification_outcome: no_publication_evidence
   dysink:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2605.21028
-    evidence: comments 为空，S2 仅标注 arXiv.org，OpenAlex 为预印本。
-    verification_confidence: low
+    source: https://yebo0216best.github.io/
+    evidence: '本次arXiv:2605.21028题名DySink: Dynamic Frame Sinks for Autoregressive Long Video Generation，作者Bo Ye、Xinyu Cui、Jian Zhao、Tong Wei、Min-Ling Zhang，最新v5为2026-07-31，无Comments或Journal reference录用声明。经精确题名检索实际读取第一作者Bo Ye个人主页，同题同作者条目明确写“Preprint.”，Paper链接指向2605.21028。官方代码链接本次404，但作者主页与arXiv可独立确认预印本；未找到正式录用证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2605.21028
+    - https://github.com/yebo0216best/DySink
+    - https://yebo0216best.github.io/
+    verification_outcome: no_publication_evidence
+    blocker: 补充核查的GitHub仓库返回404；arXiv和作者主页可读，未因该单一链接失败认定未发表。
   echo-forcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2605.16003
-    evidence: comments 为空，S2 仅标注 arXiv.org，OpenAlex 为预印本。
-    verification_confidence: low
+    evidence: '本次打开arXiv，题名为Echo-Forcing: A Scene Memory Framework for Interactive Long Video Generation，作者Mingqiang Wu、Weilun Feng等11人，编号2605.16003；当前v1于2026-05-15提交，未显示comments、journal_ref或出版社DOI。实际打开作者官方仓库，News仅有2026/05/13 Paper released、2026/07/24暂撤代码、2026/10/25重新发布代码，并无会议录用声明。题名检索未找到可核实正式渠道；因此仅确认有预印本，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2605.16003
+    - https://github.com/mingqiangWu/Echo-Forcing
+    verification_outcome: no_publication_evidence
   echo-infinity:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2606.04527
-    evidence: comments 仅项目网站，S2 标注 arXiv.org，OpenAlex 为预印本。
-    verification_confidence: low
+    evidence: '实时arXiv题名《Echo-Infinity: Learning Evolving Memory for Real-Time Infinite Video Generation》，Yuxuan Bian等，2026-06-03 v1；comments仅“Website”，无journal_ref。实际访问作者官方项目，BibTeX明确“journal = {arXiv preprint arXiv:2606.04527}”；题名+accepted/publication及OpenReview定向检索未获可匹配的官方接收声明。本次确认预印本存在、未找到正式发表证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2606.04527
+    - https://echo-team-joy-future-academy-jd.github.io/Echo-Infinity/
+    verification_outcome: no_publication_evidence
   echokv:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.05903
-    evidence: comments 为空，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: '本次打开arXiv，完整题名EchoKV: Self-Corrective KV Cache Eviction via Iterative Query Feedback，作者JianKun Zou、Tongtong Yuan，编号2611.05903，v1实际2026-11-04，无comments或journal_ref显示。实际打开官方HTML正文核对同题作者；没有发现该论文作者项目或正式渠道声明。完整题名联网检索只取得预印本及解读，未取得可核实会议期刊录用；仅确认预印本存在，不确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.05903
+    - https://arxiv.org/html/2611.05903v1
+    verification_outcome: no_publication_evidence
   evoworld:
-    status: preprint
-    year: 2025
-    source: https://arxiv.org/abs/2510.01183
-    evidence: comments 仅代码仓库链接，S2 标注 arXiv.org（自托管），无正式发表记录。
-    verification_confidence: low
+    status: accepted
+    year: 2026
+    source: https://iclr.cc/virtual/2026/10018037
+    evidence: '当天requests实际读取ICLR 2026官方程序页HTTP200，明确标注“Poster in Workshop: The 2nd Workshop on World Models: Understanding, Modelling and Scaling”。完整题名与arXiv:2510.01183相同；11位作者Jiahao Wang、Luoxin Ye、Taiming Lu、Junfei Xiao、Jiahan Zhang、Yuxiang Guo、Xijun Liu、Rama Chellappa、Cheng Peng、Alan Yuille、Jieneng Chen逐一对应。足以确认2026年ICLR该workshop的poster录用；不声称ICLR主会录用，也不自动视为归档论文集正式出版。arXiv comments本身仅有代码链接。'
+    verification_confidence: high
+    name: ICLR
+    track: workshop
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2510.01183
+    - https://iclr.cc/virtual/2026/10018037
+    - https://openreview.net/forum?id=YjRjKjfjoC
+    - https://api2.openreview.net/notes?forum=YjRjKjfjoC
+    - https://api2.openreview.net/notes?id=YjRjKjfjoC
+    verification_outcome: confirmed_publication
+    blocker: 辅助OpenReview页面返回Verifying your browser；API先SSL EOF，另一查询HTTP403 ChallengeRequiredError。录用结论由成功读取的ICLR官方程序页独立确证，不受辅助源阻塞影响。
+    track_detail: 'The 2nd Workshop on World Models: Understanding, Modelling and Scaling；Poster'
   evoworld-oos:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2611.06748
-    evidence: comments 为空，S2 无 venue，无录用证据。
-    verification_confidence: low
+    source: https://tommy-bie.github.io/projects/evoworld/
+    evidence: '实际读取arXiv 2611.06748，最新v2为2026-11-05，题名为‘EvoWorld: Towards Out-of-Sight World Evolution in Generative Video Models’，作者Yequan Bie, Dengyang Jiang, Zhixuan Chen, Xiaozhuan Liang, Haoxuan Che, Quande Liu, Xi Chen, Hao Chen；comments与journal_ref为空。实际读取作者项目页，引文明示arXiv preprint 2611.06748，未见明确录用声明；按副标题与作者确认是Out-of-Sight这一EvoWorld而非同名其他工作。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.06748
+    - https://tommy-bie.github.io/projects/evoworld/
+    verification_outcome: no_publication_evidence
   exeworldbench:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.15166
-    evidence: comments 为空，S2 无 venue，OpenAlex 仅登记为 arXiv 预印本。
-    verification_confidence: low
+    evidence: '本次打开arXiv最新摘要，题名ExeWorldBench: Benchmarking Code-Based Executable 3D World Modeling，作者Xinge Peng、Zhen Fang、Ruibing Wang等12人；编号2610.15166，最新v2为2026-10-31，未显示comments、journal_ref。实际打开所给官方作者项目页，介绍三类可执行世界建模基准和数据，未显示正式会议期刊。完整题名加accepted检索仅发现预印本相关条目，没有可核实正式录用。此结论不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.15166
+    - https://helen1p.github.io/ExeWorldBench/
+    verification_outcome: no_publication_evidence
   fadem:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2606.10671
-    evidence: comments 仅页数与项目主页，S2 标注 arXiv.org，OpenAlex 为预印本。
-    verification_confidence: low
+    source: https://github.com/aniki-ly/FadeMem
+    evidence: '当天arXiv comments为“14 pages, 9 figures. Substantially revised manuscript with expanded experiments and integrated supplementary material. Project page: …”。实际读取官方项目JS和仓库，其引用明确为“journal = {arXiv preprint arXiv:2606.10671}”，作者Yu Lu、Junjie Yang、Piotr Koniusz、YuXin Song、Yi Yang与摘要一致。未见本视频论文的会议/期刊录用声明；其他同名FadeMem论文的ICASSP信息不可套用。未找到证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2606.10671
+    - https://fademem.github.io/FadeMem_Webpage/
+    - https://fademem.github.io/FadeMem_Webpage/assets/index-g3n4QXN8.js
+    - https://github.com/aniki-ly/FadeMem
+    verification_outcome: no_publication_evidence
+    blocker: 项目HTML为JavaScript外壳，已读取JS内引用；requests访问仓库曾代理502，但WebFetch成功补读。
   fight-world-model:
     status: technical_report
     year: 2026
     source: https://arxiv.org/abs/2610.40607
-    evidence: arXiv comments 明确写「Tech Report」。
+    evidence: 'arXiv:2610.40607完整题名Fight World Model: Customizable Combat through Visual Interaction Proxies，Jiahua Li、Zixu John、Tom Zhong等八作者，v1为2026-10-29，comments明确Tech Report，无journal_ref。实际访问官方项目，标题八作者及论文链接2610.40607对应。题名accepted检索未找到正式录用来源，部分第三方页面误写2510.25906/2025，已按arXiv和官方项目排除该错配信息。保留已确认技术报告身份；未找到正式发表证据不等于确认未发表。'
     verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.40607
+    - https://fight-world-model.github.io
+    verification_outcome: no_publication_evidence
   flex:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2602.14027
-    evidence: comments 仅「19 pages, 15 figures」，S2 标注 arXiv.org，无正式发表记录。
-    verification_confidence: low
+    evidence: '最新arXiv题名Train Short, Inference Long: Training-free Horizon Extension for Autoregressive Video Generation，作者Jia Li、Xiaomeng Fu等，v3为2026-03-13；comments原文‘19 pages, 15 figures’，未见journal_ref。作者FLEX项目页给@misc arXiv引用、编号2602.14027，未标录用。检索出现的ICML关键词不足以证明录用。仅确认预印本存在，未检出正式录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2602.14027
+    - https://ga-lee.github.io/FLEX_demo
+    verification_outcome: no_publication_evidence
   forgewm:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2608.14022
-    evidence: comments 为空，S2 仅标注 arXiv.org，无正式发表记录。
-    verification_confidence: low
+    source: https://asdfo123.github.io/
+    evidence: 'arXiv:2608.14022完整题名ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models，Xinye Li、Lingshuai Lin等十一作者，v1为2026-08-14，无comments/journal_ref。第一作者Xinye Li官网将同题同作者条目标注arXiv preprint，2026，并直接链接2608.14022；其邻近ACL 2026 Main条目是其他论文，不能混用。题名检索未找到正式会议/期刊录用证据，未发现证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2608.14022
+    - https://asdfo123.github.io/
+    verification_outcome: no_publication_evidence
   framepack:
-    status: accepted
+    status: published
     name: NeurIPS
     year: 2025
     track: main
-    source: https://arxiv.org/abs/2504.12626
-    evidence: comments 仅有 GitHub 链接；S2 标注 Neural Information Processing Systems 2025，OpenAlex 登记为 NeurIPS 会议论文（DOI 10.52202/085713-1024）。
+    source: https://dl.acm.org/doi/10.52202/085713-1024
+    evidence: ACM DL 的 NIPS '25 论文页给出正式标题 Frame context packing and drift prevention in next-frame-prediction video diffusion models、五位作者、Article No.917、pp.30546-30566，DOI 10.52202/085713-1024。正式标题与 arXiv 名 FramePack 不同，按标题加作者核对确认同一篇；主会已发表。
     verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://dl.acm.org/doi/10.52202/085713-1024
+    - https://arxiv.org/abs/2504.12626
+    verification_outcome: confirmed_publication
   frechet-forcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.25666
-    evidence: comments 为空，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: 'arXiv:2610.25666完整题名Frechet Forcing: Training Long-Horizon Streaming World Models from Short Clips，Yian Zhao、Yu Yan、Hongcan Guo、Ruochong Zheng、Jian Zhang、Jie Chen，v1为2026-10-19，无comments/journal_ref。论文HTML首页无本作发表或录用声明，但提供官方项目；实际访问项目，题名六作者一致，引用journal = arXiv preprint，未给会议/期刊录用。题名检索未发现正式接收证据；只能确认预印本，未发现发表证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.25666
+    - https://arxiv.org/html/2610.25666v1
+    - https://zhao-yian.github.io/Frechet_Forcing
+    verification_outcome: no_publication_evidence
   futureworld:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.39619
-    evidence: comments 仅「17 pages, 6 figures」，S2 无 venue，无录用证据。
-    verification_confidence: low
+    evidence: 'arXiv最新v1题名‘FutureWorld: A Plug-and-Play Causal Next-State Predictor for Interactive Video World Exploration’，作者Guangyuan Li等，编号2610.39619。Comments原文‘17 pages, 6 figures’，未见journal_ref；实际打开官方项目页，题名作者匹配，未见明确会议、期刊录用或技术报告分类声明。本次未找到正式录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.39619
+    - https://GuangYuanKK.github.io/futureworld
+    verification_outcome: no_publication_evidence
   gamedirector:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2609.25652
-    evidence: comments 仅项目主页，S2 标注 arXiv.org（自托管），无正式发表记录。
-    verification_confidence: low
+    evidence: '2026-11-13实际读取arXiv:2609.25652及作者GameDirector官方项目，完整题名为GameDirector: Decoupling Gameplay Logic from Rendering for Player-Configurable Game World Models，Zijun Lin等作者、方法名、项目和编号对应。图谱Player-Configured Worlds是标题改写差异，非不同论文的充分证据，本次不改主表。arXiv comments仅项目链接、无journal_ref，项目未见接收声明，截至本次未找到正式发表证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2609.25652
+    - https://jimntu.github.io/gamedirector/
+    - https://github.com/jimntu/GameDirector_code
+    verification_outcome: no_publication_evidence
   gaussianrenderformer:
     status: submitted
     year: 2026
     source: https://arxiv.org/abs/2611.05593
-    evidence: arXiv comments 写明「Under review at TMLR」，为投稿在审状态，尚无录用证据。
-    verification_confidence: medium
+    evidence: '当天实际读取的arXiv comments明确为“Under review at TMLR. 32 pages. Project page: …”。官方项目页作者Shahaf Valencia Levy、Sagie Benaim与arXiv:2611.05593对应，引用仍为该arXiv预印本。只能确认投稿在审，不能因出现TMLR名称、journal分类就推断期刊录用；本次未见accept决定或正式期刊记录。未找到录用证据不等于确认从未或不会发表。'
+    verification_confidence: high
+    submission_target:
+      year: 2026
+      track: journal
+      track_detail: 投稿至Transactions on Machine Learning Research（TMLR），仍在审；无录用证据，name留空
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.05593
+    - https://svlwoof.github.io/gaussianrenderformer/
+    verification_outcome: no_publication_evidence
+    track_detail: 投稿至Transactions on Machine Learning Research（TMLR），仍在审；无录用证据，name留空
   gear:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2609.34722
-    evidence: comments 仅项目主页，S2 标注 arXiv.org，OpenAlex 为预印本。
-    verification_confidence: low
+    evidence: 'arXiv题名Geometry as Address: Routing Attention to Visual Memory for Long-Horizon Camera-Controlled Video Generation，作者Zesong Yang、Weikai Chen、Liyuan Cui等，v1为2026-09-28；comments仅项目页，未见journal_ref。官方项目页明确‘ARXIV 2026’，BibTeX为‘arXiv preprint’，编号2609.34722一致。精确题名检索及项目页未检出正式录用证据，仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2609.34722
+    - https://zju3dv.github.io/geometry-as-address/
+    verification_outcome: no_publication_evidence
   gems:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.33158
-    evidence: arXiv comments 仅有代码与数据链接，无任何录用或期刊信息，第三方索引也无会议记录，判定为预印本。
-    verification_confidence: low
+    evidence: 当天实际读取arXiv和GEMS官方项目页；完整题名、作者Ling-Chia Chen、Abdelrhman Werby、Kaan Aytekin、Kai O. Arras与arXiv:2610.33158一致。摘要comments为代码/数据相关链接，未列正式journal_ref，项目页未见会议/期刊录用声明。保留预印本；本次未查到证据不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.33158
+    - https://abwerby.github.io/GEMS/
+    verification_outcome: no_publication_evidence
   gen3c:
-    status: accepted
+    status: published
     name: CVPR
     year: 2025
     track: main
-    source: https://arxiv.org/abs/2503.03751
-    evidence: arXiv comments 明确写 To appear in CVPR 2025。
+    source: https://openaccess.thecvf.com/content/CVPR2025/html/Ren_GEN3C_3D-Informed_World-Consistent_Video_Generation_with_Precise_Camera_Control_CVPR_2025_paper.html
+    evidence: CVF Open Access 的 CVPR 2025 论文页给出完整标题、十位作者、pp.6121-6132，DOI 10.1109/CVPR52734.2025.00574。图谱未收 arXiv 号，对应 2503.03751（arXiv comments 原写 To appear in CVPR 2025，现已正式发表）。
     verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://openaccess.thecvf.com/content/CVPR2025/html/Ren_GEN3C_3D-Informed_World-Consistent_Video_Generation_with_Precise_Camera_Control_CVPR_2025_paper.html
+    - https://dblp.uni-trier.de/rec/bibtex/conf/cvpr/RenSHLLN00F025
+    verification_outcome: confirmed_publication
   genie3:
     status: product
     year: 2025
     source: https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/
     evidence: DeepMind 官方博客发布，原文写明 limited research preview，页面无 arXiv 论文也无会议期刊名称，BibTeX 仅指向该博客本身。
     verification_confidence: medium
+    verification_outcome: no_publication_evidence
   geo-context:
     status: accepted
     name: CVPR
@@ -528,90 +915,190 @@ papers:
     source: https://arxiv.org/abs/2602.21929
     evidence: arXiv comments 明确写有 Accepted by CVPR 2026，Semantic Scholar 亦标注 Computer Vision and Pattern Recognition。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2602.21929
   geostate:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.22343
-    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足，按预印本处理。
-    verification_confidence: low
+    source: https://hongchang-liu.github.io/GeoState-project-page/
+    evidence: 'arXiv最新v1题名‘GeoState: Learning View-Decoupled Geometry States for 3D World Modeling’，作者Hongchang Liu等，编号2610.22343，未见Comments/journal_ref录用声明。官方项目页题名作者对应，引用‘@misc’，arXiv编号‘2610.22343’。本次未找到正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.22343
+    - https://hongchang-liu.github.io/GeoState-project-page/
+    verification_outcome: no_publication_evidence
   gim-world:
-    status: preprint
+    status: accepted
     year: 2026
-    source: https://arxiv.org/abs/2606.02436
-    evidence: arXiv comments 仅写项目主页，S2 的 arXiv.org 与 OpenAlex 的 repository 均非正式出版渠道。
-    verification_confidence: low
+    source: https://github.com/nagara214/GIM-World/blob/main/README.md
+    evidence: 本次打开arXiv 2606.02436，实际题名Geometry-Aware Implicit Memory for Video World Models，作者Zhengxuan Wei、Xu Guo、Xinghui Li等11人，v1为2026-06-01，comments仅项目页，未显示journal_ref。实际打开作者官方仓库README，题名及编号一致，明确原文“GIM-World is accepted to SIGGRAPH Asia 2026”，标题下也标SIGGRAPH Asia 2026。第一作者、共同一作Xu Guo、Xinghui Li和通讯作者Qi Fan各主页均把同题同作者论文列于SIGGRAPH Asia 2026。第一作者News另写2026.07 conditionally accepted，仓库较明确的accepted及多作者出版条目支持录用。官方Technical Papers页面链接到日程，但实际日程未返回该文条目。新闻检索有Conference Track线索，作者一手页面未明确Conference与TOG Journal细分，故不臆定track；尚未以正式出版社条目确认出版。
+    verification_confidence: medium
+    name: SIGGRAPH Asia
+    track: unknown
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2606.02436
+    - https://gim-world.github.io/
+    - https://github.com/nagara214/GIM-World/blob/main/README.md
+    - https://fanq15.github.io/
+    - https://guoxu1233.github.io/homepage/
+    - https://zhengxuanwei.top/
+    - https://crayon-shinchan.github.io/xinghui99.github.io/
+    - https://asia.siggraph.org/2026/program/technical-papers/
+    - https://sa2026.conference-schedule.org/?filter1=sstype101
+    - https://sa2026.conference-schedule.org/search-program/
+    verification_outcome: confirmed_publication
+    track_detail: SIGGRAPH Asia2026录用，Conference与TOG Journal细分待核
   glance-forcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.20220
-    evidence: arXiv comments 为空，第三方索引无会议或期刊记录，证据不足，按预印本处理。
-    verification_confidence: low
+    evidence: '本次arXiv:2610.20220题名Glance Forcing: Making Bidirectional Diffusion Autoregressive at a Glance，作者Zhuobai Dong、Junchao Yi、Hu Jian Guo、Linjie Li、Rui Zhao、Alex Jinpeng Wang，v1为2026-10-14，未列Comments或Journal reference。实际读取第一作者项目主页，BibTeX为同题、同作者及编号2610.20220的arXiv @misc，未见本论文录用声明。页面“Previous Work: Glance (ECCV 2026)”明确指另一篇Glance: Accelerating Diffusion Models with 1 Sample（2512.02899），不能移植至Glance Forcing；SIGGRAPH Asia录用线索未复现。暂无正式录用证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.20220
+    - https://zhuobaidong.github.io/Glance-Forcing
+    verification_outcome: no_publication_evidence
   globebench:
-    status: preprint
+    status: accepted
     year: 2026
-    source: https://arxiv.org/abs/2610.22708
-    evidence: arXiv comments 仅给出代码与数据集链接，无录用声明，第三方索引无会议记录。
-    verification_confidence: low
+    source: https://www.patronus.ai/research/globebench?utm_campaign=security-funded-145-the-economic-shifts-heard-round-the-world
+    evidence: 2026-11-13主代理独立读取Patronus官方GlobeBench研究页，完整题名Evaluating Text-Based World Model Capabilities for Scalable Environment Simulations、Nicholas Saban、Charvi Bannur、Mariya I. Vasileva、Darshan Deshpande四作者及arXiv:2610.22708对应。原文Accepted at / NeurIPS 2026 Workshop · Workshop on Evaluation of Interactive Agents (IAEval), non-archival · Poster，足以确认非存档Workshop Poster录用，不是NeurIPS主会，亦不写正式论文集已出版。arXiv BibTeX仍为misc不能推翻一手Workshop声明。
+    verification_confidence: high
+    name: NeurIPS
+    track: workshop
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.22708
+    - https://www.patronus.ai/research/globebench?utm_campaign=security-funded-145-the-economic-shifts-heard-round-the-world
+    - https://openreview.net/forum?id=0M3WoOwahn
+    verification_outcome: confirmed_publication
+    blocker: 补充OpenReview页面受浏览器验证限制，未读取决定全文；官方项目明确Workshop录用。
+    track_detail: Workshop on Evaluation of Interactive Agents (IAEval), non-archival, Poster
   gpwm:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.08338
-    evidence: arXiv comments 仅写页数、作者贡献说明与项目主页，无任何录用信息。
-    verification_confidence: low
+    evidence: '本次arXiv:2611.08338题名GPWM: Modeling the World as 3D Particle Motion，作者Robert Ren、Matthew Bronars等8人，v1为2026-11-05。Comments仅“39 pages, 27 figures, 7 tables”、共同贡献/抛硬币排序及项目链接，无Journal reference。实际读取作者项目主页，题名作者一致，BibTeX明确arXiv preprint arXiv:2611.08338，未列会议期刊录用；精确题名加accepted搜索亦未获匹配权威决定。确认预印本存在，暂无正式录用证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.08338
+    - https://robertren1122.github.io/gpwm/
+    verification_outcome: no_publication_evidence
   graph-swap:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.02056
-    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
-    verification_confidence: low
+    evidence: 本次arXiv:2611.02056题名Do Embodied VLMs Actually Use Their Scene-Graph Memory?，作者Shubh Garg、Divyansh Pandey、Vedant Khandelwal、Niyati Rawal、Amit Sheth，v1为2026-11-01，无Comments或Journal reference。进一步实际读取官方论文HTML，页首署名一致、同编号，无本论文会议期刊投稿/录用声明；精确题名检索仅取得预印本及讨论页面，未找到匹配权威录用记录。不把参考文献中的会议当本论文去向；暂无发表证据不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.02056
+    - https://arxiv.org/html/2611.02056v1
+    verification_outcome: no_publication_evidence
   grome:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.39812
-    evidence: arXiv comments 为空，第三方索引无会议或期刊记录，证据不足，按预印本处理。
-    verification_confidence: low
+    evidence: 当天读取arXiv摘要、正文及正文提供的官方项目页。项目题名与Fang Yu、Xiaoxue Wu、Haiyu Zhang、Yangfu Li、Botong Zhao、Yu Qiao、Tianfan Xue、Yue Lu、Xinyuan Chen等作者对应arXiv:2610.39812。摘要无comments/journal_ref，项目页HTTP200未见录用声明。正文提及遵守ICLR Code of Ethics不等于ICLR录用。保留预印本；未找到证据不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.39812
+    - https://arxiv.org/html/2610.39812
+    - https://lyeean.github.io/GROME_/
+    verification_outcome: no_publication_evidence
   gsexplorer:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.01543
-    evidence: arXiv comments 仅写 17 pages，无录用声明，第三方索引亦无会议记录。
-    verification_confidence: low
+    evidence: '本次打开arXiv，完整题名GSExplorer: Interactive World Generation with a Persistent 3D Gaussian World State，作者Sicheng Yu、Liu Liu等10人，编号2611.01543，v1实际2026-11-01（非输入线索2026-11-03）。comments原文“17 pages”，未显示journal_ref。循HTML链接实际打开作者项目3dagentworld.github.io/GSExplorer，题名作者一致，代码及Hugging Face仍Coming soon，未显示会议期刊录用。完整题名检索未取得正式渠道证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.01543
+    - https://arxiv.org/html/2611.01543v1
+    - https://3dagentworld.github.io/GSExplorer/
+    verification_outcome: no_publication_evidence
   helixworld:
-    status: preprint
+    status: technical_report
     year: 2026
-    source: https://arxiv.org/abs/2609.38123
-    evidence: arXiv comments 为空，S2 仅记录为 arXiv.org（非正式会议或期刊），无其他出版证据。
-    verification_confidence: low
+    source: https://github.com/NoizAI/HelixWorld
+    evidence: '最新arXiv题名‘HelixWorld: A Real-time Interactive Audio-Visual World Model’，编号2609.38123，作者和官方链接核对吻合；未见journal_ref。官方仓库News明确写‘2026-09-29. The HelixWorld technical report is now on arXiv.’，引用为arXiv preprint；官方发布博客链接同篇论文。据一手声明记technical_report，不视为会议录用。本次未找到正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2609.38123
+    - https://github.com/NoizAI/HelixWorld
+    - https://noiz.ai/lp/zh/blog/meet-helix-world
+    verification_outcome: no_publication_evidence
   helm:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.02660
-    evidence: arXiv comments 仅写页数与项目主页，无录用声明，第三方索引无会议记录。
-    verification_confidence: low
+    evidence: 'arXiv题名HeLM: Hierarchical Explicit Language Memory for Non-Markovian Manipulation，作者Gyeonghun Kim、Donghoon Kim、Minsoo Choi、Suyun Lee，v1为2026-11-02；comments含‘32 pages, 14 figures, including supplementary material’及项目页，未见journal_ref。作者项目页@misc引用对应arXiv:2611.02660，未标正式录用；精确题名区分同名HeLM研究后未检出录用证据。仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.02660
+    - https://kimspacehuni.github.io/HeLM/
+    verification_outcome: no_publication_evidence
   himem:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2611.09355
-    evidence: arXiv comments 为空，第三方索引无会议或期刊记录，证据不足。
-    verification_confidence: low
+    source: https://arxiv.org/html/2611.09355v1
+    evidence: 'arXiv:2611.09355完整题名HiMEM: Hippocampus-Inspired Memory Consolidation, Pruning, and Composition for Vision-Language-Action Models in 3D Scenes，Boran Zhao、Yanbin Hu、Jun Ye、Zhenxian Hu、Yuxin Zhai、Jin Cui、Pengju Ren，v1为2026-11-06，无comments/journal_ref。正文明确This paper substantially extends our NeurIPS 2026 conference paper, ECHO及this journal version；参考文献中Accepted for publication at ... NeurIPS 2026属于前作ECHO，不是HiMEM。未给HiMEM期刊名称、DOI、投稿接收日期或已录用声明，不将journal version本身推断成已投稿或已发表。题名作者accepted检索未找到本作正式发表证据；不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.09355
+    - https://arxiv.org/html/2611.09355v1
+    verification_outcome: no_publication_evidence
   hiper:
-    status: preprint
+    status: submitted
     year: 2026
-    source: https://arxiv.org/abs/2611.07662
-    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
-    verification_confidence: low
+    source: https://github.com/pairs-lab/HiPer
+    evidence: 实际读取arXiv 2611.07662，题名为‘Which Objects Stay? Learning Hierarchical Persistence Beliefs for Lifelong Open-Vocabulary Object Maps’，作者Thanh Nguyen Canh, Haolan Zhang, Nak Young Chong；comments与journal_ref为空。实际读取v1 HTML正文，其直接链接pairs-lab/HiPer，建立论文与匿名仓库的对应。仓库原文‘Submitted to IEEE Robotics and Automation Letters (RA-L), 2026’，BibTeX为‘Under review at IEEE Robotics and Automation Letters’，故只确认期刊投稿中，不是录用。正文10.1109/LRA.2026.XXXXXXX是占位DOI，不能作正式出版证据。year为投稿声明年份，不是已确认发表年份。截至2026-11-13，本次已查来源暂未找到录用或正式出版证据，不等于证明未发表。
+    verification_confidence: high
+    submission_target:
+      name: IEEE Robotics and Automation Letters
+      year: 2026
+      track: journal
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.07662
+    - https://arxiv.org/html/2611.07662v1
+    - https://github.com/pairs-lab/HiPer
+    verification_outcome: no_publication_evidence
   history-forcing:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2611.02782
-    evidence: arXiv comments 仅写项目主页，无录用声明，第三方索引无会议记录。
-    verification_confidence: low
+    source: https://ziplab.co/History-Forcing-Project-Page/
+    evidence: '实际读取arXiv 2611.02782，题名为‘History Forcing: Distilling History-Dependent Continuations for Long-Horizon Video World Models’，作者Hangyi Kuang等；comments仅给项目页，journal_ref为空。作者项目页实际读取，2026-11-03新闻为论文、模型、数据发布，BibTeX标arXiv preprint并绑定2611.02782，未见会议/期刊录用声明。arXiv首发为2026-11-02，输入11-03对应项目公告日，不以此作发表判据。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.02782
+    - https://ziplab.co/History-Forcing-Project-Page/
+    verification_outcome: no_publication_evidence
   hla-wm:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.05739
-    evidence: arXiv comments 为空，OpenAlex 仅登记为 arXiv repository 预印本，无会议或期刊记录。
-    verification_confidence: low
+    source: https://ziplab.co/publication/
+    evidence: 'arXiv:2610.05739完整题名HLA-WM: Hybrid Linear Attention for Long-Horizon Video World Models，Zhuokun Chen、Feng Chen、Xi Lin等七作者，v1为2026-10-05，无comments/journal_ref。作者实验室官方publication页面将同题同作者作品明确归入Preprint；官方项目页链接回2610.05739且未声明录用。题名检索未发现本作会议/期刊接收证据；仅确认当前可见预印本身份，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.05739
+    - https://ziplab.github.io/publication/
+    - https://ziplab.co/publication/
+    - https://caesarhhh.github.io/hla-wm/
+    verification_outcome: no_publication_evidence
   holo4d:
     status: accepted
     name: NeurIPS
@@ -620,24 +1107,44 @@ papers:
     source: https://arxiv.org/abs/2610.25276
     evidence: arXiv comments 明确写有 Accepted to NeurIPS 2026。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2610.25276
   honeycomb:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2609.37690
-    evidence: arXiv comments 仅写项目主页与代码仓库，S2 的 arXiv.org 非正式渠道，无录用证据。
-    verification_confidence: low
+    evidence: '本次打开arXiv，完整题名Honeycomb: Constant-Size Scene Memory Representation for Video World Models，Jack Wei Lun Shi、Kaichen Zhou等9位作者，编号2609.37690；首发2026-09-29，最新v2为2026-09-30。comments原文仅Project Page及Code链接，journal_ref未显示。实际打开arXiv所指作者项目页，题名作者一致，页面介绍HexMemory、实验和代码，未显示会议或期刊录用声明。检索编号题名未找到可核实正式渠道；仅确认预印本存在，不确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2609.37690
+    - https://jackswl.github.io/honeycomb/
+    verification_outcome: no_publication_evidence
   hy-nomas:
     status: technical_report
     year: 2026
     source: https://arxiv.org/abs/2610.36729
-    evidence: arXiv comments 明确标注 Technical Report，属技术报告而非会议或期刊发表。
-    verification_confidence: medium
+    evidence: '实时arXiv《Hy-Nomas: Towards Free-form Interactive World Generation》，Qiaoling Chen等，2026-10-27 v1；comments明确“Technical Report”，无journal_ref。实际访问作者官方GitHub，News写2026-10-26更新技术报告、10-27技术报告上arXiv，引用明确“journal={arXiv preprint arXiv:2610.36729}”；未声明会议或期刊接收。题名发表检索未获官方接收证据。确认技术报告，代码开源发布不等于会议/期刊发表，也不等于断言未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.36729
+    - https://arxiv.org/html/2610.36729
+    - https://github.com/Tencent-Hunyuan/Hy-Nomas
+    verification_outcome: no_publication_evidence
   hy-world-2:
-    status: preprint
+    status: technical_report
     year: 2026
-    source: https://arxiv.org/abs/2604.14268
-    evidence: arXiv comments 仅写项目主页与代码链接，S2 的 arXiv.org 与 OpenAlex 的 repository 均非正式出版渠道。
-    verification_confidence: low
+    source: https://tengfei-wang.github.io/
+    evidence: 'arXiv:2604.14268题名HY-World 2.0: A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds，作者含Team HY-World、Chenjie Cao、Xuhui Zuo、Zhenwei Wang及Tengfei Wang。作者Tengfei Wang官网对该准确题目标为‘Tencent HY World Team — Technical Report, 2026’。arXiv v1为2026-04-15，comments为项目与代码，未见journal_ref。确认技术报告身份，未检出正式录用证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2604.14268
+    - https://tengfei-wang.github.io/
+    verification_outcome: no_publication_evidence
   infinite-rope:
     status: accepted
     name: CVPR
@@ -646,18 +1153,38 @@ papers:
     source: https://arxiv.org/abs/2511.20649
     evidence: arXiv comments 写有 CVPR 2026 并附项目主页，Semantic Scholar 亦标注 CVPR 会议。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2511.20649
   infinite-world:
-    status: preprint
+    status: accepted
     year: 2026
-    source: https://arxiv.org/abs/2602.02393
-    evidence: arXiv comments 仅写项目主页，S2 仅记录为 arXiv.org，无录用证据。
-    verification_confidence: low
+    source: https://icml.cc/virtual/2026/poster/66617
+    evidence: 'ICML官方主会程序页面为‘ICML Poster Infinite-World: Scaling Interactive World Models to 1000-Frame Horizons via Pose-Free Hierarchical Memory’，列Ruiqi Wu、Xuanhua He、Meng Cheng、Tianyu Yang等11位作者，与arXiv:2602.02393匹配。页面原文‘Poster Thu, Jul 9, 2026 • 2:30 PM – 4:15 PM KST’，官方仓库标题标‘[ICML 2026]’。主会程序足以确认录用；尚未核实具体PMLR单篇出版页面，保守记accepted而非published。OpenReview补充页仅显示‘Verifying your browser’，不影响已有官方主会证据。'
+    verification_confidence: high
+    name: ICML
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2602.02393
+    - https://rq-wu.github.io/projects/infinite-world/index.html
+    - https://github.com/MeiGen-AI/Infinite-World
+    - https://icml.cc/virtual/2026/poster/66617
+    - https://openreview.net/forum?id=27m3BuajLs
+    verification_outcome: confirmed_publication
+    blocker: 辅助OpenReview页面受浏览器验证阻挡；官方ICML程序已确证，非整体核验受阻。
   keepsake:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.06588
-    evidence: arXiv comments 为空，OpenAlex 仅登记为 arXiv 预印本，无会议或期刊记录。
-    verification_confidence: low
+    evidence: '本次打开arXiv，题名Keepsake: Selective Spatial Memory for Long-Horizon Video Generation，作者Abdul Mohaimen Al Radi、Kunyang Li、Yuzhang Shang、Mubarak Shah、Yu Tian；编号2610.06588，v1为2026-10-05，未显示comments或journal_ref。已打开官方arXiv HTML正文并核对题名作者；没有找到该论文作者项目或正式录用字段。完整题名及作者加conference检索未找到可核实会议记录。维持预印本，未查到录用不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.06588
+    - https://arxiv.org/html/2610.06588v1
+    verification_outcome: no_publication_evidence
   l2m:
     status: accepted
     name: NeurIPS
@@ -666,120 +1193,233 @@ papers:
     source: https://arxiv.org/abs/2611.01858
     evidence: arXiv comments 明确写有 Accepted at NeurIPS 2026。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.01858
   l2r:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.11444
-    evidence: arXiv comments 为空，OpenAlex 仅登记为 arXiv 预印本，无会议或期刊记录。
-    verification_confidence: low
+    source: https://jkhu29.github.io/l2r/
+    evidence: '实际读取arXiv 2610.11444，题名为‘Learning to Retrieve: Internalizing Memory Retrieval for Video World Models’，JiaKui Hu等作者，与L2R项目对应；comments及journal_ref均为空。作者项目页可访问，BibTeX标为arXiv预印本并绑定2610.11444、2026年，未见明确会议/期刊录用声明。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.11444
+    - https://jkhu29.github.io/l2r/
+    verification_outcome: no_publication_evidence
   l3g-world:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.40614
-    evidence: arXiv comments 仅写项目主页，无录用声明，第三方索引无会议记录。
-    verification_confidence: low
+    evidence: '本次arXiv:2610.40614题名L3G-World: Real-Time Infinite World Generation with Latent 3D Gaussian Memory，作者Jinhyeok Choi、JoungBin Lee等8人，v1为2026-10-29。Comments仅项目页，无Journal reference。实际读取KAIST官方项目页，同题作者编号一致，BibTeX为arXiv @misc；原始HTML弹窗中出现孤立“Accepted version”，但没有场所、年份或决定，不能据此确认会议期刊录用。精确题名搜索出现第三方所谓CVPR-track但无权威依据，未采；保留已验证预印本，track未知。暂无可归属的录用证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.40614
+    - https://cvlab-kaist.github.io/L3G-World/
+    verification_outcome: no_publication_evidence
+    blocker: 项目页“Accepted version”未注明录用场所，无法确定具体会议、期刊或track，未据此升级状态。
   layerrecall:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2608.28460
-    evidence: arXiv comments 仅写页数与图数，S2 仅记录为 arXiv.org，无录用证据。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2608.28460，标题LayerRecall: A State-Conditioned Memory Router for Long-Horizon Consistency in Video Generation，作者Yixuan Ding、Jiahao Kong、Wei Huang、Ruijie Quan、Yi Yang，comments=15 pages, 11 figures。实际作者项目页同题同作者，BibTeX为@misc、eprint=2608.28460；PUBLIC REVIEW PREVIEW不构成已投稿到特定刊会或录用证明。结合标题检索，本次未找到录用一手证据，暂记预印本，不代表确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2608.28460
+    - https://yixuan-ding-zju.github.io/LayerRecall_Web/
+    verification_outcome: no_publication_evidence
   lingbot-world:
-    status: preprint
+    status: technical_report
     year: 2026
-    source: https://arxiv.org/abs/2601.20540
-    evidence: arXiv comments 仅写项目主页与代码链接，S2 的 arXiv.org 与 OpenAlex 的 repository 均非正式出版渠道。
-    verification_confidence: low
+    source: https://technology.robbyant.com/lingbot-world
+    evidence: arXiv:2601.20540题名为Advancing Open-source World Models，作者含Robbyant Team、Zelin Gao、Qiuyu Wang，2026-01-28提交。官方LingBot-World项目页将该arXiv链接明确标为‘Tech Report’；arXiv comments仅给项目及代码，未见journal_ref。确认技术报告身份，未检出正式会议或期刊录用证据，不等于确认未发表。
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2601.20540
+    - https://technology.robbyant.com/lingbot-world
+    verification_outcome: no_publication_evidence
   loger:
-    status: accepted
+    status: published
     year: 2026
-    track: unknown
-    source: https://arxiv.org/abs/2603.03269
-    evidence: arXiv comments 仅写项目主页；OpenAlex 将其登记为 Springer LNCS 会议论文（DOI 10.1007/978-3-032-37135-5_15），但无法确认具体会议名称，故不填 venue。
-    verification_confidence: low
+    track: main
+    source: https://link.springer.com/chapter/10.1007/978-3-032-37135-5_15
+    evidence: '实际访问arXiv 2603.03269及作者项目页核对标题LoGeR: Long-Context Geometric Reconstruction with Hybrid Memory、Junyi Zhang等八位作者。实际访问Springer章节与DOI解析页，标题、八位作者及摘要一致，标Conference paper、First Online: 01 October 2026、pp263–281、LNCS volume17072。出版社HTML书目元数据citation_inbook_title明确为Computer Vision – ECCV 2026，citation_conference_title为European Conference on Computer Vision，非workshops书名。由此将此前低置信accepted补强为ECCV2026主会已发表；项目页仍引用预印本不影响出版社证据。'
+    verification_confidence: high
+    name: ECCV
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2603.03269
+    - https://loger-project.github.io/
+    - https://doi.org/10.1007/978-3-032-37135-5_15
+    - https://link.springer.com/chapter/10.1007/978-3-032-37135-5_15
+    verification_outcome: confirmed_publication
   lol:
-    status: preprint
+    status: published
     year: 2026
-    source: https://arxiv.org/abs/2601.16914
-    evidence: arXiv comments 明确写 preprint，与 Semantic Scholar 标注的 CVPR 冲突，按更保守一侧取预印本。
-    verification_confidence: low
+    source: https://openaccess.thecvf.com/content/CVPR2026/html/Cui_LoL_Longer_than_Longer_Scaling_Video_Generation_to_Hour_CVPR_2026_paper.html
+    evidence: 实际读取arXiv 2601.16914，comments仍为‘preprint’，journal_ref为空；但本次成功读取更强的官方CVF出版记录，题名完全一致，作者为Justin Cui, Jie Wu, Ming Li, Tao Yang, Xiaojie Li, Rui Wang, Andrew Bai, Yuanhao Ban, Cho-Jui Hsieh。出版引用原文：‘Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026, pp. 38132-38142’；官方BibTeX为@InProceedings，month={June}, year={2026}, pages={38132-38142}，并直接链接回https://arxiv.org/abs/2601.16914。据此确认CVPR 2026主会正式发表，不能让尚未更新的arXiv preprint标签推翻出版方记录。
+    verification_confidence: high
+    name: CVPR
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2601.16914
+    - https://openaccess.thecvf.com/content/CVPR2026/html/Cui_LoL_Longer_than_Longer_Scaling_Video_Generation_to_Hour_CVPR_2026_paper.html
+    verification_outcome: confirmed_publication
   longforcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.18289
-    evidence: arXiv comments 为空，OpenAlex 仅登记为 arXiv 预印本，无会议或期刊记录。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2610.18289，当前标题为LongForcing: Scaling Temporal Manifold Matching for Long-Horizon World Rollout，作者Ziyu Zhu、Zhaoxu Sun等八人。输入标题结尾World Models与当前World Rollout有差异，但编号、LongForcing名称及输入作者官方仓库互链一致，可核为同一工作当前题名。arXiv与官方仓库未给刊会录用声明，精确题名/名称检索也未找到一手录用记录；暂记预印本，不代表确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.18289
+    - https://github.com/Fantasy-AMAP/LongForcing
+    verification_outcome: no_publication_evidence
   longlive:
-    status: preprint
-    source: https://arxiv.org/abs/2509.22622
-    evidence: LongLive arXiv 首发 2025-09，而 ICLR 2025 已于 2025-04 举行，第三方索引的 ICLR 2025 归属在时间上不成立，按预印本处理。
-    verification_confidence: low
+    status: published
+    source: https://proceedings.iclr.cc/paper_files/paper/2026/hash/91a1610c6ed9e02d33f826b46f472b92-Abstract-Conference.html
+    evidence: '本次实际读取arXiv 2509.22622最新摘要页，题名为‘LongLive: Real-time Interactive Long Video Generation’，journal_ref为空；作者为Shuai Yang, Wei Huang, Ruihang Chu, Yicheng Xiao, Yuyang Zhao, Xianbang Wang, Muyang Li, Enze Xie, Yingcong Chen, Yao Lu, Song Han, Yukang Chen。作者NVlabs/LongLive v1.0仓库明确公告‘[2026.1.27] LongLive is accepted by ICLR-2026.’，引用绑定同一arXiv编号。更强的官方出版页列出相同题名和上述12位作者，载体原文为‘International Conference on Learning Representations 2026 (ICLR 2026) Conference’，确认ICLR 2026主会正式发表。旧结论误以ICLR 2025会期机械否定，应纠正为ICLR 2026；无需假设更名才能建立匹配。OpenReview辅助访问遇到浏览器验证/API SSL错误，不影响已成功核实的官方proceedings结论。'
+    verification_confidence: high
+    name: ICLR
+    year: 2026
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2509.22622
+    - https://github.com/NVlabs/LongLive/tree/v1.0
+    - https://proceedings.iclr.cc/paper_files/paper/2026/hash/91a1610c6ed9e02d33f826b46f472b92-Abstract-Conference.html
+    - https://openreview.net/forum?id=nCAODkpsPJ
+    - https://api2.openreview.net/notes?forum=nCAODkpsPJ
+    verification_outcome: confirmed_publication
   longlive-rag:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2606.02553
-    evidence: arXiv comments 仅写页数与图表数，S2 仅记录为 arXiv.org，无录用证据。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2606.02553，标题LongLive-RAG: A General Retrieval-Augmented Framework for Long Video Generation，作者Qixin Hu、Shuai Yang、Wei Huang、Song Han、Yukang Chen；comments为20 pages, 7 figures, 4 tables，未显示journal reference。作者Shuai Yang主页将此同题同作者论文明确列为arXiv preprint, 2026；该主页的ICLR2026声明指LongLive而非LongLive-RAG。结合精确题名检索，本次未找到此篇会议/期刊录用一手证据，暂记预印本，不代表确认其未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2606.02553
+    - https://shuaiyang.me/
+    verification_outcome: no_publication_evidence
   longtake:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2609.38562
-    evidence: arXiv comments 为空，S2 仅记录为 arXiv.org，OpenAlex 仅登记为预印本。
-    verification_confidence: low
+    evidence: 'arXiv题名LongTake: Learning to Sustain Dynamics in Long-Horizon Video Generation，作者Byoungwoo Park、Jaemoo Choi、Juho Lee、Yongxin Chen，v1为2026-09-29；comments为空，未见journal_ref。作者LongTake项目页副题有差异，但方法名、作者与arXiv链接2609.38562对应，未标会议或录用。精确题名检索未查到正式录用证据；仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2609.38562
+    - https://bw-park.github.io/LongTake
+    verification_outcome: no_publication_evidence
   loopnav:
-    status: preprint
-    year: 2025
-    source: https://arxiv.org/abs/2505.22976
-    evidence: 'arXiv comments 仅写 V3: SGCS（版本说明），无录用声明，第三方索引亦无会议记录。'
-    verification_confidence: low
+    status: accepted
+    year: 2026
+    source: https://neurips.cc/virtual/2026/poster/139665
+    evidence: 'NeurIPS 2026官方程序列出LoopNav: Benchmarking Spatial Consistency in World Models，四作者Kewei Lian、Shaofei Cai、Yitao Liang、Anji Liu与arXiv:2505.22976完全一致，安排2026-12-08 17:00–20:00 Hall 1-4 Poster。作者Shaofei Cai官网明确写Conference on Neural Information Processing Systems (NeurIPS''26)，2026 (Accepted; proceedings forthcoming)。故截至核验日为主会已录用、论文集待出版，而非已正式出版；arXiv最新v3为2026-05-08，comments仍仅V3: SGCS，说明不能只靠comments判定。'
+    verification_confidence: high
+    name: NeurIPS
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2505.22976
+    - https://phython96.github.io/en/publications.html
+    - https://neurips.cc/virtual/2026/poster/139665
+    verification_outcome: confirmed_publication
   lowbit-gdn-state:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.39931
-    evidence: arXiv comments 仅写页数与图数，无录用声明，第三方索引无会议记录。
-    verification_confidence: low
+    evidence: 当天arXiv comments为“24 pages, 13 figures”，作者Qinghang Huang、Xuchu Huang、Xunzhao Yin与题名及arXiv:2610.39931对应，无正式journal_ref。正文HTTP200；ICLR、ICML、NeurIPS等检索命中均为他作参考文献，不是本论文录用。保留预印本；未查到正式发表证据不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.39931
+    - https://arxiv.org/html/2610.39931
+    verification_outcome: no_publication_evidence
   lyra2:
-    status: preprint
+    status: accepted
     year: 2026
-    source: https://arxiv.org/abs/2604.13036
-    evidence: arXiv comments 仅写项目主页，S2 仅记录为 arXiv.org，无录用证据。
-    verification_confidence: low
+    source: https://j-lab.ai/
+    evidence: '本次arXiv:2604.13036题名Lyra 2.0: Explorable Generative 3D Worlds，作者Tianchang Shen、Sherwin Bahmani等15人，v1为2026-04-14，Comments仅项目主页。实际读取NVIDIA官方项目页，同题同作者明确“Accepted to SIGGRAPH Asia 2026”。进一步实际读取作者Jun Gao主页j-lab.ai，同题条目直接链接arXiv:2604.13036及该NVIDIA主页，并明确标“ACM Transactions on Graphics (SIGGRAPH Asia), 2026”，因此确认journal/TOG路线，而非仅凭SIGGRAPH字样假定主会conference track。未取得出版社卷期或正式出版记录，保守记accepted，不提前标published。'
+    verification_confidence: high
+    name: TOG
+    track: journal
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2604.13036
+    - https://research.nvidia.com/labs/sil/projects/lyra2/
+    - https://j-lab.ai/
+    verification_outcome: confirmed_publication
+    track_detail: ACM Transactions on Graphics, SIGGRAPH Asia 2026
   mallea:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.21283
-    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
-    verification_confidence: low
+    evidence: 'arXiv题名Mallea: Building, Steering, and Memorizing Worlds with Coding Agent，作者Xuanyi Liu、Ruiqi Li、Siwei Ma，v1为2026-10-15；comments为空，未见journal_ref，摘要给作者项目页。已读Mallea项目页为研究展示，未标正式会议、期刊或录用信息。精确题名检索未检出正式录用证据，仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.21283
+    - https://lxycopper.github.io/Mallea
+    verification_outcome: no_publication_evidence
   mamba3r:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.04221
-    evidence: arXiv comments 仅写页数、图数与表格数，无录用声明，第三方索引无会议记录。
-    verification_confidence: low
+    evidence: '实际打开最新arXiv v1，题名‘Mamba3R: Fixed-Capacity Selective State Memory for Long-Sequence 3D Reconstruction’，作者Zhenxiang Xiong等，编号2611.04221。Comments原文‘12 pages, 4 figures, 8 tables. The supplementary material referenced in the text is not included in this version’，未列journal_ref。结合精确题名检索未取得正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.04221
+    verification_outcome: no_publication_evidence
   map2vid:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.25223
-    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
-    verification_confidence: low
+    evidence: 当天实际读取arXiv摘要，完整题名、Yulin Dai等6位作者与arXiv:2610.25223一致；comments和journal_ref未列出会议/期刊录用或正式出版信息，进一步读取正文也未找到本论文的录用声明。保留预印本状态；未查到证据不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.25223
+    - https://arxiv.org/html/2610.25223
+    verification_outcome: no_publication_evidence
   marble:
     status: product
     year: 2025
     source: https://marble.worldlabs.ai/
     evidence: World Labs 商业产品页面，无对应论文与录用记录。
     verification_confidence: medium
+    verification_outcome: no_publication_evidence
   mass:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2608.06257
-    evidence: arXiv comments 仅写项目主页，S2 仅记录为 arXiv.org，无录用证据。
-    verification_confidence: low
+    evidence: 'arXiv最新v2（2026-08-10）题名‘MASS: Multiplayer World Models with Authoritative Shared State’，作者Ziqi Cai等，与项目页及编号2608.06257匹配。Comments仅项目页，未列journal_ref。项目出现‘Publication’栏目但没有明确会议期刊名，不能据此判正式发表。本次未找到正式录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2608.06257
+    - https://alaya-lab.github.io/MASS/
+    verification_outcome: no_publication_evidence
   matrix-game-3:
-    status: preprint
+    status: technical_report
     year: 2026
-    source: https://arxiv.org/abs/2604.08995
-    evidence: arXiv comments 仅写项目主页，S2 的 arXiv.org 与 OpenAlex 的 repository 均非正式出版渠道。
-    verification_confidence: low
+    source: https://matrix-game-v3.github.io/
+    evidence: 2026-11-13实际读取arXiv摘要及官方项目页。项目页将论文链接明确标作“Technical Report”；题名、Zile Wang等作者与arXiv:2604.08995对应。arXiv comments仅提供项目主页，未列正式期刊引用。可确认技术报告类型；本次未找到会议/期刊录用证据，不等于确认未发表或排除后续正式发表。
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2604.08995
+    - https://matrix-game-v3.github.io/
+    verification_outcome: no_publication_evidence
   mem3r:
     status: accepted
     name: WACV
@@ -788,11 +1428,19 @@ papers:
     source: https://arxiv.org/abs/2604.07279
     evidence: arXiv comments 明确写有 Accepted to the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2604.07279
   memactive:
     status: unknown
     source: ''
     evidence: 图谱内部标注为 MIPG 2026，无公开链接，公开索引与搜索引擎均未找到对应论文，该标注未经外部核实故不采信。
     verification_confidence: low
+    checked_at: '2026-11-13'
+    verification_outcome: blocked
+    blocker: 缺少可唯一识别论文的作者、完整题名和链接；无法确认身份及发表状态。
+    verification_note: 输入仅有简称MemActive及内部标签MIPG 2026，无作者、论文完整标题、arXiv编号或公开链接。今日检索未能建立唯一论文身份；出现的MemAct、ActiveMem等近名不能替换本条。保留previous的unknown，不采信未经公开证据支持的MIPG 2026标签。
   memlearner:
     status: accepted
     name: ECCV
@@ -801,193 +1449,396 @@ papers:
     source: https://arxiv.org/abs/2606.31734
     evidence: arXiv comments 写有 ECCV 2026 并附项目主页，Semantic Scholar 与 OpenAlex 的 LNCS 会议论文记录一致。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2606.31734
   memobench:
     status: accepted
     name: ECCV
     year: 2026
     track: main
     source: https://arxiv.org/abs/2606.27537
-    evidence: arXiv comments 为空，Semantic Scholar 标注 European Conference on Computer Vision 2026（s2_types 含 Conference），仅单一第三方来源。
+    evidence: arXiv comments 为空，Semantic Scholar 标注 European Conference on Computer Vision 2026（s2_types 含 Conference），仅单一第三方来源。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
     verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2606.27537
+    verification_outcome: confirmed_publication
   memory-forcing:
-    status: preprint
-    year: 2025
-    source: https://arxiv.org/abs/2510.03198
-    evidence: arXiv comments 仅写 19 pages, 8 figures，S2 仅记录为 arXiv.org，无录用证据。
-    verification_confidence: low
+    status: accepted
+    year: 2026
+    source: https://junchao-cs.github.io/
+    evidence: '今日实际读取第一作者主页及原始HTML，新闻明确写“[Sep. 2026] Memory Forcing accepted to NeurIPS 2026!”。主页论文新题名为“Memory forcing: Spatio-temporal Memory for Long-Horizon Interactive Video Generation”，该条PDF href精确指向https://arxiv.org/pdf/2510.03198，故不是另一篇编号2610.11756的同名论文。今日arXiv 2510.03198题名仍为“Memory Forcing: Spatio-Temporal Memory for Consistent Scene Generation on Minecraft”，作者Junchao Huang、Xinting Hu、Boyao Han、Shaoshuai Shi、Zhuotao Tian、Tianyu He、Li Jiang，comments为“19 pages, 8 figures”。主页列Bohan Han而arXiv为Boyao Han，记录此署名差异；作者主页同一论文的明确PDF编号足以关联新旧题名。录用依据为作者声明，未取得官方决定或精确赛道，故不推断main。'
+    verification_confidence: medium
+    name: NeurIPS
+    track: unknown
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2510.03198
+    - https://junchao-cs.github.io/
+    verification_outcome: confirmed_publication
+    blocker: 具体赛道及官方录用决定未独立取得；作者主页与arXiv存在新旧题名、Bohan/Boyao署名差异，已以主页直接PDF编号关联而非近名猜测。
+    track_detail: 作者明确NeurIPS2026录用，具体赛道尚未取得官方证据
   memory-forcing-train:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.11756
-    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
-    verification_confidence: low
+    evidence: '实际打开最新arXiv，题名‘Memory Forcing: Attendable Mid-Horizon History for Streaming Video Generation’，作者Jiaming Zhang、Xinyu Wang、Huafeng Shi、Gangshan Wu、Limin Wang，编号2610.11756。最新v3日期2026-10-19，有正常论文摘要；历史v2（2026-10-11）标withdrawn，不应误判整篇最新版本撤稿。最新页无Comments/journal_ref录用声明；结合精确题名检索未取得正式录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.11756
+    verification_outcome: no_publication_evidence
   memrope:
     status: accepted
     name: ECCV
     year: 2026
     track: main
     source: https://arxiv.org/abs/2603.12513
-    evidence: arXiv comments 仅写页数与项目主页，但 Semantic Scholar 明确标注 European Conference on Computer Vision 2026，OpenAlex 亦登记为 LNCS 会议论文（DOI 10.1007/978-3-032-37356-4_14）。
+    evidence: arXiv comments 仅写页数与项目主页，但 Semantic Scholar 明确标注 European Conference on Computer Vision 2026，OpenAlex 亦登记为 LNCS 会议论文（DOI 10.1007/978-3-032-37356-4_14）。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
     verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2603.12513
+    verification_outcome: confirmed_publication
   memvln:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.35066
-    evidence: arXiv comments 仅写项目主页，无录用声明，第三方索引无会议记录。
-    verification_confidence: low
+    evidence: '本次打开arXiv，题名MemVLN: Streaming Episodic Memory for Vision-Language Navigation，作者Yan Wang、Jiangyong Huang、Siyuan Huang、Baoxiong Jia，编号2610.35066，最新v2为2026-10-27。comments仅Project page，未显示journal_ref。实际打开官方memvln项目，作者与编号一致，引用@misc、archivePrefix={arXiv}、year={2026}，未显示会议期刊录用。完整题名加accepted检索未找到可核实正式渠道，故仅确认预印本，不确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.35066
+    - https://memvln.github.io/
+    verification_outcome: no_publication_evidence
   metrictrail:
-    status: preprint
+    status: technical_report
     year: 2026
-    source: https://arxiv.org/abs/2611.07555
-    evidence: arXiv comments 仅写项目主页与代码链接，无录用声明，第三方索引无会议记录。
-    verification_confidence: low
+    source: https://research.nvidia.com/labs/sil/projects/metrictrail/
+    evidence: 当天requests实际成功读取NVIDIA官方项目页及arXiv摘要，题名、作者及arXiv:2611.07555对应。官方BibTeX虽用“@inproceedings”，但booktitle明确为“NVIDIA Research Whitepapers”、year为2026，不能将条目语法误当会议录用；据白皮书渠道归为technical_report。arXiv comments仅项目与代码链接，未列正式journal_ref。未找到会议/期刊发表证据，不等于排除后续正式发表。
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.07555
+    - https://research.nvidia.com/labs/sil/projects/metrictrail/
+    verification_outcome: no_publication_evidence
+    blocker: 辅助WebFetch对项目页曾返回空内容，但requests已成功读取白皮书BibTeX；不影响一手报告类型证据。
   mind:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2602.08025
-    evidence: arXiv comments 为空，S2 仅记录为 arXiv.org，OpenAlex 仅登记为预印本。
-    verification_confidence: low
+    evidence: '本次实读arXiv:2602.08025，完整题名MIND: Benchmarking Memory Consistency and Action Control in World Models，作者Yixuan Ye、Xuanyu Lu等10人，最新v2为2026-02-11；页面未列Comments或Journal reference。作者项目主页与CSU-JPG/MIND仓库均核对同题、同作者及编号2602.08025，BibTeX仍为@misc及arXiv，未见录用声明。补充精确题名与SIGGRAPH搜索未取得匹配录用证据；不采未经复现的SIGGRAPH Asia线索。确认预印本存在，本次未找到正式录用证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2602.08025
+    - https://github.com/CSU-JPG/MIND
+    - https://csu-jpg.github.io/MIND.github.io/
+    verification_outcome: no_publication_evidence
   minwm:
-    status: preprint
+    status: technical_report
     year: 2026
-    source: https://arxiv.org/abs/2605.30263
-    evidence: arXiv comments 为空，S2 仅记录为 arXiv.org（非正式会议或期刊），无其他出版证据。
-    verification_confidence: low
+    source: https://github.com/shengshu-ai/minWM
+    evidence: '本次打开arXiv 2605.30263，完整题名minWM: A Full-Stack Open-Source Framework for Real-Time Interactive Video World Models，Min Zhao、Hongzhou Zhu等16作者，最新v2为2026-09-22；未显示comments或journal_ref。实际打开作者官方仓库，指向同编号论文的链接明确标Technical Report，News原文“2026-05-29 We release the technical report”，另写“A full-stack framework and tutorial for newcomers, rather than a specific model”。因此以作者自称technical_report分类；未核实会议期刊录用。题名录用检索没有取得正式录用证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2605.30263
+    - https://github.com/shengshu-ai/minWM
+    verification_outcome: no_publication_evidence
   mirage:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2606.09828
-    evidence: arXiv comments 仅写项目主页与代码链接，S2 仅记录为 arXiv.org，无录用证据。
-    verification_confidence: low
+    source: https://github.com/microsoft/LatentSpatialMemory
+    evidence: 本次读取arXiv 2606.09828，真实题名为‘Latent Spatial Memory for Video World Models’，作者Weijie Wang等；摘要明确方法名Mirage，题名与简称对应。最新v2为2026-08-27，comments仅提供项目/代码，journal_ref为空。实际读取作者仓库，引用原文‘arXiv preprint arXiv:2606.09828’，未见明确会议/期刊录用声明。aka.ms短链请求曾代理失败，但仓库经另一读取工具成功核实，并非整篇无法核验。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2606.09828
+    - https://aka.ms/latent-spatial-memory
+    - https://github.com/microsoft/LatentSpatialMemory
+    verification_outcome: no_publication_evidence
   mist:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.23542
-    evidence: arXiv comments 仅写页数、项目主页与代码链接，无录用声明，第三方索引无会议记录。
-    verification_confidence: low
+    source: https://hku-mmlab.github.io/MIST/
+    evidence: '实际读取arXiv 2610.23542，题名为‘Execution Before Memory: Diagnosing Memory Failures in Video World Models’，作者Weiyang Jin, Jiwen Yu, Sihan Xu, Yuwei Niu, Xihui Liu；comments为页数及项目代码链接，journal_ref为空。作者项目页新闻仅说明2026-10-16发布arXiv、2026-10-20发布代码评测；引用为arXiv preprint并绑定2610.23542，未见明确录用声明。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.23542
+    - https://hku-mmlab.github.io/MIST/
+    verification_outcome: no_publication_evidence
   mit3:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.26910
-    evidence: arXiv comments 为空，OpenAlex 仅登记为 arXiv 预印本，无会议或期刊记录。
-    verification_confidence: low
+    evidence: arXiv:2610.26910实际标题Memory Internalization via Test-Time Training for Long-Video Understanding，Haonan Zhao、Jiaxuan Chen、Qingyang Liu、Shuochen Chang、Siyu Sun、Jiangtong Li、Li Niu，摘要明确方法MIT^3，与输入简称吻合。v1为2026-10-17，无comments/journal_ref；论文HTML首页未见会议/期刊或投稿录用声明。全题名及accepted检索未获得本作正式录用来源；检索结果相邻条目的EMNLP Findings字样不能归给本作。仅确认预印本，未找到发表证据不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.26910
+    - https://arxiv.org/html/2610.26910v1
+    verification_outcome: no_publication_evidence
   mix-forcing:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.33589
-    evidence: arXiv comments 为空，Semantic Scholar 与 OpenAlex 均无会议或期刊记录，证据不足。
-    verification_confidence: low
+    source: https://zelingao98.github.io/mixforcing
+    evidence: 'arXiv最新v1题名‘Mix Forcing: Causal Pre-Training via Mixture Attention for Interactive World Models’，作者Zelin Gao等，编号2610.33589；未见Comments/journal_ref录用声明。项目页题名作者对应，引用‘@misc’、eprint‘2610.33589’。本次未找到正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.33589
+    - https://zelingao98.github.io/mixforcing
+    verification_outcome: no_publication_evidence
   moc:
-    status: preprint
-    source: https://arxiv.org/abs/2508.21058
-    evidence: MoC arXiv 首发 2025-08，而 ICLR 2025 已于 2025-04 举行，第三方索引的 ICLR 2025 归属在时间上不成立，按预印本处理。
-    verification_confidence: low
+    status: published
+    source: https://proceedings.iclr.cc/paper_files/paper/2026/hash/94bbcb744bbada8808fda05b9d9290d6-Abstract-Conference.html
+    evidence: 2026-11-13独立审阅及主代理实际读取ICLR官方论文集摘要页，完整题名Mixture of Contexts for Long Video Generation、Shengqu Cai至Gordon Wetzstein等13名作者与arXiv:2508.21058对应，页面明确International Conference on Learning Representations 2026 (ICLR 2026) Conference。据正式论文集确认published/main，不再仅依赖Poster或作者BibTeX；修正此前误套ICLR2025导致的否决。
+    verification_confidence: high
+    name: ICLR
+    year: 2026
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2508.21058
+    - https://iclr.cc/virtual/2026/poster/10006593
+    - https://proceedings.iclr.cc/paper_files/paper/2026/hash/94bbcb744bbada8808fda05b9d9290d6-Abstract-Conference.html
+    verification_outcome: confirmed_publication
   momentum:
     status: preprint
     source: https://arxiv.org/abs/2610.23423
-    evidence: arXiv comments 为空、无 journal_ref，Semantic Scholar 与 OpenAlex 均无会议或期刊记录。
-    verification_confidence: low
+    evidence: '实时arXiv为《Momentum: Persistent Dynamics for Video World Models》，Nedko Savov等，2026-10-16 v1；无comments和journal_ref。摘要仅说模型和源码将公开，未给会议或期刊接收声明；题名+accepted检索出现同篇arXiv最新记录，无匹配的官方接收记录。附加HTML抓取代理502，不能据此补作未发表判断；主要摘要查证成功，保留preprint。仅确认预印本及未找到发表证据，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.23423
+    - https://arxiv.org/html/2610.23423
+    verification_outcome: no_publication_evidence
   mosaichunk:
     status: preprint
-    source: https://arxiv.org/abs/2610.02153
-    evidence: arXiv comments 仅写 27 pages 与项目主页，S2 无 venue，OpenAlex 记录为 arXiv 预印本。
-    verification_confidence: low
+    source: https://mosaichunk.github.io/
+    evidence: 'arXiv最新v1题名‘MosaiChunk: Compositing Spatio-Temporal Memory for Autoregressive Video Generation’，作者Yiwen Zhang等，编号2610.02153；Comments为‘27 pages’及项目页，未列journal_ref。项目页BibTeX为‘@misc’，eprint为‘2610.02153’，身份吻合。本次未找到会议或期刊录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.02153
+    - https://mosaichunk.github.io/
+    verification_outcome: no_publication_evidence
   most-memory:
-    status: preprint
-    source: https://arxiv.org/abs/2611.00734
-    evidence: arXiv comments 为空，无 journal_ref，S2 与 OpenAlex 均无正式发表记录。
-    verification_confidence: low
+    status: submitted
+    source: https://most-vla.github.io/
+    evidence: 'arXiv:2611.00734完整题名MOST: Memory of Object States and Task Progress for Long-Horizon Mobile Manipulation，Diqi He、Jinbang Guo、Yijun Shen、Zhiwei Yu、Huan Yang、Dingwen Zhang、Junwei Han、Zhongyuan Wang，v1为2026-10-31，无comments/journal_ref。论文HTML链接的官方项目完整题名八作者与2611.00734一致，项目BibTeX明确note = {Under review}，但没有披露具体会议/期刊，故应标submitted而不是accepted，name留空。全题名及accepted检索无正式录用证据；在审与未找到接收证据均不等于确认未发表。'
+    verification_confidence: high
+    year: 2026
+    submission_target:
+      year: 2026
+      track: unknown
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.00734
+    - https://arxiv.org/html/2611.00734v1
+    - https://most-vla.github.io/
+    verification_outcome: no_publication_evidence
   motioncore:
     status: preprint
     source: https://arxiv.org/abs/2611.08904
-    evidence: arXiv comments 为空，无 journal_ref，无任何第三方会议或期刊索引记录。
-    verification_confidence: low
+    evidence: '实际打开最新arXiv v2（2026-11-09），完整题名‘MotionCore: A Latent Neural Simulator for Video Generation with Rigid-Body Dynamics’，作者Zheng Wang、Zhengwei Gong、Yuanzhi Liang、Haibin Huang、Chi Zhang，编号2611.08904。最新页无Comments/journal_ref录用信息；结合题名检索未取得正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.08904
+    verification_outcome: no_publication_evidence
   moviedit:
     status: preprint
     source: https://arxiv.org/abs/2611.02737
-    evidence: arXiv comments 仅写 26 pages, 15 figures，无任何录用或期刊信息。
-    verification_confidence: low
+    evidence: 'arXiv题名MoviEdit: Long-form Multi-Shot Video Editing Made Easy，作者Suhyeon Lee、Zhengang Li、Soo Ye Kim等，v1为2026-11-02；comments原文‘26 pages, 15 figures’，未见journal_ref。官方项目页作者、方法对应，未标会议、录用或投稿声明。精确题名检索未发现正式录用证据，仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.02737
+    - https://multi-shot-edit.github.io/
+    verification_outcome: no_publication_evidence
   nanokv:
     status: preprint
     source: https://arxiv.org/abs/2611.06377
-    evidence: arXiv comments 仅写页数、项目页与代码链接，无录用声明。
-    verification_confidence: low
+    evidence: 'arXiv题名NanoKV: High-Ratio KV Cache Compression for Autoregressive Video Generation，作者Jiacheng Lu、Haoyi Zhu、Sipei Yi、Enze Xie、Cheng Zhuo、Yu Li，v1为2026-11-04；comments为‘25 pages, 13 figures’及项目和代码链接，未见journal_ref。作者项目页@misc引文对应arXiv:2611.06377，未标会议或录用。精确题名检索未检出正式录用证据，仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.06377
+    - https://jiacheng-lu03.github.io/NanoKV/
+    verification_outcome: no_publication_evidence
   neoworld-3:
     status: preprint
     source: https://arxiv.org/abs/2610.27690
-    evidence: arXiv comments 为空，无 journal_ref，S2 与 OpenAlex 均无正式发表记录。
-    verification_confidence: low
+    evidence: '本次arXiv:2610.27690题名NeoWorld-3: From Pixels to Code-Defined Physical Worlds，作者Eachen Soong、Zijian Niu、Haoran Xu、Yihong Dong、Yunbo Wang、Xiaokang Yang，v1为2026-10-20，无Comments或Journal reference。实际读取论文HTML取得项目页neoworldproject.github.io/Studio并访问，页名NeoWorld-3，Read paper直接链接同一编号；项目页未列会议期刊录用声明。精确题名与accepted搜索未获得匹配权威录用记录。当前确认预印本存在，暂无录用证据不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.27690
+    - https://arxiv.org/html/2610.27690v1
+    - https://neoworldproject.github.io/Studio
+    verification_outcome: no_publication_evidence
   neuralsrender:
     status: preprint
-    source: https://arxiv.org/abs/2610.29200
-    evidence: arXiv comments 仅写 'Tech repo'（技术仓库），既非 Technical Report 也非录用声明，按预印本处理。
-    verification_confidence: low
+    source: https://github.com/WHU-USI3DV/NeuralSRender
+    evidence: 'arXiv:2610.29200题名NeuralSRender: G-Buffer Guided Video Diffusion for Sim-to-Real Rendering，作者Yipeng Lu、Youqi Liao、Zhenyu Wang、Yuning Peng、Zhen Dong，v1为2026-10-21；comments原文‘Tech repo’，未见journal_ref。官方代码仓库明确标‘arXiv preprint, 2026’。Tech repo指技术仓库，不等于Technical Report或录用声明。精确题名检索未检出正式录用证据，仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.29200
+    - https://github.com/WHU-USI3DV/NeuralSRender
+    verification_outcome: no_publication_evidence
   octworld:
     status: published
     name: ECCV
     year: 2026
     track: main
     source: https://arxiv.org/abs/2609.03919
-    evidence: arXiv journal_ref 明确为 'ECCV 2026, LNCS 17026 (2026) 287-305'，DOI 10.1007/978-3-032-37595-7_16，comments 亦写 Published at ECCV 2026。
+    evidence: arXiv journal_ref 明确为 'ECCV 2026, LNCS 17026 (2026) 287-305'，DOI 10.1007/978-3-032-37595-7_16，comments 亦写 Published at ECCV 2026。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
     verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2609.03919
+    verification_outcome: confirmed_publication
   omnimem:
-    status: preprint
-    source: https://arxiv.org/abs/2605.30519
-    evidence: arXiv comments 仅写页数与项目页，S2 venue 为 arXiv.org（非正式会议），OpenAlex 记为预印本。
-    verification_confidence: low
+    status: accepted
+    source: https://neurips.cc/virtual/2026/loc/atlanta/poster/150029
+    evidence: 'NeurIPS官方主会程序页面标题为‘NeurIPS Poster OmniMem: Scalable and Adaptive Memory Retrieval for Long Video Generation’，列作者‘Lin Zhao ⋅ Yushu Wu ⋅ Yifan Gong ⋅ Yanzhi Wang ⋅ Pu Zhao’，与arXiv:2605.30519对应。页面安排‘Poster Sat, Dec 12, 2026 • 8:30 AM – 11:30 AM AEDT Hall C1’；官方项目页标‘NeurIPS 2026’，作者高校主页列‘In The 40th Annual Conference on Neural Information Processing Systems, 2026’。据官方主会程序确认accepted/main，截至核验日会议尚未举行，不推断论文集已出版。'
+    verification_confidence: high
+    name: NeurIPS
+    year: 2026
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2605.30519
+    - https://wuyushuwys.github.io/OmniMem/
+    - https://cs.seu.edu.cn/zhaopu/main.htm
+    - https://neurips.cc/virtual/2026/loc/atlanta/poster/150029
+    verification_outcome: confirmed_publication
   onstm:
     status: preprint
     source: https://arxiv.org/abs/2607.15271
-    evidence: arXiv comments 明确标注 'Preprint'，S2 venue 为 arXiv.org。
-    verification_confidence: high
+    evidence: 实际读取arXiv 2607.15271，真实题名为‘Online Neural Space Time Memory for Dynamic Novel View Synthesis’，作者Baback Elmieh等，与NSTM项目对应。comments原文包含‘19 pages. Preprint. Project page with demos and video results’，journal_ref为空。实际读取作者项目页https://nst-mem.github.io/，未见明确会议/期刊录用声明。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2607.15271
+    - https://nst-mem.github.io/
+    verification_outcome: no_publication_evidence
   operator-mismatch-contrastive:
     status: preprint
     source: https://arxiv.org/abs/2610.25360
-    evidence: arXiv comments 仅写 19 pages/6 figures/11 tables，无录用声明，无第三方索引记录。
-    verification_confidence: low
+    evidence: 实际访问arXiv 2610.25360，标题Operator-Mismatch Contrastive Learning for World-Relative Trajectory Coherence，作者One Octadion、Firmansyah Sundana、Novanto Yudistira；comments=19 pages, 6 figures, 11 tables，未显示journal reference。精确题名检索未找到匹配作者身份的会议论文集、出版社或一手录用声明。确认此arXiv预印本存在，暂记preprint；未找到录用证据不等于确认未发表，亦未将空journal_ref作为未发表证明。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.25360
+    verification_outcome: no_publication_evidence
   orbia:
     status: technical_report
     source: https://arxiv.org/abs/2610.20693
-    evidence: arXiv comments 明确写 'Technical Report'（70 页技术报告）。
+    evidence: 当天arXiv comments明确“Technical Report; 70 pages, 43 figures, 12 tables”，无正式journal_ref。官方项目页题名、作者与论文对应，citation标识arXiv:2610.20693；没有会议/期刊录用声明。确认技术报告类型，而非正式发表；未查到录用证据不等于确认未发表。
     verification_confidence: high
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.20693
+    - https://orbia-bench.github.io/
+    verification_outcome: no_publication_evidence
   packforcing:
     status: accepted
     name: ECCV
     year: 2026
     track: main
     source: https://arxiv.org/abs/2603.25730
-    evidence: arXiv 元数据无录用声明；S2 标注 European Conference on Computer Vision 2026，OpenAlex 记为 ECCV 会议论文（LNCS DOI 10.1007/978-3-032-37464-6_31），已联网核对 arXiv 详情页仍无 journal_ref，故取中等置信。
+    evidence: arXiv 元数据无录用声明；S2 标注 European Conference on Computer Vision 2026，OpenAlex 记为 ECCV 会议论文（LNCS DOI 10.1007/978-3-032-37464-6_31），已联网核对 arXiv 详情页仍无 journal_ref，故取中等置信。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
     verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2603.25730
+    verification_outcome: confirmed_publication
   pawbench:
     status: preprint
     source: https://arxiv.org/abs/2608.27345
-    evidence: arXiv comments 为空，S2 venue 为 arXiv.org，OpenAlex 记为 arXiv 预印本。
-    verification_confidence: low
+    evidence: '本次打开arXiv 2608.27345，题名PAWBench: How Far Are We from Probabilistically Aligned World Modeling?，作者Yuandong Pu、Le Zhuo、Sayak Paul等14人，最新v3为2026-09-03，无comments或journal_ref显示。实际打开HTML正文找到并访问官方项目pawbench.github.io，标题作者及编号一致；BibTeX明确journal={arXiv preprint arXiv:2608.27345}、year={2026}。页面及题名录用检索未得到可核实会议期刊记录；仅确认预印本，不确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2608.27345
+    - https://arxiv.org/html/2608.27345v3
+    - https://pawbench.github.io
+    verification_outcome: no_publication_evidence
   physcodebench:
     status: preprint
     source: https://arxiv.org/abs/2604.23580
     evidence: 项目页给出 arXiv 2604.23580，comments 为空，页面未声明任何会议或期刊录用，按预印本处理。
     verification_confidence: low
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://sealical.github.io/physcodebench/
+    - https://arxiv.org/abs/2604.23580
+    - https://openreview.net/forum?id=T9NxKVoqiu
+    verification_outcome: blocked
+    blocker: OpenReview论坛触发浏览器验证，未能读取投稿/录用决定；现有可读来源只确认预印本。
+    verification_note: 今日实际打开PhysCodeBench项目页及其对应arXiv 2604.23580，确认题名和论文链接对应，最新v2为2026-09-11。项目页提到revised manuscript，BibTeX仍为arXiv预印本，未取得accepted决定。检索发现OpenReview论坛线索，但实际打开只得到“Verifying your browser”，无法读取决定；搜索摘要中的“Submitted to ICLR 2026”不等于accepted，亦不作为已核实投稿结论。保留previous的preprint；正式发表查证受阻，不声称确认未发表。
   physcodegym:
     status: preprint
     source: https://arxiv.org/abs/2610.17288
-    evidence: arXiv comments 为空，无 journal_ref，OpenAlex 仅有 arXiv 预印本记录。
-    verification_confidence: low
+    evidence: '2026-11-13实际读取arXiv:2610.17288及作者官方PhysCodeGym仓库，两者完整题名为PhysCodeGym: Benchmarking Coding Agents for Physically Verifiable 4D Reconstruction，第一作者Shuai Shao，编号、方法名及4D物理重建主题相互对应。图谱标题为改写表述，属书目措辞差异，不据此认定另一篇论文；本次不修改主表标题。arXiv无comments或journal_ref，官方仓库未见录用声明，截至本次核验未找到正式发表证据，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.17288
+    - https://github.com/ShaoShuai0605/PhysCodeGym
+    verification_outcome: no_publication_evidence
   playgen2:
     status: preprint
     source: https://arxiv.org/abs/2611.07867
-    evidence: arXiv comments 仅给代码链接，无录用声明，无第三方索引记录。
-    verification_confidence: low
+    evidence: '今日实际打开arXiv 2611.07867《PlayGen2: Learning Real-Time Playable Worlds with Explicit 3D State》，作者Jihai Zhang、Yuhan Zhou、Junyou Li、Deheng Ye、Qi Dou、Yu Cheng；v1为2026-11-05。Comments仅提供代码链接；实际GitHub README为项目部署与使用说明，未提供正式录用声明。截至2026-11-13未找到录用证据，不把开源代码等同正式论文发表，也不证明未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.07867
+    - https://github.com/MajorDavidZhang/PlayGen-2
+    verification_outcome: no_publication_evidence
   playworld:
     status: preprint
-    source: https://arxiv.org/abs/2608.13552
-    evidence: arXiv comments 仅写项目主页，S2 venue 为 arXiv.org，无正式会议或期刊记录。
-    verification_confidence: low
+    source: https://kxding.github.io/project/PlayWorld/
+    evidence: 'arXiv:2608.13552完整题名PlayWorld: Benchmarking World Models with Agent Players over Long-Horizon Objectives，Kaixin Ding、Xi Chen、Minghong Cai等十二作者，最新v2为2026-08-14；comments仅项目页，无journal_ref。官方项目页题名及十二作者一致，引用arXiv preprint arXiv:2608.13552，页脚Research preview · 2026，未给会议/期刊或录用投稿声明。题名录用检索未获得权威接收证据；仅确认预印本，不能据此证明未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2608.13552
+    - https://kxding.github.io/project/PlayWorld/
+    verification_outcome: no_publication_evidence
   pod-rope:
     status: preprint
     source: https://arxiv.org/abs/2610.33745
-    evidence: arXiv comments 仅写 21 pages, 5 figures，无录用或期刊信息。
-    verification_confidence: low
+    evidence: '实时arXiv为《POD-RoPE: Rotary Position Encoding over Physical Observation Distributions for Embodied AI》，Xiaodi Huang等；最新2026-10-28 v2，comments仅“21 pages, 5 figures”，无journal_ref或项目链接。题名+accepted/conference检索未获可匹配官方发表记录；附加HTML请求代理502，主要摘要查证成功。确认预印本存在，不把搜索片段中相邻其他文章的EMNLP/NeurIPS声明挪给POD-RoPE，未发现发表证据不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.33745
+    - https://arxiv.org/html/2610.33745
+    verification_outcome: no_publication_evidence
   ppmem:
     status: accepted
     name: NeurIPS
@@ -996,41 +1847,88 @@ papers:
     source: https://arxiv.org/abs/2610.23795
     evidence: arXiv comments 明确写 'Accepted by NeurIPS 2026'。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2610.23795
   prestp:
     status: preprint
     source: https://arxiv.org/abs/2611.07551
-    evidence: arXiv comments 仅写页数与图表/附录数量，无录用声明。
-    verification_confidence: low
+    evidence: 实时arXiv为《Training-Free Predictive Spatio-Temporal Token Pruning for Few-Step Autoregressive Video Diffusion》，Jia Li等，摘要明确方法简称PreSTP；最新2026-11-06 v2，comments仅“19 pages, 10 figures, 11 tables, including appendices”，无journal_ref。附加HTML实际返回404并说明No HTML，不是论文不存在；预印本摘要已成功取得。简称、第一作者及accepted/publication检索未获官方接收记录。确认预印本，不等于确认未发表。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.07551
+    - https://arxiv.org/html/2611.07551
+    verification_outcome: no_publication_evidence
   primesim:
     status: preprint
     source: https://arxiv.org/abs/2611.04870
-    evidence: arXiv comments 为空，无 journal_ref，S2 与 OpenAlex 均无正式发表记录。
-    verification_confidence: low
+    evidence: '本次打开arXiv，完整题名PrimeSim: A Generalist World Model Simulator from Large-Scale Cross-Embodiment Demonstrations，作者Travis Davies、Wentao Ma、Lihao Guo等13人，编号2611.04870，v1为2026-11-03，无comments或journal_ref显示。实际打开PrimeBot作者项目页，同题13作者一致，明确“PrimeBot Research · 2026 · arXiv:2611.04870”，引用@misc、archivePrefix={arXiv}。这是对应研究论文，不能因同名仿真产品把论文标product。官方项目未显示录用，检索也未找到正式渠道证据；不等于确认未发表。GitHub访问502，但已由arXiv和完整作者项目核实身份与预印本。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.04870
+    - https://primebottech.github.io/PrimeSim-website/
+    - https://github.com/PrimebotTech/PrimeSim
+    verification_outcome: no_publication_evidence
   prowbench:
     status: preprint
     source: https://arxiv.org/abs/2610.02205
-    evidence: arXiv comments 仅有项目页链接，OpenAlex 记为 arXiv 预印本。
-    verification_confidence: low
+    evidence: '实际打开最新arXiv v2（2026-10-05），题名‘PROWBench: Do Video Models Render What the Program Specifies?’、作者及编号2610.02205与项目页匹配。Comments仅项目页链接，未列journal_ref；实际检查官方项目页未见明确录用或论文集信息。本次未找到正式录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.02205
+    - https://alaya-lab.github.io/PROWBench
+    verification_outcome: no_publication_evidence
   pvbench:
     status: preprint
     source: https://arxiv.org/abs/2610.26711
-    evidence: arXiv comments 为空，无 journal_ref，无任何第三方会议或期刊记录。
-    verification_confidence: low
+    evidence: '本次arXiv:2610.26711完整题名PVBench: Quantifying Physical Plausibility in Video Generation with Object-Level Physical Measurements（比输入题名多Physical一词），作者Kaiwei Chen、Moran Li等8人，v1为2026-10-19，无Comments或Journal reference。进一步读取论文HTML得到官方项目页并实际访问，题名作者编号一致，Citation说明“PVBench is available on arXiv”，未列会议期刊录用声明。精确题名检索未获得匹配权威录用记录。确认预印本存在，暂无录用证据不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.26711
+    - https://arxiv.org/html/2610.26711v1
+    - https://kszg-11.github.io/PVBench-Website/
+    verification_outcome: no_publication_evidence
   pwm:
     status: preprint
     source: https://arxiv.org/abs/2609.10540
-    evidence: arXiv comments 仅写主页与 GitHub，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
-    verification_confidence: low
+    evidence: 本次arXiv:2609.10540题名Programmable World Model，作者Zheng-Hui Huang、Guixu Lin等11人，最新v2为2026-10-13。Comments仅Homepage与GitHub链接，未列Journal reference。实际读取Alaya Lab官方主页，题名、作者与arXiv对应，未列会议期刊名称或录用声明；精确题名加accepted搜索未找到匹配权威接收信息。当前确认预印本存在，暂无正式录用证据不等于确认未发表。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2609.10540
+    - https://alaya-lab.github.io/pwm
+    verification_outcome: no_publication_evidence
   qgvi:
     status: preprint
     source: https://arxiv.org/abs/2610.41373
-    evidence: arXiv comments 仅写含补充材料、图与参考文献数量，无录用声明。
-    verification_confidence: low
+    evidence: '今日实际打开arXiv 2610.41373《Queryable Gaussian View Index: Text Retrieval and Selective Camera Localization》，作者Tianyu Xiong、Rui Li、Jiaqi Yang；v1为2026-10-30。Comments原文“Includes supplementary material; 3 figures, 47 references”。截至2026-11-13未在已读页面与标题检索找到正式录用证据；确认预印本，不等于证明未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.41373
+    verification_outcome: no_publication_evidence
   r2m-bench:
     status: preprint
     source: https://arxiv.org/abs/2608.27328
-    evidence: arXiv comments 仅有代码链接，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
-    verification_confidence: low
+    evidence: '本次arXiv题名R2M-Bench: Evaluating Revisit Memory via Relative Consistency in Interactive Video World Models，作者Qiwen Gu、Bingjie Gao、Rui Chen等，v1为2026-08-27；Comments仅为Code: https://github.com/AMAP-ML/R2MBench，无Journal reference。实际读取该官方仓库，Citation同题同作者且明确journal={arXiv preprint arXiv:2608.27328}，未声明会议期刊录用。补充题名和NeurIPS检索未找到匹配权威录用记录。本次未找到正式发表证据，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2608.27328
+    - https://github.com/AMAP-ML/R2MBench
+    verification_outcome: no_publication_evidence
   rad:
     status: published
     name: ECCV
@@ -1039,89 +1937,194 @@ papers:
     source: https://arxiv.org/abs/2511.12940
     evidence: arXiv comments 明确写 'Published at ECCV 2026'，S2 亦标注 European Conference on Computer Vision。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2511.12940
   reactworld:
     status: preprint
     source: https://arxiv.org/abs/2611.06120
-    evidence: arXiv comments 仅写 10 pages, 7 figures 与项目主页，无录用声明。
-    verification_confidence: low
+    evidence: '当天arXiv摘要comments为“10 pages, 7 figures. Project page: …”，无正式journal_ref；题名、作者及arXiv:2611.06120已在摘要核对。comments链接的官方项目页仍标“Local draft”，明确未提供作者、单位、录用信息，相关链接留空，不能据此认定录用。保留预印本；未找到录用证据不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.06120
+    - https://metaengine-world.github.io/ReactWorld/
+    verification_outcome: no_publication_evidence
+    blocker: 项目页为Local draft，缺作者及出版信息，不能作为独立的作者身份或录用证明；摘要身份核验成功。
   reading-writing-world-video:
     status: preprint
     source: https://arxiv.org/abs/2610.31668
-    evidence: arXiv comments 仅写 104 页综述与项目主页，S2 归类为 Review，无期刊或会议记录。
-    verification_confidence: low
+    evidence: 实时arXiv题名及Shengqiong Wu等作者对应；最新2026-10-29 v2，comments为“104 pages, 18 figures, 19 tables. Project page”，无journal_ref。实际访问作者官方综述项目，标题和作者一致，页面无明确接收声明；完整题名publication检索只找到对应arXiv及索引，未获会议/期刊官方发表证据。确认综述预印本存在，不把review文章类型当期刊发表，不等于确认未发表。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.31668
+    - https://vid-gen.github.io/video-world-model-survey
+    verification_outcome: no_publication_evidence
   recallgs:
     status: preprint
     source: https://arxiv.org/abs/2610.31293
-    evidence: arXiv comments 为空，无 journal_ref，S2 与 OpenAlex 均无正式发表记录。
-    verification_confidence: low
+    evidence: '实际读取arXiv 2610.31293，题名为‘RecallGS: Geometry-Grounded Recall for Online Semantic Gaussian Splatting’，作者Thanh-Khoi Nguyen, Thien-Phuc Tran, Minh-Triet Tran；comments与journal_ref均为空。继续读取arXiv HTML正文，未找到独立作者项目外链或录用标识。标题加accepted及作者/会议检索未获得可核验的正式出版记录。截至2026-11-13，本次已查来源暂未找到会议/期刊录用证据，不等于证明未发表；不把未找到项目页表述为项目页不存在。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.31293
+    - https://arxiv.org/html/2610.31293
+    verification_outcome: no_publication_evidence
   recam:
     status: preprint
     source: https://arxiv.org/abs/2610.27986
-    evidence: arXiv comments 仅给代码链接，无录用声明，无第三方索引记录。
-    verification_confidence: low
+    evidence: '本次打开arXiv 2610.27986，完整题名Recast the Past: Stable Long Video Generation with Full Context Memory，Yukuo Ma、Cong Liu等7作者，当前v1为2026-10-20，comments原文仅“Code: https://github.com/scottykma/Recam”，未显示journal_ref。实际打开该官方实现，README题名一致，介绍ReCam机制、训练推理和coming soon权重，未显示会议期刊录用声明。完整题名检索亦未找到可核实正式渠道；此结论不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.27986
+    - https://github.com/scottykma/Recam
+    verification_outcome: no_publication_evidence
   recr:
     status: preprint
     source: https://arxiv.org/abs/2611.04164
-    evidence: arXiv comments 为空，无 journal_ref，无第三方会议或期刊记录。
-    verification_confidence: low
+    evidence: 实际访问arXiv 2611.04164，准确标题What Remains in Sight? Autoregressive Video Decoding as Representation-Guided Context Rewriting，作者Lixuan He、Jihyeon Je、Yang You、Leonidas Guibas；摘要明确提出ReCR，输入简称和编号可核身份。页面未见刊会录用comments或journal reference，精确题名检索未找到匹配一手录用声明。本次仅确认预印本存在，暂记preprint，不代表确认未发表。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.04164
+    verification_outcome: no_publication_evidence
   recsa:
     status: preprint
-    source: https://arxiv.org/abs/2611.07232
-    evidence: arXiv comments 仅写 24 pages, 6 figures, 17 tables，无录用声明。
-    verification_confidence: low
+    source: https://arxiv.org/html/2611.07232v1
+    evidence: 'arXiv:2611.07232实际题名Recursive Sparse Attention: Million-Token Length Extrapolation at Logarithmic Cost，Ruitian Wang、Xinyu Yang、Minshen Zhang、Hao Zhang，摘要明确RecSA，身份吻合。v1为2026-11-04，comments仅24 pages, 6 figures, 17 tables，无journal_ref。论文HTML首页明确Preprint.；另有The page layout violates the ICML style.样式警告，不能将使用ICML模板判为投稿或录用。全题名录用检索未找到本作正式接收证据，参考文献会议不计。未发现发表证据不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.07232
+    - https://arxiv.org/html/2611.07232v1
+    verification_outcome: no_publication_evidence
   redate:
     status: preprint
     source: https://arxiv.org/abs/2611.00758
-    evidence: arXiv comments 仅写 40 pages/16 figures/38 tables，无录用或期刊信息。
-    verification_confidence: low
+    evidence: '实际读取arXiv:2611.00758，题名Old Is Not False: Valid-Time Memory for Interactive Video World Models，作者Ziming Wang、Chuyue Gong、Hongliang Cao等，v1为2026-10-31；comments原文‘40 pages, 16 figures, 38 tables’，未见journal_ref或录用声明。精确题名配合accepted检索未发现正式录用证据；仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.00758
+    verification_outcome: no_publication_evidence
   reel:
     status: preprint
-    source: https://arxiv.org/abs/2610.16632
-    evidence: arXiv comments 仅给项目页 URL，OpenAlex 记为 arXiv 预印本。
-    verification_confidence: low
+    source: https://xuhang07.github.io/REEL/
+    evidence: 实际读取arXiv 2610.16632，题名匹配，作者Hang Xu, Guohui Zhang, Xiaoxiao Ma, Hu Yu, Jie Huang, Jiayin Xiao, Lin Song, Haoyang Huang, Nan Duan, Feng Zhao；comments仅给项目页，journal_ref为空。作者项目页实际可访问，页首和引用明确写‘Preprint’，未见会议/期刊录用声明。补充OpenReview定向检索未返回可用证据，不能将空结果作为未录用证明。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.16632
+    - https://xuhang07.github.io/REEL/
+    verification_outcome: no_publication_evidence
   referstream:
     status: preprint
     source: https://arxiv.org/abs/2610.37566
-    evidence: arXiv comments 仅写 18 pages 与项目主页，无录用声明。
-    verification_confidence: low
+    evidence: '今日实际打开arXiv 2610.37566《ReferStream: Interactive Subject Injection for Streaming Video Generation》，作者Shuolin Xu等8人，v1为2026-10-27。Comments原文含“18 pages. Project page:”。实际项目页未提供录用声明。截至2026-11-13在可读来源与标题检索未找到正式录用证据；仅确认预印本，不断言未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.37566
+    - https://xushuolin.github.io/ReferStream/
+    verification_outcome: no_publication_evidence
   retrieval-ego-memory:
-    status: preprint
-    source: https://arxiv.org/abs/2610.31284
-    evidence: arXiv comments 为空，无 journal_ref，无第三方会议或期刊记录。
-    verification_confidence: low
+    status: accepted
+    source: https://cbmi2026.sciencesconf.org/page/customizable_page_6
+    evidence: CBMI2026官方Papers页在‘Main Session - [CBMI] Content Based Multimedia indexing’下列‘(L) Retrieval-Augmented Online Textual Memory for Episodic Memory Video Question Answering - Raffaele Calì, Giuseppe Lando, Rosario Forte, Antonino Furnari’，为Session 5长论文。官方program列‘Regular session 5’，2026-10-23 11:30–11:45，同题及作者匹配；program中Rosario姓名重复一次不构成身份冲突。作者官网@inproceedings给booktitle International Conference on Content-Based Multimedia Indexing (CBMI)、year 2026，并链接arXiv:2610.31284。arXiv v1为2026-10-22，comments/journal_ref空。官方名单与program足以确认主会录用；尚未取得正式论文集出版页或DOI，保守标accepted而不把已排报告等同正式出版。
+    verification_confidence: high
+    name: CBMI
+    year: 2026
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.31284
+    - https://antoninofurnari.github.io/research/cali2026retrieval
+    - https://antoninofurnari.github.io/publications/cali2026retrieval/
+    - https://cbmi2026.sciencesconf.org
+    - https://cbmi2026.sciencesconf.org/program
+    - https://cbmi2026.sciencesconf.org/page/customizable_page_6
+    verification_outcome: confirmed_publication
+    track_detail: CBMI2026 Main Session / Regular Session 5 / Long Paper；会议等级未核实，不启用等级档位
   retrieval-traversal:
     status: accepted
     name: NeurIPS
     year: 2026
     track: workshop
     source: https://arxiv.org/abs/2610.40545
-    evidence: arXiv comments 明确写 'Accepted at the NeurIPS 2026 Workshop on Long-Context Foundation Models (LCFM)'，属 workshop。
+    evidence: arXiv comments 明确写 Accepted at the NeurIPS 2026 Workshop on Long-Context Foundation Models (LCFM)，属 workshop，主会不成立；2026-11-14 复核未发现主会版本，track 维持 workshop，不启用档位。
     verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2610.40545
+    verification_outcome: no_publication_evidence
   rolling-sink:
     status: preprint
-    source: https://arxiv.org/abs/2602.07775
-    evidence: arXiv comments 仅写项目主页，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
-    verification_confidence: low
+    source: https://rolling-sink.github.io/
+    evidence: 'arXiv:2602.07775完整题名Rolling Sink: Bridging Limited-Horizon Training and Open-Ended Testing in Autoregressive Video Diffusion，Haodong Li、Shaoteng Liu、Zhe Lin、Manmohan Chandraker；最新v7为2026-08-31，comments仅项目页，无journal_ref。官方项目同题同四作者，引用仅arXiv preprint arXiv:2602.07775，未注明会议、期刊、投稿或录用。题名录用检索未获得可核实的正式发表来源；未找到发表证据，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2602.07775
+    - https://rolling-sink.github.io/
+    verification_outcome: no_publication_evidence
   sana-wm:
     status: preprint
     source: https://arxiv.org/abs/2605.15178
-    evidence: arXiv comments 仅有项目页链接，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
-    verification_confidence: low
+    evidence: 实际打开最新arXiv摘要，核对SANA-WM题名、作者及2605.15178，Comments仅项目链接，未列journal_ref。作者主页将该工作列为‘arXiv, 2026’，与其他SANA系列的会议录用条目分开。项目页本次正文信息有限；本次核验未找到本篇正式录用证据，不等于确认未发表。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2605.15178
+    - https://nvlabs.github.io/Sana/WM/
+    - http://junsongc.top/
+    verification_outcome: no_publication_evidence
   scenebound:
     status: preprint
     source: https://arxiv.org/abs/2611.00756
-    evidence: arXiv comments 仅写 34 pages, 8 figures, 27 tables，无录用声明。
-    verification_confidence: low
+    evidence: 当天成功读取arXiv摘要，题名及Ziming Wang等7位作者与arXiv:2611.00756一致，comments仅“34 pages, 8 figures, 27 tables”，无正式journal_ref或录用声明。可确认预印本存在，未找到正式发表证据；不等于确认未发表。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.00756
+    - https://arxiv.org/html/2611.00756
+    verification_outcome: no_publication_evidence
+    blocker: 辅助正文HTML端点HTTP404并写No HTML for '2611.00756'；摘要页成功，故不将缺少HTML误报为论文不存在或覆盖已核实的预印本信息。
   se-mem:
     status: preprint
     source: https://arxiv.org/abs/2611.00658
-    evidence: arXiv comments 仅写 13 pages, 6 figures，无录用或期刊信息。
-    verification_confidence: low
+    evidence: '实际打开最新arXiv v1，题名‘SE-Mem: Semantic-Episodic Memory for Scene-Consistent Generative View Synthesis’，作者Changsong Lei等，编号2611.00658。Comments原文‘13 pages, 6 figures’，未列journal_ref。结合精确题名检索仅取得预印本相关资料；本次未找到正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.00658
+    verification_outcome: no_publication_evidence
   sekai:
     status: preprint
     source: https://arxiv.org/abs/2611.06685
-    evidence: arXiv comments 仅写页数、图数与代码仓库链接，无录用声明。
-    verification_confidence: low
+    evidence: '实时arXiv为《Sekai: Incremental Event Memory for Generalized Reasoning Video Segmentation》，Zhengtao Liu等，2026-11-04 v1；comments仅“20 pages, 6 figures”及代码链接，无journal_ref。作者GitHub经requests代理502后用WebFetch成功读取，README写“Full Isekai annotations will be released upon publication”，但未指明投稿或已接收会议，不能仅据upon publication推定submitted或accepted。完整题名+conference/accepted检索未获官方发表证据。确认预印本，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.06685
+    - https://github.com/zenastangbi/Sekai
+    verification_outcome: no_publication_evidence
   self-forcing:
     status: accepted
     name: NeurIPS
@@ -1130,122 +2133,234 @@ papers:
     source: https://arxiv.org/abs/2506.08009
     evidence: arXiv comments 写 'NeurIPS 2025 spotlight'，S2 标注 Neural Information Processing Systems 2025，OpenAlex 有 NeurIPS 会议论文记录（DOI 10.52202/085713-5576）。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2506.08009
   slot-jepa:
     status: preprint
-    source: https://arxiv.org/abs/2610.28074
-    evidence: arXiv comments 为空，无 journal_ref，无第三方会议或期刊记录。
-    verification_confidence: low
+    source: https://github.com/KID-7391/Slot-JEPA
+    evidence: 'arXiv最新v1题名‘Slot-JEPA: Object-Structured Prediction Interfaces for Latent World Models’，作者Peisong Wen等，编号2610.28074；未见Comments/journal_ref录用声明。官方仓库写‘official implementation’，并明确对应‘arXiv:2610.28074’，题名作者吻合；未见明确会议期刊信息。本次未找到正式录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.28074
+    - https://github.com/KID-7391/Slot-JEPA
+    verification_outcome: no_publication_evidence
   slotmemory:
     status: preprint
     source: https://arxiv.org/abs/2605.31033
-    evidence: arXiv comments 仅给代码仓库链接，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
-    verification_confidence: low
+    evidence: 实时arXiv题名和Weijia Dou等作者对应；最新2026-11-03 v2，comments为“Code is available at”官方仓库，无journal_ref。旧项目页tj12323.github.io/SlotMemory实际404；已改查最新arXiv指向的作者官方GitHub，成功读取README，引用为@misc、eprint={2605.31033}，未见接收声明。完整题名和NeurIPS/OpenReview检索未获官方接收证据；部分搜索摘要中的NeurIPS字样属于相邻其他论文，未据此误判。本次确认预印本，不等于确认未发表。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2605.31033
+    - https://tj12323.github.io/SlotMemory/
+    - https://github.com/tj12323/SlotMemory
+    verification_outcome: no_publication_evidence
   smart:
     status: preprint
     source: https://arxiv.org/abs/2610.19257
-    evidence: arXiv comments 仅写页数与项目主页，OpenAlex 记为 arXiv 预印本。
-    verification_confidence: low
+    evidence: 今日实际核对arXiv 2610.19257，题名《Long-horizon Video Generation with Slot Memory Addressed By Region Tokens》，作者Eren Cetin、Julius Erbach等9人，v1为2026-10-13。Comments原文含“23 pages, 13 figures, 6 tables. Project page:”。实际项目页将论文引用为arXiv预印本，未给出录用声明。截至2026-11-13未找到录用证据，不等于确认未发表。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.19257
+    - https://eren-cetin.github.io/SMART/
+    verification_outcome: no_publication_evidence
   smi:
     status: preprint
     source: https://arxiv.org/abs/2610.02521
-    evidence: arXiv comments 仅写 32 pages 与项目主页，OpenAlex 记为 arXiv 预印本。
-    verification_confidence: low
+    evidence: '实时arXiv为《Spatial Memory Intelligence: Endowing World Models with Understanding-Driven Long-Term Memory》，Ying Yang等；摘要明确简称SMI，故不是ID错配。最新2026-10-08 v2，comments为“32 pages. Project page”，无journal_ref。作者官方项目引用明确“journal={arXiv preprint arXiv:2610.02521}”，无接收声明；以完整题名和第一作者检索未获会议/出版社接收证据。确认预印本，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.02521
+    - https://spatial-memory-intelligence.github.io/
+    verification_outcome: no_publication_evidence
   sol-engine:
     status: preprint
     source: https://arxiv.org/abs/2606.23743
-    evidence: arXiv comments 为空，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
-    verification_confidence: low
+    evidence: 'arXiv题名Sol Video Inference Engine: Agent-Native Full-Stack Acceleration Framework for Efficient Video Generation，作者Yitong Li、Junsong Chen、Haopeng Li等，最新v2为2026-06-24；comments为空，未见journal_ref。NVLabs官方文档引用为@misc，arXiv编号2606.23743一致，未写会议或录用。精确题名检索未发现正式出版证据；空comments本身不代表未发表，本条仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2606.23743
+    - https://nvlabs.github.io/Sana/Sol-Engine/docs
+    verification_outcome: no_publication_evidence
   solarwm:
-    status: preprint
-    source: https://arxiv.org/abs/2609.02886
-    evidence: arXiv comments 仅有项目页 URL，S2 venue 为 arXiv.org，OpenAlex 记为预印本。
-    verification_confidence: low
+    status: technical_report
+    source: https://zixinzhang02.github.io/
+    evidence: 当天实际读取arXiv、SolarWM官方项目页及共同作者Zixin Zhang主页。作者主页将与arXiv:2609.02886题名及Junchao Huang等作者对应的SolarWM列为“Technical Report”；项目页未提供会议/期刊录用声明，arXiv未列正式journal_ref。报告类型有一手作者来源支持；未找到正式发表证据不等于确认未发表。
+    verification_confidence: high
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2609.02886
+    - https://junchao-cs.github.io/SolarWM-Web/
+    - https://zixinzhang02.github.io/
+    verification_outcome: no_publication_evidence
   sora2-veo31:
     status: product
     year: 2025
     source: https://openai.com/index/sora-2/
     evidence: OpenAI Sora 2 与 Google Veo 3.1 均为商业产品发布页，非同行评审论文。
     verification_confidence: medium
+    verification_outcome: no_publication_evidence
   spark-embodied-memory:
     status: preprint
     source: https://arxiv.org/abs/2611.00344
-    evidence: arXiv comments 为空，无 journal_ref，无第三方会议或期刊记录。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2611.00344，标题SPARK: Self-Correcting Embodied Memory via Physical Re-Observation，作者Dmytro Kurdydyk、Aadi Palnitkar、Sebastian Scherer、Seungchan Kim，与输入编号/简称吻合。页面未显示刊会录用comments或journal reference。完整题名检索未找到匹配的一手会议论文集、出版社或录用声明；本次确认预印本存在，暂记preprint，不代表确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.00344
+    verification_outcome: no_publication_evidence
   sparse-anchors:
     status: preprint
     source: https://arxiv.org/abs/2611.05084
-    evidence: arXiv comments 仅写 8 pages, 4 figures, 2 tables，无录用声明。
-    verification_confidence: low
+    evidence: 实际读取arXiv 2611.05084，题名为‘Sparse Anchors for Visual Multi-Session Registration in Changing Environments’，作者Yunus Talha Erzurumlu, Niklas Trekel, Saurabh Gupta, Nico Koltermann, Olga Vysotska, Jens Behley, Louis Wiesmann, Cyrill Stachniss。comments原文‘8 pages, 4 figures, 2 tables’，journal_ref为空。实际读取HTML正文，未找到独立作者项目外链或明确录用标识；题名加accepted及作者publication检索未提供可核验的正式出版记录，补充检索空响应不作否定证据。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.05084
+    - https://arxiv.org/html/2611.05084
+    verification_outcome: no_publication_evidence
   spatial-ttt:
     status: accepted
     name: ECCV
     year: 2026
     track: main
     source: https://arxiv.org/abs/2603.12255
-    evidence: arXiv 元数据无录用声明；S2 标注 European Conference on Computer Vision 2026，OpenAlex 记为 ECCV 会议论文（LNCS DOI 10.1007/978-3-032-36839-3_19），已联网核对 arXiv 详情页仍无 journal_ref，故取中等置信。
+    evidence: arXiv 元数据无录用声明；S2 标注 European Conference on Computer Vision 2026，OpenAlex 记为 ECCV 会议论文（LNCS DOI 10.1007/978-3-032-36839-3_19），已联网核对 arXiv 详情页仍无 journal_ref，故取中等置信。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
     verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2603.12255
+    verification_outcome: confirmed_publication
   spmem:
     status: accepted
     name: NeurIPS
     year: 2025
     track: main
     source: https://arxiv.org/abs/2506.05284
-    evidence: arXiv comments 仅写项目主页，但 S2 标注 Neural Information Processing Systems 2025，OpenAlex 记为 NeurIPS 会议论文（DOI 10.52202/085713-1651）。
+    evidence: arXiv comments 仅写项目主页，但 S2 标注 Neural Information Processing Systems 2025，OpenAlex 记为 NeurIPS 会议论文（DOI 10.52202/085713-1651）。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
     verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2506.05284
+    verification_outcome: confirmed_publication
   state-world-models:
-    status: preprint
-    source: https://arxiv.org/abs/2610.26811
-    evidence: arXiv comments 为空，无 journal_ref，S2 仅归类为 Review，无会议或期刊记录。
-    verification_confidence: low
+    status: submitted
+    source: https://ivg-yanranzhang.github.io/StateWorldModel/
+    evidence: '本次打开arXiv 2610.26811，完整题名State World Models: Execute the Rules, Generate the Pixels，Chan Yan Ki、Yanran Zhang、Wenzhao Zheng等8作者，v1为2026-10-19，未显示comments及journal_ref。实际打开正文找到并访问官方作者项目页，题名作者对应，页脚原文“State World Models · ICLR 2027 submission”；引用区写journal={arXiv preprint arXiv:2610.26811}及“Provisional citation · will be updated after review”。这是一手明确投稿线索，故submitted、目标届次2027；不是accepted或published，未找到录用决定。'
+    verification_confidence: high
+    year: 2027
+    submission_target:
+      name: ICLR
+      year: 2027
+      track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.26811
+    - https://arxiv.org/html/2610.26811v1
+    - https://ivg-yanranzhang.github.io/StateWorldModel/
+    verification_outcome: no_publication_evidence
   streameval:
     status: preprint
     source: https://arxiv.org/abs/2610.28402
-    evidence: arXiv comments 为空，无 journal_ref，无第三方会议或期刊记录。
-    verification_confidence: low
+    evidence: '本次arXiv:2610.28402题名StreamEval: Evaluating Interactive Streaming Video Generation Models，署名StreamEval Team，最新v3为2026-10-26，无Comments或Journal reference。实际读取streameval.ai及官方StreamEval/StreamEval仓库，题名、编号相同，Citation明确journal={arXiv preprint arXiv:2610.28402}，未声明会议期刊录用。页面five tracks系基准任务划分，不是会议track；SIGGRAPH Asia录用线索经检索未复现。确认预印本存在，暂无正式录用证据不等于确认未发表。'
+    verification_confidence: medium
+    year: 2026
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.28402
+    - https://streameval.ai
+    - https://github.com/StreamEval/StreamEval
+    verification_outcome: no_publication_evidence
   streaming-code-wm:
     status: project_page
     year: 2026
     source: https://github.com/TingtingLiao/streaming-code-world-model
-    evidence: 社区流式实现仓库，README 以 @misc 引用自身，无对应正式论文。
-    verification_confidence: medium
+    evidence: 实际读取仓库README，标题Streaming Code World Model，说明“This project implements a streaming version of Code World Model (CWM)”。自引为@misc{liao2026streamingcwm}，作者Liao, Tingting and Liu, Guangyi，year=2026，howpublished仅为本GitHub URL；未提供独立arXiv编号、会议期刊或录用声明。因此确认本条为社区流式实现项目页，不把上游Code World Model的论文状态移植到此仓库；本次无独立正式发表证据，不等于断言未发表。
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://github.com/TingtingLiao/streaming-code-world-model
+    verification_outcome: no_publication_evidence
   streamingllm:
-    status: accepted
+    status: published
     name: ICLR
     year: 2024
     track: main
-    source: https://arxiv.org/abs/2309.17453
-    evidence: 图谱未收录 arXiv 号；公开核实：arXiv 2309.17453 的 comments 为 'ICLR 2024'，ICLR 2024 官网 Poster 页与 OpenReview 记录一致。
+    source: https://openreview.net/forum?id=NG7sS51zVF
+    evidence: OpenReview 论坛页为该文 ICLR 2024 录用页，标题与五位作者一致；ICLR 2024 录用清单标 Poster。图谱未收 arXiv 号，对应 2309.17453。
     verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://openreview.net/forum?id=NG7sS51zVF
+    - https://arxiv.org/abs/2309.17453
+    verification_outcome: confirmed_publication
   streamrender-h3:
     status: project_page
     year: 2026
     source: https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/
-    evidence: NVIDIA Research 研究项目页，页面 BibTeX 标为 Project page，无独立论文；所属 Sol-Engine 工作见 arXiv 2606.23743，亦无录用声明。
-    verification_confidence: low
+    evidence: '实际读取作者项目页，正式引用题名为‘StreamRender-H3: Interactive Coding Worlds with Real-time Streaming Diffusion Render’，作者Yanzuo Lu, Tian Ye, Yitong Li, Shuchen Xue, Haozhe Liu, Song Han, Enze Xie。页面BibTeX使用@misc，year={2026}，note={Project page}，直接支持项目页分类。页面要求分别引用本项目与底层Sol-Engine论文2606.23743，不能把底层论文的状态移用于本项目。本次未实际读取底层Sol-Engine摘要，亦不对其发表状态作断言。截至2026-11-13，本次已查来源暂未找到本项目独立论文的会议/期刊录用证据，不等于证明未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/
+    verification_outcome: no_publication_evidence
   syncvid:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.31765
-    evidence: arXiv comments 仅为页数与项目主页（28 pages, 8 figures, 9 tables, Project page），无录用信息；S2 无 venue，无 OpenAlex 会议/期刊记录。
-    verification_confidence: low
+    evidence: 'arXiv题名SyncVid: World-Equivariant Diffusion for Synchronized Video Generation，作者Farhad G. Zanjani、Animesh Karnewar、Fatih Porikli、Amirhossein Habibian，v1为2026-10-22；comments为‘28 pages, 8 figures, 9 tables’及项目页，未见journal_ref。Qualcomm官方项目页BibTeX为‘arXiv preprint’，编号2610.31765一致；页面底部其他论文的会议归属不用于本篇。精确题名检索未检出正式录用证据，仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.31765
+    - https://qualcomm-ai-research.github.io/SyncVid-Webpage
+    verification_outcome: no_publication_evidence
   taomate-hd:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.03394
-    evidence: arXiv comments 为空，S2 venue 为空，无 OpenAlex 记录，仅能判定为预印本。
-    verification_confidence: low
+    evidence: '今日实际打开arXiv 2611.03394《TaoMate-HD: Progressive-Resolution Autoregressive Audio-Video Generation》，作者Qijun Gan、Chenwei Zhang、Xinyang Li、Meiguang Jin、Junfeng Ma、Shen Qiu；v1为2026-11-02，无comments录用声明。实际项目页News的2026-11-03条目仅为arXiv、代码和权重发布。截至2026-11-13未找到正式录用证据；模型权重发布不等同会议发表，亦不以无声明证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.03394
+    - https://taoliveaigc.github.io/TaoMate-HD/
+    verification_outcome: no_publication_evidence
   tethercache:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2606.13035
-    evidence: comments 仅写 17 pages, 8 figures；S2 venue 为 arXiv.org（非正式会议/期刊），OpenAlex 为 preprint/repository，故为预印本。
-    verification_confidence: low
+    evidence: '今日实际核对arXiv 2606.13035《TetherCache: Stabilizing Autoregressive Long-Form Video Generation with Gated Recall and Trusted Alignment》，作者Yu Meng、Xiangyang Luo、Letian Li等，v1为2026-06-11。Comments原文“17 pages, 8 figures”，未注明录用。截至2026-11-13，标题检索和已读arXiv页面未提供正式会议/期刊录用证据；仅确认预印本，不证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2606.13035
+    verification_outcome: no_publication_evidence
   toucheworld:
     status: technical_report
     year: 2026
     source: https://arxiv.org/abs/2611.06061
-    evidence: arXiv 官方标题自身标注为 'TouchéWorld tech report'，comments 与第三方索引均无录用信息，按技术报告处理。
-    verification_confidence: medium
+    evidence: '本次arXiv:2611.06061完整题名为TouchéWorld tech report : Towards Online Unified Camera--Hand Exploration in Generative Worlds，作者Jiaao Yu、Yanjian Zhang、Haoyang Jiang、Guillaume Wisniewski、Nadi Tomeh、Shijie Jia，v1实际为2026-11-04。官方题名明确tech report，页面无Comments或Journal reference；进一步读取论文HTML及题名作者检索未找到明确会议期刊录用声明。依据作者明确命名确认technical_report；暂无正式录用证据不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.06061
+    - https://arxiv.org/html/2611.06061v1
+    verification_outcome: no_publication_evidence
   trajectory-forcing:
     status: accepted
     name: NeurIPS
@@ -1254,253 +2369,794 @@ papers:
     source: https://arxiv.org/abs/2611.09096
     evidence: arXiv comments 明确写 'Accepted at NeurIPS 2026'，与图谱原始标注 NeurIPS 2026 一致。
     verification_confidence: high
+    verification_outcome: confirmed_publication
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.09096
   tt-mbrl:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.09625
-    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录，判定为预印本。
-    verification_confidence: low
+    evidence: 实时arXiv为《Encoding Memory in World Models with Test-Time Model-Based Reinforcement Learning》，Maxime Burchi、Fayaz Ali Dharejo、Radu Timofte，摘要明确TT-MBRL简称；2026-11-06 v1，comments与journal_ref均无。实际访问论文HTML及其作者官方GitHub，README只写“This is the official repository of TT-MBRL ... Code will be released very soon!”，无接收声明。完整题名conference检索未获匹配官方发表记录。确认预印本存在，不将其他网站误写的机构或arXiv公开日当接收证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.09625
+    - https://arxiv.org/html/2611.09625
+    - https://github.com/burchim/TT-MBRL
+    verification_outcome: no_publication_evidence
   twinpast:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.41983
-    evidence: comments 为空，S2 仅有类型标记 Review 而无 venue 名称，无正式发表证据。
-    verification_confidence: low
+    evidence: '实时arXiv为《TwinPast: Benchmarking Historical Evidence Use in Streaming Video Understanding with Evidence Contrastive Video Pairs》，Haotian Yang等，2026-10-30 v1；comments和journal_ref均无。进一步实际访问论文HTML发现作者项目，并读取该项目，BibTeX为@misc、year={2026}、eprint={2610.41983}；无会议/期刊接收声明。题名和第一作者publication检索未获官方发表记录。确认预印本，不把arXiv页面的公开日期当会议发表，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.41983
+    - https://arxiv.org/html/2610.41983
+    - https://yh1zzzzzzz.github.io/twinpast/
+    verification_outcome: no_publication_evidence
   ucm:
     status: accepted
     name: SIGGRAPH
     year: 2026
     track: main
     source: https://arxiv.org/abs/2602.22960
-    evidence: 'comments 仅项目主页；S2 venue 为 International Conference on Computer Graphics and Interactive Techniques，且 OpenAlex 存在 conference-paper 记录（source: ACM SIGGRAPH Conference，source_type:
-      conference，DOI 10.1145/3799902.3811088），按规则提升为高置信度录用。'
+    evidence: 'comments 仅项目主页；S2 venue 为 International Conference on Computer Graphics and Interactive Techniques，且 OpenAlex 存在 conference-paper 记录（source: ACM SIGGRAPH Conference，source_type: conference，DOI 10.1145/3799902.3811088），按规则提升为高置信度录用。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。'
     verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2602.22960
+    verification_outcome: confirmed_publication
   unistate:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.25414
-    evidence: comments 仅为项目主页，S2 venue 为空，无 OpenAlex 会议/期刊记录。
-    verification_confidence: low
+    source: https://curryjung.github.io/unistate/
+    evidence: '实际读取arXiv 2610.25414，题名为‘UniState: Unifying Memory and Intervention for Controllable World Simulation’，作者Jaeseok Jeong, Kyungmook Choi, Sohyun Chung, Youngsik Yun, Youngjung Uh；comments仅给项目页，journal_ref为空。项目页实际可访问，只有arXiv链接及‘code coming soon’，未见明确录用声明。补充OpenReview检索未返回可用记录，空结果不证明没有录用。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.25414
+    - https://curryjung.github.io/unistate/
+    verification_outcome: no_publication_evidence
   uniworld:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.32381
-    evidence: comments 仅为项目主页，S2 venue 为空，无正式发表证据。
-    verification_confidence: low
+    source: https://zephipage.github.io/UniWorld/
+    evidence: '实际读取arXiv 2610.32381，最新v3为2026-10-28，题名为‘UniWorld: A Unified World Model for Real-Time Visual World Simulation’，作者Xin Zhang, Yabo Chen, Shuaiwei Wang, Zixuan Duan, Haibin Huang, Feng Xu, Xuelong Li。comments仅给项目页，journal_ref为空。实际读取作者项目页，题名/编号对应，未见明确会议或期刊录用声明。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.32381
+    - https://zephipage.github.io/UniWorld/
+    verification_outcome: no_publication_evidence
   var-q:
     status: accepted
-    name: ICCV
-    year: 2025
-    track: workshop
-    source: https://arxiv.org/abs/2611.05380
-    evidence: comments 写 'A preliminary version of this work was presented at the ICCV 2025 BiVision Workshop'，仅早期版本在 ICCV 2025 BiVision Workshop 发表，本 arXiv 全稿无其它录用记录，故记为 workshop track。
-    verification_confidence: medium
+    name: NeurIPS
+    year: 2026
+    track: main
+    source: https://neurips.cc/virtual/2026/session/137653
+    evidence: NeurIPS 2026 官方 Atlanta Poster Session 3 页面列出标题与八位作者；作者主页出版清单亦标 NeurIPS 2026。此前记录只查到 ICCV 2025 BiVision Workshop 的早期版本，现确认主会 Poster 成立，workshop 那条不再作为发表依据。
+    verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://neurips.cc/virtual/2026/session/137653
+    - https://arxiv.org/abs/2611.05380
+    verification_outcome: confirmed_publication
   velox:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.22311
-    evidence: comments 为空，S2 无 venue，OpenAlex 记录为 preprint/repository（10.48550/arxiv.2610.22311）。
-    verification_confidence: low
+    source: https://velox-world.com/velox/
+    evidence: '实际访问arXiv 2610.22311，标题Velox: Spatial Memory Makes World Models Efficient，作者Qiuhong Shen、Shizun Wang、Xinchao Wang。作者项目页身份一致，Release节明确写The preprint is public，并要求引用arXiv版；BibTeX journal=arXiv preprint arXiv:2610.22311，year=2026。精确题名检索及项目页本次未发现会议/期刊录用声明，暂记预印本，不代表确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.22311
+    - https://velox-world.com/velox/
+    verification_outcome: no_publication_evidence
   vibevideobench:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.35864
-    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
-    verification_confidence: low
+    source: https://vibevideobench.github.io/
+    evidence: 'arXiv:2610.35864完整题名VibeVideoBench: Evaluating Multimodal Agents on Code-Driven Video Generation，Muxi Diao、Wenbin Xu、Lele Yang等二十四作者，最新v2为2026-10-27，无comments/journal_ref。论文HTML首页提供官方项目；实际访问项目，标题、二十四作者及arXiv:2610.35864一致，BibTeX为@misc/2026/arXiv，无会议期刊或录用投稿标记。题名录用检索未找到正式接收来源；只确认预印本，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.35864
+    - https://arxiv.org/html/2610.35864v2
+    - https://vibevideobench.github.io/
+    verification_outcome: no_publication_evidence
   video-coder:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.09894
-    evidence: comments 仅项目主页与 GitHub 代码链接，无录用信息。
-    verification_confidence: low
+    evidence: '本次打开arXiv，完整题名Video-Coder: Reinforcing Agentic Coding for Video Generation，作者Chaoyang Wang、Sicheng Gao、Junan Hu等10人，编号2611.09894，v1为2026-11-06；comments仅项目与代码链接，未显示journal_ref。实际打开作者项目及GitHub，题名编号一致，仓库News原文“[2026/11/08] We release the code, model, data of Video-Coder”，不是会议录用。题名加accepted检索未取得可核实正式渠道，因此仅确认预印本，不确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.09894
+    - https://cywang735.github.io/Video-Coder/
+    - https://github.com/CYWang735/Video-Coder
+    verification_outcome: no_publication_evidence
   video2asset:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.09661
-    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2611.09661，标题Video2Asset: Online Construction of Persistent 3D Street-Scene Assets，作者Zihan Zheng、Chunlei Cai、Zhenlong Wu、Linjun Li、Yichen Gong、Xiaoyun Zhang、Qiang Hu。摘要页未显示刊会录用comments或journal reference，精确题名检索未找到匹配的一手会议论文集、出版社或录用声明。本次确认预印本存在，暂记preprint，不代表确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.09661
+    verification_outcome: no_publication_evidence
   videococo:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2607.27380
-    evidence: comments 仅页数（15 pages, 3 figures, 3 tables）；S2 venue 为 arXiv.org，OpenAlex 为 preprint/repository。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2607.27380最新v2（2026-08-08），完整标题为VideoCoCo: Code-as-CoT for Physically-Consistent Video Generation via an Agentic Dual-Engine System，首作者Haodong Li；输入为该标题的缩写。comments仅15 pages, 3 figures, and 3 tables，未显示journal reference。作者官方仓库News为2026-07-29代码/权重发布，未写会议录用。搜索出现的ECCV2026涉及前作CoCo（2603.08652），不能转移给VideoCoCo。本次未找到此篇录用一手证据，暂记预印本，不代表确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2607.27380
+    - https://github.com/micky-li-hd/VideoCoCo
+    verification_outcome: no_publication_evidence
   videophy:
-    status: preprint
-    source: https://arxiv.org/abs/2406.03520
-    evidence: arXiv 有正式论文（2406.03520），comments 仅注页数，无任何会议或期刊录用声明，按预印本处理。
+    status: published
+    source: https://proceedings.iclr.cc/paper_files/paper/2025/hash/fce2d8a485746f76aac7b5650db2679d-Abstract-Conference.html
+    evidence: '2026-11-13核实arXiv:2406.03520与ICLR官方2025 Poster页面题名及作者对应。独立审阅智能体进一步实际打开ICLR官方论文集，完整题名VideoPhy: Evaluating Physical Commonsense for Video Generation及10名作者一致，页面明示International Conference on Learning Representations 2025 (ICLR 2025) Conference，证实正式主会出版，据此记published/main，而非仅由poster或会期推断出版。arXiv comments未更新会议字段不能据此漏掉正式发表；补查OpenReview浏览器验证不影响官方论文集证据。'
     verification_confidence: high
+    name: ICLR
+    year: 2025
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2406.03520
+    - https://openreview.net/forum?id=9D2QvO1uWj
+    - https://iclr.cc/virtual/2025/poster/30714
+    - https://proceedings.iclr.cc/paper_files/paper/2025/hash/fce2d8a485746f76aac7b5650db2679d-Abstract-Conference.html
+    verification_outcome: confirmed_publication
   vmem-bench:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.35001
-    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
-    verification_confidence: low
+    evidence: 实际读取arXiv:2610.35001，题名More Memory, Better Videos? A Controlled Study of Visual Memory in Long-Video Generation，作者Yuzhuo Chen、Huafeng Shi、Xinyu Wang等，v1为2026-10-26，与VMem-Bench研究身份对应。comments为空，未见journal_ref。精确题名配合accepted检索仅找到预印本与第三方报道，未检出正式录用证据。空comments不代表未发表，本条仅确认预印本存在，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.35001
+    verification_outcome: no_publication_evidence
   vpm:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.28594
-    evidence: comments 仅 '43 pages; 14 figures'，无录用信息，S2 venue 为空。
-    verification_confidence: low
+    evidence: 实际访问arXiv 2610.28594，标题Learning the 4D World through Point Trajectory Forecasting，作者Byungwoo Jeon、Sunghwan Hong等十三人，comments=43 pages; 14 figures。论文HTML给出的作者项目页实际访问成功，题名加Video-Point Model (VPM)前缀、作者与编号一致，未见会议期刊录用/投稿声明。结合精确题名检索，本次未找到录用一手证据，暂记预印本，不代表确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.28594
+    - https://arxiv.org/html/2610.28594v1
+    - https://rootyjeon.github.io/video-point-model/
+    verification_outcome: no_publication_evidence
   wam-sim:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.07939
-    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2611.07939，完整标题WAM-Sim0.1: World Anchored Memory Meets Online RL for Consistent and Realistic Driving Simulation，作者Jiahao Cui、Jiaye Li等十人。作者项目页题名/论文PDF编号吻合，但未列会议期刊名称、录用/发表声明或正式书目信息。结合完整题名检索，本次未找到录用一手证据，暂记预印本，不代表确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.07939
+    - https://fudan-generative-vision.github.io/WAM-Sim
+    verification_outcome: no_publication_evidence
   wan-streamer:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2607.15038
-    evidence: comments 仅官网地址（wan-streamer.com/v0.3），S2 venue 为 arXiv.org，无正式发表证据。
-    verification_confidence: low
+    evidence: 今日实际打开arXiv 2607.15038《Video = World + Event Stream》，作者Lianghua Huang等，最新v2为2026-07-17；Comments仅给官网地址。实际Wan Streamer v0.3官网为模型与能力发布介绍，未提供会议/期刊录用声明。截至2026-11-13在已访问来源未找到录用证据；仍确认对应预印本，不把模型发布等同论文正式发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2607.15038
+    - https://wan-streamer.com/v0.3/
+    verification_outcome: no_publication_evidence
   wanar-fixar:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.37983
-    evidence: comments 仅为项目主页，S2 venue 为空。
-    verification_confidence: low
+    evidence: 实时arXiv为《Hierarchical Diffusion for Camera-controlled Autoregressive Video Generation》，Kaihua Chen、Yiming Gong、Deva Ramanan、Tarasha Khurana，2026-10-27 v1；摘要明确WanAR+FixAR为方法名，故输入简称不是ID错配。comments仅项目链接，无journal_ref。实际访问作者项目，引用明确“journal = {arXiv preprint arXiv:2610.37983}”，无接收声明；完整题名conference检索未获官方发表记录。确认预印本，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.37983
+    - https://kaihua-chen.github.io/wanar_fixar/
+    verification_outcome: no_publication_evidence
   wave-forcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.00859
-    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
-    verification_confidence: low
+    evidence: '今日实际打开arXiv 2611.00859《Wave Forcing: Towards Speed-of-Light Streaming Video Generation》，作者Yijie Jin等10人；页面提交日期为2026-10-31，未提供comments录用声明。实际项目页展示方法和arXiv链接，未找到正式会议声明。截至2026-11-13未找到本篇录用证据；预印本判断不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.00859
+    - https://sjtu-deng-lab.github.io/WaveForcing/
+    verification_outcome: no_publication_evidence
   waypoint-15:
-    status: preprint
+    status: technical_report
     year: 2026
-    source: https://arxiv.org/abs/2609.37107
-    evidence: comments 为空，S2 venue 为 arXiv.org（仅索引源），无会议/期刊记录；属产品方技术报告性质的预印本。
-    verification_confidence: low
+    source: https://over.world/waypoint-1.5
+    evidence: 当天实际读取arXiv摘要及官方页面。论文摘要正文自称“In this technical report, we describe…”；官方页面标题区写“July 2026 Technical Report”，题名和作者对应Waypoint-1.5及arXiv:2609.37107。arXiv无正式journal_ref，未找到会议/期刊录用声明。可确认报告类型，但不等于排除后续正式发表。
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2609.37107
+    - https://over.world/waypoint-1.5
+    verification_outcome: no_publication_evidence
   wbench:
     status: technical_report
     year: 2026
     source: https://arxiv.org/abs/2605.25874
-    evidence: 'comments 明确写 ''Technical report of WBench. Homepage: ...''，按技术报告判定，不主张任何会议/期刊。'
+    evidence: '今日实际打开arXiv 2605.25874，题名《WBench: A Comprehensive Multi-turn Benchmark for Interactive Video World Model Evaluation》，作者Kaining Ying等9人；Comments原文“Technical report of WBench. Homepage: ...”。实际项目页BibTeX为arXiv预印本，无会议录用声明，因此technical_report有直接措辞依据。截至2026-11-13未找到本篇正式录用证据；检索出现团队其他ACL论文不能移植至WBench，也不以未找到证明未发表。'
     verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2605.25874
+    - https://meituan-longcat.github.io/WBench/
+    verification_outcome: no_publication_evidence
   weave-forcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.03510
-    evidence: comments 为空，S2 venue 为空，OpenAlex 记录为 preprint/repository（10.48550/arxiv.2610.03510）。
-    verification_confidence: low
+    evidence: 'arXiv:2610.03510完整题名Weave Forcing: Compositional Memory Routing for Interactive Long Video Generation，Ziyi Wang、Junchi Yao、Heqian Qiu等八作者，v1为2026-10-02，无comments/journal_ref。进一步访问论文HTML首页，未见本作会议/期刊、submitted、under review、accepted、technical report声明或官方项目链接；题名录用检索仅发现预印本索引。可确认预印本已公开，但未找到正式发表证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.03510
+    - https://arxiv.org/html/2610.03510v1
+    verification_outcome: no_publication_evidence
   wildawm:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.26828
-    evidence: comments 仅 '35 pages'，S2 venue 为空，无录用证据。
-    verification_confidence: low
+    source: https://msr-orchard.github.io/WildAWM/
+    evidence: 实际读取arXiv 2610.26828，题名匹配，作者Zhaoyang Wang等；comments原文‘35 pages’，journal_ref为空。代码仓库requests请求遇代理错误，随后实际成功读取作者项目页，引用绑定arXiv 2610.26828，未见明确会议/期刊录用声明。WildAWM与前作AWM不同，不能将前作的ICML 2026归属移用于本作。截至2026-11-13，本次已查来源暂未找到本作正式录用或发表证据，不等于证明未发表；辅助仓库失败不覆盖成功项目页证据。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.26828
+    - https://github.com/MSR-Orchard/WildAWM
+    - https://msr-orchard.github.io/WildAWM/
+    verification_outcome: no_publication_evidence
   wizard:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.40339
-    evidence: comments 仅为项目主页，S2 venue 为空。
-    verification_confidence: low
+    source: https://wyzardwu.github.io/wizard/
+    evidence: '实际读取arXiv 2610.40339，题名为‘Wizard: Manipulate Any World in Real Time via Agentic Control’，作者Yuzhe Wu, Zijun Lin, Yeying Jin；comments仅给项目页，journal_ref为空。实际读取作者项目页，其引用明确为arXiv preprint并绑定2610.40339，代码尚待发布，未见明确会议/期刊录用声明。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.40339
+    - https://wyzardwu.github.io/wizard/
+    verification_outcome: no_publication_evidence
   wmeval:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.33894
-    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2610.33894最新v2，标题WMEval: Evaluating Interactive World Models Grounded on Physical Simulations，作者Lanxiang Hu、Yixin Huang等十六人。实际官方仓库论文链接编号吻合，完整BibTeX同题同作者，journal=arXiv preprint arXiv:2610.33894，year=2026，未见刊会录用声明。结合名称检索，本次未找到录用一手证据，暂记预印本，不代表确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.33894
+    - https://github.com/hao-ai-lab/WMEval
+    verification_outcome: no_publication_evidence
   world-in-context:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.33169
-    evidence: comments 仅为项目主页（WiC-site），S2 venue 为空。
-    verification_confidence: low
+    source: https://haroldchen19.github.io/WiC-site/
+    evidence: 当天读取arXiv摘要和官方WiC项目页；项目页7位作者与摘要对应，引用明确“journal={arXiv preprint arXiv:2610.33169}”。arXiv comments仅提供项目页，无正式journal_ref；官方页未见本论文录用声明。保留预印本；未找到发表证据不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.33169
+    - https://haroldchen19.github.io/WiC-site/
+    verification_outcome: no_publication_evidence
   world-t3:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.17434
-    evidence: comments 仅为项目主页，S2 venue 为空，OpenAlex 为 preprint/repository。
-    verification_confidence: low
+    evidence: '最新arXiv页面题名World-T3: Test-Time Training as Persistent Memory for Real-Time Video World Models，作者Junyi Wu、Zekun Li、Chenhongyi Yang等，v1为2026-10-12；comments仅项目页，未见journal_ref。项目页BibTeX标‘arXiv preprint’，编号2610.17434一致。已核标题、作者与编号；精确题名检索及所读项目页未检出正式录用证据，仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.17434
+    - https://adreamwu.github.io/World-T3
+    verification_outcome: no_publication_evidence
   worldcast:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2610.33135
-    evidence: comments 仅页数与图表数（30 pages, 14 figures, 3 tables），无录用信息。
-    verification_confidence: low
+    source: https://pixctrol.github.io/WorldCast/
+    evidence: '实际读取arXiv 2610.33135，题名为‘WorldCast: World-Consistent Character Video Generation with Large-Angle Camera Control’，作者Lei Cao等；comments原文‘30 pages, 14 figures, 3 tables’，journal_ref为空。作者项目页实际可访问，BibTeX绑定arXiv 2610.33135，未见会议/期刊录用声明。页尾‘Authors are anonymous during double-blind review’与公开作者信息不一致，可能为模板残留，不据此认定已投稿或录用。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.33135
+    - https://pixctrol.github.io/WorldCast/
+    verification_outcome: no_publication_evidence
   worldmark:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2604.21686
-    evidence: comments 为空，S2 venue 为 arXiv.org，无会议/期刊记录。
-    verification_confidence: low
+    evidence: '实际访问arXiv 2604.21686最新v2（2026-08-05），标题WorldMark: A Unified Benchmark Suite for Interactive Video World Models，Xiaojie Xu、Zhengyuan Lin等八位作者。实际作者项目页题名、作者顺序和编号一致，BibTeX journal=arXiv preprint arXiv:2604.21686，未披露刊会录用及出版信息。结合标题检索，本次未找到录用一手证据，暂记预印本，不代表确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2604.21686
+    - https://alayalab.github.io/WorldMark/
+    verification_outcome: no_publication_evidence
   worldmembench:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.19063
-    evidence: comments 仅 '27 pages, 10 figures'，S2 venue 为空，OpenAlex 为 preprint/repository。
-    verification_confidence: low
+    evidence: 当天arXiv comments为“27 pages, 10 figures”，没有正式journal_ref。官方项目页题名、Nan Zhou等作者及arXiv:2610.19063匹配，未见论文录用或正式出版声明。因此保留预印本；本次未查到证据不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.19063
+    - https://zju-real.github.io/WorldMemBench/
+    verification_outcome: no_publication_evidence
   worldmirror:
-    status: preprint
-    year: 2026
-    source: https://arxiv.org/abs/2610.31834
-    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
-    verification_confidence: low
-  worldmodelbench:
     status: accepted
+    year: 2026
+    source: https://neurips.cc/virtual/2026/165873
+    evidence: '本次arXiv:2610.31834为WorldMirror: Agentic Real-to-Sim Generation of Interactive Worlds from In-the-Wild Robot Demonstrations，作者Tianling Xu、Weijie Wan、Honghao Su等12人，v1为2026-10-22。论文HTML和作者官网均核对编号与题名。精确题名检索后实际读取NeurIPS 2026官方页面，原始HTML明确“Poster in Workshop: Physical World Model”，同一完整题名，署名Tianling Xu、Weijie Wan、Honghao Su、Kailun Su、Junyuan Tang、Tianxing Chen、Yue Chen，均为arXiv作者子集且首尾作者相同；官方workshop日程亦列同题。由此确认该工作的workshop poster录用，不记为NeurIPS主会；会议版本署名精简且摘要更新，保守置信medium，未声称所有版本文本完全一致。'
+    verification_confidence: medium
+    name: NeurIPS
+    track: workshop
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.31834
+    - https://arxiv.org/html/2610.31834v1
+    - https://worldmirror-page.github.io/
+    - https://neurips.cc/virtual/2026/165873
+    - https://neurips.cc/virtual/2026/workshop/137568
+    - https://openreview.net/forum?id=9RsULbRk1K
+    - https://api2.openreview.net/notes?forum=9RsULbRk1K
+    verification_outcome: confirmed_publication
+    blocker: 官方NeurIPS页面已证实workshop poster；补充OpenReview页面显示浏览器验证，公开API返回403 ChallengeRequiredError，未读取最终decision全文或PDF。
+    track_detail: Physical World Model Workshop, Poster
+  worldmodelbench:
+    status: published
     name: NeurIPS
     year: 2025
     track: main
-    source: https://arxiv.org/abs/2502.20694
-    evidence: 'comments 为空；S2 venue 为 Neural Information Processing Systems（2025），OpenAlex 为 conference-paper（source: neural information processing systems, source_type: conference,
-      DOI 10.52202/085713-1834），双源一致。'
+    source: https://proceedings.neurips.cc/paper_files/paper/2025/hash/4ec03ed08a3fcb59e1c815b5598beff1-Abstract-Datasets_and_Benchmarks_Track.html
+    evidence: NeurIPS 2025 论文集 Datasets and Benchmarks Track 页列出标题、13 位作者与 DOI 10.52202/085713-1834；ACM DL 记 Article No.5465、p.175345。主会 D&B 赛道已发表。
     verification_confidence: high
+    track_detail: Datasets and Benchmarks Track，不按 workshop 处理
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://proceedings.neurips.cc/paper_files/paper/2025/hash/4ec03ed08a3fcb59e1c815b5598beff1-Abstract-Datasets_and_Benchmarks_Track.html
+    - https://dlnext.acm.org/doi/10.52202/085713-1834
+    verification_outcome: confirmed_publication
   worldoracle:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.18826
-    evidence: comments 为空，S2 venue 为空，无 OpenAlex 记录。
-    verification_confidence: low
+    evidence: 'arXiv题名WorldOracle: Benchmarking Action-Conditioned World Models against Real-World Executions，作者Haoyi Duan、Liliang Chen、Nan Wang等，最新v4为2026-10-24；comments为空，未见journal_ref。官方项目页标‘Research Preview · 2026’，链接对应arXiv编号2610.18826，未写正式会议。精确题名检索及已读来源未检出录用证据，仅确认预印本存在，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.18826
+    - https://worldoracle-benchmark.github.io/
+    verification_outcome: no_publication_evidence
   worldpager:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.35529
-    evidence: comments 仅 '11 pages, 4 figures, 9 tables'，无录用信息。
-    verification_confidence: low
+    evidence: 'arXiv:2610.35529完整题名WorldPager: Zero-Stall Tiered Memory for Long-Horizon World Models on a Single Consumer GPU，两作者Bingnan Liu、Ruini Xue，v1为2026-10-26。comments仅11 pages, 4 figures, 9 tables，无journal_ref；论文HTML首页只标arXiv预印本，无会议/期刊、submitted、under review或accepted声明，也未发现官方项目URL。题名录用检索只得到预印本/列表，邻近论文的ICDE 2027等comments不能归给本作。未发现发表证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.35529
+    - https://arxiv.org/html/2610.35529v1
+    verification_outcome: no_publication_evidence
   worldprobe:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.39721
     evidence: comments 仅 '19 pages, 9 figures'，S2 venue 为空。
     verification_confidence: low
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.39721
+    - https://github.com/Untitled-W/WorldProbe
+    verification_outcome: blocked
+    blocker: 作者官方仓库本次返回404，无法核查该补充来源的最新录用声明；arXiv摘要页已成功读取且预印本身份已确认。
+    verification_note: '实际成功访问arXiv 2610.39721，标题WorldProbe: When Video World Models Fall Apart under Long-Horizon Spatial Exploration，作者Minqi Wang、Jie Peng等十一人，comments=19 pages, 9 figures，确认预印本身份。精确题名检索未找到一手录用信息，但arXiv指向的作者仓库https://github.com/Untitled-W/WorldProbe本次返回GitHub404，无法继续检查该一手补充来源的最新声明。保留旧preprint并将本次发表核实记受阻，不声称已排除正式发表。'
   worldroambench:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2606.31672
-    evidence: comments 为空，S2 venue 为 arXiv.org，无会议/期刊记录。
-    verification_confidence: low
+    evidence: 实时arXiv题名及Ting-Bing Xu等作者对应；最新2026-09-18 v5，comments和journal_ref均无。实际访问Amap官方WorldRoam-Bench项目，Paper链接回同一arXiv，无明确会议/期刊接收声明；完整题名及OpenReview定向检索未获同篇官方发表证据。附加HTML抓取曾代理502，但摘要页和作者项目均已成功查证；搜索片段的相邻ECCV接收论文未混用。确认预印本，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2606.31672
+    - https://arxiv.org/html/2606.31672
+    - https://worldroam.amap.com/
+    verification_outcome: no_publication_evidence
   worldsimbench:
-    status: preprint
-    source: https://arxiv.org/abs/2410.18072
-    evidence: arXiv 有正式论文（2410.18072），comments 为空，未见录用声明，按预印本处理。
+    status: published
+    source: https://proceedings.mlr.press/v267/qin25f.html
+    evidence: '实际访问arXiv 2410.18072，标题为WorldSimBench: Towards Video Generation Models as World Simulators，首作者Yiran Qin。PMLR正式论文页给出同标题及Yiran Qin、Zhelun Shi等作者，明确收录于Proceedings of the 42nd International Conference on Machine Learning，PMLR 267:50338–50362，2025，日期13–19 Jul。arXiv含Wanli Ouyang而正式版作者表少此一人，其余作者及摘要一致，属于版本作者名单调整而非异文错配。正式主会论文集足以确认已发表，不能因arXiv未更新comments而判为仅预印本。'
     verification_confidence: high
+    name: ICML
+    year: 2025
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2410.18072
+    - https://proceedings.mlr.press/v267/qin25f.html
+    verification_outcome: confirmed_publication
   worldstereo:
     status: accepted
     name: CVPR
     year: 2026
     track: main
     source: https://arxiv.org/abs/2603.02049
-    evidence: comments 为空；S2 venue 为 Computer Vision and Pattern Recognition（2026，types 含 Conference），但 OpenAlex 仅收录 preprint/repository 记录，两源部分不一致，故置信度取 medium 而非 high。
+    evidence: comments 为空；S2 venue 为 Computer Vision and Pattern Recognition（2026，types 含 Conference），但 OpenAlex 仅收录 preprint/repository 记录，两源部分不一致，故置信度取 medium 而非 high。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
     verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2603.02049
+    verification_outcome: confirmed_publication
   worldstream:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.28827
-    evidence: comments 仅 '19 pages, 18 figures'，S2 venue 为空。
-    verification_confidence: low
+    evidence: '今日实际打开arXiv 2610.28827，题名《WorldStream: Streaming Interactive 3D Worlds with Hierarchical Planning and Persistent State》，作者Xiaoxiao Ma等14人；v1为2026-10-20。Comments原文“19 pages, 18 figures”。截至2026-11-13，已访问arXiv及标题检索未给出正式录用证据；确认预印本存在，不将无录用字段解释为确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2610.28827
+    verification_outcome: no_publication_evidence
   xiaomi-auto-wm-2:
+    status: technical_report
+    year: 2026
+    source: https://xiaomiautoworldmodel.github.io/CausalWorldModel/
+    evidence: 'arXiv完整题名‘Xiaomi Auto World Model 2.0: Causal World Models for Real-World Driving and Embodied Intelligence’，编号2611.01677，作者Zhenxin Zhu、Zhijian Huang等；Comments为‘40 pages, 20 figures’及项目页，未列journal_ref。官方项目明确标‘Technical report ↗’及‘Read technical report ↗’，链接为https://arxiv.org/pdf/2611.01677，题名与编号吻合，引用署名Xiaomi Auto World Model Team。据一手声明记technical_report；未找到正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.01677
+    - https://xiaomiautoworldmodel.github.io/CausalWorldModel/
+    verification_outcome: no_publication_evidence
+  zo3t:
+    status: published
+    source: https://ojs.aaai.org/index.php/AAAI/article/view/38267
+    evidence: 'AAAI官方论文集题名Zo3T: Zero-Shot 3D-Aware Trajectory-Guided Image-to-Video Generation via Test-Time Training，作者Ruicheng Zhang、Jun Zhou、Zunnan Xu、Zihao Liu、Jiehui Huang、Mingyang Zhang、Yu Sun、Xiu Li与arXiv:2509.06723一致。官方原文‘Published 2026-03-14’，‘Vol. 40 No. 15: AAAI-26 Technical Tracks 15’，分区‘AAAI Technical Track on Computer Vision XII’，页12708–12716，DOI 10.1609/aaai.v40i15.38267。确认AAAI2026主会正式出版，纠正旧条目AAAI2025年份线索，不按首发日期机械否决。arXiv最新v3为2025-12-09，虽无comments/journal_ref但正式出版源优先。'
+    verification_confidence: high
+    name: AAAI
+    year: 2026
+    track: main
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2509.06723
+    - https://ojs.aaai.org/index.php/AAAI/article/view/38267
+    verification_outcome: confirmed_publication
+  compass1:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2611.12087
+    evidence: '实时arXiv为《Compass 1: Towards Open-World and Persistent Embodied Navigation from Monocular RGB Videos》，Hai Zhang等，2026-11-09 v1；comments明确“Technical Report. Project Page”，无journal_ref。实际访问Archon Robotics官方项目，发布日期为November 9, 2026，介绍多机构研究并链接Paper，但无会议/期刊接收声明。按题名、第一作者及accepted/publication检索未获官方接收记录。由实际arXiv明确确认技术报告；项目页面的Published日期是研究发布，不等于期刊/会议发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.12087
+    - https://www.archon.tech/research/compass1
+    verification_outcome: no_publication_evidence
+  looped-ced:
     status: preprint
     year: 2026
-    source: https://arxiv.org/abs/2611.01677
-    evidence: comments 为页数加项目主页（40 pages, 20 figures），未提 Technical Report 也未提录用，S2 venue 为空，按预印本处理。
-    verification_confidence: low
-  zo3t:
+    source: https://arxiv.org/abs/2611.13378
+    evidence: '实时arXiv为《Looping Deeper Without Growing the KV Cache: Recurrent Depth for Causal Encoder-Decoders》，Jiaqi Leng等，摘要明确方法名Looped CED；2026-11-09 v1，comments仅“23 pages (11 pages main text), 10 figures, 14 tables”，无journal_ref。进一步实际访问论文HTML；以完整题名conference检索未获匹配的官方接收或发表声明。确认预印本存在；Looped CED是方法简称，不把展开题名视为错配，也不把同主题其他循环模型论文混作其发表记录。未发现发表证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.13378
+    - https://arxiv.org/html/2611.13378
+    verification_outcome: no_publication_evidence
+  hsgnav:
     status: preprint
-    source: https://arxiv.org/abs/2509.06723
-    evidence: Zo3t arXiv 首发 2025-09，而 AAAI 2025 已于 2025-02 举行，第三方索引的 AAAI 2025 归属在时间上不成立，按预印本处理。
-    verification_confidence: low
+    year: 2026
+    source: https://arxiv.org/abs/2611.10547
+    evidence: '今日实际打开arXiv 2611.10547《HSGNav: Hypothesis Scene Graphs for Multi-Scale Lifelong Navigation under Object Relocation》，作者Kaiyao Liao等9人，v1为2026-11-07。Comments原文“11 pages, 4 figures, 4 tables”。虽然previous为空，本次已由可访问的arXiv页面确认预印本身份。截至2026-11-13未找到正式录用证据；不等于证明未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.10547
+    verification_outcome: no_publication_evidence
+  fgse:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.14326
+    evidence: 今日实际打开arXiv 2611.14326《When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents》，作者Runxuan Tang、Haoyu Gao、Yuyan Ding、Junyi Yao、Zihao Zheng、Zecheng Sheng、Liwei Hou；v1为2026-11-10，无comments录用声明。题名与Falsification-Gated Self-Evolution简称对应；不能将其他when to remember近名workshop论文移植至本篇。虽然previous为空，今日已确认预印本。截至2026-11-13未找到本篇正式录用证据，不等于证明未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.14326
+    verification_outcome: no_publication_evidence
+  spatial-harness:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.11344
+    evidence: arXiv comments 只有 NeurIPS 2026 字样，未写 Accepted；2026-11-14 复核在 NeurIPS 2026 官方条目中未找到与该标题作者匹配的项，检索到的同名结果指向另一篇讲述 Visual Harness 的工作，不作录用依据。截至核验日期未查到正式发表证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.11344
+    verification_outcome: no_publication_evidence
+  treeagent:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.13946
+    evidence: '实际访问arXiv 2611.13946，标题TreeAgent: Structure-Aware Memory Agent for Processing Long Hierarchical Data，作者Wei Gu、Weiwei Qi、Jiajun Tang、Tianhang Zheng、Bo Chen、Zhibo Zhang、Jinfei Liu、Kui Ren；comments为13 pages, 3 figures, 5 tables, including appendices及代码链接。实际作者仓库同题同作者，BibTeX为@misc、eprint=2611.13946，未写刊会录用声明。结合精确题名检索，本次未找到录用一手证据，暂记预印本，不代表确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.13946
+    - https://github.com/ZJU-LLM-Safety/TreeAgent
+    verification_outcome: no_publication_evidence
+  physopsd:
+    status: preprint
+    year: 2026
+    source: https://haroldchen19.github.io/PhysOPSD-site/
+    evidence: 'arXiv:2611.12411完整题名PhysOPSD: Code as Privilege for Physically Plausible Video Generation，Harold Haodong Chen、Rui Peng、Lingteng Qiu、Kejie Qiu、Chao Xu、Zilong Dong，v1为2026-11-09。comments仅项目URL，无journal_ref。实际访问官方项目，题名六作者和2611.12411一致，BibTeX写journal={arXiv preprint arXiv:2611.12411}、year={2026}；未注明会议、正式期刊、投稿或录用。题名录用检索未找到正式发表来源；仅确认预印本公开，未找到发表证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.12411
+    - https://haroldchen19.github.io/PhysOPSD-site/
+    verification_outcome: no_publication_evidence
+  map2slam:
+    status: preprint
+    year: 2026
+    source: https://robbyant-research.github.io/Map2SLAM/
+    evidence: '实际读取arXiv 2611.11169，题名为‘Map2SLAM: From Streaming Map Prediction to Real-Time SLAM’，作者Jian Gao等；comments为17页10图及项目链接，journal_ref为空。作者项目页实际可访问并与题名/编号对应，未见明确会议或期刊录用声明；页面中的accepted probes/loops属于算法接受探测或闭环，并非论文录用。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。本条无旧结论，当前预印本分类来自本次实际访问而非继承缓存。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.11169
+    - https://robbyant-research.github.io/Map2SLAM/
+    verification_outcome: no_publication_evidence
+  memsurg:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.10917
+    evidence: '实际读取arXiv 2611.10917，真实题名为‘Remembering to Reason: Structured Memory for Scene and Workflow Understanding in Robot-Assisted Surgery’，作者Zhiran Zhang, Hu Wang, Yichen Wu, Yutong Xie；comments与journal_ref为空。实际读取v1 HTML正文，未找到独立项目外链或录用标识，代码表示将公开。额外实际读取疑似作者站publications页，条目原文为‘MemSurg: Memory-Augmented Long-Horizon Reasoning for Surgical Video Understanding’、‘Anonymous Authors’、‘Submitted to MICCAI 2026’，该页无arXiv编号，不能可靠绑定为本论文更名版本，也没有录用证据；不将其升级为本作已投稿或已录用。目标arXiv本身题名作者可核验。截至2026-11-13，本次已查来源暂未找到目标论文正式录用或发表证据，不等于证明未发表。本条无旧结论，当前分类来自本次实际访问。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.10917
+    - https://arxiv.org/html/2611.10917v1
+    - https://minervazz.github.io/publications
+    verification_outcome: no_publication_evidence
+  hist3r:
+    status: accepted
+    name: NeurIPS
+    year: 2026
+    track: main
+    source: https://nips.cc/virtual/2026/loc/sydney/poster/155909
+    evidence: 'arXiv:2611.12011题名HIST3R: Decomposing and Rectifying State Updates with History for Streaming 3D Reconstruction，作者Kenneth Yang、Yu-Chiang Frank Wang，comments明确‘Accepted at NeurIPS 2026’。作者项目页也标NeurIPS2026并链接该编号。NeurIPS官方program列‘HIST3R: Rectified State Decomposition from History for Streaming 3D Reconstruction’，作者‘Kenneth Yang ⋅ Frank Wang’，‘Poster Tue, Dec 8, 2026 • 10:00 AM – 1:00 PM AEDT Hall 1-4’。题名有变体，但HIST3R方法、历史状态方向-幅度分解、作者及实验数字完全一致：1000帧ScanNet/TUM-Dynamics ATE降低23.87%/33.65%，500帧7-Scenes/NRGBD改善56.52%/33.96%，确认同一论文。主会program支持main；截至11月13日会期尚未到，标accepted而非published。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.12011
+    - https://kennethyangg.github.io/HIST3R/
+    - https://nips.cc/virtual/2026/loc/sydney/poster/155909
+    verification_outcome: confirmed_publication
+  apex-stream:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.14033
+    evidence: 实际读取arXiv:2611.14033，题名Few-Step Streaming Video Generation via Condition Shifting，作者Deyuan Liu、Jungang Li、Kaiwen Zheng等11人，v1为2026-11-10；摘要明确将APEX扩展至streaming video，与输入简称APEX对应。comments为空，未见journal_ref。完整题名配合accepted/conference检索未发现正式录用证据，不将其他APEX论文录用归入本篇。仅确认预印本存在，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.14033
+    verification_outcome: no_publication_evidence
+  pace:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.10240
+    evidence: '本次实际读取arXiv:2611.10240，完整题名PACE: Keeping the Right Tokens in the KV Cache Is Not Enough for Long-Horizon LLM Agents，唯一作者Suman Chatterjee，v1为2026-11-06。Comments仅“21 pages, 3 figures, 8 tables”，未列Journal reference。实际读取论文HTML，页首单位Amazon Web Services，无本论文会议期刊投稿或录用声明；精确题名搜索未获得匹配权威录用记录，且没有把同缩写PACE框架错当本作。确认预印本存在，本次暂无录用证据不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.10240
+    - https://arxiv.org/html/2611.10240v1
+    verification_outcome: no_publication_evidence
+  taomate-r1:
+    status: technical_report
+    year: 2026
+    source: https://github.com/TaoLiveAIGC/TaoMate-H3
+    evidence: '本次arXiv:2611.14307题名TaoMate-R1: Temporal Role Specialization for Streaming Multi-Reference Video Generation，作者Qijun Gan、Chenwei Zhang、Xinyang Li、Meiguang Jin、Junfeng Ma，v1为2026-11-10，无Comments或Journal reference。实际读取官方TaoMate-H3仓库，2026/11/10的TaoMate-R1新闻明确“Our technical report is released on arxiv”，Citation为同题同作者、eprint=2611.14307；据明确自述判technical_report，不将TaoMate-H3上游产品或其他TaoMate论文状态混入。本次暂无正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.14307
+    - https://github.com/TaoLiveAIGC/TaoMate-H3
+    verification_outcome: no_publication_evidence
+  wanderbench:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.12557
+    evidence: 当天实际读取arXiv摘要与正文。comments仅“10 pages, 4 figures”，无正式journal_ref；完整题名及Yuhang Chen、Jiheng Li、Jiale Wang、Zai Wang、Guangyue Liu与arXiv:2611.12557匹配，正文未见自身录用声明。其他同名地理定位WanderBench/arXiv:2603.10463不是本论文，不套用其发表信息。补记本篇为预印本；未查到发表证据不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.12557
+    - https://arxiv.org/html/2611.12557
+    verification_outcome: no_publication_evidence
+  clock-memory:
+    status: preprint
+    year: 2026
+    source: https://github.com/bennidict23/memory-clock
+    evidence: 当天arXiv comments仅“38 pages”，无正式journal_ref；题名及作者Chubin Zhang、Bo An对应arXiv:2611.14488。进一步实际读取官方仓库，新闻写“[2026.11.11] Paper available on arXiv.”；BibTeX为“@misc{zhang2026robotmemoryclock”，eprint=2611.14488、archivePrefix=arXiv、year=2026。未见会议/期刊录用声明，补记预印本；未找到正式发表证据不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.14488
+    - https://arxiv.org/html/2611.14488
+    - https://github.com/bennidict23/memory-clock
+    verification_outcome: no_publication_evidence
+    blocker: requests访问官方仓库曾代理502，随后WebFetch成功读取新闻及引用，已补足官方来源。
+  semantickv:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.11452
+    evidence: 本次通过WebFetch实际打开arXiv 2611.11452（requests曾超时/502，但WebFetch成功），真实题名Semantically Aligned KV Cache Compression for Efficient Agentic Autoregressive Video Generation，SemanticKV为方法名；作者Weizhong Huang、Huaijia Kou、Tianyu Xie、Xiawu Zheng、Liujuan Cao，v1于2026-11-08提交。comments原文“32 pages, 12 figures”，未显示journal_ref或正式出版社DOI，10.48550为arXiv DOI。也已实际打开官方HTML核同题作者；完整题名检索未取得可核实会议期刊录用。新补为preprint，仅代表目前找到预印本，不代表确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.11452
+    - https://arxiv.org/html/2611.11452v1
+    verification_outcome: no_publication_evidence
+  camp-ii:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.14009
+    evidence: '本次通过WebFetch实际打开arXiv 2611.14009（requests曾超时/502，但WebFetch成功），完整题名Coding Agent Memory Post-Training II: Unlocking the Memory Potential of Pre-trained File Operations for Long-Horizon Tasks via On-Policy Distillation；作者Lirui Luo、Kelong Mao、Xinwei Yang等13人（最新作者含Pu Yao），最新v2为2026-11-12。comments原文“40 pages, 6 figures, 8 tables. Project website: https://liruiluo.github.io/agentmemorygym-v2/”，未显示journal_ref。实际打开作者项目，题名13作者和编号一致，BibTeX仅year={2026}、eprint={2611.14009}、archivePrefix={arXiv}，无会议录用。完整题名加accepted conference检索亦无可核实正式渠道；新补preprint，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.14009
+    - https://liruiluo.github.io/agentmemorygym-v2/
+    verification_outcome: no_publication_evidence
+  reelcache:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.09973
+    evidence: '实际打开arXiv最新v1，题名‘ReelCache: An Efficient KV Cache Compression and Management System for Multi-Round Video Generation’，作者Tianyu Wang、Daiyang Yu、Zhiwei Ren、Junbo Li、Jitian Zhang、Longfei Shangguan，编号2611.09973。Comments原文‘18 pages total, 11 pages body plus 5 pages appendix’，未列journal_ref。官方仓库题名匹配，内容为实现说明，未见明确录用信息。本次未找到正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.09973
+    - https://github.com/Tianyu9748/ReelCache
+    verification_outcome: no_publication_evidence
+  seqfold:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.13704
+    evidence: '实际打开arXiv最新v1（2026-11-10），完整题名‘SeqFold: Timestamp-Addressable Compressed States for User Action Sequence Backbones’，作者Mianwei Zhou等10位，编号2611.13704；无Comments/journal_ref录用声明。该篇主题为推荐系统用户行为序列，与输入短名SeqFold及编号对应，不因主题差异判身份错配。结合精确题名检索未取得正式会议期刊录用证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-13'
+    checked_sources:
+    - https://arxiv.org/abs/2611.13704
+    verification_outcome: no_publication_evidence
+  vid2vid-long:
+    name: ECCV
+    year: 2026
+    status: published
+    track: main
+    source: https://link.springer.com/chapter/10.1007/978-3-032-37135-5_3
+    evidence: Springer 章节页标题为 Consistent Video-to-Video Translation via Explicit Correspondences，DOI 10.1007/978-3-032-37135-5_3，LNCS 17072，页码 39 起 57 止，属 ECCV 2026 主会论文集；arXiv comments 亦写 ECCV 2026。本轮本机复验 doi.org 解析到该页并读到 pageEnd 57。
+    verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.17298
+    - https://link.springer.com/chapter/10.1007/978-3-032-37135-5_3
+    - https://www.cs.cmu.edu/~vid2vid-long/
+    verification_outcome: confirmed_publication
+  ttb-baking:
+    name: NeurIPS
+    year: 2026
+    status: accepted
+    track: main
+    source: https://neurips.cc/virtual/2026/poster/154935
+    evidence: NeurIPS 2026 官方 Poster 页标题为 Test-time MLP Baking，9 位作者与 arXiv 完全一致，页面标签为 Poster；arXiv comments 自称 Spotlight，官方页未见 Spotlight 字样，故按 Poster 记，赛道同属主会。本轮本机直连 neurips.cc 与代理均失败，该页由核验通道抓取，未二次复核。
+    verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.17331
+    - https://neurips.cc/virtual/2026/poster/154935
+    - https://test-time-baking.github.io
+    verification_outcome: confirmed_publication
+  worlddraft:
+    status: preprint
+    source: https://arxiv.org/abs/2611.16217
+    evidence: arXiv abs 页标题与作者一致，comments 仅项目页与共同一作说明，无 journal_ref；项目页未见录用声明或指向 proceedings 的 BibTeX。截至 2026-11-14 未查到正式发表证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.16217
+    - https://haroldchen19.github.io/WorldDraft-site/
+    verification_outcome: no_publication_evidence
+  cocode-world:
+    status: preprint
+    source: https://arxiv.org/abs/2611.15602
+    evidence: arXiv abs 页标题与作者一致，comments 为空、无 journal_ref；项目页未见录用声明。截至 2026-11-14 未查到正式发表证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.15602
+    - https://iapple233.github.io/CCW/
+    verification_outcome: no_publication_evidence
+  meminstream:
+    status: preprint
+    source: https://arxiv.org/abs/2611.15640
+    evidence: arXiv abs 页标题与作者一致，comments 为空、无 journal_ref；未查到会议或期刊收录。截至 2026-11-14 未查到正式发表证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.15640
+    verification_outcome: no_publication_evidence
+  retime-compose:
+    status: preprint
+    source: https://arxiv.org/abs/2611.15260
+    evidence: arXiv abs 页标题与作者一致，comments 只有页数与项目页，无 journal_ref；项目页未见录用声明。截至 2026-11-14 未查到正式发表证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.15260
+    - https://joefeng0571.github.io/retime-compose/
+    verification_outcome: no_publication_evidence
+  vpr-reanchor:
+    status: preprint
+    source: https://arxiv.org/abs/2611.15100
+    evidence: arXiv abs 页标题与作者一致，comments 只有页数说明，无 journal_ref；未查到会议或期刊收录。截至 2026-11-14 未查到正式发表证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.15100
+    verification_outcome: no_publication_evidence
+  cgem-event-memory:
+    status: preprint
+    source: https://arxiv.org/abs/2611.16386
+    evidence: arXiv abs 页标题与作者一致，comments 只有页数与图数，无 journal_ref；未查到会议或期刊收录。截至 2026-11-14 未查到正式发表证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.16386
+    verification_outcome: no_publication_evidence
+  bwm-forge:
+    status: technical_report
+    source: https://arxiv.org/abs/2611.16221
+    evidence: arXiv comments 明确写 Technical Report，无 journal_ref；未查到 proceedings 或期刊条目。技术报告不因作者机构知名就晋档。
+    verification_confidence: high
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.16221
+    verification_outcome: no_publication_evidence
+  birddreams:
+    status: preprint
+    source: https://arxiv.org/abs/2611.14815
+    evidence: arXiv abs 页标题与作者一致，comments 只有项目页，无 journal_ref；NVIDIA 研究页为项目页，未见录用声明。截至 2026-11-14 未查到正式发表证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-14'
+    checked_sources:
+    - https://arxiv.org/abs/2611.14815
+    - https://research.nvidia.com/labs/sil/projects/birddreams/
+    verification_outcome: no_publication_evidence
 project_shortlist:
   位置时间寻址:
     worldtrace: 优先读：把记忆内容与位置地址分开，借鉴分布内虚拟位置重写；适合先做推理期位置消融。
