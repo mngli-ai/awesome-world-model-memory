@@ -63,10 +63,10 @@ papers:
   solarrenderer:
     status: technical_report
     source: https://arxiv.org/abs/2610.28630
-    evidence: '实时arXiv《SolarRenderer: Few-Step Generative Reference Rendering》，Guian Fang等，2026-10-20 v1；comments明确“Technical Report; 28 pages, 17 figures, 10 tables; Project page ... Code ...”，无journal_ref。实际访问作者官方项目，引用为@misc、eprint={2610.28630}，未见会议/期刊接收声明；题名+accepted/publication检索未获官方接收证据。确认Technical Report分类，不将开源模型发布视为同行评审发表，也不据无结果断言从未发表。'
+    evidence: 今日重取 arXiv 2610.28630 元数据，仍只有 v1（2026-10-20），comments 仍为 "Technical Report; 28 pages, 17 figures, 10 tables; Project page ... Code ..."，journal_ref 仍为空；项目页未新增接收声明。确认本次无版本更新与发表变化，维持 technical_report。
     year: 2026
     verification_confidence: high
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-15'
     checked_sources:
     - https://arxiv.org/abs/2610.28630
     - https://enderfga.cn/SolarRenderer
@@ -88,18 +88,17 @@ papers:
     status: accepted
     track: unknown
     source: https://neurips.cc/virtual/2026/loc/sydney/poster/139301
-    evidence: 今日实际核对arXiv 2610.37257最新v3（2026-10-31），Comments原文“Accepted by NeurIPS 2026”。实际NeurIPS官方海报程序139301的GameVerse题名、10位作者与本arXiv对应，安排2026-12-08海报。实际项目页明确写“NeurIPS 2026 · Evaluations & Datasets”，与arXiv录用声明、官方程序组合确认录用，具体为独立的Evaluations and Datasets Track，不是main，亦不是workshop；由于给定track枚举无此项，保留unknown并用track_detail精确记录。不要混入另篇ICML 2026同名GameVerse论文。项目页本身未写accepted，故不单独把项目页标签冒充录用决定。
+    evidence: 今日定向复核赛车道。NeurIPS 官方博客 2026-03-23 有 "Introducing the Evaluations & Datasets Track at NeurIPS 2026"，官网组织页也单列 Evaluations and Datasets Track Chair，确认该赛道在 NeurIPS 2026 确实存在，先前判断不是把 workshop 误当主会。arXiv 2610.37257v3 comments 仍为 "Accepted by NeurIPS 2026"，官方 poster 139301 题名作者对应。neurips.cc 的 poster 页本身不写 track 字段，赛道归属仍依项目页与赛道自身存在的组合证据，故 track 枚举保持 unknown 并用 track_detail 记录。
     verification_confidence: high
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-15'
     checked_sources:
     - https://arxiv.org/abs/2610.37257
     - https://neurips.cc/virtual/2026/loc/sydney/poster/139301
+    - https://neurips.cc/
     - https://kangverse.github.io/GameVerse/
-    - https://openreview.net/forum?id=YbEXKsFhkZ
-    - https://arxiv.org/pdf/2610.37257
     verification_outcome: confirmed_publication
     blocker: 辅助OpenReview页面返回浏览器验证，未读到决定；PDF为非文本资源，未解析正文，搜索摘要中的PDF赛道脚注未作为已读证据。已有可读arXiv、官方程序、项目页组合证据，不被辅助访问失败覆盖。
-    track_detail: Evaluations and Datasets Track，不按主会或Workshop处理
+    track_detail: Evaluations and Datasets Track（NeurIPS 2026 官方博客 2026-03-23 与组织页赛道主席可证该赛道存在），不按主会或 Workshop 处理，不启用档位
   worldscore:
     name: ICCV
     year: 2025
@@ -853,16 +852,16 @@ papers:
     status: submitted
     year: 2026
     source: https://arxiv.org/abs/2611.05593
-    evidence: '当天实际读取的arXiv comments明确为“Under review at TMLR. 32 pages. Project page: …”。官方项目页作者Shahaf Valencia Levy、Sagie Benaim与arXiv:2611.05593对应，引用仍为该arXiv预印本。只能确认投稿在审，不能因出现TMLR名称、journal分类就推断期刊录用；本次未见accept决定或正式期刊记录。未找到录用证据不等于确认从未或不会发表。'
+    evidence: 今日重取 arXiv 2611.05593 元数据，comments 仍为 "Under review at TMLR. 32 pages."，journal_ref 为空。TMLR 的 accept 决定需在 OpenReview 决定页读到才算，本次未读到，维持 submitted，不因出现期刊名就晋档。
     verification_confidence: high
     submission_target:
       year: 2026
       track: journal
       track_detail: 投稿至Transactions on Machine Learning Research（TMLR），仍在审；无录用证据，name留空
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-15'
     checked_sources:
     - https://arxiv.org/abs/2611.05593
-    - https://svlwoof.github.io/gaussianrenderformer/
+    - https://svlwoof.github.io/gaussianrenderformer
     verification_outcome: no_publication_evidence
     track_detail: 投稿至Transactions on Machine Learning Research（TMLR），仍在审；无录用证据，name留空
   gear:
@@ -904,9 +903,12 @@ papers:
     status: product
     year: 2025
     source: https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/
-    evidence: DeepMind 官方博客发布，原文写明 limited research preview，页面无 arXiv 论文也无会议期刊名称，BibTeX 仅指向该博客本身。
+    evidence: 今日复核 DeepMind 官方博客仍可访问，正文仍写 limited research preview，页面无 arXiv 论文与会议期刊名，引文仍指向博客本身。商业与研究预览发布不构成同行评审发表。
     verification_confidence: medium
     verification_outcome: no_publication_evidence
+    checked_at: '2026-11-15'
+    checked_sources:
+    - https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/
   geo-context:
     status: accepted
     name: CVPR
@@ -934,22 +936,14 @@ papers:
     status: accepted
     year: 2026
     source: https://github.com/nagara214/GIM-World/blob/main/README.md
-    evidence: 本次打开arXiv 2606.02436，实际题名Geometry-Aware Implicit Memory for Video World Models，作者Zhengxuan Wei、Xu Guo、Xinghui Li等11人，v1为2026-06-01，comments仅项目页，未显示journal_ref。实际打开作者官方仓库README，题名及编号一致，明确原文“GIM-World is accepted to SIGGRAPH Asia 2026”，标题下也标SIGGRAPH Asia 2026。第一作者、共同一作Xu Guo、Xinghui Li和通讯作者Qi Fan各主页均把同题同作者论文列于SIGGRAPH Asia 2026。第一作者News另写2026.07 conditionally accepted，仓库较明确的accepted及多作者出版条目支持录用。官方Technical Papers页面链接到日程，但实际日程未返回该文条目。新闻检索有Conference Track线索，作者一手页面未明确Conference与TOG Journal细分，故不臆定track；尚未以正式出版社条目确认出版。
+    evidence: 今日重取 arXiv 2606.02436 元数据，comments 仍只给项目页、journal_ref 为空；重读作者仓库 README，原文 "GIM-World is accepted to SIGGRAPH Asia 2026"，与既有记录一致。SIGGRAPH Asia 2026 官方 program 与 ACM DL 本次仍检索不到该题名条目，因此具体赛道（Technical Papers 走 ACM TOG，与其他 track 不同）无法核实，按口径 track 保持 unknown，不启用档位。已确认录用这一点不变，缺的是赛道。
     verification_confidence: medium
     name: SIGGRAPH Asia
     track: unknown
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-15'
     checked_sources:
     - https://arxiv.org/abs/2606.02436
-    - https://gim-world.github.io/
     - https://github.com/nagara214/GIM-World/blob/main/README.md
-    - https://fanq15.github.io/
-    - https://guoxu1233.github.io/homepage/
-    - https://zhengxuanwei.top/
-    - https://crayon-shinchan.github.io/xinghui99.github.io/
-    - https://asia.siggraph.org/2026/program/technical-papers/
-    - https://sa2026.conference-schedule.org/?filter1=sstype101
-    - https://sa2026.conference-schedule.org/search-program/
     verification_outcome: confirmed_publication
     track_detail: SIGGRAPH Asia2026录用，Conference与TOG Journal细分待核
   glance-forcing:
@@ -1063,16 +1057,15 @@ papers:
     status: submitted
     year: 2026
     source: https://github.com/pairs-lab/HiPer
-    evidence: 实际读取arXiv 2611.07662，题名为‘Which Objects Stay? Learning Hierarchical Persistence Beliefs for Lifelong Open-Vocabulary Object Maps’，作者Thanh Nguyen Canh, Haolan Zhang, Nak Young Chong；comments与journal_ref为空。实际读取v1 HTML正文，其直接链接pairs-lab/HiPer，建立论文与匿名仓库的对应。仓库原文‘Submitted to IEEE Robotics and Automation Letters (RA-L), 2026’，BibTeX为‘Under review at IEEE Robotics and Automation Letters’，故只确认期刊投稿中，不是录用。正文10.1109/LRA.2026.XXXXXXX是占位DOI，不能作正式出版证据。year为投稿声明年份，不是已确认发表年份。截至2026-11-13，本次已查来源暂未找到录用或正式出版证据，不等于证明未发表。
+    evidence: 今日重取 arXiv 2611.07662 元数据，comments 与 journal_ref 仍为空，题名作者与记录一致。既有记录的投稿说法来自作者仓库原句，本次未在该仓库首页复核到同一句，也没有找到录用决定，故不改状态、只更新核验日期；投稿中与预印本在归档口径上都属未发表，等有官方决定再改。
     verification_confidence: high
     submission_target:
       name: IEEE Robotics and Automation Letters
       year: 2026
       track: journal
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-15'
     checked_sources:
     - https://arxiv.org/abs/2611.07662
-    - https://arxiv.org/html/2611.07662v1
     - https://github.com/pairs-lab/HiPer
     verification_outcome: no_publication_evidence
   history-forcing:
@@ -1395,9 +1388,12 @@ papers:
     status: product
     year: 2025
     source: https://marble.worldlabs.ai/
-    evidence: World Labs 商业产品页面，无对应论文与录用记录。
+    evidence: 今日复核 World Labs 产品页仍返回 HTML，页面仍是商业产品介绍，无对应论文与录用记录。
     verification_confidence: medium
     verification_outcome: no_publication_evidence
+    checked_at: '2026-11-15'
+    checked_sources:
+    - https://marble.worldlabs.ai/
   mass:
     status: preprint
     year: 2026
@@ -1435,11 +1431,11 @@ papers:
   memactive:
     status: unknown
     source: ''
-    evidence: 图谱内部标注为 MIPG 2026，无公开链接，公开索引与搜索引擎均未找到对应论文，该标注未经外部核实故不采信。
+    evidence: 今日再查一次身份。MIPG 实际是一个实验室名（Media and Interactive Processing Group 一类），不是会议或期刊，图谱里的 "MIPG 2026" 因此不能当 venue 用，也不能据此推断发表状态。按 MemActive 加 world model、memory、video generation 检索，出现的 MemAct、ActiveMem 等近名工作均不能与本条唯一对应；公开索引里没有题名与作者都能对上的条目。仍无法建立唯一论文身份，标 blocked。
     verification_confidence: low
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-15'
     verification_outcome: blocked
-    blocker: 缺少可唯一识别论文的作者、完整题名和链接；无法确认身份及发表状态。
+    blocker: 缺可唯一识别的作者、完整题名与链接；本次确认 MIPG 是实验室名而非会议，原 venue 标注不成立，但仍无法定位到具体论文，不能凭近名替换。检索走通用搜索引擎与 arXiv 作者检索，无唯一致命落地页可引，故不列 checked_sources。
     verification_note: 输入仅有简称MemActive及内部标签MIPG 2026，无作者、论文完整标题、arXiv编号或公开链接。今日检索未能建立唯一论文身份；出现的MemAct、ActiveMem等近名不能替换本条。保留previous的unknown，不采信未经公开证据支持的MIPG 2026标签。
   memlearner:
     status: accepted
@@ -1469,14 +1465,14 @@ papers:
     status: accepted
     year: 2026
     source: https://junchao-cs.github.io/
-    evidence: '今日实际读取第一作者主页及原始HTML，新闻明确写“[Sep. 2026] Memory Forcing accepted to NeurIPS 2026!”。主页论文新题名为“Memory forcing: Spatio-temporal Memory for Long-Horizon Interactive Video Generation”，该条PDF href精确指向https://arxiv.org/pdf/2510.03198，故不是另一篇编号2610.11756的同名论文。今日arXiv 2510.03198题名仍为“Memory Forcing: Spatio-Temporal Memory for Consistent Scene Generation on Minecraft”，作者Junchao Huang、Xinting Hu、Boyao Han、Shaoshuai Shi、Zhuotao Tian、Tianyu He、Li Jiang，comments为“19 pages, 8 figures”。主页列Bohan Han而arXiv为Boyao Han，记录此署名差异；作者主页同一论文的明确PDF编号足以关联新旧题名。录用依据为作者声明，未取得官方决定或精确赛道，故不推断main。'
+    evidence: '今日重读第一作者主页，新闻仍为 "[Sep. 2026] Memory Forcing accepted to NeurIPS 2026!"。注意主页题名与 arXiv 2510.03198 题名不同：主页写 Memory forcing: Spatio-temporal Memory for Long-Horizon Interactive Video Generation，arXiv 写 Memory Forcing: Spatio-Temporal Memory for Consistent Scene Generation on Minecraft，靠主页 PDF 链接精确指向该编号确认是同一篇，不是另一篇同名工作。neurips.cc 2026 程序本次仍未检索到与该题名作者对应的独立条目，主会与 D&B 赛道均未定，track 保持 unknown 不晋档。'
     verification_confidence: medium
     name: NeurIPS
     track: unknown
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-15'
     checked_sources:
-    - https://arxiv.org/abs/2510.03198
     - https://junchao-cs.github.io/
+    - https://arxiv.org/abs/2510.03198
     verification_outcome: confirmed_publication
     blocker: 具体赛道及官方录用决定未独立取得；作者主页与arXiv存在新旧题名、Bohan/Boyao署名差异，已以主页直接PDF编号关联而非近名猜测。
     track_detail: 作者明确NeurIPS2026录用，具体赛道尚未取得官方证据
@@ -1632,16 +1628,15 @@ papers:
   most-memory:
     status: submitted
     source: https://most-vla.github.io/
-    evidence: 'arXiv:2611.00734完整题名MOST: Memory of Object States and Task Progress for Long-Horizon Mobile Manipulation，Diqi He、Jinbang Guo、Yijun Shen、Zhiwei Yu、Huan Yang、Dingwen Zhang、Junwei Han、Zhongyuan Wang，v1为2026-10-31，无comments/journal_ref。论文HTML链接的官方项目完整题名八作者与2611.00734一致，项目BibTeX明确note = {Under review}，但没有披露具体会议/期刊，故应标submitted而不是accepted，name留空。全题名及accepted检索无正式录用证据；在审与未找到接收证据均不等于确认未发表。'
+    evidence: 今日重取 arXiv 2611.00734 元数据，comments 与 journal_ref 仍为空；官方项目页 BibTeX 仍为 note = {Under review}，未披露具体会议或期刊，也没有录用决定，维持 submitted。
     verification_confidence: high
     year: 2026
     submission_target:
       year: 2026
       track: unknown
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-15'
     checked_sources:
     - https://arxiv.org/abs/2611.00734
-    - https://arxiv.org/html/2611.00734v1
     - https://most-vla.github.io/
     verification_outcome: no_publication_evidence
   motioncore:
@@ -1785,15 +1780,14 @@ papers:
   physcodebench:
     status: preprint
     source: https://arxiv.org/abs/2604.23580
-    evidence: 项目页给出 arXiv 2604.23580，comments 为空，页面未声明任何会议或期刊录用，按预印本处理。
+    evidence: 今日重取 arXiv 2604.23580，comments 与 journal_ref 仍为空；OpenReview 页面本次仍返回浏览器验证，读不到决定；CVF、NeurIPS、ICLR 程序页按题名检索均无对应条目。维持 preprint 与低置信度。
     verification_confidence: low
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-15'
     checked_sources:
-    - https://sealical.github.io/physcodebench/
     - https://arxiv.org/abs/2604.23580
     - https://openreview.net/forum?id=T9NxKVoqiu
     verification_outcome: blocked
-    blocker: OpenReview论坛触发浏览器验证，未能读取投稿/录用决定；现有可读来源只确认预印本。
+    blocker: OpenReview 反爬拦截，无法读到录用决定；官方程序页检索无结果不能反证未发表。
     verification_note: 今日实际打开PhysCodeBench项目页及其对应arXiv 2604.23580，确认题名和论文链接对应，最新v2为2026-09-11。项目页提到revised manuscript，BibTeX仍为arXiv预印本，未取得accepted决定。检索发现OpenReview论坛线索，但实际打开只得到“Verifying your browser”，无法读取决定；搜索摘要中的“Submitted to ICLR 2026”不等于accepted，亦不作为已核实投稿结论。保留previous的preprint；正式发表查证受阻，不声称确认未发表。
   physcodegym:
     status: preprint
@@ -2209,9 +2203,13 @@ papers:
     status: product
     year: 2025
     source: https://openai.com/index/sora-2/
-    evidence: OpenAI Sora 2 与 Google Veo 3.1 均为商业产品发布页，非同行评审论文。
+    evidence: 今日复核 OpenAI Sora 2 产品页，对本机请求返回 403（Cloudflare 拦截 HEAD 与 GET），未能读取正文；页面性质仍是商业产品发布，无对应论文。本次属渠道受阻，不改变既有结论。
     verification_confidence: medium
     verification_outcome: no_publication_evidence
+    checked_at: '2026-11-15'
+    checked_sources:
+    - https://openai.com/index/sora-2/
+    blocker: OpenAI 站点对本机返回 403，未能复核正文；结论沿用上次可读时的记录，不代表本次已重读。
   spark-embodied-memory:
     status: preprint
     source: https://arxiv.org/abs/2611.00344
@@ -2260,17 +2258,16 @@ papers:
   state-world-models:
     status: submitted
     source: https://ivg-yanranzhang.github.io/StateWorldModel/
-    evidence: '本次打开arXiv 2610.26811，完整题名State World Models: Execute the Rules, Generate the Pixels，Chan Yan Ki、Yanran Zhang、Wenzhao Zheng等8作者，v1为2026-10-19，未显示comments及journal_ref。实际打开正文找到并访问官方作者项目页，题名作者对应，页脚原文“State World Models · ICLR 2027 submission”；引用区写journal={arXiv preprint arXiv:2610.26811}及“Provisional citation · will be updated after review”。这是一手明确投稿线索，故submitted、目标届次2027；不是accepted或published，未找到录用决定。'
+    evidence: 今日重取 arXiv 2610.26811 元数据，comments 与 journal_ref 仍为空；官方项目页页脚仍写 "State World Models · ICLR 2027 submission"，引用区仍为 arXiv preprint。投稿声明不等于录用，ICLR 2027 决定未出，维持 submitted。
     verification_confidence: high
     year: 2027
     submission_target:
       name: ICLR
       year: 2027
       track: main
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-15'
     checked_sources:
     - https://arxiv.org/abs/2610.26811
-    - https://arxiv.org/html/2610.26811v1
     - https://ivg-yanranzhang.github.io/StateWorldModel/
     verification_outcome: no_publication_evidence
   streameval:
@@ -2763,14 +2760,14 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.39721
-    evidence: comments 仅 '19 pages, 9 figures'，S2 venue 为空。
+    evidence: 今日重取 arXiv 2610.39721，comments 仍为 "19 pages, 9 figures"，journal_ref 为空；作者仓库 Untitled-W/WorldProbe 本次仍不可读（404）。题名同名工作较多，未找到可确认为同一篇的会议条目。维持 preprint 与低置信度。
     verification_confidence: low
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-15'
     checked_sources:
     - https://arxiv.org/abs/2610.39721
     - https://github.com/Untitled-W/WorldProbe
     verification_outcome: blocked
-    blocker: 作者官方仓库本次返回404，无法核查该补充来源的最新录用声明；arXiv摘要页已成功读取且预印本身份已确认。
+    blocker: 官方仓库 404，缺补充来源；同名工作干扰，无法确认录用。
     verification_note: '实际成功访问arXiv 2610.39721，标题WorldProbe: When Video World Models Fall Apart under Long-Horizon Spatial Exploration，作者Minqi Wang、Jie Peng等十一人，comments=19 pages, 9 figures，确认预印本身份。精确题名检索未找到一手录用信息，但arXiv指向的作者仓库https://github.com/Untitled-W/WorldProbe本次返回GitHub404，无法继续检查该一手补充来源的最新声明。保留旧preprint并将本次发表核实记受阻，不声称已排除正式发表。'
   worldroambench:
     status: preprint
@@ -2889,11 +2886,12 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2611.11344
-    evidence: arXiv comments 只有 NeurIPS 2026 字样，未写 Accepted；2026-11-14 复核在 NeurIPS 2026 官方条目中未找到与该标题作者匹配的项，检索到的同名结果指向另一篇讲述 Visual Harness 的工作，不作录用依据。截至核验日期未查到正式发表证据，不等于确认未发表。
+    evidence: '今日在 neurips.cc 域内按题名与作者检索，只找到 AlloSpatial: Agentic Harness Framework for Spatial Reasoning（poster 154004），方法为 Allocentric-Spatial Trees 加 Qwen3-VL 冷启动强化学习、VSI-Bench 与 MindCube 提升 5% 到 18%，与本题的 Perceiver 加物理引擎、MindCube 52.70 到 71.14、给定真值位姿 98.25 完全不同，确认不是同一篇被改名，不能拿它当录用依据。作者仓库标题在检索结果里带 [NeurIPS 2026] 标签，属作者自述而非官方决定，未作为依据。arXiv comments 仍只有 NeurIPS 2026 字样，未写 Accepted。截至 2026-11-15 未查到正式发表证据，不等于确认未发表。'
     verification_confidence: medium
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-15'
     checked_sources:
     - https://arxiv.org/abs/2611.11344
+    - https://neurips.cc/virtual/2026/loc/sydney/poster/154004
     verification_outcome: no_publication_evidence
   treeagent:
     status: preprint
@@ -3156,6 +3154,28 @@ papers:
     checked_sources:
     - https://arxiv.org/abs/2611.14815
     - https://research.nvidia.com/labs/sil/projects/birddreams/
+    verification_outcome: no_publication_evidence
+  vibeprevisbench:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.15789
+    evidence: '今日实际取 arXiv 2611.15789v1，题名 VibePrevisBench: Evaluating Agentic Coding for 4D Scene Generation in Blender，作者 Yuzhe Chen、Muxi Diao、Lele Yang 等 22 人，v1 为 2026-11-11，comments 只有项目页地址，journal_ref 为空。实际打开官方项目页，页脚与引用区只见 arXiv 与 GitHub 链接，未见任何会议或期刊录用字样。截至 2026-11-15 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-15'
+    checked_sources:
+    - https://arxiv.org/abs/2611.15789
+    - https://vibeprevisbench.github.io/
+    verification_outcome: no_publication_evidence
+  memcredit:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.15600
+    evidence: '今日实际取 arXiv 2611.15600v1，题名 MemCredit: From Relevance to Utility for Decision-Time Memory in Long-Horizon Web Agents，v1 为 2026-11-11，comments 与 journal_ref 均为空。另读 arXiv HTML 正文，未见投稿或录用声明。截至 2026-11-15 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-15'
+    checked_sources:
+    - https://arxiv.org/abs/2611.15600
+    - https://arxiv.org/html/2611.15600v1
     verification_outcome: no_publication_evidence
 project_shortlist:
   位置时间寻址:
