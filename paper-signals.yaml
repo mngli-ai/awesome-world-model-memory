@@ -480,12 +480,11 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2608.25927
-    evidence: '今日实际打开arXiv 2608.25927《Code World Model: Coding Agent as World Brain》，作者Yiwen Chen、Guosheng Lin、Chi Zhang，v1为2026-08-26。Comments仅提供项目页；实际项目页未出现正式录用声明。标题作者对应输入记录。截至2026-11-13在已访问来源未找到会议或期刊录用证据；不以空缺声明证明未发表。'
+    evidence: arXiv 2608.25927 仅 v1，comments 只有项目页；项目页 BibTeX 只写 eprint 与 archivePrefix；Semantic Scholar venue 为 arXiv.org；OpenReview 无同名记录。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2608.25927
-    - https://buaacyw.github.io/cwm/
     verification_outcome: no_publication_evidence
   commit-forcing:
     status: preprint
@@ -570,12 +569,11 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2605.31336
-    evidence: '实时arXiv为《DecMem: Towards Minute-Long Consistent World Generation with Decoupled Memory》，Zhenhao Yang等，2026-05-29 v1；comments仅项目链接，无journal_ref。实际作者项目引用为@misc、eprint={2605.31336}，无接收声明。题名+accepted/NeurIPS及OpenReview检索未获同篇官方接收记录；搜索出的DeMem决策记忆或去记忆论文不是这篇DecMem，未混用。确认预印本存在，未发现发表证据不等于确认未发表。'
+    evidence: arXiv 2605.31336 仅 v1，comments 只有项目页；官方项目页 jeffreyyzh.github.io/DecMem-Page 无录用声明；OpenReview 只有 CoRR 2026 导入记录；CVPR 2026 与 ICML 2026 列表均无。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2605.31336
-    - https://jeffreyyzh.github.io/DecMem-Page
     verification_outcome: no_publication_evidence
   deep-forcing:
     status: accepted
@@ -670,37 +668,33 @@ papers:
   dysink:
     status: preprint
     year: 2026
-    source: https://yebo0216best.github.io/
-    evidence: '本次arXiv:2605.21028题名DySink: Dynamic Frame Sinks for Autoregressive Long Video Generation，作者Bo Ye、Xinyu Cui、Jian Zhao、Tong Wei、Min-Ling Zhang，最新v5为2026-07-31，无Comments或Journal reference录用声明。经精确题名检索实际读取第一作者Bo Ye个人主页，同题同作者条目明确写“Preprint.”，Paper链接指向2605.21028。官方代码链接本次404，但作者主页与arXiv可独立确认预印本；未找到正式录用证据不等于确认未发表。'
+    source: https://arxiv.org/abs/2605.21028
+    evidence: arXiv 2605.21028 最新版为 v5（2026-07-31），comments 与 journal_ref 为空；OpenReview 只有 CoRR 2026 导入记录；CVPR 2026 检索 0 命中，ICML 2026 无该题。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2605.21028
-    - https://github.com/yebo0216best/DySink
-    - https://yebo0216best.github.io/
     verification_outcome: no_publication_evidence
     blocker: 补充核查的GitHub仓库返回404；arXiv和作者主页可读，未因该单一链接失败认定未发表。
   echo-forcing:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2605.16003
-    evidence: '本次打开arXiv，题名为Echo-Forcing: A Scene Memory Framework for Interactive Long Video Generation，作者Mingqiang Wu、Weilun Feng等11人，编号2605.16003；当前v1于2026-05-15提交，未显示comments、journal_ref或出版社DOI。实际打开作者官方仓库，News仅有2026/05/13 Paper released、2026/07/24暂撤代码、2026/10/25重新发布代码，并无会议录用声明。题名检索未找到可核实正式渠道；因此仅确认有预印本，不等于确认未发表。'
+    evidence: arXiv 2605.16003 仅 v1（2026-05-15），comments 与 journal_ref 为空；CVPR 2026 与 ICML 2026 列表均无该题；OpenReview 只有 CoRR 2026 的 DBLP 导入记录（Public_Article），不是录用。5 月投稿若冲 NeurIPS 2026，其决定未能在官方页复核，neurips.cc 本机返回 000。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2605.16003
-    - https://github.com/mingqiangWu/Echo-Forcing
     verification_outcome: no_publication_evidence
   echo-infinity:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2606.04527
-    evidence: '实时arXiv题名《Echo-Infinity: Learning Evolving Memory for Real-Time Infinite Video Generation》，Yuxuan Bian等，2026-06-03 v1；comments仅“Website”，无journal_ref。实际访问作者官方项目，BibTeX明确“journal = {arXiv preprint arXiv:2606.04527}”；题名+accepted/publication及OpenReview定向检索未获可匹配的官方接收声明。本次确认预印本存在、未找到正式发表证据，不等于确认未发表。'
+    evidence: arXiv 2606.04527 仅 v1（2026-06-03），comments 只有项目页链接，无 journal_ref 与会议 DOI；官方项目页只列 Paper/Website/Code/Model，无录用声明；CVPR 2026、ECCV 2026、ICML 2026（PMLR v306）全量列表均检索不到该题。NeurIPS 2026 与 SIGGRAPH 2026 未做系统检索，neurips.cc 本机直连与代理均返回 000，这是本轮证据缺口。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2606.04527
-    - https://echo-team-joy-future-academy-jd.github.io/Echo-Infinity/
     verification_outcome: no_publication_evidence
   echokv:
     status: preprint
@@ -756,15 +750,12 @@ papers:
   fadem:
     status: preprint
     year: 2026
-    source: https://github.com/aniki-ly/FadeMem
-    evidence: '当天arXiv comments为“14 pages, 9 figures. Substantially revised manuscript with expanded experiments and integrated supplementary material. Project page: …”。实际读取官方项目JS和仓库，其引用明确为“journal = {arXiv preprint arXiv:2606.10671}”，作者Yu Lu、Junjie Yang、Piotr Koniusz、YuXin Song、Yi Yang与摘要一致。未见本视频论文的会议/期刊录用声明；其他同名FadeMem论文的ICASSP信息不可套用。未找到证据不等于确认未发表。'
+    source: https://arxiv.org/abs/2606.10671
+    evidence: arXiv 2606.10671 v2（2026-08-04）comments 自述为 substantially revised manuscript，无 journal_ref；项目页为前端渲染，抓取打包 JS 后全文不含 accepted 字样；CVPR 2026、ECCV 2026、ICML 2026 列表均无该题。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2606.10671
-    - https://fademem.github.io/FadeMem_Webpage/
-    - https://fademem.github.io/FadeMem_Webpage/assets/index-g3n4QXN8.js
-    - https://github.com/aniki-ly/FadeMem
     verification_outcome: no_publication_evidence
     blocker: 项目HTML为JavaScript外壳，已读取JS内引用；requests访问仓库曾代理502，但WebFetch成功补读。
   fight-world-model:
@@ -782,24 +773,26 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2602.14027
-    evidence: '最新arXiv题名Train Short, Inference Long: Training-free Horizon Extension for Autoregressive Video Generation，作者Jia Li、Xiaomeng Fu等，v3为2026-03-13；comments原文‘19 pages, 15 figures’，未见journal_ref。作者FLEX项目页给@misc arXiv引用、编号2602.14027，未标录用。检索出现的ICML关键词不足以证明录用。仅确认预印本存在，未检出正式录用证据，不等于确认未发表。'
+    evidence: arXiv 2602.14027 comments 只有页数，无 journal_ref 与 DOI；CVPR 2026 OpenAccess 与 ICML 2026 PMLR v306 全量列表无该题。OpenReview 曾命中一条同名记录但 venue 字段为空、按 id 直取返回 0 条，无法确认为投稿或录用，未采信。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2602.14027
-    - https://ga-lee.github.io/FLEX_demo
     verification_outcome: no_publication_evidence
   forgewm:
-    status: preprint
+    status: submitted
     year: 2026
-    source: https://asdfo123.github.io/
-    evidence: 'arXiv:2608.14022完整题名ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models，Xinye Li、Lingshuai Lin等十一作者，v1为2026-08-14，无comments/journal_ref。第一作者Xinye Li官网将同题同作者条目标注arXiv preprint，2026，并直接链接2608.14022；其邻近ACL 2026 Main条目是其他论文，不能混用。题名检索未找到正式会议/期刊录用证据，未发现证据不等于确认未发表。'
+    source: https://openreview.net/forum?id=LjT2Bez1xh
+    evidence: 今日经核验通道读取 OpenReview 记录，forum LjT2Bez1xh 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，提交号 3912，TLDR 描述四阶段因果训练与 1/2/4 步预算，与 arXiv 主题一致，属在审投稿而非录用；arXiv 2608.14022 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2608.14022
-    - https://asdfo123.github.io/
+    - https://openreview.net/forum?id=LjT2Bez1xh
     verification_outcome: no_publication_evidence
+    name: ICLR 2027
+    track: unknown
+    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   framepack:
     status: published
     name: NeurIPS
@@ -1217,12 +1210,11 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2608.28460
-    evidence: '实际访问arXiv 2608.28460，标题LayerRecall: A State-Conditioned Memory Router for Long-Horizon Consistency in Video Generation，作者Yixuan Ding、Jiahao Kong、Wei Huang、Ruijie Quan、Yi Yang，comments=15 pages, 11 figures。实际作者项目页同题同作者，BibTeX为@misc、eprint=2608.28460；PUBLIC REVIEW PREVIEW不构成已投稿到特定刊会或录用证明。结合标题检索，本次未找到录用一手证据，暂记预印本，不代表确认未发表。'
+    evidence: arXiv 2608.28460 仅 v1，comments 只有页数；OpenAlex 记为 type=preprint；OpenReview 全站与 ICLR 2027、NeurIPS 2026 分区检索 term=LayerRecall 返回 0 条；未发现作者项目页或仓库录用声明。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2608.28460
-    - https://yixuan-ding-zju.github.io/LayerRecall_Web/
     verification_outcome: no_publication_evidence
   lingbot-world:
     status: technical_report
@@ -1291,16 +1283,19 @@ papers:
     - https://api2.openreview.net/notes?forum=nCAODkpsPJ
     verification_outcome: confirmed_publication
   longlive-rag:
-    status: preprint
+    status: submitted
     year: 2026
-    source: https://arxiv.org/abs/2606.02553
-    evidence: '实际访问arXiv 2606.02553，标题LongLive-RAG: A General Retrieval-Augmented Framework for Long Video Generation，作者Qixin Hu、Shuai Yang、Wei Huang、Song Han、Yukang Chen；comments为20 pages, 7 figures, 4 tables，未显示journal reference。作者Shuai Yang主页将此同题同作者论文明确列为arXiv preprint, 2026；该主页的ICLR2026声明指LongLive而非LongLive-RAG。结合精确题名检索，本次未找到此篇会议/期刊录用一手证据，暂记预印本，不代表确认其未发表。'
+    source: https://openreview.net/forum?id=7DrkJNzqyF
+    evidence: 今日经核验通道读取 OpenReview 记录，forum 7DrkJNzqyF 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，题名与 arXiv 完全一致，属在审投稿而非录用；arXiv 2606.02553 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2606.02553
-    - https://shuaiyang.me/
+    - https://openreview.net/forum?id=7DrkJNzqyF
     verification_outcome: no_publication_evidence
+    name: ICLR 2027
+    track: unknown
+    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   longtake:
     status: preprint
     year: 2026
@@ -1398,12 +1393,11 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2608.06257
-    evidence: 'arXiv最新v2（2026-08-10）题名‘MASS: Multiplayer World Models with Authoritative Shared State’，作者Ziqi Cai等，与项目页及编号2608.06257匹配。Comments仅项目页，未列journal_ref。项目出现‘Publication’栏目但没有明确会议期刊名，不能据此判正式发表。本次未找到正式录用证据，不等于确认未发表。'
+    evidence: arXiv 2608.06257 v2（2026-08-10）comments 只有项目页；项目页全文不含 Accepted 或任何会议名；OpenAlex 记为 type=preprint；ICLR 2027 与 NeurIPS 2026 分区检索无同名记录。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2608.06257
-    - https://alaya-lab.github.io/MASS/
     verification_outcome: no_publication_evidence
   matrix-game-3:
     status: technical_report
@@ -1545,17 +1539,19 @@ papers:
     - https://github.com/shengshu-ai/minWM
     verification_outcome: no_publication_evidence
   mirage:
-    status: preprint
+    status: submitted
     year: 2026
-    source: https://github.com/microsoft/LatentSpatialMemory
-    evidence: 本次读取arXiv 2606.09828，真实题名为‘Latent Spatial Memory for Video World Models’，作者Weijie Wang等；摘要明确方法名Mirage，题名与简称对应。最新v2为2026-08-27，comments仅提供项目/代码，journal_ref为空。实际读取作者仓库，引用原文‘arXiv preprint arXiv:2606.09828’，未见明确会议/期刊录用声明。aka.ms短链请求曾代理失败，但仓库经另一读取工具成功核实，并非整篇无法核验。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。
+    source: https://openreview.net/forum?id=sduHZ2U3Fx
+    evidence: 今日经核验通道读取 OpenReview 记录，forum sduHZ2U3Fx 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，同名投稿，arXiv 正式题名为 Latent Spatial Memory for Video World Models，MIRAGE 是方法名，属在审投稿而非录用；arXiv 2606.09828 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2606.09828
-    - https://aka.ms/latent-spatial-memory
-    - https://github.com/microsoft/LatentSpatialMemory
+    - https://openreview.net/forum?id=sduHZ2U3Fx
     verification_outcome: no_publication_evidence
+    name: ICLR 2027
+    track: unknown
+    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   mist:
     status: preprint
     year: 2026
@@ -1724,13 +1720,12 @@ papers:
   onstm:
     status: preprint
     source: https://arxiv.org/abs/2607.15271
-    evidence: 实际读取arXiv 2607.15271，真实题名为‘Online Neural Space Time Memory for Dynamic Novel View Synthesis’，作者Baback Elmieh等，与NSTM项目对应。comments原文包含‘19 pages. Preprint. Project page with demos and video results’，journal_ref为空。实际读取作者项目页https://nst-mem.github.io/，未见明确会议/期刊录用声明。截至2026-11-13，本次已查来源暂未找到正式录用或发表证据，不等于证明未发表。
+    evidence: arXiv 2607.15271 comments 原文自述 Preprint，并给项目页；项目页 BibTeX 只写 eprint 与 archivePrefix，无会议或期刊字段；OpenAlex 记为 type=preprint。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
     year: 2026
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2607.15271
-    - https://nst-mem.github.io/
     verification_outcome: no_publication_evidence
   operator-mismatch-contrastive:
     status: preprint
@@ -1766,17 +1761,19 @@ papers:
     - https://arxiv.org/abs/2603.25730
     verification_outcome: confirmed_publication
   pawbench:
-    status: preprint
-    source: https://arxiv.org/abs/2608.27345
-    evidence: '本次打开arXiv 2608.27345，题名PAWBench: How Far Are We from Probabilistically Aligned World Modeling?，作者Yuandong Pu、Le Zhuo、Sayak Paul等14人，最新v3为2026-09-03，无comments或journal_ref显示。实际打开HTML正文找到并访问官方项目pawbench.github.io，标题作者及编号一致；BibTeX明确journal={arXiv preprint arXiv:2608.27345}、year={2026}。页面及题名录用检索未得到可核实会议期刊记录；仅确认预印本，不确认未发表。'
+    status: submitted
+    source: https://openreview.net/forum?id=gjmCyG9Yuw
+    evidence: 今日经核验通道读取 OpenReview 记录，forum gjmCyG9Yuw 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，提交号 4653，题名仅大小写差异（How far are we），keywords 含 Benchmark 与 World Model，属在审投稿而非录用；arXiv 2608.27345 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
     year: 2026
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2608.27345
-    - https://arxiv.org/html/2608.27345v3
-    - https://pawbench.github.io
+    - https://openreview.net/forum?id=gjmCyG9Yuw
     verification_outcome: no_publication_evidence
+    name: ICLR 2027
+    track: unknown
+    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   physcodebench:
     status: preprint
     source: https://arxiv.org/abs/2604.23580
@@ -1812,16 +1809,19 @@ papers:
     - https://github.com/MajorDavidZhang/PlayGen-2
     verification_outcome: no_publication_evidence
   playworld:
-    status: preprint
-    source: https://kxding.github.io/project/PlayWorld/
-    evidence: 'arXiv:2608.13552完整题名PlayWorld: Benchmarking World Models with Agent Players over Long-Horizon Objectives，Kaixin Ding、Xi Chen、Minghong Cai等十二作者，最新v2为2026-08-14；comments仅项目页，无journal_ref。官方项目页题名及十二作者一致，引用arXiv preprint arXiv:2608.13552，页脚Research preview · 2026，未给会议/期刊或录用投稿声明。题名录用检索未获得权威接收证据；仅确认预印本，不能据此证明未发表。'
+    status: submitted
+    source: https://openreview.net/forum?id=3nSV2brMqb
+    evidence: 今日经核验通道读取 OpenReview 记录，forum 3nSV2brMqb 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，提交号 530，keywords 为 Video World Model; Benchmark，匿名投稿无法比对作者，属在审投稿而非录用；arXiv 2608.13552 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
     year: 2026
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2608.13552
-    - https://kxding.github.io/project/PlayWorld/
+    - https://openreview.net/forum?id=3nSV2brMqb
     verification_outcome: no_publication_evidence
+    name: ICLR 2027
+    track: unknown
+    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   pod-rope:
     status: preprint
     source: https://arxiv.org/abs/2610.33745
@@ -1915,13 +1915,12 @@ papers:
   r2m-bench:
     status: preprint
     source: https://arxiv.org/abs/2608.27328
-    evidence: '本次arXiv题名R2M-Bench: Evaluating Revisit Memory via Relative Consistency in Interactive Video World Models，作者Qiwen Gu、Bingjie Gao、Rui Chen等，v1为2026-08-27；Comments仅为Code: https://github.com/AMAP-ML/R2MBench，无Journal reference。实际读取该官方仓库，Citation同题同作者且明确journal={arXiv preprint arXiv:2608.27328}，未声明会议期刊录用。补充题名和NeurIPS检索未找到匹配权威录用记录。本次未找到正式发表证据，不等于确认未发表。'
+    evidence: arXiv 2608.27328 仅 v1，comments 只有代码链接；仓库 README 无录用字段；OpenReview 上该题名唯一记录是 CoRR 2026 索引（Public_Article），不是会议录用。同名检索另命中两篇不同的 ICLR 2027 投稿，非本文。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
     year: 2026
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2608.27328
-    - https://github.com/AMAP-ML/R2MBench
     verification_outcome: no_publication_evidence
   rad:
     status: published
@@ -2065,26 +2064,24 @@ papers:
     verification_outcome: no_publication_evidence
   rolling-sink:
     status: preprint
-    source: https://rolling-sink.github.io/
-    evidence: 'arXiv:2602.07775完整题名Rolling Sink: Bridging Limited-Horizon Training and Open-Ended Testing in Autoregressive Video Diffusion，Haodong Li、Shaoteng Liu、Zhe Lin、Manmohan Chandraker；最新v7为2026-08-31，comments仅项目页，无journal_ref。官方项目同题同四作者，引用仅arXiv preprint arXiv:2602.07775，未注明会议、期刊、投稿或录用。题名录用检索未获得可核实的正式发表来源；未找到发表证据，不等于确认未发表。'
-    verification_confidence: medium
+    source: https://arxiv.org/abs/2602.07775
+    evidence: 今日两条互不相通的核验通道给出冲突结果：一条把 forum bI2MFCxHdB 认作本文的 ICLR 2027 在审投稿（Submission 837，含 Rebuttal_Revision 邀请），另一条把同一编号认作 tethercache 的评审回复页，并读到多篇 General Response to All Reviewers and AC 作者集中回复。同一 forum 编号不可能对应两篇，身份无法对齐，venue 与 decision 都取不到，论坛页与 pdf 均被 403 浏览器验证拦截，故本轮不晋档。arXiv 2602.07775 的 comments 只有页数与项目页链接，journal_ref 为空。截至 2026-11-16 未查到正式发表证据，不等于确认未发表；该条需人工登录 OpenReview 核对归属。
+    verification_confidence: low
     year: 2026
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2602.07775
-    - https://rolling-sink.github.io/
-    verification_outcome: no_publication_evidence
+    verification_outcome: blocked
+    blocker: forum bI2MFCxHdB 归属在两个核验通道之间冲突，OpenReview 对非登录访问返回浏览器验证，无法定论。
   sana-wm:
     status: preprint
     source: https://arxiv.org/abs/2605.15178
-    evidence: 实际打开最新arXiv摘要，核对SANA-WM题名、作者及2605.15178，Comments仅项目链接，未列journal_ref。作者主页将该工作列为‘arXiv, 2026’，与其他SANA系列的会议录用条目分开。项目页本次正文信息有限；本次核验未找到本篇正式录用证据，不等于确认未发表。
+    evidence: arXiv 2605.15178 仅 v1，comments 只有项目页；NVIDIA 项目页为纯前端 SPA，已抓取其 JS bundle 检索，仍无任何录用字样；CVPR 2026 与 ICML 2026 全量列表无该题。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
     year: 2026
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2605.15178
-    - https://nvlabs.github.io/Sana/WM/
-    - http://junsongc.top/
     verification_outcome: no_publication_evidence
   scenebound:
     status: preprint
@@ -2143,17 +2140,19 @@ papers:
     - https://github.com/KID-7391/Slot-JEPA
     verification_outcome: no_publication_evidence
   slotmemory:
-    status: preprint
-    source: https://arxiv.org/abs/2605.31033
-    evidence: 实时arXiv题名和Weijia Dou等作者对应；最新2026-11-03 v2，comments为“Code is available at”官方仓库，无journal_ref。旧项目页tj12323.github.io/SlotMemory实际404；已改查最新arXiv指向的作者官方GitHub，成功读取README，引用为@misc、eprint={2605.31033}，未见接收声明。完整题名和NeurIPS/OpenReview检索未获官方接收证据；部分搜索摘要中的NeurIPS字样属于相邻其他论文，未据此误判。本次确认预印本，不等于确认未发表。
+    status: submitted
+    source: https://openreview.net/forum?id=wODuGIZFpv
+    evidence: 今日经核验通道读取 OpenReview 记录，forum wODuGIZFpv 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，同名投稿，题名与 arXiv 一致，属在审投稿而非录用；arXiv 2605.31033 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
     year: 2026
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2605.31033
-    - https://tj12323.github.io/SlotMemory/
-    - https://github.com/tj12323/SlotMemory
+    - https://openreview.net/forum?id=wODuGIZFpv
     verification_outcome: no_publication_evidence
+    name: ICLR 2027
+    track: unknown
+    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   smart:
     status: preprint
     source: https://arxiv.org/abs/2610.19257
@@ -2178,15 +2177,16 @@ papers:
     verification_outcome: no_publication_evidence
   sol-engine:
     status: preprint
-    source: https://arxiv.org/abs/2606.23743
-    evidence: 'arXiv题名Sol Video Inference Engine: Agent-Native Full-Stack Acceleration Framework for Efficient Video Generation，作者Yitong Li、Junsong Chen、Haopeng Li等，最新v2为2026-06-24；comments为空，未见journal_ref。NVLabs官方文档引用为@misc，arXiv编号2606.23743一致，未写会议或录用。精确题名检索未发现正式出版证据；空comments本身不代表未发表，本条仅确认预印本存在，不等于确认未发表。'
+    source: https://openreview.net/forum?id=T1USDcgiBK
+    evidence: 今日经核验通道读取 OpenReview，forum T1USDcgiBK 题名与 arXiv 2606.23743 完全一致，venue 字段为「ICLR 2027 Conference Desk Rejected Submission」，即投稿被直接拒稿、未进入评审；arXiv 侧 comments 与 journal_ref 为空。这不是录用，维持 preprint。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。
     verification_confidence: medium
     year: 2026
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2606.23743
-    - https://nvlabs.github.io/Sana/Sol-Engine/docs
+    - https://openreview.net/forum?id=T1USDcgiBK
     verification_outcome: no_publication_evidence
+    blocker: Desk Rejected 记录由核验通道读取，本机 OpenReview 访问被浏览器验证拦截。
   solarwm:
     status: technical_report
     source: https://zixinzhang02.github.io/
@@ -2341,12 +2341,13 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2606.13035
-    evidence: '今日实际核对arXiv 2606.13035《TetherCache: Stabilizing Autoregressive Long-Form Video Generation with Gated Recall and Trusted Alignment》，作者Yu Meng、Xiangyang Luo、Letian Li等，v1为2026-06-11。Comments原文“17 pages, 8 figures”，未注明录用。截至2026-11-13，标题检索和已读arXiv页面未提供正式会议/期刊录用证据；仅确认预印本，不证明未发表。'
-    verification_confidence: medium
-    checked_at: '2026-11-13'
+    evidence: 今日两条互不相通的核验通道给出冲突结果：一条把 forum bI2MFCxHdB 认作本文的 ICLR 2027 在审投稿（Submission 837，含 Rebuttal_Revision 邀请），另一条把同一编号认作 rolling-sink 的评审回复页，并读到多篇 General Response to All Reviewers and AC 作者集中回复。同一 forum 编号不可能对应两篇，身份无法对齐，venue 与 decision 都取不到，论坛页与 pdf 均被 403 浏览器验证拦截，故本轮不晋档。arXiv 2606.13035 的 comments 只有页数与项目页链接，journal_ref 为空。截至 2026-11-16 未查到正式发表证据，不等于确认未发表；该条需人工登录 OpenReview 核对归属。
+    verification_confidence: low
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2606.13035
-    verification_outcome: no_publication_evidence
+    verification_outcome: blocked
+    blocker: forum bI2MFCxHdB 归属在两个核验通道之间冲突，OpenReview 对非登录访问返回浏览器验证，无法定论。
   toucheworld:
     status: technical_report
     year: 2026
@@ -2490,12 +2491,11 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2607.27380
-    evidence: '实际访问arXiv 2607.27380最新v2（2026-08-08），完整标题为VideoCoCo: Code-as-CoT for Physically-Consistent Video Generation via an Agentic Dual-Engine System，首作者Haodong Li；输入为该标题的缩写。comments仅15 pages, 3 figures, and 3 tables，未显示journal reference。作者官方仓库News为2026-07-29代码/权重发布，未写会议录用。搜索出现的ECCV2026涉及前作CoCo（2603.08652），不能转移给VideoCoCo。本次未找到此篇录用一手证据，暂记预印本，不代表确认未发表。'
+    evidence: arXiv 2607.27380 v2（2026-08-08）comments 只有页数与图表数；Semantic Scholar 与 OpenAlex 的 venue 字段都是 arXiv.org 自身，externalIds 只有 arXiv DOI 与 DBLP 的 corr 记录，不是期刊发表。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2607.27380
-    - https://github.com/micky-li-hd/VideoCoCo
     verification_outcome: no_publication_evidence
   videophy:
     status: published
@@ -2549,12 +2549,11 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2607.15038
-    evidence: 今日实际打开arXiv 2607.15038《Video = World + Event Stream》，作者Lianghua Huang等，最新v2为2026-07-17；Comments仅给官网地址。实际Wan Streamer v0.3官网为模型与能力发布介绍，未提供会议/期刊录用声明。截至2026-11-13在已访问来源未找到录用证据；仍确认对应预印本，不把模型发布等同论文正式发表。
+    evidence: arXiv 2607.15038 v2（2026-07-17）正式题名为 Video = World + Event Stream，comments 只有网站链接，无 journal_ref；官方页 wan-streamer.com/v0.3 是 2026-07-16 的产品发布页，全文不提会议或期刊。图谱节点里的 Wan Streamer v0.3 是官网版本名，不是论文副标题；性质更接近厂商技术发布，但不足以据此改判 technical_report，维持 preprint。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2607.15038
-    - https://wan-streamer.com/v0.3/
     verification_outcome: no_publication_evidence
   wanar-fixar:
     status: preprint
@@ -2682,12 +2681,11 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2604.21686
-    evidence: '实际访问arXiv 2604.21686最新v2（2026-08-05），标题WorldMark: A Unified Benchmark Suite for Interactive Video World Models，Xiaojie Xu、Zhengyuan Lin等八位作者。实际作者项目页题名、作者顺序和编号一致，BibTeX journal=arXiv preprint arXiv:2604.21686，未披露刊会录用及出版信息。结合标题检索，本次未找到录用一手证据，暂记预印本，不代表确认未发表。'
+    evidence: arXiv 2604.21686 comments 为空，无 journal_ref；CVPR 2026 OpenAccess 检索 0 命中，ICML 2026 PMLR v306 无该题。OpenReview 同名记录是另一篇关于语言模型水印的 WorldMark（ICLR 2027 Desk Rejected），与本文无关，切勿混淆；项目站 warena.ai 本轮不可读。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2604.21686
-    - https://alayalab.github.io/WorldMark/
     verification_outcome: no_publication_evidence
   worldmembench:
     status: preprint
@@ -2770,17 +2768,19 @@ papers:
     blocker: 官方仓库 404，缺补充来源；同名工作干扰，无法确认录用。
     verification_note: '实际成功访问arXiv 2610.39721，标题WorldProbe: When Video World Models Fall Apart under Long-Horizon Spatial Exploration，作者Minqi Wang、Jie Peng等十一人，comments=19 pages, 9 figures，确认预印本身份。精确题名检索未找到一手录用信息，但arXiv指向的作者仓库https://github.com/Untitled-W/WorldProbe本次返回GitHub404，无法继续检查该一手补充来源的最新声明。保留旧preprint并将本次发表核实记受阻，不声称已排除正式发表。'
   worldroambench:
-    status: preprint
+    status: submitted
     year: 2026
-    source: https://arxiv.org/abs/2606.31672
-    evidence: 实时arXiv题名及Ting-Bing Xu等作者对应；最新2026-09-18 v5，comments和journal_ref均无。实际访问Amap官方WorldRoam-Bench项目，Paper链接回同一arXiv，无明确会议/期刊接收声明；完整题名及OpenReview定向检索未获同篇官方发表证据。附加HTML抓取曾代理502，但摘要页和作者项目均已成功查证；搜索片段的相邻ECCV接收论文未混用。确认预印本，不等于确认未发表。
+    source: https://openreview.net/forum?id=QrVhQvM6H2
+    evidence: 今日经核验通道读取 OpenReview 记录，forum QrVhQvM6H2 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，投稿版题名把 An Open-World Benchmark for 改成 Evaluating，评审回复另见 forum 2xog9w4SJv，属在审投稿而非录用；arXiv 2606.31672 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
     verification_confidence: medium
-    checked_at: '2026-11-13'
+    checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2606.31672
-    - https://arxiv.org/html/2606.31672
-    - https://worldroam.amap.com/
+    - https://openreview.net/forum?id=QrVhQvM6H2
     verification_outcome: no_publication_evidence
+    name: ICLR 2027
+    track: unknown
+    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   worldsimbench:
     status: published
     source: https://proceedings.mlr.press/v267/qin25f.html
@@ -3176,6 +3176,27 @@ papers:
     checked_sources:
     - https://arxiv.org/abs/2611.15600
     - https://arxiv.org/html/2611.15600v1
+    verification_outcome: no_publication_evidence
+  migro:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.15315
+    evidence: '今日实际取 arXiv 2611.15315v1，题名 MIGRO: A Decoupled and Portable Long-Term Memory System for Language Models，v1 为 2026-11-11，comments 与 journal_ref 均为空，只有 v1 一个版本。实际打开代码仓库 github.com/zOUMINGXI/MIGRO 首页，README 未见任何会议或期刊录用字样。按标题与作者检索未落到任何论文集或 DOI 落地页。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-16'
+    checked_sources:
+    - https://arxiv.org/abs/2611.15315
+    - https://github.com/zOUMINGXI/MIGRO
+    verification_outcome: no_publication_evidence
+  mppa:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.15029
+    evidence: '今日实际取 arXiv 2611.15029v1，题名 Mask-Pattern Position Augmentation: Training-Free Long-Context Extrapolation for Diffusion LLMs，作者 Gaurav Sarkar 与 Syed Affan Daimi（IIIT Hyderabad），v1 为 2026-11-11，comments 为 “7 pages, 2 figures, 1 table, 1 algorithm”，journal_ref 为空，只有 v1 一个版本。摘要与元数据里没有投稿或录用声明，也没有项目页可查。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-16'
+    checked_sources:
+    - https://arxiv.org/abs/2611.15029
     verification_outcome: no_publication_evidence
 project_shortlist:
   位置时间寻址:
