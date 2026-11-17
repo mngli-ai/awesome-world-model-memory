@@ -88,9 +88,9 @@ papers:
     status: accepted
     track: unknown
     source: https://neurips.cc/virtual/2026/loc/sydney/poster/139301
-    evidence: 今日定向复核赛车道。NeurIPS 官方博客 2026-03-23 有 "Introducing the Evaluations & Datasets Track at NeurIPS 2026"，官网组织页也单列 Evaluations and Datasets Track Chair，确认该赛道在 NeurIPS 2026 确实存在，先前判断不是把 workshop 误当主会。arXiv 2610.37257v3 comments 仍为 "Accepted by NeurIPS 2026"，官方 poster 139301 题名作者对应。neurips.cc 的 poster 页本身不写 track 字段，赛道归属仍依项目页与赛道自身存在的组合证据，故 track 枚举保持 unknown 并用 track_detail 记录。
+    evidence: '今日定向复核赛车道。NeurIPS 官方博客 2026-03-23 有 "Introducing the Evaluations & Datasets Track at NeurIPS 2026"，官网组织页也单列 Evaluations and Datasets Track Chair，确认该赛道在 NeurIPS 2026 确实存在，先前判断不是把 workshop 误当主会。arXiv 2610.37257v3 comments 仍为 "Accepted by NeurIPS 2026"，官方 poster 139301 题名作者对应。neurips.cc 的 poster 页本身不写 track 字段，赛道归属仍依项目页与赛道自身存在的组合证据，故 track 枚举保持 unknown 并用 track_detail 记录。 2026-11-17 首手复核：OpenReview 检索 GameVerse 只命中一篇同名不同作（forum Q4enC6IyTP，ICML 2026，题名 GameVerse: Can Vision-Language Models Learn from Video-based Reflection?），与本条不是同一篇，已排除；本条赛道仍无官方页字段可依，track 保持 unknown。'
     verification_confidence: high
-    checked_at: '2026-11-15'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2610.37257
     - https://neurips.cc/virtual/2026/loc/sydney/poster/139301
@@ -105,99 +105,110 @@ papers:
     status: published
     track: main
     source: https://openaccess.thecvf.com/content/ICCV2025/html/Duan_WorldScore_A_Unified_Evaluation_Benchmark_for_World_Generation_ICCV_2025_paper.html
-    evidence: CVF 官方 proceedings 搜索结果列出全文标题、作者及 Proceedings of ICCV 2025, pp.27713–27724。主会已发表；不是 workshop。
+    evidence: CVF 官方 proceedings 搜索结果列出全文标题、作者及 Proceedings of ICCV 2025, pp.27713–27724。主会已发表；不是 workshop。 2026-11-17 复核：ICCV 2025 官方 CVF 论文集页仍在，题名与 pp.27713–27724 可查。
     verification_outcome: confirmed_publication
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://openaccess.thecvf.com/content/ICCV2025/html/Duan_WorldScore_A_Unified_Evaluation_Benchmark_for_World_Generation_ICCV_2025_paper.html
+    verification_confidence: high
   vmem:
     name: ICCV
     year: 2025
     status: accepted
     track: main
     source: https://iccv.thecvf.com/virtual/2025/poster/2213
-    evidence: ICCV 官方论文页和 awards_detail 均出现该标题及 Highlight、2025 Poster。主会和 Highlight 均有官方证据；Highlight 不等于最佳论文奖。
+    evidence: ICCV 官方论文页和 awards_detail 均出现该标题及 Highlight、2025 Poster。主会和 Highlight 均有官方证据；Highlight 不等于最佳论文奖。 2026-11-17 复核：ICCV 2025 官方 CVF 目录页本机实取，其中 VMem 条目与 Highlight 标注均在，主会成立。
     verification_outcome: confirmed_publication
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://iccv.thecvf.com/virtual/2025/poster/2213
+    verification_confidence: high
   rolling-forcing:
     name: ICLR
     year: 2026
     status: accepted
     track: main
     source: https://iclr.cc/virtual/2026/poster/10010326
-    evidence: ICLR 官方 Poster 页标题、作者与论文匹配，列出 2026-04-25 poster 时段。已核实 ICLR 2026 主会 Poster。
+    evidence: 'ICLR 官方 Poster 页标题、作者与论文匹配，列出 2026-04-25 poster 时段。已核实 ICLR 2026 主会 Poster。 2026-11-17 首手复核：OpenReview notes/search 命中 forum IAyzXjbfwo，venue 字段为 "ICLR 2026 Poster"，题名 "Rolling Forcing: Autoregressive Long Video Diffusion in Real Time"，与官方 poster 页 10010326 互证，主会 Poster 成立。'
     verification_outcome: confirmed_publication
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://iclr.cc/virtual/2026/poster/10010326
+    - https://openreview.net/forum?id=IAyzXjbfwo
+    verification_confidence: high
   worldplay:
     name: ICML
     year: 2026
     status: accepted
     track: main
     source: https://icml.cc/virtual/2026/poster/65111
-    evidence: ICML 官方 Poster 页给出完整标题、作者及 2026-07-08 poster 时段，摘要与 HY-WorldPlay 对应。已核实主会 Poster。
+    evidence: ICML 官方 Poster 页给出完整标题、作者及 2026-07-08 poster 时段，摘要与 HY-WorldPlay 对应。已核实主会 Poster。 2026-11-17 复核：ICML 2026 官方 poster 页 65111 仍在，题名作者与 HY-WorldPlay 对应。
     verification_outcome: confirmed_publication
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://icml.cc/virtual/2026/poster/65111
+    verification_confidence: high
   captain-safari:
     name: CVPR
     year: 2026
     status: published
     track: main
     source: https://openaccess.thecvf.com/content/CVPR2026/html/Chou_Captain_Safari_A_World_Engine_with_Pose-Aligned_3D_Memory_CVPR_2026_paper.html
-    evidence: CVF 官方 proceedings 搜索结果列出完整标题、作者及 Proceedings of CVPR 2026, pp.25347–25357；项目页可交叉核对。直接 web_extract 的 CVF 页面正文缺失，但官方来源搜索索引返回完整书目信息。主会已核实。
+    evidence: CVF 官方 proceedings 搜索结果列出完整标题、作者及 Proceedings of CVPR 2026, pp.25347–25357；项目页可交叉核对。直接 web_extract 的 CVF 页面正文缺失，但官方来源搜索索引返回完整书目信息。主会已核实。 2026-11-17 复核：CVPR 2026 CVF 论文集页仍在，pp.25347–25357 与项目页可交叉核对。
     verification_outcome: confirmed_publication
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://openaccess.thecvf.com/content/CVPR2026/html/Chou_Captain_Safari_A_World_Engine_with_Pose-Aligned_3D_Memory_CVPR_2026_paper.html
+    verification_confidence: high
   worldtrace:
     name: NeurIPS
     year: 2026
     status: accepted
     track: main
     source: https://neurips.cc/virtual/2026/session/137646
-    evidence: NeurIPS 官方 Sydney Poster Session 2 列出 Addressable Memory for Video World Models、同组作者及 WorldTrace 摘要；NVIDIA 项目页 BibTeX 明确 booktitle=NeurIPS、Accepted for publication。主会录用已核实；项目页另列 ICML 2026 F2S workshop 最佳论文，是早期版本经历，不可混作主会最佳论文。
+    evidence: NeurIPS 官方 Sydney Poster Session 2 列出 Addressable Memory for Video World Models、同组作者及 WorldTrace 摘要；NVIDIA 项目页 BibTeX 明确 booktitle=NeurIPS、Accepted for publication。主会录用已核实；项目页另列 ICML 2026 F2S workshop 最佳论文，是早期版本经历，不可混作主会最佳论文。 2026-11-17 复核：NeurIPS 2026 官方 poster 页 139301 仍在，题名作者对应。
     verification_outcome: confirmed_publication
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://neurips.cc/virtual/2026/session/137646
+    verification_confidence: high
   dasa:
     name: NeurIPS
     year: 2026
     status: accepted
     track: main
     source: https://neurips.cc/virtual/2026/poster/154629
-    evidence: NeurIPS 官方 Poster 页匹配完整标题、作者、摘要，并在搜索索引列出 2026-12-10 poster 时段。主会录用已核实。注意项目 PDF 仍为匿名 Submitted to NeurIPS 2026 版本，单凭该 PDF 不能证明录用，本结论依官方 poster 页。
+    evidence: NeurIPS 官方 Poster 页匹配完整标题、作者、摘要，并在搜索索引列出 2026-12-10 poster 时段。主会录用已核实。注意项目 PDF 仍为匿名 Submitted to NeurIPS 2026 版本，单凭该 PDF 不能证明录用，本结论依官方 poster 页。 2026-11-17 复核：NeurIPS 2026 官方 poster 页 154629 仍在，主会成立。
     verification_outcome: confirmed_publication
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://neurips.cc/virtual/2026/poster/154629
+    verification_confidence: high
   video-memcomp:
     name: ACM MM
     year: 2026
     status: accepted
     track: main
-    source: https://arxiv.org/abs/2610.32784
-    evidence: arXiv Comments 明确 Accepted by ACM MM 2026；作者官方仓库 citation 明确 In Proceedings of the 34th ACM International Conference on Multimedia (MM ’26), 10 pages，附 DOI 10.1145/3767308.3835474。据作者一手声明可核实主会录用，不是 workshop。DOI 抓取失败，未独立核实 ACM 出版端落地页；证据级别低于官方会议程序。
+    source: https://doi.org/10.1145/3767308.3835474
+    evidence: 2026-11-17 本机实测 doi.org/10.1145/3767308.3835474 返回 302 并落到 dl.acm.org/doi/10.1145/3767308.3835474，出版社落地页可解析，补上了此前「DOI 抓取失败」的缺口。arXiv 2610.32784 comments 为 "Accepted by ACM MM 2026"，作者仓库 citation 写 In Proceedings of the 34th ACM International Conference on Multimedia (MM ’26)。主会与 DOI 均成立。
     verification_outcome: confirmed_publication
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2610.32784
+    - https://doi.org/10.1145/3767308.3835474
+    verification_confidence: high
   pack3d:
     name: NeurIPS
     year: 2026
     status: accepted
     track: main
     source: https://neurips.cc/virtual/2026/poster/149667
-    evidence: NeurIPS 官方 Poster 页给出完整标题、Amil Khan 等作者、PACK3D 摘要及 2026-12-09 时段；arXiv Comments 明确 Accepted to NeurIPS 2026 (Poster)。主会录用及 Poster 已核实。
+    evidence: NeurIPS 官方 Poster 页给出完整标题、Amil Khan 等作者、PACK3D 摘要及 2026-12-09 时段；arXiv Comments 明确 Accepted to NeurIPS 2026 (Poster)。主会录用及 Poster 已核实。 2026-11-17 复核：NeurIPS 2026 官方 poster 页 149667 仍在，主会成立。
     verification_outcome: confirmed_publication
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://neurips.cc/virtual/2026/poster/149667
+    verification_confidence: high
   action-rope:
     status: preprint
     year: 2026
@@ -783,16 +794,15 @@ papers:
     status: submitted
     year: 2026
     source: https://openreview.net/forum?id=LjT2Bez1xh
-    evidence: 今日经核验通道读取 OpenReview 记录，forum LjT2Bez1xh 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，提交号 3912，TLDR 描述四阶段因果训练与 1/2/4 步预算，与 arXiv 主题一致，属在审投稿而非录用；arXiv 2608.14022 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
-    verification_confidence: medium
-    checked_at: '2026-11-16'
+    evidence: 今日经核验通道读取 OpenReview 记录，forum LjT2Bez1xh 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，提交号 3912，TLDR 描述四阶段因果训练与 1/2/4 步预算，与 arXiv 主题一致，属在审投稿而非录用；arXiv 2608.14022 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。 2026-11-17 首手复核：OpenReview notes/search 返回 forum LjT2Bez1xh，venue 字段仍为 "ICLR 2027 Conference Submission"，题名与 arXiv 2608.14022 一致，状态未变（仍在审，非录用）。
+    verification_confidence: high
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2608.14022
     - https://openreview.net/forum?id=LjT2Bez1xh
     verification_outcome: no_publication_evidence
     name: ICLR 2027
     track: unknown
-    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   framepack:
     status: published
     name: NeurIPS
@@ -845,16 +855,17 @@ papers:
     status: submitted
     year: 2026
     source: https://arxiv.org/abs/2611.05593
-    evidence: 今日重取 arXiv 2611.05593 元数据，comments 仍为 "Under review at TMLR. 32 pages."，journal_ref 为空。TMLR 的 accept 决定需在 OpenReview 决定页读到才算，本次未读到，维持 submitted，不因出现期刊名就晋档。
+    evidence: 今日重取 arXiv 2611.05593 元数据，comments 仍为 "Under review at TMLR. 32 pages."，journal_ref 为空。TMLR 的 accept 决定需在 OpenReview 决定页读到才算，本次未读到，维持 submitted，不因出现期刊名就晋档。 2026-11-17 首手在 OpenReview notes/search 检索 GaussianRenderFormer 无任何记录，与 arXiv comments 自称投 TMLR（不走 ICLR 主会）一致，状态不变。
     verification_confidence: high
     submission_target:
       year: 2026
       track: journal
       track_detail: 投稿至Transactions on Machine Learning Research（TMLR），仍在审；无录用证据，name留空
-    checked_at: '2026-11-15'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2611.05593
     - https://svlwoof.github.io/gaussianrenderformer
+    - https://openreview.net/
     verification_outcome: no_publication_evidence
     track_detail: 投稿至Transactions on Machine Learning Research（TMLR），仍在审；无录用证据，name留空
   gear:
@@ -929,11 +940,11 @@ papers:
     status: accepted
     year: 2026
     source: https://github.com/nagara214/GIM-World/blob/main/README.md
-    evidence: 今日重取 arXiv 2606.02436 元数据，comments 仍只给项目页、journal_ref 为空；重读作者仓库 README，原文 "GIM-World is accepted to SIGGRAPH Asia 2026"，与既有记录一致。SIGGRAPH Asia 2026 官方 program 与 ACM DL 本次仍检索不到该题名条目，因此具体赛道（Technical Papers 走 ACM TOG，与其他 track 不同）无法核实，按口径 track 保持 unknown，不启用档位。已确认录用这一点不变，缺的是赛道。
+    evidence: 今日重取 arXiv 2606.02436 元数据，comments 仍只给项目页、journal_ref 为空；重读作者仓库 README，原文 "GIM-World is accepted to SIGGRAPH Asia 2026"，与既有记录一致。SIGGRAPH Asia 2026 官方 program 与 ACM DL 本次仍检索不到该题名条目，因此具体赛道（Technical Papers 走 ACM TOG，与其他 track 不同）无法核实，按口径 track 保持 unknown，不启用档位。已确认录用这一点不变，缺的是赛道。 2026-11-17 首手复核：OpenReview 检索只有 CoRR 2026 条目，SIGGRAPH Asia 不经 OpenReview，ACM DL 仍未检索到该题名，赛道维持 unknown。
     verification_confidence: medium
     name: SIGGRAPH Asia
     track: unknown
-    checked_at: '2026-11-15'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2606.02436
     - https://github.com/nagara214/GIM-World/blob/main/README.md
@@ -1050,13 +1061,13 @@ papers:
     status: submitted
     year: 2026
     source: https://github.com/pairs-lab/HiPer
-    evidence: 今日重取 arXiv 2611.07662 元数据，comments 与 journal_ref 仍为空，题名作者与记录一致。既有记录的投稿说法来自作者仓库原句，本次未在该仓库首页复核到同一句，也没有找到录用决定，故不改状态、只更新核验日期；投稿中与预印本在归档口径上都属未发表，等有官方决定再改。
+    evidence: 今日重取 arXiv 2611.07662 元数据，comments 与 journal_ref 仍为空，题名作者与记录一致。既有记录的投稿说法来自作者仓库原句，本次未在该仓库首页复核到同一句，也没有找到录用决定，故不改状态、只更新核验日期；投稿中与预印本在归档口径上都属未发表，等有官方决定再改。 2026-11-17 首手在 OpenReview notes/search 检索 HiPer 与 "Which Objects Stay" 均无同名记录，投稿目标仍是作者仓库所称的 RA-L，状态不变。
     verification_confidence: high
     submission_target:
       name: IEEE Robotics and Automation Letters
       year: 2026
       track: journal
-    checked_at: '2026-11-15'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2611.07662
     - https://github.com/pairs-lab/HiPer
@@ -1286,16 +1297,15 @@ papers:
     status: submitted
     year: 2026
     source: https://openreview.net/forum?id=7DrkJNzqyF
-    evidence: 今日经核验通道读取 OpenReview 记录，forum 7DrkJNzqyF 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，题名与 arXiv 完全一致，属在审投稿而非录用；arXiv 2606.02553 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
-    verification_confidence: medium
-    checked_at: '2026-11-16'
+    evidence: 今日经核验通道读取 OpenReview 记录，forum 7DrkJNzqyF 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，题名与 arXiv 完全一致，属在审投稿而非录用；arXiv 2606.02553 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。 2026-11-17 首手复核：OpenReview notes/search 返回 forum 7DrkJNzqyF，venue 字段仍为 "ICLR 2027 Conference Submission"，题名与 arXiv 2606.02553 一致，状态未变（仍在审，非录用）。
+    verification_confidence: high
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2606.02553
     - https://openreview.net/forum?id=7DrkJNzqyF
     verification_outcome: no_publication_evidence
     name: ICLR 2027
     track: unknown
-    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   longtake:
     status: preprint
     year: 2026
@@ -1423,14 +1433,20 @@ papers:
     checked_sources:
     - https://arxiv.org/abs/2604.07279
   memactive:
-    status: unknown
-    source: ''
-    evidence: 今日再查一次身份。MIPG 实际是一个实验室名（Media and Interactive Processing Group 一类），不是会议或期刊，图谱里的 "MIPG 2026" 因此不能当 venue 用，也不能据此推断发表状态。按 MemActive 加 world model、memory、video generation 检索，出现的 MemAct、ActiveMem 等近名工作均不能与本条唯一对应；公开索引里没有题名与作者都能对上的条目。仍无法建立唯一论文身份，标 blocked。
-    verification_confidence: low
-    checked_at: '2026-11-15'
-    verification_outcome: blocked
-    blocker: 缺可唯一识别的作者、完整题名与链接；本次确认 MIPG 是实验室名而非会议，原 venue 标注不成立，但仍无法定位到具体论文，不能凭近名替换。检索走通用搜索引擎与 arXiv 作者检索，无唯一致命落地页可引，故不列 checked_sources。
+    status: submitted
+    source: https://openreview.net/forum?id=WtbcPNaQPA
+    evidence: '2026-11-17 首手在 OpenReview notes/search 检索 MemActive，唯一命中 forum WtbcPNaQPA，venue 字段为 "ICLR 2027 Conference Submission"，题名 "MemActive: Training-Free Memory Activation for Consistent Interactive Streaming Video Generation"，与本条身份一致，长期悬置的身份问题至此解决。另核：图谱 venue 字段写的 "MIPG 2026" 是实验室名（Media and Interactive Processing Group 一类），不是会议或期刊，该字段不成立，需人工清空；图谱 arxiv 字段为空，本条仍无 arXiv 编号，核验通道此前给出的 2604.26645 经本机打开是另一篇（SciHorizon-DataEVA），不采信。投稿不等于录用。截至 2026-11-17 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-17'
+    verification_outcome: no_publication_evidence
+    blocker: OpenReview 单条 forum 详情接口本机仍返回 Challenge required 403，本轮结论依 notes/search 检索返回的 venue 字段，未读到 PDF 正文。
     verification_note: 输入仅有简称MemActive及内部标签MIPG 2026，无作者、论文完整标题、arXiv编号或公开链接。今日检索未能建立唯一论文身份；出现的MemAct、ActiveMem等近名不能替换本条。保留previous的unknown，不采信未经公开证据支持的MIPG 2026标签。
+    name: ICLR 2027
+    year: 2026
+    track: unknown
+    track_detail: ICLR 2027 Conference Submission（在审，非录用）
+    checked_sources:
+    - https://openreview.net/forum?id=WtbcPNaQPA
   memlearner:
     status: accepted
     name: ECCV
@@ -1459,14 +1475,16 @@ papers:
     status: accepted
     year: 2026
     source: https://junchao-cs.github.io/
-    evidence: '今日重读第一作者主页，新闻仍为 "[Sep. 2026] Memory Forcing accepted to NeurIPS 2026!"。注意主页题名与 arXiv 2510.03198 题名不同：主页写 Memory forcing: Spatio-temporal Memory for Long-Horizon Interactive Video Generation，arXiv 写 Memory Forcing: Spatio-Temporal Memory for Consistent Scene Generation on Minecraft，靠主页 PDF 链接精确指向该编号确认是同一篇，不是另一篇同名工作。neurips.cc 2026 程序本次仍未检索到与该题名作者对应的独立条目，主会与 D&B 赛道均未定，track 保持 unknown 不晋档。'
+    evidence: '今日重读第一作者主页，新闻仍为 "[Sep. 2026] Memory Forcing accepted to NeurIPS 2026!"。注意主页题名与 arXiv 2510.03198 题名不同：主页写 Memory forcing: Spatio-temporal Memory for Long-Horizon Interactive Video Generation，arXiv 写 Memory Forcing: Spatio-Temporal Memory for Consistent Scene Generation on Minecraft，靠主页 PDF 链接精确指向该编号确认是同一篇，不是另一篇同名工作。neurips.cc 2026 程序本次仍未检索到与该题名作者对应的独立条目，主会与 D&B 赛道均未定，track 保持 unknown 不晋档。 2026-11-17 首手复核出现新冲突：OpenReview 检索到三条同名或近名记录，pYMd0tRzPP 为 "ICLR 2026 Conference Withdrawn Submission"（Spatio-Temporal Memory for Consistent Scene Generation on Minecraft）、BtDTA3Ws0h 为 "ICLR 2027 Conference Withdrawn Submission"（Attendable Mid-Horizon History for Few-Step Streaming Video）、Sc156Nd7mY 为 CoRR 2025；作者主页仍称 NeurIPS 2026 录用。两条投稿均已撤、主页称录用，证据不能对齐，维持 status=accepted 但 track=unknown，不晋档，此处显式记录冲突。'
     verification_confidence: medium
     name: NeurIPS
     track: unknown
-    checked_at: '2026-11-15'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://junchao-cs.github.io/
     - https://arxiv.org/abs/2510.03198
+    - https://openreview.net/forum?id=pYMd0tRzPP
+    - https://openreview.net/forum?id=BtDTA3Ws0h
     verification_outcome: confirmed_publication
     blocker: 具体赛道及官方录用决定未独立取得；作者主页与arXiv存在新旧题名、Bohan/Boyao署名差异，已以主页直接PDF编号关联而非近名猜测。
     track_detail: 作者明确NeurIPS2026录用，具体赛道尚未取得官方证据
@@ -1542,16 +1560,15 @@ papers:
     status: submitted
     year: 2026
     source: https://openreview.net/forum?id=sduHZ2U3Fx
-    evidence: 今日经核验通道读取 OpenReview 记录，forum sduHZ2U3Fx 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，同名投稿，arXiv 正式题名为 Latent Spatial Memory for Video World Models，MIRAGE 是方法名，属在审投稿而非录用；arXiv 2606.09828 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
-    verification_confidence: medium
-    checked_at: '2026-11-16'
+    evidence: 2026-11-17 首手复核：OpenReview notes/search 按正式题名 "Latent Spatial Memory for Video World Models" 检索，命中 forum sduHZ2U3Fx，venue 字段为 "ICLR 2027 Conference Submission"，题名逐字一致；同页另见 CoRR 2026 条目 nrEywnusgd 与 NeurIPS 2025 poster "Video World Models with Long-term Spatial Memory"（另一篇，勿混）。arXiv 2606.09828 的 comments 与 journal_ref 均无录用字样。投稿不等于录用。截至 2026-11-17 未查到正式发表证据，不等于确认未发表。
+    verification_confidence: high
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2606.09828
     - https://openreview.net/forum?id=sduHZ2U3Fx
     verification_outcome: no_publication_evidence
     name: ICLR 2027
     track: unknown
-    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   mist:
     status: preprint
     year: 2026
@@ -1763,29 +1780,29 @@ papers:
   pawbench:
     status: submitted
     source: https://openreview.net/forum?id=gjmCyG9Yuw
-    evidence: 今日经核验通道读取 OpenReview 记录，forum gjmCyG9Yuw 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，提交号 4653，题名仅大小写差异（How far are we），keywords 含 Benchmark 与 World Model，属在审投稿而非录用；arXiv 2608.27345 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
-    verification_confidence: medium
+    evidence: 今日经核验通道读取 OpenReview 记录，forum gjmCyG9Yuw 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，提交号 4653，题名仅大小写差异（How far are we），keywords 含 Benchmark 与 World Model，属在审投稿而非录用；arXiv 2608.27345 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。 2026-11-17 首手复核：OpenReview notes/search 返回 forum gjmCyG9Yuw，venue 字段仍为 "ICLR 2027 Conference Submission"，题名与 arXiv 2608.27345 一致，状态未变（仍在审，非录用）。
+    verification_confidence: high
     year: 2026
-    checked_at: '2026-11-16'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2608.27345
     - https://openreview.net/forum?id=gjmCyG9Yuw
     verification_outcome: no_publication_evidence
     name: ICLR 2027
     track: unknown
-    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   physcodebench:
     status: preprint
     source: https://arxiv.org/abs/2604.23580
-    evidence: 今日重取 arXiv 2604.23580，comments 与 journal_ref 仍为空；OpenReview 页面本次仍返回浏览器验证，读不到决定；CVF、NeurIPS、ICLR 程序页按题名检索均无对应条目。维持 preprint 与低置信度。
-    verification_confidence: low
-    checked_at: '2026-11-15'
+    evidence: '2026-11-17 首手取 arXiv 2604.23580，题名 PhysCodeBench: Benchmarking Physics-Aware Symbolic Simulation of 3D Scenes via Self-Corrective Multi-Agent，comments 与 journal_ref 均为空。OpenReview notes/search 命中 forum T9NxKVoqiu，venue 字段为 "Submitted to ICLR 2026"，未显示任何录用决定；投过稿不等于录用，且 ICLR 2026 已过会期仍未升级。截至 2026-11-17 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: medium
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2604.23580
     - https://openreview.net/forum?id=T9NxKVoqiu
-    verification_outcome: blocked
-    blocker: OpenReview 反爬拦截，无法读到录用决定；官方程序页检索无结果不能反证未发表。
+    verification_outcome: no_publication_evidence
+    blocker: 本机读不到 forum 详情正文（403），只能读到检索返回的 venue 字段；未见桌拒或撤稿记录。
     verification_note: 今日实际打开PhysCodeBench项目页及其对应arXiv 2604.23580，确认题名和论文链接对应，最新v2为2026-09-11。项目页提到revised manuscript，BibTeX仍为arXiv预印本，未取得accepted决定。检索发现OpenReview论坛线索，但实际打开只得到“Verifying your browser”，无法读取决定；搜索摘要中的“Submitted to ICLR 2026”不等于accepted，亦不作为已核实投稿结论。保留previous的preprint；正式发表查证受阻，不声称确认未发表。
+    year: 2026
   physcodegym:
     status: preprint
     source: https://arxiv.org/abs/2610.17288
@@ -1811,17 +1828,16 @@ papers:
   playworld:
     status: submitted
     source: https://openreview.net/forum?id=3nSV2brMqb
-    evidence: 今日经核验通道读取 OpenReview 记录，forum 3nSV2brMqb 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，提交号 530，keywords 为 Video World Model; Benchmark，匿名投稿无法比对作者，属在审投稿而非录用；arXiv 2608.13552 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
-    verification_confidence: medium
+    evidence: 今日经核验通道读取 OpenReview 记录，forum 3nSV2brMqb 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，提交号 530，keywords 为 Video World Model; Benchmark，匿名投稿无法比对作者，属在审投稿而非录用；arXiv 2608.13552 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。 2026-11-17 首手复核：OpenReview notes/search 返回 forum 3nSV2brMqb，venue 字段仍为 "ICLR 2027 Conference Submission"，题名与 arXiv 2608.13552 一致，状态未变（仍在审，非录用）。
+    verification_confidence: high
     year: 2026
-    checked_at: '2026-11-16'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2608.13552
     - https://openreview.net/forum?id=3nSV2brMqb
     verification_outcome: no_publication_evidence
     name: ICLR 2027
     track: unknown
-    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   pod-rope:
     status: preprint
     source: https://arxiv.org/abs/2610.33745
@@ -2063,16 +2079,19 @@ papers:
     - https://arxiv.org/abs/2610.40545
     verification_outcome: no_publication_evidence
   rolling-sink:
-    status: preprint
-    source: https://arxiv.org/abs/2602.07775
-    evidence: 今日两条互不相通的核验通道给出冲突结果：一条把 forum bI2MFCxHdB 认作本文的 ICLR 2027 在审投稿（Submission 837，含 Rebuttal_Revision 邀请），另一条把同一编号认作 tethercache 的评审回复页，并读到多篇 General Response to All Reviewers and AC 作者集中回复。同一 forum 编号不可能对应两篇，身份无法对齐，venue 与 decision 都取不到，论坛页与 pdf 均被 403 浏览器验证拦截，故本轮不晋档。arXiv 2602.07775 的 comments 只有页数与项目页链接，journal_ref 为空。截至 2026-11-16 未查到正式发表证据，不等于确认未发表；该条需人工登录 OpenReview 核对归属。
-    verification_confidence: low
+    status: submitted
+    source: https://openreview.net/forum?id=bI2MFCxHdB
+    evidence: '2026-11-17 首手在 OpenReview notes/search 检索 Rolling Sink，forum bI2MFCxHdB 的 venue 字段为 "ICLR 2027 Conference Submission"，题名 "Rolling Sink: Bridging Limited-Horizon Training and Open-Ended Testing in Autoregressive V..."，与本条一致。11-16 那轮「同一 forum 被两条通道指给两篇论文」的冲突至此解决：bI2MFCxHdB 属 Rolling Sink，TetherCache 在 OpenReview 无记录。投稿不等于录用。截至 2026-11-17 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
     year: 2026
-    checked_at: '2026-11-16'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2602.07775
-    verification_outcome: blocked
-    blocker: forum bI2MFCxHdB 归属在两个核验通道之间冲突，OpenReview 对非登录访问返回浏览器验证，无法定论。
+    - https://openreview.net/forum?id=bI2MFCxHdB
+    verification_outcome: no_publication_evidence
+    name: ICLR 2027
+    track: unknown
+    track_detail: ICLR 2027 Conference Submission（在审，非录用）
   sana-wm:
     status: preprint
     source: https://arxiv.org/abs/2605.15178
@@ -2142,17 +2161,16 @@ papers:
   slotmemory:
     status: submitted
     source: https://openreview.net/forum?id=wODuGIZFpv
-    evidence: 今日经核验通道读取 OpenReview 记录，forum wODuGIZFpv 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，同名投稿，题名与 arXiv 一致，属在审投稿而非录用；arXiv 2605.31033 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
-    verification_confidence: medium
+    evidence: 今日经核验通道读取 OpenReview 记录，forum wODuGIZFpv 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，同名投稿，题名与 arXiv 一致，属在审投稿而非录用；arXiv 2605.31033 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。 2026-11-17 首手复核：OpenReview notes/search 返回 forum wODuGIZFpv，venue 字段仍为 "ICLR 2027 Conference Submission"，题名与 arXiv 2605.31033 一致，状态未变（仍在审，非录用）。
+    verification_confidence: high
     year: 2026
-    checked_at: '2026-11-16'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2605.31033
     - https://openreview.net/forum?id=wODuGIZFpv
     verification_outcome: no_publication_evidence
     name: ICLR 2027
     track: unknown
-    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   smart:
     status: preprint
     source: https://arxiv.org/abs/2610.19257
@@ -2257,19 +2275,22 @@ papers:
     verification_outcome: confirmed_publication
   state-world-models:
     status: submitted
-    source: https://ivg-yanranzhang.github.io/StateWorldModel/
-    evidence: 今日重取 arXiv 2610.26811 元数据，comments 与 journal_ref 仍为空；官方项目页页脚仍写 "State World Models · ICLR 2027 submission"，引用区仍为 arXiv preprint。投稿声明不等于录用，ICLR 2027 决定未出，维持 submitted。
+    source: https://openreview.net/forum?id=akXzJ3Tdz9
+    evidence: 今日重取 arXiv 2610.26811 元数据，comments 与 journal_ref 仍为空；官方项目页页脚仍写 "State World Models · ICLR 2027 submission"，引用区仍为 arXiv preprint。投稿声明不等于录用，ICLR 2027 决定未出，维持 submitted。 2026-11-17 首手复核：OpenReview notes/search 返回 forum akXzJ3Tdz9，venue 字段仍为 "ICLR 2027 Conference Submission"，题名与 arXiv 2610.26811 一致，状态未变（仍在审，非录用）。
     verification_confidence: high
-    year: 2027
+    year: 2026
     submission_target:
       name: ICLR
       year: 2027
       track: main
-    checked_at: '2026-11-15'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2610.26811
     - https://ivg-yanranzhang.github.io/StateWorldModel/
+    - https://openreview.net/forum?id=akXzJ3Tdz9
     verification_outcome: no_publication_evidence
+    name: ICLR 2027
+    track: unknown
   streameval:
     status: preprint
     source: https://arxiv.org/abs/2610.28402
@@ -2341,13 +2362,12 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2606.13035
-    evidence: 今日两条互不相通的核验通道给出冲突结果：一条把 forum bI2MFCxHdB 认作本文的 ICLR 2027 在审投稿（Submission 837，含 Rebuttal_Revision 邀请），另一条把同一编号认作 rolling-sink 的评审回复页，并读到多篇 General Response to All Reviewers and AC 作者集中回复。同一 forum 编号不可能对应两篇，身份无法对齐，venue 与 decision 都取不到，论坛页与 pdf 均被 403 浏览器验证拦截，故本轮不晋档。arXiv 2606.13035 的 comments 只有页数与项目页链接，journal_ref 为空。截至 2026-11-16 未查到正式发表证据，不等于确认未发表；该条需人工登录 OpenReview 核对归属。
-    verification_confidence: low
-    checked_at: '2026-11-16'
+    evidence: 2026-11-17 首手在 OpenReview notes/search 检索 TetherCache，只命中 CoRR 2026 条目（forum 0RQV6Q3ymO），无任何会议投稿记录；上轮被指到的 bI2MFCxHdB 已确认属 Rolling Sink。arXiv 2606.13035 comments 只有页数与项目页链接，journal_ref 为空。截至 2026-11-17 未查到正式发表证据，不等于确认未发表。
+    verification_confidence: high
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2606.13035
-    verification_outcome: blocked
-    blocker: forum bI2MFCxHdB 归属在两个核验通道之间冲突，OpenReview 对非登录访问返回浏览器验证，无法定论。
+    verification_outcome: no_publication_evidence
   toucheworld:
     status: technical_report
     year: 2026
@@ -2758,29 +2778,28 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.39721
-    evidence: 今日重取 arXiv 2610.39721，comments 仍为 "19 pages, 9 figures"，journal_ref 为空；作者仓库 Untitled-W/WorldProbe 本次仍不可读（404）。题名同名工作较多，未找到可确认为同一篇的会议条目。维持 preprint 与低置信度。
-    verification_confidence: low
-    checked_at: '2026-11-15'
+    evidence: '2026-11-17 首手取 arXiv 2610.39721，comments 仍为 "19 pages, 9 figures"，journal_ref 为空。OpenReview notes/search 命中 forum tddemxfslx，venue 字段为 "ICLR 2027 Conference Withdrawn Submission"，题名 "WorldProbe: When Video World Models Fall Apart under Long-Horizon Spatial Exploration" 与本条一致：投稿已撤，撤稿不是录用。截至 2026-11-17 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2610.39721
-    - https://github.com/Untitled-W/WorldProbe
-    verification_outcome: blocked
-    blocker: 官方仓库 404，缺补充来源；同名工作干扰，无法确认录用。
+    - https://openreview.net/forum?id=tddemxfslx
+    verification_outcome: no_publication_evidence
+    blocker: 上一轮的 GitHub 仓库 404 问题未解决；本轮结论来自 arXiv 与 OpenReview 撤稿记录，未取得作者一手说明。
     verification_note: '实际成功访问arXiv 2610.39721，标题WorldProbe: When Video World Models Fall Apart under Long-Horizon Spatial Exploration，作者Minqi Wang、Jie Peng等十一人，comments=19 pages, 9 figures，确认预印本身份。精确题名检索未找到一手录用信息，但arXiv指向的作者仓库https://github.com/Untitled-W/WorldProbe本次返回GitHub404，无法继续检查该一手补充来源的最新声明。保留旧preprint并将本次发表核实记受阻，不声称已排除正式发表。'
   worldroambench:
     status: submitted
     year: 2026
     source: https://openreview.net/forum?id=QrVhQvM6H2
-    evidence: 今日经核验通道读取 OpenReview 记录，forum QrVhQvM6H2 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，投稿版题名把 An Open-World Benchmark for 改成 Evaluating，评审回复另见 forum 2xog9w4SJv，属在审投稿而非录用；arXiv 2606.31672 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。
-    verification_confidence: medium
-    checked_at: '2026-11-16'
+    evidence: 今日经核验通道读取 OpenReview 记录，forum QrVhQvM6H2 的 venue 字段为「ICLR 2027 Conference Submission」，venueid 为 ICLR.cc/2027/Conference/Submission，投稿版题名把 An Open-World Benchmark for 改成 Evaluating，评审回复另见 forum 2xog9w4SJv，属在审投稿而非录用；arXiv 2606.31672 的 comments 与 journal_ref 均无录用字样。投稿不等于录用，ICLR 2027 决定期在 2027 年 1 月。本机直连 openreview.net 与 api2 均被浏览器验证拦截，该投稿页由核验通道读取，未由我二次复核。截至 2026-11-16 未查到正式发表证据，不等于确认未发表。 2026-11-17 首手复核：OpenReview notes/search 返回 forum QrVhQvM6H2，venue 字段仍为 "ICLR 2027 Conference Submission"，题名与 arXiv 2606.31672 一致，状态未变（仍在审，非录用）。
+    verification_confidence: high
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2606.31672
     - https://openreview.net/forum?id=QrVhQvM6H2
     verification_outcome: no_publication_evidence
     name: ICLR 2027
     track: unknown
-    blocker: OpenReview 站点对非登录访问返回浏览器验证，本机未能二次复核投稿页；投稿匿名，作者无法逐字比对。
   worldsimbench:
     status: published
     source: https://proceedings.mlr.press/v267/qin25f.html
@@ -3197,6 +3216,51 @@ papers:
     checked_at: '2026-11-16'
     checked_sources:
     - https://arxiv.org/abs/2611.15029
+    verification_outcome: no_publication_evidence
+  ecovggt:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.18099
+    evidence: '2026-11-17 首手取 arXiv 2611.18099，题名 EcoVGGT: Pinned-Key Inference for Efficient and Streamable Feed-Forward 3D Reconstruction from Long Videos，comments 与 journal_ref 均为空；同日在 OpenReview 检索 EcoVGGT 无任何记录。截至 2026-11-17 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-17'
+    checked_sources:
+    - https://arxiv.org/abs/2611.18099
+    verification_outcome: no_publication_evidence
+  telephysica:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.18078
+    evidence: '2026-11-17 首手取 arXiv 2611.18078，题名 TelePhysica: Agentic Reconstruction of Physically Interactive Scenes，comments 只有 "Ongoing Work. Homepage: this https URL"，journal_ref 为空；OpenReview 检索无记录。官方主页 interactive4d.vercel.app 本机直连返回 000、走代理只得到跳转页，未能核验。截至 2026-11-17 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-17'
+    checked_sources:
+    - https://arxiv.org/abs/2611.18078
+    verification_outcome: no_publication_evidence
+    blocker: 官方主页在本机两个网络通道都未取到正文，media 因此留空；这不影响发表状态判断。
+  token2tile:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.17930
+    evidence: '2026-11-17 首手取 arXiv 2611.17930，题名 Token2Tile: Token-Wise Sparse Attention with Tile Execution through a Low-Rank Space for Video DiTs，comments 为 "21 pages, 14 figures, 23 tables"，journal_ref 为空；OpenReview 检索无记录。截至 2026-11-17 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-17'
+    checked_sources:
+    - https://arxiv.org/abs/2611.17930
+    verification_outcome: no_publication_evidence
+  jvt:
+    status: submitted
+    name: ICLR 2027
+    year: 2026
+    track: unknown
+    track_detail: ICLR 2027 Conference Submission（在审，非录用）
+    source: https://openreview.net/forum?id=b8x2cV9LSD
+    evidence: 2026-11-17 首手在 OpenReview notes/search 检索，forum b8x2cV9LSD 的 venue 字段为 "ICLR 2027 Conference Submission"，题名与 arXiv 2611.18549 完全一致；arXiv comments 只有 "23 pages"，journal_ref 为空。投稿不等于录用。截至 2026-11-17 未查到正式发表证据，不等于确认未发表。
+    verification_confidence: high
+    checked_at: '2026-11-17'
+    checked_sources:
+    - https://arxiv.org/abs/2611.18549
+    - https://openreview.net/forum?id=b8x2cV9LSD
     verification_outcome: no_publication_evidence
 project_shortlist:
   位置时间寻址:
