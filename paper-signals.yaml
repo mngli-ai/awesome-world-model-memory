@@ -88,7 +88,7 @@ papers:
     status: accepted
     track: unknown
     source: https://neurips.cc/virtual/2026/loc/sydney/poster/139301
-    evidence: '今日定向复核赛车道。NeurIPS 官方博客 2026-03-23 有 "Introducing the Evaluations & Datasets Track at NeurIPS 2026"，官网组织页也单列 Evaluations and Datasets Track Chair，确认该赛道在 NeurIPS 2026 确实存在，先前判断不是把 workshop 误当主会。arXiv 2610.37257v3 comments 仍为 "Accepted by NeurIPS 2026"，官方 poster 139301 题名作者对应。neurips.cc 的 poster 页本身不写 track 字段，赛道归属仍依项目页与赛道自身存在的组合证据，故 track 枚举保持 unknown 并用 track_detail 记录。 2026-11-17 首手复核：OpenReview 检索 GameVerse 只命中一篇同名不同作（forum Q4enC6IyTP，ICML 2026，题名 GameVerse: Can Vision-Language Models Learn from Video-based Reflection?），与本条不是同一篇，已排除；本条赛道仍无官方页字段可依，track 保持 unknown。'
+    evidence: '今日定向复核赛车道。NeurIPS 官方博客 2026-03-23 有 "Introducing the Evaluations & Datasets Track at NeurIPS 2026"，官网组织页也单列 Evaluations and Datasets Track Chair，确认该赛道在 NeurIPS 2026 确实存在，先前判断不是把 workshop 误当主会。arXiv 2610.37257v3 comments 仍为 "Accepted by NeurIPS 2026"，官方 poster 139301 题名作者对应。neurips.cc 的 poster 页本身不写 track 字段，赛道归属仍依项目页与赛道自身存在的组合证据，故 track 枚举保持 unknown 并用 track_detail 记录。 2026-11-17 首手复核：OpenReview 检索 GameVerse 只命中一篇同名不同作（forum Q4enC6IyTP，ICML 2026，题名 GameVerse: Can Vision-Language Models Learn from Video-based Reflection?），与本条不是同一篇，已排除；本条赛道仍无官方页字段可依，track 保持 unknown。 2026-11-17 复核：官方 poster 139301 本机可取（302 跟随后 200），GameVerse 出现 6 处，但页面仍不写 track 字段；核验通道本轮称在 NeurIPS E&D 名单页见到该文，它给的 /virtual/2026/events/ed 在本机返回 404，没有可复核的落地页，故不采信，track 保持 unknown，不启用档位。'
     verification_confidence: high
     checked_at: '2026-11-17'
     checked_sources:
@@ -380,12 +380,14 @@ papers:
     name: WACV
     track: main
     source: https://arxiv.org/abs/2611.09816
-    evidence: arXiv comments 写 WACV camera ready，支持录用；原文未注明届次，故不猜填年份。
+    evidence: arXiv 2611.09816 comments 写 "WACV camera ready"，支持录用；原文未注明届次，2026-11-17 复核按 WACV 会期序列补记 2027，但未取得 CVF 论文集页，届次置信度低于会议本身，track 维持 main、置信度维持 medium。
     verification_confidence: medium
     verification_outcome: confirmed_publication
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2611.09816
+    year: 2027
+    track_detail: WACV 2027 主会，届次由 arXiv comments "WACV camera ready" 与 2027 会期推定，未取得论文集页
   boxworld:
     status: preprint
     year: 2026
@@ -940,7 +942,7 @@ papers:
     status: accepted
     year: 2026
     source: https://github.com/nagara214/GIM-World/blob/main/README.md
-    evidence: 今日重取 arXiv 2606.02436 元数据，comments 仍只给项目页、journal_ref 为空；重读作者仓库 README，原文 "GIM-World is accepted to SIGGRAPH Asia 2026"，与既有记录一致。SIGGRAPH Asia 2026 官方 program 与 ACM DL 本次仍检索不到该题名条目，因此具体赛道（Technical Papers 走 ACM TOG，与其他 track 不同）无法核实，按口径 track 保持 unknown，不启用档位。已确认录用这一点不变，缺的是赛道。 2026-11-17 首手复核：OpenReview 检索只有 CoRR 2026 条目，SIGGRAPH Asia 不经 OpenReview，ACM DL 仍未检索到该题名，赛道维持 unknown。
+    evidence: 今日重取 arXiv 2606.02436 元数据，comments 仍只给项目页、journal_ref 为空；重读作者仓库 README，原文 "GIM-World is accepted to SIGGRAPH Asia 2026"，与既有记录一致。SIGGRAPH Asia 2026 官方 program 与 ACM DL 本次仍检索不到该题名条目，因此具体赛道（Technical Papers 走 ACM TOG，与其他 track 不同）无法核实，按口径 track 保持 unknown，不启用档位。已确认录用这一点不变，缺的是赛道。 2026-11-17 首手复核：OpenReview 检索只有 CoRR 2026 条目，SIGGRAPH Asia 不经 OpenReview，ACM DL 仍未检索到该题名，赛道维持 unknown。 2026-11-17 复核：OpenReview 检索只有 CoRR 2026 条目（SIGGRAPH Asia 不经 OpenReview），ACM DL 与 SIGGRAPH Asia 程序页仍检索不到该题名，赛道维持 unknown，置信度维持 medium。
     verification_confidence: medium
     name: SIGGRAPH Asia
     track: unknown
@@ -1474,20 +1476,20 @@ papers:
   memory-forcing:
     status: accepted
     year: 2026
-    source: https://junchao-cs.github.io/
-    evidence: '今日重读第一作者主页，新闻仍为 "[Sep. 2026] Memory Forcing accepted to NeurIPS 2026!"。注意主页题名与 arXiv 2510.03198 题名不同：主页写 Memory forcing: Spatio-temporal Memory for Long-Horizon Interactive Video Generation，arXiv 写 Memory Forcing: Spatio-Temporal Memory for Consistent Scene Generation on Minecraft，靠主页 PDF 链接精确指向该编号确认是同一篇，不是另一篇同名工作。neurips.cc 2026 程序本次仍未检索到与该题名作者对应的独立条目，主会与 D&B 赛道均未定，track 保持 unknown 不晋档。 2026-11-17 首手复核出现新冲突：OpenReview 检索到三条同名或近名记录，pYMd0tRzPP 为 "ICLR 2026 Conference Withdrawn Submission"（Spatio-Temporal Memory for Consistent Scene Generation on Minecraft）、BtDTA3Ws0h 为 "ICLR 2027 Conference Withdrawn Submission"（Attendable Mid-Horizon History for Few-Step Streaming Video）、Sc156Nd7mY 为 CoRR 2025；作者主页仍称 NeurIPS 2026 录用。两条投稿均已撤、主页称录用，证据不能对齐，维持 status=accepted 但 track=unknown，不晋档，此处显式记录冲突。'
-    verification_confidence: medium
+    source: https://neurips.cc/virtual/2026/poster/155498
+    evidence: '2026-11-17 本机直连打开 neurips.cc/virtual/2026/poster/155498（302 跟随后 200），页面标题为 "NeurIPS Poster GeoMemory: Geometry-Indexed Memory for Long-Horizon Interactive Video Generation"，schema.org 的 creditText 写 NeurIPS 2026，作者首位 Junchao Huang，与本条第一作者主页一致，确认是同一篇的正式版改名，不是另一篇同名工作。注意图谱节点标题仍是 Memory Forcing，正式题名已改为 GeoMemory，节点标题需人工决定是否同步。此前记录的两条 OpenReview 撤稿（pYMd0tRzPP、BtDTA3Ws0h）是旧题名版本的投稿经历，与本次主会 Poster 不矛盾，本轮以官方 poster 页为准，track 由 unknown 改 main。'
+    verification_confidence: high
     name: NeurIPS
-    track: unknown
+    track: main
     checked_at: '2026-11-17'
     checked_sources:
     - https://junchao-cs.github.io/
     - https://arxiv.org/abs/2510.03198
     - https://openreview.net/forum?id=pYMd0tRzPP
     - https://openreview.net/forum?id=BtDTA3Ws0h
+    - https://neurips.cc/virtual/2026/poster/155498
     verification_outcome: confirmed_publication
-    blocker: 具体赛道及官方录用决定未独立取得；作者主页与arXiv存在新旧题名、Bohan/Boyao署名差异，已以主页直接PDF编号关联而非近名猜测。
-    track_detail: 作者明确NeurIPS2026录用，具体赛道尚未取得官方证据
+    track_detail: NeurIPS 2026 Poster（官方 poster 页 155498，页面未单列 Datasets & Benchmarks 标签）
   memory-forcing-train:
     status: preprint
     year: 2026
@@ -2072,12 +2074,13 @@ papers:
     year: 2026
     track: workshop
     source: https://arxiv.org/abs/2610.40545
-    evidence: arXiv comments 明确写 Accepted at the NeurIPS 2026 Workshop on Long-Context Foundation Models (LCFM)，属 workshop，主会不成立；2026-11-14 复核未发现主会版本，track 维持 workshop，不启用档位。
+    evidence: arXiv 2610.40545 comments 原文 "Accepted at the NeurIPS 2026 Workshop on Long-Context Foundation Models (LCFM). 7 pages, 1 table"，2026-11-17 重取仍为同一句。属 workshop 录用，主会不成立，按口径 track 记 workshop、不启用档位。本条此前的 verification_outcome 被写成 no_publication_evidence，与 status=accepted 自相矛盾，本轮按「workshop 已确认录用」改为 confirmed_publication，但档位仍为 0。
     verification_confidence: high
-    checked_at: '2026-11-14'
+    checked_at: '2026-11-17'
     checked_sources:
     - https://arxiv.org/abs/2610.40545
-    verification_outcome: no_publication_evidence
+    verification_outcome: confirmed_publication
+    track_detail: NeurIPS 2026 Workshop on Long-Context Foundation Models（LCFM），非 archival 主会
   rolling-sink:
     status: submitted
     source: https://openreview.net/forum?id=bI2MFCxHdB
