@@ -91,18 +91,17 @@ papers:
     year: 2026
     status: accepted
     track: unknown
-    source: https://neurips.cc/virtual/2026/loc/sydney/poster/139301
-    evidence: '今日定向复核赛车道。NeurIPS 官方博客 2026-03-23 有 "Introducing the Evaluations & Datasets Track at NeurIPS 2026"，官网组织页也单列 Evaluations and Datasets Track Chair，确认该赛道在 NeurIPS 2026 确实存在，先前判断不是把 workshop 误当主会。arXiv 2610.37257v3 comments 仍为 "Accepted by NeurIPS 2026"，官方 poster 139301 题名作者对应。neurips.cc 的 poster 页本身不写 track 字段，赛道归属仍依项目页与赛道自身存在的组合证据，故 track 枚举保持 unknown 并用 track_detail 记录。 2026-11-17 首手复核：OpenReview 检索 GameVerse 只命中一篇同名不同作（forum Q4enC6IyTP，ICML 2026，题名 GameVerse: Can Vision-Language Models Learn from Video-based Reflection?），与本条不是同一篇，已排除；本条赛道仍无官方页字段可依，track 保持 unknown。 2026-11-17 复核：官方 poster 139301 本机可取（302 跟随后 200），GameVerse 出现 6 处，但页面仍不写 track 字段；核验通道本轮称在 NeurIPS E&D 名单页见到该文，它给的 /virtual/2026/events/ed 在本机返回 404，没有可复核的落地页，故不采信，track 保持 unknown，不启用档位。 2026-11-19 本机复核：neurips.cc 官方静态数据 neurips-2026-orals-posters.json 中 id 139301 记录为 name『GameVerse: A Minute-Scale Gameplay Dataset for Long-Horizon Interactive World Modeling』、eventtype『Poster』、decision『Accept (poster)』、session『Sydney Poster Session 2』；该文件仍不含 track 字段，无法区分主会与 Evaluations & Datasets 赛道，track 维持 unknown，不启用档位。'
+    source: https://api2.openreview.net/notes/search?term=Minute-Scale%20Gameplay&source=forum
+    evidence: '2026-11-20 核验：OpenReview 检索命中 forum YbEXKsFhkZ，title『GameVerse: A Minute-Scale Gameplay Dataset for Long-Horizon Interactive World Modeling』，venue 原文『NeurIPS 2026 Evaluations and Datasets Track poster』，venueid『NeurIPS.cc/2026/Evaluations_and_Datasets_Track』，作者 Kang He 等与 arXiv 2610.37257 逐位一致（排除了同名 ICML 2026 另一篇 Q4enC6IyTP）；NeurIPS 官方节目 id 139301 亦为 decision『Accept (poster)』、session『Sydney Poster Session 2』，该 json 无 track 字段。结论：赛道首次落地，是主会并行的 Evaluations and Datasets 赛道，既非主会正轨也非 workshop；track 枚举无对应取值故仍记 unknown，档位不启用。附带发现口径冲突：仓库内 worldmodelbench 同属 D&B 却记为 track=main，本轮不改它，留待人工统一。'
     verification_confidence: high
-    checked_at: '2026-11-19'
+    checked_at: '2026-11-20'
     checked_sources:
-    - https://arxiv.org/abs/2610.37257
-    - https://neurips.cc/virtual/2026/loc/sydney/poster/139301
-    - https://neurips.cc/
-    - https://kangverse.github.io/GameVerse/
+    - https://api2.openreview.net/notes/search?term=Minute-Scale%20Gameplay&source=forum
+    - https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json
+    - https://neurips.cc/virtual/2026/poster/139301
     verification_outcome: confirmed_publication
     blocker: 辅助OpenReview页面返回浏览器验证，未读到决定；PDF为非文本资源，未解析正文，搜索摘要中的PDF赛道脚注未作为已读证据。已有可读arXiv、官方程序、项目页组合证据，不被辅助访问失败覆盖。
-    track_detail: Evaluations and Datasets Track（NeurIPS 2026 官方博客 2026-03-23 与组织页赛道主席可证该赛道存在），不按主会或 Workshop 处理，不启用档位
+    track_detail: NeurIPS 2026 Evaluations and Datasets Track poster（venueid NeurIPS.cc/2026/Evaluations_and_Datasets_Track）；非主会正轨亦非 workshop，track 枚举无对应值故记 unknown
   worldscore:
     name: ICCV
     year: 2025
@@ -391,14 +390,16 @@ papers:
     name: WACV
     track: main
     source: https://arxiv.org/abs/2611.09816
-    evidence: arXiv 2611.09816 comments 写 "WACV camera ready"，支持录用；原文未注明届次，2026-11-17 复核按 WACV 会期序列补记 2027，但未取得 CVF 论文集页，届次置信度低于会议本身，track 维持 main、置信度维持 medium。
+    evidence: 2026-11-20 核验：arXiv abs 页 comments 原文『WACV camera ready』，作者 Fan Zhu, Rui Yu 与本文一致；WACV 官方网站 wacv.thecvf.com 标题为 2027 Conference，正文写 Jan 4-8, 2027, Disney Springs，与 2026-11 camera ready 的时点吻合，届次记为 WACV 2027。CVF OpenAccess 的 WACV2027 目录仍 404（论文集未出版），故未取得论文集页与页码，状态维持 accepted、赛道 main、置信度 medium。此前届次是按时序推定的，本轮换成官方站直接佐证，但仍缺论文集落地页。
     verification_confidence: medium
     verification_outcome: confirmed_publication
-    checked_at: '2026-11-17'
+    checked_at: '2026-11-20'
     checked_sources:
     - https://arxiv.org/abs/2611.09816
+    - https://wacv.thecvf.com/
+    - https://openaccess.thecvf.com/WACV2027
     year: 2027
-    track_detail: WACV 2027 主会，届次由 arXiv comments "WACV camera ready" 与 2027 会期推定，未取得论文集页
+    track_detail: WACV 2027 主会（2027-01-04 至 01-08，论文集未出版）
   boxworld:
     status: submitted
     year: 2026
@@ -637,13 +638,16 @@ papers:
     name: NeurIPS
     year: 2026
     track: main
-    source: https://arxiv.org/abs/2611.02822
-    evidence: arXiv comments 首句标注「NeurIPS 2026」，但未写 Accepted 字样。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
-    verification_confidence: medium
-    checked_at: '2026-11-14'
+    source: https://neurips.cc/virtual/2026/poster/148543
+    evidence: '2026-11-20 核验：NeurIPS 2026 官方静态节目 neurips-2026-orals-posters.json 中 id 148543，name『Disen-Forcing: Disentangling Semantic Anchoring from Motion for Autoregressive Video Diffusion』，eventtype Poster，decision『Accept (poster)』，session『Sydney Poster Session 1』，paper_url 指向 openreview.net/forum?id=x6iaZeSlAJ；该 forum 的 venue 为 NeurIPS 2026 poster，venueid 为 NeurIPS.cc/2026/Conference（主会，非 Evaluations and Datasets 赛道）。arXiv comments 只写 NeurIPS 2026，未写 Accepted，故以官方节目为准，置信度由 medium 升 high。'
+    verification_confidence: high
+    checked_at: '2026-11-20'
     checked_sources:
-    - https://arxiv.org/abs/2611.02822
+    - https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json
+    - https://neurips.cc/virtual/2026/poster/148543
+    - https://api2.openreview.net/notes/search?term=Disen-Forcing&source=forum
     verification_outcome: confirmed_publication
+    track_detail: NeurIPS 2026 主会 Poster（官方节目 id 148543，Sydney Poster Session 1）
   dkv-forcing:
     status: preprint
     year: 2026
@@ -991,19 +995,20 @@ papers:
     - https://api2.openreview.net/notes/search?term=GeoState&source=forum
     verification_outcome: no_publication_evidence
   gim-world:
-    status: accepted
+    status: published
     year: 2026
-    source: https://github.com/nagara214/GIM-World/blob/main/README.md
-    evidence: 今日重取 arXiv 2606.02436 元数据，comments 仍只给项目页、journal_ref 为空；重读作者仓库 README，原文 "GIM-World is accepted to SIGGRAPH Asia 2026"，与既有记录一致。SIGGRAPH Asia 2026 官方 program 与 ACM DL 本次仍检索不到该题名条目，因此具体赛道（Technical Papers 走 ACM TOG，与其他 track 不同）无法核实，按口径 track 保持 unknown，不启用档位。已确认录用这一点不变，缺的是赛道。 2026-11-17 首手复核：OpenReview 检索只有 CoRR 2026 条目，SIGGRAPH Asia 不经 OpenReview，ACM DL 仍未检索到该题名，赛道维持 unknown。 2026-11-17 复核：OpenReview 检索只有 CoRR 2026 条目（SIGGRAPH Asia 不经 OpenReview），ACM DL 与 SIGGRAPH Asia 程序页仍检索不到该题名，赛道维持 unknown，置信度维持 medium。 2026-11-19 复核：arXiv 2606.02436 comments 与 journal_ref 仍无发表信息，仓库 README 仍写 accepted to SIGGRAPH Asia 2026。本轮核验通道称在 Crossref 找到 DOI 与 SIGGRAPH Asia 2026 Conference Papers 载体，但本机以 Crossref API 按 DOI 与题名两条路径复查均未检出该记录，无法复现，故不据此改赛道，track 维持 unknown，置信度维持 medium。
-    verification_confidence: medium
+    source: https://doi.org/10.1145/3829340.3842346
+    evidence: '2026-11-20 核验：Crossref works API 返回 DOI 10.1145/3829340.3842346，title『Geometry-Aware Implicit Memory for Video World Models』（与 arXiv 2606.02436 同题，节点标题的 GIM-World 是简称），container-title『Proceedings of the SIGGRAPH Asia 2026 Conference Papers』，event『SA Conference Papers 26: SIGGRAPH Asia 2026 Conference Papers』，type proceedings-article，page 1-12，作者 Zhengxuan Wei, Xu Guo, Xinghui Li, Xunzhi Xiang, Min Wei, Yiran Zhu 等与 arXiv 作者列表逐位一致。Conference Papers 是 SIGGRAPH Asia 的正式论文赛道，不是 workshop 或课程，故赛道记 main。此前只凭作者仓库 README 的 accepted 声明记 medium，本轮拿到 ACM DOI 与论文集名后升为 published/high。venues 表里没有 SIGGRAPH Asia 的权威等级条目，按规则不猜档，档位仍为 0。'
+    verification_confidence: high
     name: SIGGRAPH Asia
-    track: unknown
-    checked_at: '2026-11-19'
+    track: main
+    checked_at: '2026-11-20'
     checked_sources:
+    - https://api.crossref.org/works/10.1145/3829340.3842346
+    - https://doi.org/10.1145/3829340.3842346
     - https://arxiv.org/abs/2606.02436
-    - https://github.com/nagara214/GIM-World/blob/main/README.md
     verification_outcome: confirmed_publication
-    track_detail: SIGGRAPH Asia2026录用，Conference与TOG Journal细分待核
+    track_detail: SIGGRAPH Asia 2026 Conference Papers（ACM DOI 10.1145/3829340.3842346，pp.1-12）
   glance-forcing:
     status: submitted
     year: 2026
@@ -1560,17 +1565,20 @@ papers:
     checked_sources:
     - https://arxiv.org/abs/2606.31734
   memobench:
-    status: accepted
+    status: published
     name: ECCV
     year: 2026
     track: main
-    source: https://arxiv.org/abs/2606.27537
-    evidence: arXiv comments 为空，Semantic Scholar 标注 European Conference on Computer Vision 2026（s2_types 含 Conference），仅单一第三方来源。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
-    verification_confidence: medium
-    checked_at: '2026-11-14'
+    source: https://link.springer.com/chapter/10.1007/978-3-032-37174-4_38
+    evidence: '2026-11-20 核验：Springer 章节页（DOI 10.1007/978-3-032-37174-4_38）标题『MemoBench: Benchmarking World Modeling in Dynamically Changing Environments』，citation_inbook_title『Computer Vision – ECCV 2026』，citation_conference_title『European Conference on Computer Vision』，pp.658-676，所属卷 LNCS 17067 / Proceedings Part LXVII，卷名不含 Workshops；作者 Haoyu Chen 等与 arXiv 2606.27537 逐位一致。arXiv abs 页 comments 与 journal_ref 仍为空，故此前只凭第三方索引记 accepted/medium，本轮拿到正式章节页后升为 published。'
+    verification_confidence: high
+    checked_at: '2026-11-20'
     checked_sources:
+    - https://link.springer.com/chapter/10.1007/978-3-032-37174-4_38
+    - https://link.springer.com/book/10.1007/978-3-032-37174-4
     - https://arxiv.org/abs/2606.27537
     verification_outcome: confirmed_publication
+    track_detail: ECCV 2026 主会论文集 Part LXVII（LNCS 17067），pp.658-676
   memory-forcing:
     status: accepted
     year: 2026
@@ -1680,15 +1688,16 @@ papers:
     status: preprint
     year: 2026
     source: https://export.arxiv.org/api/query?id_list=2605.31336,2608.06257,2609.38562,2610.23542,2610.11756,2610.25666,2610.25223,2610.31668,2610.25414
-    evidence: 'OpenReview 同题记录 venue=『ICLR 2027 Conference Withdrawn Submission』（Qlg1VwKwMA），即已撤稿、非录用；arXiv 2610.23542 comments 仅项目页与代码库；项目页/仓库未见录用声明；截至核验日期维持 preprint。 2026-11-19 本机复核：OpenReview notes/search 命中 forum Qlg1VwKwMA，venue『ICLR 2027 Conference Withdrawn Submission』，venueid ICLR.cc/2027/Conference/Withdrawn_Submission，题名『Execution Before Memory: Diagnosing Memory Failures in Video World Models』一致。此前未记录该投稿，状态维持 preprint，补记撤稿事实。'
+    evidence: 'OpenReview 同题记录 venue=『ICLR 2027 Conference Withdrawn Submission』（Qlg1VwKwMA），即已撤稿、非录用；arXiv 2610.23542 comments 仅项目页与代码库；项目页/仓库未见录用声明；截至核验日期维持 preprint。 2026-11-19 本机复核：OpenReview notes/search 命中 forum Qlg1VwKwMA，venue『ICLR 2027 Conference Withdrawn Submission』，venueid ICLR.cc/2027/Conference/Withdrawn_Submission，题名『Execution Before Memory: Diagnosing Memory Failures in Video World Models』一致。此前未记录该投稿，状态维持 preprint，补记撤稿事实。 2026-11-20 复核：OpenReview 题名检索命中 forum Qlg1VwKwMA，venue『ICLR 2027 Conference Withdrawn Submission』，venueid ICLR.cc/2027/Conference/Withdrawn_Submission，即该投稿已撤，不是录用；状态维持 preprint。'
     verification_confidence: high
-    checked_at: '2026-11-19'
+    checked_at: '2026-11-20'
     checked_sources:
     - https://export.arxiv.org/api/query?id_list=2605.31336,2608.06257,2609.38562,2610.23542,2610.11756,2610.25666,2610.25223,2610.31668,2610.25414
     - https://api2.openreview.net/notes/search?term=Execution%20Before%20Memory&source=forum
     - https://openaccess.thecvf.com/CVPR2026
     - https://hku-mmlab.github.io/MIST/
     - https://github.com/HKU-MMLab/MIST
+    - https://api2.openreview.net/notes/search?term=Execution%20Before%20Memory&source=forum
     verification_outcome: no_publication_evidence
   mit3:
     status: preprint
@@ -1897,17 +1906,20 @@ papers:
     track: unknown
     track_detail: ICLR 2027 Conference Submission（在审，非录用）
   packforcing:
-    status: accepted
+    status: published
     name: ECCV
     year: 2026
     track: main
-    source: https://arxiv.org/abs/2603.25730
-    evidence: arXiv 元数据无录用声明；S2 标注 European Conference on Computer Vision 2026，OpenAlex 记为 ECCV 会议论文（LNCS DOI 10.1007/978-3-032-37464-6_31），已联网核对 arXiv 详情页仍无 journal_ref，故取中等置信。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
-    verification_confidence: medium
-    checked_at: '2026-11-14'
+    source: https://link.springer.com/chapter/10.1007/978-3-032-37464-6_31
+    evidence: '2026-11-20 核验：Springer 章节页（DOI 10.1007/978-3-032-37464-6_31）标题『PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference』，citation_inbook_title『Computer Vision – ECCV 2026』，pp.576-593，所属卷 LNCS 17035 / Proceedings Part XXXV；作者 Xiaofeng Mao, Shaohao Rui, Kaining Ying 与 arXiv 2603.25730 逐位一致。arXiv abs 页 comments/journal_ref 仍空，此前依 OpenAlex 记 accepted/medium，本轮直接打开 DOI 落地页核对卷名、页码、作者后升为 published。'
+    verification_confidence: high
+    checked_at: '2026-11-20'
     checked_sources:
+    - https://link.springer.com/chapter/10.1007/978-3-032-37464-6_31
+    - https://link.springer.com/book/10.1007/978-3-032-37464-6
     - https://arxiv.org/abs/2603.25730
     verification_outcome: confirmed_publication
+    track_detail: ECCV 2026 主会论文集 Part XXXV（LNCS 17035），pp.576-593
   pawbench:
     status: submitted
     source: https://openreview.net/forum?id=gjmCyG9Yuw
@@ -2421,17 +2433,19 @@ papers:
     - https://arxiv.org/abs/2611.05084
     verification_outcome: no_publication_evidence
   spatial-ttt:
-    status: accepted
+    status: published
     name: ECCV
     year: 2026
     track: main
-    source: https://arxiv.org/abs/2603.12255
-    evidence: arXiv 元数据无录用声明；S2 标注 European Conference on Computer Vision 2026，OpenAlex 记为 ECCV 会议论文（LNCS DOI 10.1007/978-3-032-36839-3_19），已联网核对 arXiv 详情页仍无 journal_ref，故取中等置信。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
-    verification_confidence: medium
-    checked_at: '2026-11-14'
+    source: https://link.springer.com/chapter/10.1007/978-3-032-36839-3_19
+    evidence: '2026-11-20 核验：Springer 章节页（DOI 10.1007/978-3-032-36839-3_19）标题『Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training』，citation_inbook_title『Computer Vision – ECCV 2026』，citation_conference_title『European Conference on Computer Vision』，pp.339-357。此前只依 S2 与 OpenAlex 记 accepted/medium，本轮打开章节页核对题名与卷名后升为 published；arXiv abs 页 comments 与 journal_ref 仍为空。'
+    verification_confidence: high
+    checked_at: '2026-11-20'
     checked_sources:
+    - https://link.springer.com/chapter/10.1007/978-3-032-36839-3_19
     - https://arxiv.org/abs/2603.12255
     verification_outcome: confirmed_publication
+    track_detail: ECCV 2026 主会论文集，pp.339-357（DOI 10.1007/978-3-032-36839-3_19）
   spmem:
     status: accepted
     name: NeurIPS
@@ -2952,11 +2966,12 @@ papers:
     status: preprint
     year: 2026
     source: https://arxiv.org/abs/2610.18826
-    evidence: '2026-11-18 首手重取 arXiv 2610.18826 的 abs 页（当前最新 v5），comments 为空，journal_ref 为空；未见 accepted/published/camera ready 等录用字样。本条本轮只做了 arXiv 官方元数据这一层复核，未单独对该条做 OpenReview 题名检索与项目页重读。截至 2026-11-18 未查到正式发表证据，不等于确认未发表。 2026-11-19 本机复核：OpenReview 命中 forum 43TnxEoIFC，venue『ICLR 2027 Conference Withdrawn Submission』，题名『WorldOracle: Benchmarking Action-Conditioned World Models against Real…』一致。状态维持 preprint。'
+    evidence: '2026-11-18 首手重取 arXiv 2610.18826 的 abs 页（当前最新 v5），comments 为空，journal_ref 为空；未见 accepted/published/camera ready 等录用字样。本条本轮只做了 arXiv 官方元数据这一层复核，未单独对该条做 OpenReview 题名检索与项目页重读。截至 2026-11-18 未查到正式发表证据，不等于确认未发表。 2026-11-19 本机复核：OpenReview 命中 forum 43TnxEoIFC，venue『ICLR 2027 Conference Withdrawn Submission』，题名『WorldOracle: Benchmarking Action-Conditioned World Models against Real…』一致。状态维持 preprint。 2026-11-20 复核：OpenReview 题名检索命中 forum 43TnxEoIFC，venue『ICLR 2027 Conference Withdrawn Submission』，venueid ICLR.cc/2027/Conference/Withdrawn_Submission，即在审已撤，非录用；状态维持 preprint。'
     verification_confidence: medium
-    checked_at: '2026-11-19'
+    checked_at: '2026-11-20'
     checked_sources:
     - https://arxiv.org/abs/2610.18826
+    - https://api2.openreview.net/notes/search?term=WorldOracle&source=forum
     verification_outcome: no_publication_evidence
   worldpager:
     status: preprint
@@ -3011,17 +3026,20 @@ papers:
     - https://proceedings.mlr.press/v267/qin25f.html
     verification_outcome: confirmed_publication
   worldstereo:
-    status: accepted
+    status: published
     name: CVPR
     year: 2026
     track: main
-    source: https://arxiv.org/abs/2603.02049
-    evidence: comments 为空；S2 venue 为 Computer Vision and Pattern Recognition（2026，types 含 Conference），但 OpenAlex 仅收录 preprint/repository 记录，两源部分不一致，故置信度取 medium 而非 high。；2026-11-14 复核未发现与现有结论冲突的新证据，结论维持。
-    verification_confidence: medium
-    checked_at: '2026-11-14'
+    source: https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_WorldStereo_Bridging_Camera-Guided_Video_Generation_and_Scene_Reconstruction_via_3D_CVPR_2026_paper.html
+    evidence: '2026-11-20 核验：CVF OpenAccess 的 CVPR 2026 全量目录（openaccess.thecvf.com/CVPR2026?day=all）中检得该条目，题名『WorldStereo: Bridging Camera-Guided Video Generation and Scene Reconstruction via 3D Geometric Memories』，页面路径含 Zhang_WorldStereo_..._CVPR_2026_paper.html，与 arXiv 2603.02049 同题。此前依 S2 记 accepted/medium 且 OpenAlex 只有 preprint 记录，两源不一致；本轮拿到 CVF 正式论文集页后升为 published。'
+    verification_confidence: high
+    checked_at: '2026-11-20'
     checked_sources:
+    - https://openaccess.thecvf.com/CVPR2026?day=all
+    - https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_WorldStereo_Bridging_Camera-Guided_Video_Generation_and_Scene_Reconstruction_via_3D_CVPR_2026_paper.html
     - https://arxiv.org/abs/2603.02049
     verification_outcome: confirmed_publication
+    track_detail: CVPR 2026 主会论文集（CVF OpenAccess）
   worldstream:
     status: preprint
     year: 2026
@@ -3106,18 +3124,20 @@ papers:
     - https://api2.openreview.net/notes/search?term=When%20Should%20Agents%20Remember%3F%20Falsification-Gated%20Self-Evolution%20for%20LLM%20Agents&source=forum
     verification_outcome: no_publication_evidence
   spatial-harness:
-    status: preprint
+    status: accepted
     year: 2026
-    source: https://export.arxiv.org/api/query?id_list=2611.11344,2611.14033,2611.13704,2611.13946,2611.15260,2611.15640,2611.15600,2611.18099
-    evidence: 'arXiv 2611.11344 comments 仅写『NeurIPS 2026』，未写 accepted/to appear；proceedings.neurips.cc/paper_files/paper/2026 返回 404（论文集未上线），OpenReview 未见该题名的 NeurIPS 2026 记录，无法核到录用；另有题名相近的『The Spatial Harness: From Fallible Visual Tools to Reliable Agentic Spatial…』(ICLR 2027 Conference Submission, A3g0MJSbx5) 但题名不一致、未核对作者，不能等同；截至核验日期维持 preprint，建议人工复核 comments 语义。 2026-11-19 复核：arXiv abs 页今日快照 comments/journal_ref 无发表字样，OpenReview 无同题会议记录，状态维持 preprint。'
+    source: https://neurips.cc/virtual/2026/poster/153471
+    evidence: '2026-11-20 核验：先按原题在 NeurIPS 2026 官方静态节目 neurips-2026-orals-posters.json（9274 条）里检索 Spatial Harness 为 0 条，宽词 Harness 命中 id 153471『Visual Harness: Grounding Multimodal Reasoning in Physics Engines』，eventtype Poster，decision『Accept (poster)』，session『Sydney Poster Session 6』，作者 Chentao Cao, Zhanke Zhou, Sangni Duan, Bo Han, Hang Li 与 arXiv 2611.11344 的作者列表五位同序一致。该海报的 paper_url 指向 openreview.net/forum?id=L6id31iRwA。据此判定为同一篇的改名录用版：arXiv 现题『Spatial Harness: Grounding Spatial Reasoning in Executable World States with Physics Engines』，录用题名把 Spatial 换成 Multimodal、把 Executable World States 换成 Physics Engines。此前两轮按原题检索都判 preprint，属改名导致的漏判。因题名不一致、且 forum 详情接口 403 无法直读，置信度记 medium 不给 high。'
     verification_confidence: medium
-    checked_at: '2026-11-19'
+    checked_at: '2026-11-20'
     checked_sources:
-    - https://export.arxiv.org/api/query?id_list=2611.11344,2611.14033,2611.13704,2611.13946,2611.15260,2611.15640,2611.15600,2611.18099
-    - https://api2.openreview.net/notes/search?term=Spatial%20Harness&source=forum
-    - https://openaccess.thecvf.com/CVPR2026
-    - https://proceedings.neurips.cc/paper_files/paper/2026
-    verification_outcome: no_publication_evidence
+    - https://arxiv.org/abs/2611.11344
+    - https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json
+    - https://neurips.cc/virtual/2026/poster/153471
+    verification_outcome: confirmed_publication
+    name: NeurIPS
+    track: main
+    track_detail: 'NeurIPS 2026 主会 Poster（官方节目 id 153471）；收录题名为 Visual Harness: Grounding Multimodal Reasoning in Physics Engines'
   treeagent:
     status: preprint
     year: 2026
@@ -3690,6 +3710,146 @@ papers:
     checked_sources:
     - https://arxiv.org/abs/2611.22294
     - https://api2.openreview.net/notes/search?term=Executable%20Perceptual%20Memory&source=forum
+    verification_outcome: no_publication_evidence
+  wmmllm:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2611.24193
+    evidence: '2026-11-20 首手核验：arXiv abs 页 comments 原文『25 pages, 14 figures, 8 tables; project page: this https URL』，journal_ref 为空，版本仅 v1（2026-11-18）。官方项目页 ztmotalee.github.io/wmmllm 的 BibTeX 原文为 journal = {arXiv preprint arXiv:2611.24193}，页面无 accepted/to appear/camera-ready 字样；作者仓库 README 徽章写 Technical_Report-PDF。OpenReview 以 Turning MLLMs into World Models 检索只命中 ICML 2025 与 ICLR 2026 的 World Models workshop 他人论文，题名不符已排除。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.24193
+    - https://ztmotalee.github.io/wmmllm/
+    - https://api2.openreview.net/notes/search?term=Turning%20MLLMs%20into%20World%20Models&source=forum
+    verification_outcome: no_publication_evidence
+  worldruler:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2611.24869
+    evidence: 2026-11-20 首手核验：arXiv abs 页 comments 原文仅『15 pages, 6 figures』，未写项目页，journal_ref 为空，版本仅 v1（2026-11-18）。作者仓库 AlayaLab/WorldRuler 的 Open-source Plan 原文列 - [x] [Technical report]，BibTeX 写 journal={arXiv preprint arXiv:2611.24869}；项目页 alaya-lab.github.io/WorldRuler 只有 Paper/Code/Data/Model 链接，无 venue 字样。OpenReview 以 WorldRuler 检索 0 条。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。
+    verification_confidence: high
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.24869
+    - https://alaya-lab.github.io/WorldRuler
+    - https://api2.openreview.net/notes/search?term=WorldRuler&source=forum
+    verification_outcome: no_publication_evidence
+  doppel:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.24925
+    evidence: '2026-11-20 首手核验：arXiv abs 页 comments 原文仅『Project page: this https URL』，journal_ref 为空，版本仅 v1（2026-11-18）。项目页 doppelwm.github.io 的 BibTeX 为 @misc{jangir2026doppel, ... year={2026}}，无 journal/booktitle/howpublished，页面无 accepted/to appear/camera-ready；仓库引用块写 journal = {arXiv preprint}。OpenReview 以 Render the Robot, Generate the World 精确检索命中一条 ICLR 2027 Conference Submission 同题记录（forum hY9kqIhipr），属在审而非录用，故不按录用记。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.24925
+    - https://doppelwm.github.io/
+    - https://api2.openreview.net/notes/search?term=Render%20the%20Robot&source=forum
+    verification_outcome: no_publication_evidence
+  avm:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2611.23417
+    evidence: '2026-11-20 首手核验：arXiv abs 页 comments 原文仅『Project Page: this https URL』，journal_ref 为空，版本仅 v1（2026-11-17）。项目页 autoregressive-view-model.github.io 的 main.html 顶部按钮原文 Read technical report，全文无 accepted/to appear/camera-ready；arXiv HTML 中 accepted 只出现在匹配阈值相关句子。OpenReview 以 Autoregressive View Model 检索只返回 VIEW 2006 等无关记录，题名不符。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.23417
+    - https://autoregressive-view-model.github.io/main.html
+    - https://api2.openreview.net/notes/search?term=Autoregressive%20View%20Model&source=forum
+    verification_outcome: no_publication_evidence
+  lookaway:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.24259
+    evidence: 2026-11-20 首手核验：arXiv abs 页无 comments、无 journal_ref，提交历史仅 [v1] Wed, 18 Nov 2026 11:42:17 UTC。PDF 首页标题与 abs 页略有出入（PDF 写 Do VLMs Need to Keep Looking at Long Videos While They Reason?），作者 Pengyu Li 等与 abs 页一致，属同篇不同表述。OpenReview 以 Do Thinking VLMs Need to Keep Looking 检索只命中 Thinking Inertia 等他人论文。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。
+    verification_confidence: high
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.24259
+    - https://api2.openreview.net/notes/search?term=Do%20Thinking%20VLMs%20Need%20to%20Keep%20Looking&source=forum
+    verification_outcome: no_publication_evidence
+  shelfkv:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.23769
+    evidence: 2026-11-20 首手核验：arXiv abs 页无 comments 行、无 journal reference 行，提交历史仅 [v1] Wed, 18 Nov 2026 03:24:39 UTC；作者 Ziyi Wang, Xiyue Zhang, Bing Hu, Guangmin Song, Chenyi Zhang, Li Wang 与待核题名一致。OpenReview 以 Keep the Reasoning, Read the Image 检索只命中聚类与语音等无关记录。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。
+    verification_confidence: high
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.23769
+    - https://api2.openreview.net/notes/search?term=Keep%20the%20Reasoning%20Read%20the%20Image&source=forum
+    verification_outcome: no_publication_evidence
+  strideworld:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.24408
+    evidence: 2026-11-20 首手核验：arXiv abs 页无 comments、无 journal_ref，提交历史仅 [v1] Wed, 18 Nov 2026 13:37:51 UTC；唯一外链为 github.com/chuangwang123/strideworld，仓库 README 只说明代码与榜单开放，无录用声明。OpenReview 以 Scene Rigidity and Action Consistency 检索只命中场景流与刚性约束的他人论文（VoteFlow、EMR-MSF 等）。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。
+    verification_confidence: high
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.24408
+    - https://api2.openreview.net/notes/search?term=Scene%20Rigidity%20and%20Action%20Consistency&source=forum
+    verification_outcome: no_publication_evidence
+  activeforager:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.24267
+    evidence: 2026-11-20 首手核验：arXiv abs 页无 comments、无 journal_ref，提交历史仅 [v1] Wed, 18 Nov 2026 11:48:00 UTC；作者 Pengyu Li 等与 abs 页一致。OpenReview 以 Look Closer, Look Back, or Wait 检索只命中 CHI PLAY 与状态空间模型的无关记录，题名不符。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。
+    verification_confidence: high
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.24267
+    - https://api2.openreview.net/notes/search?term=Look%20Closer%20Look%20Back%20or%20Wait&source=forum
+    verification_outcome: no_publication_evidence
+  f3:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.24708
+    evidence: 2026-11-20 首手核验：arXiv abs 页标题为 F$^3$（HTML 渲染为 F3），无 comments、无 journal_ref，提交历史仅 [v1] Wed, 18 Nov 2026 16:33:15 UTC；HTML 全文检索 accepted/to appear/camera-ready/project page 均无命中。OpenReview 精确标题检索 count=0，非精确检索只命中 ActionCodec、World Action Verifier 等他人论文。检索为阴性，置信度记 medium。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.24708
+    - https://api2.openreview.net/notes/search?term=What%20Makes%20Good%20Experience&source=forum
+    verification_outcome: no_publication_evidence
+  spark-h3:
+    status: preprint
+    year: 2026
+    source: https://arxiv.org/abs/2611.24256
+    evidence: 2026-11-20 首手核验：arXiv abs 页完全没有 comments 行、无 journal reference，提交历史仅 [v1] Wed, 18 Nov 2026 11:32:53 UTC；仓库 zechengtang/Spark-H3 README 只有一个 arXiv 徽章，无录用或在审声明。OpenReview 以 Spark-H3、Spark-Attn 及整句标题检索均 count=0；命中过的 ICLR 2027 投稿 PARK 摘要与本文不同，属同名主题非同一篇。检索为阴性，置信度记 medium。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。
+    verification_confidence: medium
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.24256
+    - https://github.com/zechengtang/Spark-H3
+    - https://api2.openreview.net/notes/search?term=Spark-H3&source=forum
+    verification_outcome: no_publication_evidence
+  sch:
+    status: submitted
+    name: ICLR
+    year: 2026
+    track: main
+    source: https://api2.openreview.net/notes/search?term=On-Demand%20Evidence%20for%20Long-Horizon%20Agents&source=forum
+    evidence: '2026-11-20 首手核验：arXiv abs 页无 comments、无 journal_ref，提交历史仅 [v1] Wed, 18 Nov 2026 12:49:41 UTC。OpenReview 以 On-Demand Evidence for Long-Horizon Agents 检索命中 forum NI30mtlLIN，题名『Beyond Summarization: Semantic Context Handoff with On-Demand Evidence for Long-Horizon Agents』，venue 原文 ICLR 2027 Conference Submission，venueid ICLR.cc/2027/Conference/Submission，摘要与 arXiv 逐字一致（含 150-task SWE-bench、80.0%→86.9% 同组数字），可判同一篇；ICLR 2027 双盲故作者字段匿名，题名加摘要双重对上。属在审，不是录用。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.24357
+    - https://api2.openreview.net/notes/search?term=On-Demand%20Evidence%20for%20Long-Horizon%20Agents&source=forum
+    verification_outcome: no_publication_evidence
+    track_detail: ICLR 2027 Conference Submission（在审，非录用）
+  oneshot-anyview:
+    status: technical_report
+    year: 2026
+    source: https://arxiv.org/abs/2611.24253
+    evidence: 2026-11-20 首手核验：arXiv abs 页 comments 原文『Technical report. 19 pages, 14 figures, 3 tables』，journal_ref 为空，版本仅 v1（2026-11-18）；作者 Kai Huang 等与 abs 页一致，HTML 全文自称 this report，无 accepted/to appear/camera-ready。OpenReview 整句标题精确检索 0 条，非精确检索命中的 Rover、UniPortrait4D、LongReplay、Vista4D 均题名不符。截至2026-11-20未查到正式会议/期刊发表证据，不等于确认未发表。
+    verification_confidence: high
+    checked_at: '2026-11-20'
+    checked_sources:
+    - https://arxiv.org/abs/2611.24253
+    - https://api2.openreview.net/notes/search?term=One%20Shot%20Any%20View&source=forum
     verification_outcome: no_publication_evidence
 project_shortlist:
   位置时间寻址:
