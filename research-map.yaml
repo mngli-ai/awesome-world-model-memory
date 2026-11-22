@@ -15622,3 +15622,48 @@ nodes:
   title: Point Dynamics as Proxy
   training: 需训
   venue: ''
+- arxiv: '2611.24565'
+  branch: 代码定状态
+  concepts:
+  - 代码定状态
+  - 结构条件渲染
+  - 训练无关
+  date: '2026-11-18'
+  detail:
+    diff: 与 sceneanything 比，那条的目标是网格，写完即定稿；这条的代理带一份随迭代改的账本，光源身份与证据能被下一轮引用。与 mallea 比，mallea 记的是对象外观纹理，这条记的是看不见的光源假设。
+    formulas: []
+    has_abstract: true
+    io: 输入单张图；输出可执行的 Blender 场景代码与匹配的光照状态，中间产物是逐轮更新的光源账本与分解渲染通道。
+    limits: 单图重建，不是视频序列，记忆跨迭代而非跨时间；场景以室内房间与静物为主；账本由 VLM 读写，写错了没有外部真值兜底。
+    position: 同一块暗像素可以是深色材质、被遮挡的物体、或根本没记进来的光源，只比外观分不出该改哪一项；所以要把几何、材质、光照各自当成可写的状态，并让代理记住每盏光的身份与证据。
+    steps:
+    - 取掩码、深度、法向、反照率、明暗与 HDR 光照先验当证据。
+    - 把每盏光的身份、支撑证据、参数与修订历史写进持久光照记忆，画外光源也留假设。
+    - 代理改可执行 Blender 场景并渲分解通道。
+    - 用评分与 VLM 诊断定位错在哪一项，回到第二步改账本。
+    - 导出最优有效场景及其光照状态。
+    train: 免训：不训练、不用可微渲染，全靠 VLM 代理改代码。
+  explain: 它给的是一份账本的形状，不是一条视频管线：每盏光有身份、证据、参数、修订历史，画外光源也占一格。这正好是我 code 层现在缺的东西——我记的是场景实体的位置与规则，没记「看不见但影响成像」的量该怎么存、被质疑时拿什么证据回话。单图重建搬不进长视频，但字段设计可以照抄。
+  id: light-harness
+  key_numbers: []
+  lane: 代码世界模型
+  link_strength: 都把状态写进可执行场景再渲染验证；这条多一层按身份存证据的账本，画外光源也留假设
+  links:
+  - https://arxiv.org/abs/2611.24565
+  - https://logic-al-al.github.io/LightHarness
+  - https://github.com/lyf1212/LightHarness_Code
+  mechanism: VLM 代理反复改可执行 Blender 场景，直到分解渲染通道与输入图对得上；每轮把每盏光的身份、支撑证据、参数与修订历史写进一份持久光照记忆，画外光源也作为假设留着，再用评分与诊断决定下一轮改哪一项。
+  media: []
+  note: 雷达自动入库 2026-11-22，字段据摘要与官方项目页，待人工核。摘要零数字，key_numbers 留空；abs comments 只有项目页与代码链接，无发表字样；项目页演示是 webp 图集、无 mp4 直链，media 留空；单图重建，记忆跨迭代而非跨时间。
+  one_liner: 光源记成带证据的账本，画外的也留假设
+  parent: mallea
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 光照账本
+  - 可执行场景
+  - 画外假设
+  title: LightHarness
+  training: 免训
+  venue: ''
