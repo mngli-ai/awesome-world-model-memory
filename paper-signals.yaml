@@ -1128,16 +1128,17 @@ papers:
     status: accepted
     year: 2026
     source: https://neurips.cc/virtual/2026/workshop/10365
-    evidence: 2026-11-13主代理独立读取Patronus官方GlobeBench研究页，完整题名Evaluating Text-Based World Model Capabilities for Scalable Environment Simulations、Nicholas Saban、Charvi Bannur、Mariya I. Vasileva、Darshan Deshpande四作者及arXiv:2610.22708对应。原文Accepted at / NeurIPS 2026 Workshop · Workshop on Evaluation of Interactive Agents (IAEval), non-archival · Poster，足以确认非存档Workshop Poster录用，不是NeurIPS主会，亦不写正式论文集已出版。arXiv BibTeX仍为misc不能推翻一手Workshop声明。 2026-11-19 本机复核：OpenReview 命中两条同题记录，forum 0M3WoOwahn 的 venue 为『IAEval 2026 Poster』、venueid 为 NeurIPS.cc/2026/Workshop/IAEval；forum 5tHb46nG32 为『ICLR 2027 Conference Submission』。前者是 NeurIPS 2026 的 IAEval workshop，与既有 track=workshop 一致，档位仍为 0。 2026-11-22 复核：arXiv abs 页 comments/journal_ref 无新增发表字样；本条不在本轮 OpenReview 检索队列（已核实出版记录，只重取 arXiv 元数据）。已核实出版记录维持不变。 2026-11-22 复核：NeurIPS 2026 官方 workshop 页（id 10365，Agentic AI in the Wild）accepted papers 列出该题，确认 workshop 赛道；档位仍 0。 2026-11-23 复核：重取 arXiv abs 页，comments 与 journal_ref 无新增发表字样。 2026-11-24 复核：重取 arXiv abs 页，comments 与 journal_ref 无新增发表字样；OpenReview 题名检索与 Crossref query.bibliographic 检索未给出与该题名对应的新出版记录。维持此前已核实的录用/发表记录，状态与档位不变。
+    evidence: 2026-11-13主代理独立读取Patronus官方GlobeBench研究页，完整题名Evaluating Text-Based World Model Capabilities for Scalable Environment Simulations、Nicholas Saban、Charvi Bannur、Mariya I. Vasileva、Darshan Deshpande四作者及arXiv:2610.22708对应。原文Accepted at / NeurIPS 2026 Workshop · Workshop on Evaluation of Interactive Agents (IAEval), non-archival · Poster，足以确认非存档Workshop Poster录用，不是NeurIPS主会，亦不写正式论文集已出版。arXiv BibTeX仍为misc不能推翻一手Workshop声明。 2026-11-19 本机复核：OpenReview 命中两条同题记录，forum 0M3WoOwahn 的 venue 为『IAEval 2026 Poster』、venueid 为 NeurIPS.cc/2026/Workshop/IAEval；forum 5tHb46nG32 为『ICLR 2027 Conference Submission』。前者是 NeurIPS 2026 的 IAEval workshop，与既有 track=workshop 一致，档位仍为 0。 2026-11-22 复核：arXiv abs 页 comments/journal_ref 无新增发表字样；本条不在本轮 OpenReview 检索队列（已核实出版记录，只重取 arXiv 元数据）。已核实出版记录维持不变。 2026-11-22 复核：NeurIPS 2026 官方 workshop 页（id 10365，Agentic AI in the Wild）accepted papers 列出该题，确认 workshop 赛道；档位仍 0。 2026-11-23 复核：重取 arXiv abs 页，comments 与 journal_ref 无新增发表字样。 2026-11-24 复核：重取 arXiv abs 页，comments 与 journal_ref 无新增发表字样；OpenReview 题名检索与 Crossref query.bibliographic 检索未给出与该题名对应的新出版记录。维持此前已核实的录用/发表记录，状态与档位不变。 2026-11-25 复核：OpenReview 同题检索另见一条 ICLR 2027 投稿记录（forum 5tHb46nG32，venue 「ICLR 2027 Conference Submission」，题名与本条逐字一致），与本条已核实的 NeurIPS 2026 Workshop 录用并存；投稿记录不改变本条 status=accepted、track=workshop，也不作为主会录用依据。
     verification_confidence: high
     name: NeurIPS
     track: workshop
-    checked_at: '2026-11-24'
+    checked_at: '2026-11-25'
     checked_sources:
     - https://arxiv.org/abs/2610.22708
     - https://www.patronus.ai/research/globebench?utm_campaign=security-funded-145-the-economic-shifts-heard-round-the-world
     - https://openreview.net/forum?id=0M3WoOwahn
     - https://neurips.cc/virtual/2026/workshop/10365
+    - https://api2.openreview.net/notes/search?term=GlobeBench+Evaluating+Text-Based+World+Model+Capabilities&source=forum&limit=10
     verification_outcome: confirmed_publication
     blocker: 补充OpenReview页面受浏览器验证限制，未读取决定全文；官方项目明确Workshop录用。
     track_detail: Workshop on Evaluation of Interactive Agents (IAEval), non-archival, Poster
@@ -4687,6 +4688,189 @@ papers:
     - https://arxiv.org/abs/2611.27124
     - https://api2.openreview.net/notes/search?term=A+Plan+or+an+Adversarial+Example+Round-Trip+Check+for+Latent+World+Models&source=forum&limit=10
     - https://api.crossref.org/works?query.bibliographic=A+Plan+or+an+Adversarial+Example%3F+A+Round-Trip+Check+for+Latent+World+Models&rows=5
+    verification_outcome: no_publication_evidence
+  eidetic-code-wm:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.28878
+    evidence: '2026-11-25 入库即核验：arXiv 2611.28878 abs 页comments 全文「Project page: this https URL」，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「Eidetic Code World Model」）返回的最近几题为 『B''MOJO: Hybrid State Space Realizations of Foundation Models with Eidetic and Fading Memory』（NeurIPS 2024）；『Eidetic Learning: an Efficient and Provable Solution to Catastrophic Forgetting』（CoRR 2025），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.28878
+    - https://api2.openreview.net/notes/search?term=Eidetic+Code+World+Model&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=Eidetic+Code+World+Model&rows=5
+    verification_outcome: no_publication_evidence
+  choose-what-returns:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.28137
+    evidence: '2026-11-25 入库即核验：arXiv 2611.28137 abs 页comments 为空，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「Choose What Returns: Object-Aware KV Memory for Selective Recall in Interactive Video Generation」）返回的最近几题为 『SlotMemory: Object-Centric KV Memory for Streaming Long-Video Generation』（ICLR 2027 Conference Submission）；『Echo-Forcing: A Scene Memory Framework for Interactive Long Video Generation』（CoRR 2026），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.28137
+    - https://api2.openreview.net/notes/search?term=Choose+What+Returns:+Object-Aware+KV+Memory+for+Selective+Recall+in+Interactive+Video+Generation&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=Choose+What+Returns:+Object-Aware+KV+Memory+for+Selective+Recall+in+Interactive+Video+Generation&rows=5
+    verification_outcome: no_publication_evidence
+  scenetether:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.28134
+    evidence: '2026-11-25 入库即核验：arXiv 2611.28134 abs 页comments 全文「Project page: this https URL」，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「SceneTether: Activity-Gated Value Anchoring for Long-Horizon Autoregressive Image Animation」）返回的最近几题为 『History Dropout for Long-Horizon Autoregressive Video Generation』（ICLR 2027 Conference Submission）；『On-Policy Adversarial Fine-Tuning for Long-Horizon Autoregressive Video Generation』（ICLR 2027 Conference Submission），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.28134
+    - https://api2.openreview.net/notes/search?term=SceneTether:+Activity-Gated+Value+Anchoring+for+Long-Horizon+Autoregressive+Image+Animation&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=SceneTether:+Activity-Gated+Value+Anchoring+for+Long-Horizon+Autoregressive+Image+Animation&rows=5
+    verification_outcome: no_publication_evidence
+  lyris:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.31239
+    evidence: '2026-11-25 入库即核验：arXiv 2611.31239 abs 页comments 全文「Project page: this http URL」，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「Lyris: Layout-Guided Long Video Generation with Persistent 3D Memory」）返回的最近几题为 『Spatia: Video Generation with Updatable Spatial Memory』（ICLR 2027 Conference Submission），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.31239
+    - https://api2.openreview.net/notes/search?term=Lyris:+Layout-Guided+Long+Video+Generation+with+Persistent+3D+Memory&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=Lyris:+Layout-Guided+Long+Video+Generation+with+Persistent+3D+Memory&rows=5
+    verification_outcome: no_publication_evidence
+  recallworld:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.28666
+    evidence: '2026-11-25 入库即核验：arXiv 2611.28666 abs 页comments 为空，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「RecallWorld: Episodic Memory for Persistent Embodied Video World Models」）返回的最近几题为 『SRAM: Spatially Registered Adaptive Memory for Persistent Video World Models』（ICLR 2027 Conference Withdrawn Submission）；『Learning 3D Persistent Embodied World Models』（NeurIPS 2025 poster），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.28666
+    - https://api2.openreview.net/notes/search?term=RecallWorld:+Episodic+Memory+for+Persistent+Embodied+Video+World+Models&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=RecallWorld:+Episodic+Memory+for+Persistent+Embodied+Video+World+Models&rows=5
+    verification_outcome: no_publication_evidence
+  engram-latent:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.28136
+    evidence: '2026-11-25 入库即核验：arXiv 2611.28136 abs 页comments 全文「22 pages, including supplementary material」，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「ENGRAM: Reliability-Weighted Latent Fusion and Occlusion-Aware Layered Readout for Video World Models」）返回的最近几题为 『Learning an Occlusion-Aware Network for Video Deblurring』（CoRR），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.28136
+    - https://api2.openreview.net/notes/search?term=ENGRAM:+Reliability-Weighted+Latent+Fusion+and+Occlusion-Aware+Layered+Readout+for+Video+World+Models&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=ENGRAM:+Reliability-Weighted+Latent+Fusion+and+Occlusion-Aware+Layered+Readout+for+Video+World+Models&rows=5
+    verification_outcome: no_publication_evidence
+  galileo-rope:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.29293
+    evidence: '2026-11-25 入库即核验：arXiv 2611.29293 abs 页comments 为空，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「GALILEO: Geometric RoPE with Galilean Key Transport for Dynamic Scenes」）返回的最近几题为 『Hybrid Rendering for Dynamic Scenes』（CoRR），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.29293
+    - https://api2.openreview.net/notes/search?term=GALILEO:+Geometric+RoPE+with+Galilean+Key+Transport+for+Dynamic+Scenes&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=GALILEO:+Geometric+RoPE+with+Galilean+Key+Transport+for+Dynamic+Scenes&rows=5
+    verification_outcome: no_publication_evidence
+  cineact:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.30613
+    evidence: '2026-11-25 入库即核验：arXiv 2611.30613 abs 页comments 为空，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「CineAct: Interaction-State Agents for Playable, Branching Film Generation」）返回的最近几题为 『AlayaWorld: Interactive Long-Horizon and Playable Video World Generation』（CoRR 2026），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.30613
+    - https://api2.openreview.net/notes/search?term=CineAct:+Interaction-State+Agents+for+Playable,+Branching+Film+Generation&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=CineAct:+Interaction-State+Agents+for+Playable,+Branching+Film+Generation&rows=5
+    verification_outcome: no_publication_evidence
+  video-as-weights:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.28221
+    evidence: '2026-11-25 入库即核验：arXiv 2611.28221 abs 页comments 为空，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「Video-as-Weights: Compiling a Video Once into Parametric and Token Memory」）返回的最近几题为 『CinePile: A Long Video Question Answering Dataset and Benchmark』（CoRR），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.28221
+    - https://api2.openreview.net/notes/search?term=Video-as-Weights:+Compiling+a+Video+Once+into+Parametric+and+Token+Memory&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=Video-as-Weights:+Compiling+a+Video+Once+into+Parametric+and+Token+Memory&rows=5
+    verification_outcome: no_publication_evidence
+  persistworld:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.30573
+    evidence: '2026-11-25 入库即核验：arXiv 2611.30573 abs 页comments 为空，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「Write, Evolve, Read: Streaming Cameras into a Persistent World State for 4D Occupancy Forecasting」）返回的最近几题为 『Point Cloud Forecasting as a Proxy for 4D Occupancy Forecasting』（CVPR 2023），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.30573
+    - https://api2.openreview.net/notes/search?term=Write,+Evolve,+Read:+Streaming+Cameras+into+a+Persistent+World+State+for+4D+Occupancy+Forecasting&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=Write,+Evolve,+Read:+Streaming+Cameras+into+a+Persistent+World+State+for+4D+Occupancy+Forecasting&rows=5
+    verification_outcome: no_publication_evidence
+  dynamics-forcing:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.29839
+    evidence: '2026-11-25 入库即核验：arXiv 2611.29839 abs 页comments 全文「9 pages, 5 figures, 3 tables」，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「Dynamics Forcing: Mitigating Error Accumulation in Causal Video World Models」）返回的最近几题为 『Dynamics Forcing for Diffusion World Models』（RLC 2026 WMW (workshop)），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。 OpenReview 返回一条近题记录「Dynamics Forcing for Diffusion World Models」，venue 为 RLC 2026 WMW（workshop），题名与本文不完全一致，未取得作者列表逐位核对，按近题不同文处理，不据此推断本文投稿或录用。'
+    verification_confidence: medium
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.29839
+    - https://api2.openreview.net/notes/search?term=Dynamics+Forcing:+Mitigating+Error+Accumulation+in+Causal+Video+World+Models&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=Dynamics+Forcing:+Mitigating+Error+Accumulation+in+Causal+Video+World+Models&rows=5
+    verification_outcome: no_publication_evidence
+    blocker: OpenReview 返回一条近题记录「Dynamics Forcing for Diffusion World Models」，venue 为 RLC 2026 WMW（workshop），题名与本文不完全一致，未取得作者列表逐位核对，按近题不同文处理，不据此推断本文投稿或录用。
+  ttt-offset:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.29453
+    evidence: '2026-11-25 入库即核验：arXiv 2611.29453 abs 页comments 全文「29 pages, 9 figures, 15 tables」，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「What Test-Time Training Corrects in Latent World Models? A Slow-Fast Approach」）返回的最近几题为 『Fast Residual Memory for Test-Time Training of Latent World Models』（ICLR 2027 Conference Submission）；『JEPA-TTT: Persistent Test-Time Training of Latent World Models for Planning under Distribution Shift』（WM PAI Workshop Poster），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.29453
+    - https://api2.openreview.net/notes/search?term=What+Test-Time+Training+Corrects+in+Latent+World+Models?+A+Slow-Fast+Approach&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=What+Test-Time+Training+Corrects+in+Latent+World+Models?+A+Slow-Fast+Approach&rows=5
+    verification_outcome: no_publication_evidence
+  props-bench:
+    status: preprint
+    name: ''
+    year: 2026
+    track: ''
+    source: https://arxiv.org/abs/2611.29665
+    evidence: '2026-11-25 入库即核验：arXiv 2611.29665 abs 页comments 为空，journal_ref 为空，全文无录用字样；OpenReview notes/search 题名检索（term「PROPS: Can Visual Generators Keep the Current Look of a Prop?」）返回的最近几题为 『Towards Direct Mapping between Visual Information Worlds and Real World』（CoRR），题名均与本文不一致，无同题命中；Crossref api/works 题名检索按「题名不少于 5 个词、相似度不低于 0.85、年份不早于 2025」严格过筛，0 条同题出版记录。截至 2026-11-25 未查到正式发表证据，不等于确认未发表。'
+    verification_confidence: high
+    checked_at: '2026-11-25'
+    checked_sources:
+    - https://arxiv.org/abs/2611.29665
+    - https://api2.openreview.net/notes/search?term=PROPS:+Can+Visual+Generators+Keep+the+Current+Look+of+a+Prop?&source=forum&limit=10
+    - https://api.crossref.org/works?query.bibliographic=PROPS:+Can+Visual+Generators+Keep+the+Current+Look+of+a+Prop?&rows=5
     verification_outcome: no_publication_evidence
 project_shortlist:
   位置时间寻址:
