@@ -16860,3 +16860,753 @@ nodes:
   title: PROPS
   training: 不适用
   venue: ''
+- arxiv: '2611.32445'
+  branch: 神经渲染器
+  concepts:
+  - 结构条件渲染
+  - 显式3D缓存
+  - 少步蒸馏
+  - 分块因果缓存
+  date: '2026-11-24'
+  detail:
+    diff: 与 SolarRenderer、Zing-1 这一族比，它们把历史留在 KV 或参考帧里，这条把历史留在几何表面；与纯文本到 3D 比，外观不是资产自带而是渲染器生成后回写的。
+    formulas: []
+    has_abstract: true
+    io: 输入是编码代理或文本到 3D 生成的网格世界、相机轨迹与动作；栅格化网格得到每个像素的面片 ID；渲染器输出视频帧，同时把特征写回对应面片；表面重新入画时按面片取回特征继续渲染。
+    limits: 摘要未给基线名与逐项分数，只给「翻倍」这类相对说法；面片分辨率、每表面特征维度、内存上限均未给；依赖物体级网格划分，但如何从代理视频得到每个物体自身坐标系未说明；40 FPS 只写 720p 实时，硬件未交代。
+    position: 代码代理与文本到 3D 生成的世界几何与状态天然持久，外观却远不如照片级；把这类世界渲成粗代理再交给视频模型，代理只说明「在哪里」，外观由渲染器即兴生成，被忘记的表面在回访时会被重新发明。
+    steps:
+    - 把粗代理渲成每个像素带面片 ID 的图，面片 ID 在帧间与视角间都指向同一块表面。
+    - 渲染器在生成时把中间特征存到它描绘的那块表面，坐标取该物体自身的参考系，因此物体移动时特征跟着走。
+    - 下一次该表面入画，按栅格化结果把特征取回，作为外观条件而不是重新生成。
+    - 记忆容量随被看到的表面数增长，与帧数解耦；多个 agent 看到同一表面时共享同一份记忆。
+    - 只用合成数据训练少步因果渲染器，零样本迁到真实室内扫描与编码代理造的世界。
+    train: 需训：仅用合成数据训练少步因果渲染器；摘要未给步数、参数量、面片分辨率与训练规模。
+  explain: 这条把「记忆的地址」换成几何本身：代理只规定哪里有什么，外观原本无处可存，回访时同一面被重新发明；M2R 用栅格化得到的面片 ID 当像素的地址，等于给渲染器配了一个自带几何索引的键值库，写入随表面走、读取靠栅格化。对我的复现最有用的一点是它说明「按帧存」不是唯一选择：SolarRenderer 的四步 LoRA 只是把参考帧条件化，跨回访没有持久外观，而只要代理带面片身份，少步渲染器也能把外观存成按表面索引、并让多个 agent 共享同一份记忆。
+  id: m2r-mesh-memory
+  key_numbers:
+  - 720p 实时 40 FPS（摘要自报）
+  - 物体恒存指标提升一倍以上（摘要原文 more than doubling）
+  - 跨 agent 一致性接近翻倍（摘要原文 nearly doubling）
+  - 仅合成数据训练，零样本迁移到真实室内扫描与编码代理生成的世界
+  lane: 代码世界模型
+  link_strength: 同为「代理只给位置、渲染器补外观」的少步因果渲染器：SolarRenderer 用 control LoRA 吃参考帧条件，这条把渲染器自己的特征写回网格面片再按面片取回
+  links:
+  - https://arxiv.org/abs/2611.32445
+  - https://research.nvidia.com/labs/sil/projects/m2r/
+  mechanism: 把渲染器生成的特征按栅格化得到的面片身份写回每个物体自身坐标系下的网格表面，表面重新入画时再按像素对应的面片取回，外观因此随物体移动、跨视角共享，内存随看到的表面数增长而不是帧数。
+  media:
+  - https://research.nvidia.com/labs/sil/projects/m2r/vids/hero/four_agents.mp4
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 A Mesh to Remember: Persistent Appearance for Interactive Video Worlds；数字全来自摘要，基线名与逐项分数未给；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 网格当面片地址，外观写在表面上
+  parent: solarrenderer
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 表面地址
+  - 外观记忆
+  - 少步因果
+  title: M2R (Mesh to Remember)
+  training: 需训
+  venue: ''
+- arxiv: '2611.32116'
+  branch: ''
+  concepts:
+  - 训练无关
+  - KV压缩或淘汰
+  - 分块因果缓存
+  - 全局锚点KV
+  date: '2026-11-24'
+  detail:
+    diff: 与 Echo-Forcing 的硬切比，硬切一刀切掉历史、主体跟着变；与 rolling / sink 类只调窗口与锚点比，那类修法被实验证明清不掉旧场景物体。
+    formulas: []
+    has_abstract: true
+    io: 输入是切换前后的文本条件与已生成帧的缓存；输出是切换后的视频帧流；方法只改缓存的构造方式，不改模型权重。
+    limits: 摘要只给 16 场景族与两项相对结论，无逐族数字、无主体相似度具体分数、无底座与窗口长度；「选择性保留主体 token」的选择器怎么实现（靠分割、靠注意力、靠文本定位）摘要未给。
+    position: 流式生成里切换场景，缓存历史既是主体一致性的唯一来源，也是旧场景物体的来源，两者绑在同一份 KV 上。
+    steps:
+    - 对文本条件、去噪步数、局部窗口、attention sink 做受控干预，观察旧场景物体何时消失、何时留存。
+    - 确认原帧留在缓存里时，KV flush 与 sink 重算仍留着旧物体。
+    - 把历史整体换成目标场景历史，旧物体基本清掉，但主体也变了，人脸相似度下降。
+    - Molt Forcing：用冷启动的目标场景重建历史，再从原缓存里挑主体 token 保留。
+    - 在 16 个场景族上与 Echo-Forcing 硬切对比清旧物与守主体两项。
+    train: 免训：只改推理期缓存的构造与保留，摘要未提任何训练或微调。
+  explain: 它把「取错」拆成两种失效：该清的没清（旧场景物体被缓存续命）、该留的留不住（换历史就把主体也换掉），并用干预实验排除了 KV flush 与 sink 重算这两个常规修法。这对我复现的六块窗口是很直接的诊断：窗口里的历史不是「越多越稳」，它同时是主体一致性与场景污染的来源，而两者的分离点不在窗口大小，在「哪些 token 属于主体」。免训重建加选择性保留这条路线，比再换一个淘汰策略更贴近因果流式的约束。
+  id: molt-forcing
+  key_numbers:
+  - 16 个场景族（摘要自报）
+  - 旧场景物体清除率不低于 Echo-Forcing 硬切（摘要原文 at least as reliably）
+  lane: 位置时间寻址
+  link_strength: 同属 forcing 族的历史管理：Rolling Forcing 管窗口怎么滚，这条管窗口里哪部分历史该留、哪部分在换场景时必须蜕掉
+  links:
+  - https://arxiv.org/abs/2611.32116
+  mechanism: 用受控干预定位出旧场景物体由缓存的视觉历史维持，KV flush 与 sink 重算都清不掉；改为从冷启动的目标场景重建历史，同时只从原缓存里挑出主体 token 保留，兼顾清旧物与守主体。
+  media: []
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 The Old Scene Lives in the Cache: Diagnosing and Shedding Stale History in Streaming Video Generation；摘要只给 16 场景族与相对结论，无主体相似度分数与底座信息；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 陈旧缓存留住旧场景，换景要蜕壳
+  parent: rolling-forcing
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 陈旧历史
+  - 换场景
+  - 免训修法
+  title: Molt Forcing
+  training: 免训
+  venue: ''
+- arxiv: '2611.31944'
+  branch: 外部检索库
+  concepts:
+  - 位姿对齐检索
+  - 检索增强
+  - KV压缩或淘汰
+  - 训练无关
+  - 流式分块推理
+  date: '2026-11-24'
+  detail:
+    diff: 与 LongLive-RAG、REEL 这类按内容检索的比，它多了几何 grounding 与一层可证的等价；与 Molt Forcing 比，一个决定「取哪些」，一个决定「该不该留」。
+    formulas: []
+    has_abstract: true
+    io: 输入是当前块的去噪查询、历史 KV 缓存、相机位姿与几何；输出是被检索出的历史 KV 子集，交给注意力计算；显存侧把缓存放 CPU，按 tile 流式搬入。
+    limits: 等价只在 draft 相关性可分解为块均值时成立；摘要未给 SolarWM-33B 的窗口长度、块大小与 Top-K 取值；3.27× 与 42.2% 是相对其他 CPU-offload KV 检索方法的平均，未逐基线列出；流式 kernel 的 tile 尺寸未给。
+    position: 自回归视频扩散靠历史 KV 维持长程一致，但历史越长，检索与注意力越慢，显存也顶不住；纯内容相似度检索在相机位姿变化时会挑错块。
+    steps:
+    - 把历史 KV 按空间块组织，块内保留池化描述子与几何量。
+    - 用几何 grounding 先排除与当前视角不重叠的块，避免只靠描述子撞名。
+    - 在剩余块上算 draft 相关性做 Top-K，并按查询条件细化。
+    - 对选中的块做流式注意力：CPU 到 GPU 的 KV 传输与注意力计算重叠，tile 级推进，显存有界。
+    - 给出 draft 相关性与全分辨率块相关性的等价关系，以及 Top-K 重叠下检索效用损失的界。
+    train: 免训：不改模型权重，只换缓存的检索与搬运方式。
+  explain: 它给了「按内容相似度检索历史 KV 会失手」的一个可证伪版本：只按池化描述子比较时，相机位姿不同的块无法区分，所以必须先做几何 grounding 再细化。这条对我关心「什么时候取错」很直接——取错的来源不只是检索键选得粗，还在于检索键本身不含几何。同时它把 draft 相关性写成全分辨率块相关性均值分支的精确等价，误差只落在 max 分支，这种「先证等价再谈加速」的写法比报一个加速比更可信。SolarWM-33B 单卡可跑，也说明 33B 量级的历史检索在工程上已经可行。
+  id: draftkv
+  key_numbers:
+  - 端到端 3.27× 加速
+  - 峰值显存降 42.2%
+  - 单张 H100 上对 SolarWM-33B 做历史 KV 检索
+  - draft 相关性 = 全分辨率块相关性的均值分支（论文理论结果）
+  lane: 内容学习寻址
+  link_strength: 与 LongLive-RAG 同做历史 KV 检索，这条先用相机位姿做几何 grounding 再按查询细化，并给出 draft 相关性等价于全分辨率块相关性均值分支的证明
+  links:
+  - https://arxiv.org/abs/2611.31944
+  - https://github.com/TillyEndless/DraftKV
+  mechanism: 历史 KV 块先按几何 grounding 粗筛（draft 相关性等价于全分辨率块相关性的均值分支），再按查询做 Top-K 细化；配合 CPU offload 与 tile 级流式注意力把传输藏进计算，单张 H100 上跑 33B。
+  media: []
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 DraftKV: Protecting Persistent Worlds through Hierarchical Streaming Retrieval；comments 称代码与项目页在线但 abs 页未给可解析链接，项目页以正文脚注的 GitHub 仓库代替（已打开，无演示视频）；数字为相对其他 CPU-offload KV 检索方法的均值；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 几何先筛，再按查询挑历史 KV
+  parent: longlive-rag
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - KV 检索
+  - 几何接地
+  - 流式注意力
+  title: DraftKV
+  training: 免训
+  venue: ''
+- arxiv: '2611.31803'
+  branch: ''
+  concepts:
+  - 记忆评测基准
+  - 动作条件控制
+  date: '2026-11-24'
+  detail:
+    diff: 与 WorldMemBench、WorldRoamBench 这类记忆/漫游基准比，它的区分点是把「受控历史」与「完整 rollout」并列，用前者诊断、后者看退化；与只看 seen-view 回访的比，它把 novel-view 恢复单列。
+    formulas: []
+    has_abstract: true
+    io: 输入是 33 个 UE 场景的真值观测历史与相机轨迹；输出是两套设置下的分数：Continued Rollout（共享真值历史）与 Full Rollout（模型自己生成的完整交互）。
+    limits: 摘要只给结论与设置，未给八个模型的绝对分数与逐维度排名；60 个 Full Rollout 的覆盖范围（场景数、时长）未说明。
+    position: 交互式世界模型逐帧生成可漫游的世界，持久性要求用户走开再回来时旧场景仍可恢复；既有评测多测 seen-view 回访与完整 rollout，跨视角恢复没被单独量，且与轨迹跟随误差、生成退化纠缠。
+    steps:
+    - 构建 600 条受控轨迹，每条从同一段地真值观测历史出发。
+    - Continued Rollout：只让模型从该历史续跑，剥离前面的轨迹跟随误差。
+    - Full Rollout：模型从零自己走完整个交互，看累积退化。
+    - 按主体一致性、外观保真、几何一致性三个维度评场景恢复。
+    - 对比 8 个开源与闭源模型在两种设置下的画像差异。
+    train: 不适用：评测工作，不训练模型。
+  explain: 现有记忆评测大多只看「回到看过的视角」，把记忆、跟轨迹、生成退化三件事混在一起，分数掉了不知道怪谁。这条的 Continued Rollout 从同一段真值历史出发，模型只对「走开再回来能不能恢复」负责，这才是能诊断的量尺。它的结论也值得记：novel-view 恢复普遍难于 seen-view 回忆，而受控历史下的模型画像与完整交互下的画像可以差很多——也就是说，用端到端 rollout 排名次会给出误导性的结论。对我这条线，评测该按「看过的视角」与「没看过的视角」分开报。
+  id: scenemembench
+  key_numbers:
+  - 600 条受控轨迹，覆盖 33 个 Unreal Engine 场景
+  - 60 个 Full Rollout 案例
+  - 8 个代表性开源与闭源模型
+  - 32 页 14 图 23 表（comments 自报）
+  lane: 评测基准
+  link_strength: 与 WorldMemBench 同测世界模型记忆，这条把「回访恢复」与「跟轨迹」「生成退化」拆开，用共享真值历史做受控诊断
+  links:
+  - https://arxiv.org/abs/2611.31803
+  - https://yuheng-si.github.io/SceneMemBench/
+  mechanism: 把场景记忆拆成 seen-view 回忆与 novel-view 恢复、受控诊断与端到端交互两对维度；用共享真值历史的 Continued Rollout 剥离轨迹跟随误差，再用 Full Rollout 看真实交互下的退化。
+  media:
+  - https://yuheng-si.github.io/SceneMemBench/media/greek_island_reversed_rotation/route-seek.mp4
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 SceneMemBench: A Benchmark for Scene Memory in Interactive Video World Models；摘要未给各模型绝对分数；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 控住历史看回访，把记性与跟轨迹拆开
+  parent: worldmembench
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 场景记忆
+  - 受控回访
+  - 跨视角恢复
+  title: SceneMemBench
+  training: 不适用
+  venue: ''
+- arxiv: '2611.31892'
+  branch: ''
+  concepts:
+  - KV压缩或淘汰
+  - 训练无关
+  - 分块因果缓存
+  - 旋转位置编码
+  - 少步蒸馏
+  date: '2026-11-24'
+  detail:
+    diff: 与 dKV Forcing、Commit Forcing 这类改刷新时机的比，它不改什么时候刷，而是改「刷多少」：大部分用重建替代真前向；与 token 复用比，它用两个互补估计去偏，末段 PSNR 高 1.14 到 1.61 dB。
+    formulas: []
+    has_abstract: true
+    io: 输入是当前块的去噪状态、历史 KV 缓存与旋转位置相位；输出是更新后的缓存与当前块的 KV；实现是 tile 对齐、无同步的 Triton kernel。
+    limits: 全部实验在 1.3B 底座，未到 33B；逐头仿射标定需要离线数据，摘要未给标定集规模；注意力读出误差代理的阈值与触发率未给；step inflation 的度量定义未在摘要展开。
+    position: 块因果视频扩散逐块生成，每块去噪完要把干净 KV 写进持久缓存；一旦蒸馏与提前退出让去噪变便宜，这次 t=0 前向就成了运行时主项，而直接复用陈旧 KV 又会污染后续块的条件。
+    steps:
+    - 把缓存更新拆成「必须真刷」与「可重建」两部分。
+    - 去掉 RoPE 相位后，用运动对齐的历史 KV 与 token 退出步的飞行中 KV 作为同一干净 KV 的两个估计。
+    - 用离线标定的逐头仿射映射在 Pre-RoPE 空间给飞行中 KV 去偏，再融合两个估计。
+    - 用注意力读出误差代理挑出需要真刷新的 token，其余走重建。
+    - 在 LongLive-1.3B 与 Self-Forcing-DMD-1.3B 上测延迟、FLOPs、末段 PSNR 与步数膨胀。
+    train: 免训：冻结 DiT，只做一次离线标定得到逐头仿射映射。
+  explain: 它把「省算力」与「取错」连成一个成本闭环：复用陈旧 KV 省下的刷新计算，会在后续 block 的去噪步数上原样还回来，所以省成本不能只看单步延迟。这个「step inflation」量法对我复现四步 LoRA 特别对症——四步让去噪变便宜之后，干净的 t=0 KV 写入反而成了主要开销。它给的解法也干净：去掉旋转相位后，历史 KV 与飞行中 KV 是同一目标的两种互补估计，融合比二选一好，只在误差代理报警时才真刷新。
+  id: samr-kv
+  key_numbers:
+  - 48 秒 LongLive-1.3B：DiT 延迟降 20.9%，主 FLOPs 降 30.7%
+  - 末段 PSNR 比 token 复用高 1.61 dB（held-out VidProM-16 上 1.14 dB）
+  - 零样本迁到 Self-Forcing-DMD-1.3B：复用导致的步数膨胀 2.47→2.30，晚段 PSNR +0.33 dB
+  - 一次免训标定把诊断分从 89.62 拉回 91.10
+  lane: 位置时间寻址
+  link_strength: 与 dKV Forcing 同改块因果视频 DiT 的 KV 刷新，这条只做部分 t=0 刷新、其余在去 Pre-RoPE 后用飞行中 KV 重建
+  links:
+  - https://arxiv.org/abs/2611.31892
+  mechanism: 去除旋转位置相位后，运动对齐的历史 KV 与 token 退出步的飞行中 KV 是同一份干净 KV 的互补估计；用离线标定的逐头仿射去偏后融合，只对注意力读出误差代理标出的 token 做真正的 t=0 刷新。
+  media: []
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 Cheap Memory Costs Future Compute: Co-Designing Persistent KV and GPU Execution for Efficient Streaming Video Diffusion；数字全在 1.3B 底座上，未到 33B；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 只刷一部分 KV，其余反旋转后重建
+  parent: dkv-forcing
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - KV 刷新
+  - 陈旧缓存
+  - 步数膨胀
+  title: SAMR
+  training: 免训
+  venue: ''
+- arxiv: '2611.32443'
+  branch: 显式几何库
+  concepts:
+  - 显式3D缓存
+  - 视野重叠检索
+  - 位姿对齐检索
+  - 动作条件控制
+  date: '2026-11-24'
+  detail:
+    diff: 与 3D-guided 的全景生成比，多的是朝向规范化与时间步门控；与 PVWander 之外的透视域记忆方法比，它必须处理 ERP 的循环边界，因此「对齐」这件事的代价更低。
+    formulas: []
+    has_abstract: true
+    io: 输入是初始 ERP 全景、相机轨迹与文本；输出是沿轨迹的 360° 视频；中间维护一份在线点云记忆。
+    limits: 摘要零数字，无 PSNR/FID/一致率；在线点云的内存上限、深度来源（单目深度模型及其误差）、全景流帧率均未给；360° 评测口径未说明。
+    position: 从一张 ERP 全景出发，沿用户给定轨迹连续合成 360° 观测；几何引导能提升一致性，但运动与朝向的组合太杂，加上累积伪影与深度误差，长程漫游会偏。
+    steps:
+    - 每段生成后把观测按估计深度与位姿反投影进在线点云。
+    - 把点云重投影到下一段的目标视角，作为几何引导。
+    - Path-Facing canonicalization：利用 ERP 水平方向的循环对称，把该段的朝向旋转到与主平移方向一致，同时保持相机路径不变。
+    - Timestep-aware gating：按去噪时间步给重投影引导加通道级门，粗阶段多用结构、细阶段抑制伪影。
+    - 两项设计各自消融。
+    train: 需训：全景视频生成模型需训练，摘要未给训练数据、底座与步数。
+  explain: 两个设计各修一处具体失效：Path-Facing canonicalization 把每段的方向对齐到主平移方向，消掉「运动方向与朝向的多样组合」这个隐藏变量——这正是回访一致性最容易崩的地方，等价于把相机相对朝向规范化再生成；Timestep-aware gating 按去噪阶段调记忆权重，与四步生成里前几步定结构、后几步补细节的事实一致。它把「记忆引导本身也会带伪影」当一等公民处理，而不是假设重投影越强越好。
+  id: pvwander
+  key_numbers:
+  - 360° ERP 全景长程漫游（摘要口径）
+  - 两项设计各有消融（摘要未给数值）
+  lane: 几何位姿寻址
+  link_strength: 与 GEMS 同用显式几何当记忆，这条把生成观测累积成在线点云再重投影，并对 ERP 全景做路径朝向规范化
+  links:
+  - https://arxiv.org/abs/2611.32443
+  - https://chuanxinsong.github.io/pvwander-project-page/
+  mechanism: 把已生成观测累积成在线点云并重投影回当前视角当几何引导；用 ERP 的水平循环对称把每段的方向对齐到主平移方向，再按去噪时间步用通道门控调记忆引导的强度。
+  media:
+  - https://chuanxinsong.github.io/pvwander-project-page/assets/long16-projection-generation.mp4
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 PVWander: 3D Memory-guided Panoramic Video Wandering with Path-Facing Canonicalization；摘要零定量指标，只有定性 improved；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 点云记忆重投影，先把路径朝向摆正
+  parent: gems
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 全景漫游
+  - 朝向规范化
+  - 记忆门控
+  title: PVWander
+  training: 需训
+  venue: ''
+- arxiv: '2611.32473'
+  branch: 显式几何库
+  concepts:
+  - 显式3D缓存
+  - 动作条件控制
+  - 几何对应编码
+  date: '2026-11-24'
+  detail:
+    diff: 与 PVWander 比，那条用点云重投影做几何引导、仍是透视域输出，这条把全景流本身当记忆并在同一模型里生成；与双阶段「先建全景再生成」的比，它不要初始全景也不需要辅助模型。
+    formulas: []
+    has_abstract: true
+    io: 输入是动作与（可选的）相机控制、初始帧；输出是透视视频帧流，内部另有一条低帧率全景流作为长期记忆。
+    limits: 摘要零数字；全景流帧率、两路带宽/算力分配、GeoAnch 的对齐精度均未给；新构造的动态 benchmark 未公开细节。
+    position: 动作条件世界模型在透视视野下有界，相机转开再回来，出画的动态实体在潜空间失去演化依据，于是突变或消失。
+    steps:
+    - 在同一个扩散模型里耦合透视与全景两路生成，全景流以更低帧率推进。
+    - GeoAnch：按几何把透视帧与全景区域做空间对应，保证同一物体在两路里是同一处。
+    - TemComp：对全景流做时间聚合，把低帧率观测补成可用的条件。
+    - 相机控制既可在潜空间注入也可在注意力层注入，两种都能接。
+    - 在新构造的动态基准上测图生视频与视频续写。
+    train: 需训：单阶段扩散模型需训练；摘要未给底座、数据与训练规模。
+  explain: 它针对的失效很具体：相机转开时出画的运动实体在潜空间里没有演化依据，回来时已经突变或消失。解法不是加大窗口，而是让记忆的载体视野更宽——用低帧率全景流当长期载体，再靠 GeoAnch 把透视帧与全景对位、TemComp 补时间。低帧率是刻意的：动态物体不需要每帧都在记忆里，但空间位置必须持续存在。这对「记忆该存什么粒度」是个有用的反问——不是所有历史都值得按帧存。
+  id: omnipersist
+  key_numbers:
+  - 单阶段扩散，无辅助模型、无初始全景输入（摘要口径）
+  - 支持潜空间与注意力两种相机控制接入
+  lane: 几何位姿寻址
+  link_strength: 与 GEMS 同以显式几何承载记忆，这条把低帧率全景流当长期载体，用几何锚定与时间补偿把两路视野接起来
+  links:
+  - https://arxiv.org/abs/2611.32473
+  - https://omnipersist.github.io/
+  - https://github.com/cszhilu1998/OmniPersist
+  mechanism: 单阶段扩散模型里同时生成透视视频与低帧率全景流，用 GeoAnch 做两路之间的空间对应、TemComp 做时间聚合；不依赖辅助模型也不要求初始全景输入。
+  media:
+  - https://omnipersist.github.io/html/I2V_results/Film_Animation_8v6Bv3TwiWc_20__v24.mp4
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 OmniPersist: Persistent Dynamic World Modeling via Coupled Panoramic Evolution；摘要零数字，只有 consistent gains 定性；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 透视加低帧率全景，转身回来还在
+  parent: gems
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 全景记忆
+  - 出画演化
+  - 双流耦合
+  title: OmniPersist
+  training: 需训
+  venue: ''
+- arxiv: '2611.31765'
+  branch: 学习路由
+  concepts:
+  - 学习路由
+  - 记忆写入淘汰
+  - 潜在记忆库
+  - 训练无关
+  date: '2026-11-24'
+  detail:
+    diff: 与「保留与早期 token 不同的」「按固定代理查询匹配」的比，它的写入判据来自世界模型的预测误差；与按时间等距采样的比，它把预算往意外处倾斜。
+    formulas: []
+    has_abstract: true
+    io: 输入是持续到达的视频流与冻结的 Video-LLM；输出是分段保留的视觉 token；查询到达时再取相关段交给 Video-LLM 作答。
+    limits: 是理解侧不是生成侧；预算随段龄衰减的曲线、惊讶度的归一化方式未给；证据门由 Video-LLM 自判，误纳率未给；世界模型为额外冻结模型，其显存与延迟开销未提。
+    position: 直播视频流越来越长，反复编码全部历史代价高；问题在将来才出现，所以记忆必须在不知道问题的前提下一次成型。
+    steps:
+    - 用冻结的视频世界模型，在给定最近历史的条件下预测下一段特征。
+    - 取归一化预测误差，得到时间与空间两路惊讶度信号。
+    - 按惊讶度做在线分段，并在预算内保留每段的关键 token；预算随段龄衰减。
+    - 查询时先用相似度拉一个候选短名单，再由 Video-LLM 判断该段是否补足证据，通过才纳入。
+    - 在三个流式与三个离线长视频基准上评测。
+    train: 免训：世界模型与 Video-LLM 都冻结，只做在线记忆构造。
+  explain: 「什么值得记」有很多代理判据：和早期 token 不一样、和预先固定的查询相关、按时间等距采样。这条指出这些判据都不会区分「细微但意外的细节」与「预期内的变化」，所以改用世界模型的预测误差——没被预料到的才算信息。这与我写侧的判据同源：不是所有变化都值得存，只有世界模型解释不了的变化才值得。另外它把读侧也做成一次判定：某段只有在被判为「补上了当前视角没有的证据」时才被纳入，这对避免「检索回来一堆相似帧」是有用的约束。
+  id: dreamcatcher
+  key_numbers:
+  - OVO-Bench 上 78.9% 总体准确率（Qwen3.8-27B，摘要自报）
+  - 三个 Qwen 视频 LLM 平均输入 token 降 80% 以上（1 fps 基准）
+  lane: 内容学习寻址
+  link_strength: 与 Learning-to-Memorize 同解决「写什么」，这条用外部冻结世界模型的预测误差当写入门控，而不是用与早期 token 的差异或固定代理查询
+  links:
+  - https://arxiv.org/abs/2611.31765
+  mechanism: 用独立预训练且冻结的视频世界模型预测下一段特征，把归一化预测误差当作时间与空间上的惊讶度，指导在线分段与 token 保留；查询时再用证据门决定某段是否真的补上了当前视角缺的证据。
+  media: []
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 Dreamcatcher: Remembering What Surprises a World Model in Video Streams；对象是流式视频问答而非生成；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 用世界模型的惊讶度决定存哪段
+  parent: l2m
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 惊讶度写入
+  - 证据门
+  - token 预算
+  title: Dreamcatcher
+  training: 免训
+  venue: ''
+- arxiv: '2611.32345'
+  branch: ''
+  concepts:
+  - KV压缩或淘汰
+  - 训练无关
+  date: '2026-11-24'
+  detail:
+    diff: 与 Video-MemComp 这类淘汰/合并的比，它不减 token 数而是压每个 token 的表示；与 KV 量化（如 QuantStream3D）比，对象是跨去噪步的特征缓存而不是注意力 KV。
+    formulas: []
+    has_abstract: true
+    io: 输入是各缓存机制要存的中间特征；输出是压缩后的缓存与重建后的特征；对上层缓存机制透明。
+    limits: 只在 HunyuanVideo 与 Wan2.1 上验证，未涉块因果流式 DiT；Wan2.1 预测缓存最大掉 3.5 pp；秩数与位宽的组合策略摘要未给；重建算力的额外开销未单列。
+    position: 视频 DiT 的推理开销来自每个去噪步都要过一遍全部时空 token；跨步复用中间特征能加速，但密集特征张量的持久存储随视频长度、分辨率与缓存覆盖率线性涨，超过单卡显存就只能 offload 或多卡切分，于是缓存而不是算力决定了卡数。
+    steps:
+    - 观察缓存特征的能量集中在少数跨 token 共享的通道模式上。
+    - 把每个缓存特征分解成少量因子（低秩）。
+    - 存储前对因子量化。
+    - 复用时先反量化再重建特征，交给原缓存机制使用。
+    - 在三种缓存机制 × HunyuanVideo / Wan2.1 上测状态大小、VBench 与端到端速度。
+    train: 免训：不训练，只改存储格式。
+  explain: 它把「缓存留多少」换成「缓存怎么压」：通道模式在 token 间共享，低秩因子加量化后存，复用前重建，淘汰策略完全不变。这个视角对我有实际意义——8GB 卡上跑流式本来不可能，但理解压缩比与质量损失的对应关系，能判断哪些缓存值得留全精度、哪些可以压。它的数字也说明问题规模：预测缓存动辄上百 GiB，不是「优化一下」的量级，而是决定了要不要多卡。
+  id: lrq-cache
+  key_numbers:
+  - 预测缓存的持久状态降 42–71×，降到 2.3–4.9 GiB/视频
+  - 原生预测缓存为 109–346 GiB/视频
+  - VBench 与原生缓存差 ≤0.25 pp（TeaCache）
+  - 比 CPU offload 原生缓存快 2.7–5.9×
+  lane: 位置时间寻址
+  link_strength: 与 Video-MemComp 同压视频扩散的缓存，这条压的是跨去噪步复用的特征缓存，用低秩因子加量化而不是淘汰
+  links:
+  - https://arxiv.org/abs/2611.32345
+  mechanism: 缓存特征的能量集中在少数跨 token 共享的通道模式上，因此把每个缓存特征表示成少量因子、存前量化、复用时重建，缓存机制本身不动。
+  media: []
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 LRQ-Cache: Compressing Feature Caches in Video Diffusion via Low-Rank Approximation and Quantization；实验在 HunyuanVideo 与 Wan2.1 上，未涉因果流式 DiT；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 缓存低秩加量化，跨去噪步复用
+  parent: video-memcomp
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 缓存压缩
+  - 低秩量化
+  - 显存预算
+  title: LRQ-Cache
+  training: 免训
+  venue: ''
+- arxiv: '2611.32171'
+  branch: ''
+  concepts:
+  - 旋转位置编码
+  - 几何对应编码
+  date: '2026-11-24'
+  detail:
+    diff: 与 Galileo-RoPE 这类直接把相机几何编进 RoPE 的比，它不改编码形式而是改频带这个隐藏超参；与普通 RoPE 外推的比，问题不在长度外推而在频率分辨率的匹配。
+    formulas: []
+    has_abstract: true
+    io: 输入是多视图 token 特征与相机参数、预测深度；输出是旋转后的特征进入注意力；可调的是顶频与频率跨度。
+    limits: 实验止于新视角合成与双视图深度，未到视频生成或长程回访；每 8 像素圈数的换算依赖 patch 大小，跨架构要重算；前向-反向不对称的分析是经验性的（阻断梯度恢复 90–93%），未给完整理论。
+    position: 几何 RoPE 把三维相机几何塞进多视图注意力：按视线、深度与重投影像素坐标旋转 token 特征，每个坐标跨一串频率旋转，这串频率的范围（频带）决定了编码能分辨多细的对应。
+    steps:
+    - 指出频带在现有实现里是未标准化变量：沿用二维 RoPE 的顶频，或让跨度随头维度指数增长。
+    - 在 RealEstate10K 新视角合成上对比 RayRoPE 与最强基线，发现 47M（144 通道）追平而 25M（48 通道）低 1.2 dB，固定宽度只改头宽也能复现同样的反转。
+    - 48 通道下用四个频率填 243× 跨度，追回 0.9 dB。
+    - 扫频带，得到可靠区间：顶频在每 8 像素 0.3–3 圈。
+    - 分析过宽频带的失效：前向取平均衰减高频，梯度未衰减，阻断高频深度梯度恢复 90–93% PSNR。
+    train: 需训：分析对象是训练好的多视图模型，结论可用于重训或调参；摘要未给训练配置。
+  explain: 这是一条「超参隐变量」型的诊断：几何 RoPE 的频带没人显式设置，实现里沿用了二维 RoPE 的顶频，或者让跨度随头维度指数增长，于是同一方法在不同头宽下排名会反过来。它给的机制解释也值钱：把旋转在预测深度区间上取平均会衰减前向的高频，但梯度没被衰减，所以前向平滑不等于反向稳定——只阻断高频深度梯度就恢复九成 PSNR。对我的复现，这意味着相机条件渲染里的频带必须显式报出来、跨实现要对齐，否则跨论文比较没有意义。
+  id: mind-the-band
+  key_numbers:
+  - 25M 模型（48 通道头）比最强基线低 1.2 dB，47M（144 通道）则追平（RealEstate10K）
+  - 48 通道下用四个频率填 243× 跨度，追回 0.9 dB
+  - 顶频落在每 8 像素 0.3–3 圈（256×256 下 10–90 圈）时三种投影编码都可靠
+  - 只阻断高频深度梯度即恢复 90–93% 的 PSNR
+  lane: 位置时间寻址
+  link_strength: 与 Galileo-RoPE 同改几何 RoPE，这条指出频带（顶频与跨度）这个未标准化变量会翻转基准排名，并给出可用区间
+  links:
+  - https://arxiv.org/abs/2611.32171
+  - https://bispl-wm.github.io/MindTheBand/
+  mechanism: 几何 RoPE 把每个坐标按一串频率旋转，这串频率的顶频与跨度沿用了二维 RoPE 的默认值，而它随注意力头维度变化；作者给出可靠区间与「前向平滑不等于反向稳定」的机制解释。
+  media: []
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 Mind the Band: The Hidden Frequency Variable in Geometric RoPE；实验在新视角合成与双视图深度，未到视频生成；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 几何 RoPE 的频带选错会翻转排名
+  parent: galileo-rope
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 几何 RoPE
+  - 频带
+  - 超参隐变量
+  title: Mind the Band
+  training: 需训
+  venue: ''
+- arxiv: '2611.32369'
+  branch: 符号状态
+  concepts:
+  - 记忆写入淘汰
+  - 检索增强
+  - 训练无关
+  - 潜在记忆库
+  date: '2026-11-24'
+  detail:
+    diff: 与 Dreamcatcher、CoverMem 这类按惊讶度或覆盖率选帧的比，它选的是结构化状态而不是帧；与场景图类离线方法比，它是增量、单遍、面向查询的。
+    formulas: []
+    has_abstract: true
+    io: 输入是持续到达的帧流；输出是对象图与事件日志；查询到达时按固定输入预算取回相关对象、事件与近期帧。
+    limits: 是理解侧不是生成侧；关系比较的判定阈值、图的规模上限与合并/分裂规则未给；四基准的绝对分未在摘要列出；关系抽取用何模型未说明。
+    position: 流式理解里，回答问题所需的证据可能已经离开当前窗口；全留不随长度扩展，丢旧帧又丧失对过去的推理。
+    steps:
+    - 在视频到达时增量构图：物体成为节点，关系成为边。
+    - 同一物体反复出现时归一到同一节点，节点内保留带时间戳的状态变化历史。
+    - 新提到的物体用「它参与的关系是否与图中既有节点吻合」判断是否已存在。
+    - 查询时按相关性取回对象、事件与近期帧，控制在固定预算内。
+    - 在四个流式基准与七个开源 VLM 上评测。
+    train: 免训：构图与检索都不训练，直接挂在冻结 VLM 前。
+  explain: 记忆的载体从帧序列换成「对象节点 + 带时间戳的状态历史 + 事件日志」，这一步与我「用代码维护场景状态」的思路同构，但它是在理解侧做的轻量版。最可借的是身份判据：判断新提到的物体是不是图里已有的那个，不看外观像不像，而看它参与的关系是否吻合——这正好绕开外观漂移，对多人 proxy 的角色一致性是直接可试的替代方案。代价是关系抽取本身会错，而摘要没给这一层的鲁棒性。
+  id: vsg-memory
+  key_numbers:
+  - 四个流式视频基准
+  - 七个开源 VLM，7B 到 32B
+  - 输入预算对齐条件下提升对过去的推理
+  lane: 框架层
+  link_strength: 与 state-world-models 同用符号结构承载状态，这条把流式视频记成对象节点加状态历史与事件日志，并靠关系判断物体是否已存在
+  links:
+  - https://arxiv.org/abs/2611.32369
+  mechanism: 把流表示成对象与关系的图外加一份事件日志，重复出现的物体归一到同一个持久节点并留带时间戳的状态历史；判断新提到的物体是否已存在时，比较它参与的关系而不是外观相似度。
+  media: []
+  note: 雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 Visual-State Graph Memory for Streaming Video Understanding；对象是流式视频理解而非生成；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。
+  one_liner: 存对象状态图，不存整段帧
+  parent: state-world-models
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 场景图记忆
+  - 身份绑定
+  - 事件日志
+  title: Visual-State Graph
+  training: 免训
+  venue: ''
+- arxiv: '2611.31757'
+  branch: 显式几何库
+  concepts:
+  - 显式3D缓存
+  - 位姿对齐检索
+  - 流式分块推理
+  date: '2026-11-24'
+  detail:
+    diff: 与分块几何对齐加隐式记忆递归的比，它把长期状态外显成可优化的因子图；与位姿图 SLAM 比，它的前端是 3DFM 而不是特征匹配，因此稠密几何是顺带产物。
+    formulas: []
+    has_abstract: true
+    io: 输入是流式视频帧（可选惯导）；输出是逐帧位姿与稠密几何，内部维护关键帧因子图与米制状态。
+    limits: 摘要只说「降低平均绝对轨迹误差」，未给数值；因子图规模上限、关键帧选取策略未给；纯单目且无惯导时米制从何而来（只能靠 3DFM 尺度预测）的退化情况未说明。
+    position: 三维基础模型一次前向能给稠密重建，但有效跨度被跨视图注意力限制；用视频分块做几何对齐再递归更新隐式记忆，或用位姿图处理大场景，两种做法都会漂，因为单目几何没有米制可观测性。
+    steps:
+    - 3DFM 当前端，逐块给出稠密几何与相对位姿。
+    - 把关键帧作为因子图节点，几何对齐作为因子。
+    - 米制尺度从 3DFM 的尺度预测或惯导获得，注入因子图。
+    - 在线优化因子图，得到一致的米制状态并回写几何。
+    - 在 VBR、Oxford Spires、KITTI 上测绝对轨迹误差。
+    train: 需训：3DFM 前端为预训练模型，因子图部分为在线优化；摘要未给前端模型与训练细节。
+  explain: 它把「记忆该用什么坐标」讲清楚了：隐式记忆递归更新会漂，根因是单目几何没有米制可观测性，误差只会在递归里累积；显式维护关键帧因子图，把 3DFM 降级成前端，漂移就被关进一个可优化的状态里。这对我的 proxy 有直接含义——代理如果只有相对几何，回访时的尺度会随递归漂，必须有一条显式的米制锚。它也提醒我，「更强的重建模型」不一定解决问题，换状态表示才解决。
+  id: xtream
+  key_numbers:
+  - VBR / Oxford Spires / KITTI 三个大规模基准上达到 SOTA（摘要自报）
+  - 12 页 3 图（comments 自报）
+  lane: 几何位姿寻址
+  link_strength: 与 geo-state 同用显式几何承载长期状态，这条用关键帧因子图维护米制状态、把 3DFM 当前端，专门治隐式记忆的漂移
+  links:
+  - https://arxiv.org/abs/2611.31757
+  mechanism: 流式管线用关键帧上的因子图维护显式米制状态，三维基础模型只当几何前端；米制来自 3DFM 的尺度预测或惯导，两者都不可用时退化为无尺度。
+  media: []
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 Xtream: An Explicit Metric State for Large-Scale Streaming Reconstruction；摘要未给 ATE 具体数值；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 因子图维护米制状态，专治隐式记忆漂移
+  parent: geostate
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 米制状态
+  - 因子图
+  - 漂移
+  title: Xtream
+  training: 需训
+  venue: ''
+- arxiv: '2611.32820'
+  branch: ''
+  concepts:
+  - 训练无关
+  - 流式分块推理
+  - 分块因果缓存
+  date: '2026-11-24'
+  detail:
+    diff: 与靠编辑缓存实现切换的比，它明确论证改缓存要么无效要么伤连续性；与训练侧加入切换数据的比，它完全在推理期做。
+    formulas: []
+    has_abstract: true
+    io: 输入是已生成的上一块、新提示与缓存；输出是下一块视频；额外开销是一块一次前向。
+    limits: 摘要未给切换成功率的量化指标，只说 substantially improves；残差注入强度、注入步数未给；只处理文本提示切换，不涉相机或结构条件切换。
+    position: 实时交互生成里用户中途改提示，但流式模型逐块生成，上一块作为强先验持续压制新提示；只留上一块惯性仍在，丢弃上下文又断连续性。
+    steps:
+    - 定位失效为上下文惯性：上一块的条件作用压过新提示。
+    - 验证惯性在只保留上一块时仍存在，说明不能靠缩短窗口解决。
+    - 把上一块重新加噪，在新提示下不带缓存去噪一次，得到「应有的样子」。
+    - 把这次去噪与原结果的残差加到下一块的早期去噪步。
+    - 在单次切换与长多段切换设置下与带专用切换机制的流式模型对比。
+    train: 免训：不改模型、不做逐模型调参。
+  explain: 诊断很干净：上一块是强先验，会把新提示压下去；而且只保留上一块时惯性仍在，说明问题不在窗口长度，而在条件的作用路径；丢弃上下文又会破坏连续性，所以「改缓存」这条路走不通。修法是在缓存外测出「同一块在新提示下应该长什么样」的差，再注回早期步——早期步定内容，这条与四步生成的前一两步决定结构一致。对我是可迁移的：交互式改提示不该靠重算缓存，而该在去噪轨迹上做偏置。
+  id: residual-guidance
+  key_numbers:
+  - 每块只多一次前向
+  - 单次切换与长多段切换两种设置（摘要未给具体指标）
+  lane: 位置时间寻址
+  link_strength: 与 Rolling Forcing 同处理流式生成里「上一块压过当前指令」的问题，这条不在缓存上改，而在缓存外测残差再注回早期去噪步
+  links:
+  - https://arxiv.org/abs/2611.32820
+  - https://residual-guidance.github.io
+  mechanism: 把上一块重新加噪后在新提示下不带缓存去噪一次，把得到的残差加到下一块的早期去噪步上；因为内容主要在早期步决定，新提示也主要在那里被压制。
+  media: []
+  note: 雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 Residual Guidance for Real-Time Interactive Video Generation；摘要未给切换成功率的量化值；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。
+  one_liner: 缓存外测残差，抵消上下文惯性
+  parent: rolling-forcing
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 上下文惯性
+  - 提示切换
+  - 免训修正
+  title: Residual Guidance
+  training: 免训
+  venue: ''
+- arxiv: '2611.32337'
+  branch: ''
+  concepts:
+  - 结构条件渲染
+  - 训练无关
+  - 物理因果评测
+  date: '2026-11-24'
+  detail:
+    diff: 与一次性长轨迹引导的比，它把预测长度压到一段，并把验证放进环；与只做提示改写或加物理奖励的比，它显式渲染控制片作为中间表示。
+    formulas: []
+    has_abstract: true
+    io: 输入是文本提示、最新生成帧与（可选的）物理约束；输出是下一短段视频；中间产物是控制片与事件判定。
+    limits: 摘要未给逐基准数值，只说 improves；事件如何渲成控制片（用什么渲染器、控制片分辨率）未说明；验证器判据与重采样上限未给。
+    position: 视频生成能出真实画面但物理演化不对；既有方法先预测整段运动轨迹再引导，预测误差累积，越到后面越偏。
+    steps:
+    - grounding：从最新帧量出场景状态（物体位置、接触关系）。
+    - event planning：预测下一个物理事件并把它渲成控制片。
+    - latent-guided generation：在该控制下生成下一短段。
+    - verification：判定事件是否发生，未发生则重采样该段。
+    - 滚动到下一轮，重复上述四步。
+    train: 免训：三个生成器都冻结，方法只加外环。
+  explain: 这是 code→proxy→video 的一个短闭环版本：从实际生成的帧量状态（而不是从计划里的状态），规划下一个事件，渲成控制片，生成，再验证事件发生与否。它的关键判断是「控制只依赖可靠的短程预测」——一次性预测整段轨迹会让误差累积到后段，改成每轮只赌一个事件，错了就重采样。这一点对我做长视频外推有直接取舍价值：与其让一个长计划撑到底，不如把计划切短、把验证放在环里。
+  id: step-event-planning
+  key_numbers:
+  - 在三个冻结生成器上提升（Physics-IQ Verified、PhyGenBench）
+  - 每轮四步：grounding、event planning、latent-guided generation、verification
+  lane: 框架层
+  link_strength: 与 WorldStream 同把「状态/事件」与「渲染」分层，这条每段先规划一个物理事件、渲成控制片再验证，成一个短闭环
+  links:
+  - https://arxiv.org/abs/2611.32337
+  mechanism: 每一轮从最新生成帧量出场景状态，规划下一个物理事件并渲成控制片，用它引导下一短段的生成，再验证事件是否真的发生，没发生就重采样。
+  media: []
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 Get the Next Moment Right: Short-Term Event Planning for Physically Plausible Video Generation；摘要未给逐基准数值；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 每段先规划事件，渲染控制片再验证
+  parent: worldstream
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 事件规划
+  - 闭环验证
+  - 短程控制
+  title: STEP
+  training: 免训
+  venue: ''
+- arxiv: '2611.32745'
+  branch: 外部检索库
+  concepts:
+  - 检索增强
+  - 潜在记忆库
+  - 记忆写入淘汰
+  date: '2026-11-24'
+  detail:
+    diff: 与只靠场景状态隐式携带历史的稀疏世界模型比，它把历史外显成可检索的锚；与视频 KV 检索的比，它的检索键是「预测时刻 + 语义兼容」，不是内容相似度。
+    formulas: []
+    has_abstract: true
+    io: 输入是历史帧与稀疏 query；输出是未来 1–3 s 的 4D 语义占用；中间有记忆锚库与两级检索。
+    limits: 是占用预测不是生成；mIoU 13.55% 的绝对值偏低且基线未在摘要列出；记忆锚的存储成本与更新频率未给；只有 nuScenes 一个数据集。
+    position: 稀疏世界模型用少量演化 query 表示场景，历史只由场景状态隐式携带，误差随预测步累积，几何与语义一起偏。
+    steps:
+    - 把历史几何与语义存成记忆锚（点级）。
+    - 按预测时刻算历史信息的有效年龄与语义兼容度。
+    - 查询级：为每个 query 选候选记忆锚集合。
+    - 点级：对稀疏点做记忆锚检索，取回几何与语义证据。
+    - 用任务与预测时刻共同门控的残差适配器修正语义、占用置信与位置。
+    train: 需训：稀疏占用世界模型需训练；摘要未给训练配置与记忆库规模。
+  explain: 它把「什么时候取」写成了检索条件本身：同一段历史，对 1 秒后的预测与 3 秒后的预测给不同证据，因为有效年龄与语义兼容度不同。这个设定很值得搬——大多数检索式记忆只有一个静态相似度，取回来的是「最像的」而不是「对这个时间跨度最有用的」。稀疏 query 加记忆锚的两级设计也说明：候选筛选可以在查询级做，证据补充要落到点级才对得上几何。绝对值不高（mIoU 13.55%），看机制比看分数合适。
+  id: memanchorworld
+  key_numbers:
+  - Occ3D-nuScenes 上 1–3 s 平均 mIoU 13.55%、平均 IoU 22.84%（摘要自报 SOTA）
+  - 11 页 4 图 4 表（comments 自报）
+  lane: 内容学习寻址
+  link_strength: 与 Retrieval as Traversal 同把检索做成带条件的多级过程，这条按预测时刻取记忆锚：有效年龄与语义兼容共同决定取哪段历史
+  links:
+  - https://arxiv.org/abs/2611.32745
+  mechanism: 稀疏占用世界模型把历史显式取出：按有效年龄与语义兼容度做查询级候选选择，再做点级记忆锚检索，用任务与预测时刻共同门控的残差适配器修正语义、占用置信与位置。
+  media: []
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 MemAnchorWorld: A Sparse World Model with Horizon-Conditioned Memory Retrieval for Autonomous Driving；对象是 4D 占用预测而非视频生成；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 按预测时刻取记忆锚，几何语义分层
+  parent: retrieval-traversal
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 记忆锚
+  - 预测时刻条件
+  - 稀疏占用
+  title: MemAnchorWorld
+  training: 需训
+  venue: ''
+- arxiv: '2611.32152'
+  branch: ''
+  concepts:
+  - 物理因果评测
+  - 记忆评测基准
+  date: '2026-11-24'
+  detail:
+    diff: 与 WorldProbe、PVBench 这类整体物理评分比，它按法则拆成可归因的五条；与纯 VLM 判官比，它要求证据落到分割/跟踪/几何上。
+    formulas: []
+    has_abstract: true
+    io: 输入是生成视频与对应的真实演示；输出是五条法则专项分数与总体判定；代理框架负责调度指标与选择性复核。
+    limits: 面向机器人操作视频，桌面刚体为主，未测长程回访与出画后回归；五条指标的具体实现细节摘要未展开；RP-Bench 的人工标注一致性未给。
+    position: 机器人世界模型生成的视频要用于动作可行性判断，物理违规没被发现就会导致错误决策；让 VLM 直接判物理，缺的是可落到证据上的时空推理。
+    steps:
+    - 定义五条法则专项指标：接触保真、物体恒存、固体性、机器人形变、物体形变。
+    - 每条指标组合分割、跟踪、三维几何或外观比较的证据，再叠加定向 VLM 推理。
+    - 代理框架按指标执行，必要时用受限动作做复核。
+    - 构建 RP-Bench：761 条人工标注生成视频与 130 条真实演示，覆盖 239 个任务、12 个数据集。
+    - 在五个生成器上比较违规类型与频率。
+    train: 不适用：评测工作，不训练生成模型；指标内含跟踪与分割模型。
+  explain: 它的 Object persistence 一条，是把「物体出画后是否还存在」变成可判量的少数尝试之一，与我的核心问题同源；Contact fidelity 则处理接触这种靠语义看不出来的关系。用代理式框架按指标调度、只在需要时调 VLM 复核，也比让 VLM 直接看视频判物理更可解释。局限也清楚：桌面刚体操作场景，没测长程回访，所以它量的是「单段内物理是否成立」而不是「记忆是否持久」。
+  id: roboprobe
+  key_numbers:
+  - RP-Bench：761 条人工标注生成视频 + 130 条真实演示，239 个任务，12 个数据集
+  - 五条指标 AUROC 均高于 0.85（摘要自报）
+  lane: 评测基准
+  link_strength: 与 WorldProbe 同判生成视频的物理合理性，这条把判据拆成五条法则专项指标，并用代理式框架选择性复核
+  links:
+  - https://arxiv.org/abs/2611.32152
+  mechanism: 把物理合理性拆成接触保真、物体恒存、固体性、机器人形变、物体形变五条法则专项指标，各自组合分割、跟踪、三维几何或外观比较的证据与定向 VLM 推理，再由代理式框架调度并选择性复核。
+  media: []
+  note: '雷达自动入库 2026-11-26，字段据摘要，待人工核（仅指科研内容精读）。arXiv 原题 RoboProbe: Benchmarking Physical Plausibility of Robot World Models；面向机器人操作视频，未测长程回访；发表状态见 paper-signals（截至 2026-11-26 未查到正式发表证据）。'
+  one_liner: 五条物理法则指标判机器人世界模型
+  parent: worldprobe
+  precision: day
+  self_measured: []
+  status: 速读
+  tags:
+  - 物体恒存
+  - 接触保真
+  - 代理式评测
+  title: RoboProbe
+  training: 不适用
+  venue: ''
